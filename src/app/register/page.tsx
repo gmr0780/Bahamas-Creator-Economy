@@ -241,7 +241,7 @@ export default function RegisterPage() {
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
               placeholder="Your full name"
-              className="w-full rounded-xl border border-white/10 bg-white/[0.08] px-5 py-3.5 text-sand placeholder-sand/50 outline-none transition-all focus:border-aqua/50 focus:ring-2 focus:ring-aqua/20"
+              className="w-full rounded-xl border border-white/25 bg-white/[0.12] px-5 py-3.5 text-white placeholder-sand/70 outline-none transition-all focus:border-aqua/50 focus:ring-2 focus:ring-aqua/20"
             />
           </div>
 
@@ -256,7 +256,7 @@ export default function RegisterPage() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@email.com"
-              className="w-full rounded-xl border border-white/10 bg-white/[0.08] px-5 py-3.5 text-sand placeholder-sand/50 outline-none transition-all focus:border-aqua/50 focus:ring-2 focus:ring-aqua/20"
+              className="w-full rounded-xl border border-white/25 bg-white/[0.12] px-5 py-3.5 text-white placeholder-sand/70 outline-none transition-all focus:border-aqua/50 focus:ring-2 focus:ring-aqua/20"
             />
           </div>
 
@@ -271,7 +271,7 @@ export default function RegisterPage() {
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               placeholder="+1 (242) 000-0000"
-              className="w-full rounded-xl border border-white/10 bg-white/[0.08] px-5 py-3.5 text-sand placeholder-sand/50 outline-none transition-all focus:border-aqua/50 focus:ring-2 focus:ring-aqua/20"
+              className="w-full rounded-xl border border-white/25 bg-white/[0.12] px-5 py-3.5 text-white placeholder-sand/70 outline-none transition-all focus:border-aqua/50 focus:ring-2 focus:ring-aqua/20"
             />
           </div>
 
@@ -285,7 +285,7 @@ export default function RegisterPage() {
                 required
                 value={platform}
                 onChange={(e) => setPlatform(e.target.value)}
-                className="w-full rounded-xl border border-white/10 bg-white/[0.08] px-5 py-3.5 text-sand outline-none transition-all focus:border-aqua/50 focus:ring-2 focus:ring-aqua/20 appearance-none"
+                className="w-full rounded-xl border border-white/25 bg-white/[0.12] px-5 py-3.5 text-white outline-none transition-all focus:border-aqua/50 focus:ring-2 focus:ring-aqua/20 appearance-none"
               >
                 <option value="" disabled className="bg-navy text-sand/80">
                   Select platform
@@ -311,7 +311,7 @@ export default function RegisterPage() {
                   value={handle}
                   onChange={(e) => setHandle(e.target.value)}
                   placeholder="yourhandle"
-                  className="w-full rounded-xl border border-white/10 bg-white/[0.08] pl-9 pr-5 py-3.5 text-sand placeholder-sand/50 outline-none transition-all focus:border-aqua/50 focus:ring-2 focus:ring-aqua/20"
+                  className="w-full rounded-xl border border-white/25 bg-white/[0.12] pl-9 pr-5 py-3.5 text-white placeholder-sand/70 outline-none transition-all focus:border-aqua/50 focus:ring-2 focus:ring-aqua/20"
                 />
               </div>
             </div>
@@ -327,7 +327,7 @@ export default function RegisterPage() {
                 required
                 value={followers}
                 onChange={(e) => setFollowers(e.target.value)}
-                className="w-full rounded-xl border border-white/10 bg-white/[0.08] px-5 py-3.5 text-sand outline-none transition-all focus:border-aqua/50 focus:ring-2 focus:ring-aqua/20 appearance-none"
+                className="w-full rounded-xl border border-white/25 bg-white/[0.12] px-5 py-3.5 text-white outline-none transition-all focus:border-aqua/50 focus:ring-2 focus:ring-aqua/20 appearance-none"
               >
                 <option value="" disabled className="bg-navy text-sand/80">
                   Select range
@@ -347,7 +347,7 @@ export default function RegisterPage() {
                 required
                 value={niche}
                 onChange={(e) => setNiche(e.target.value)}
-                className="w-full rounded-xl border border-white/10 bg-white/[0.08] px-5 py-3.5 text-sand outline-none transition-all focus:border-aqua/50 focus:ring-2 focus:ring-aqua/20 appearance-none"
+                className="w-full rounded-xl border border-white/25 bg-white/[0.12] px-5 py-3.5 text-white outline-none transition-all focus:border-aqua/50 focus:ring-2 focus:ring-aqua/20 appearance-none"
               >
                 <option value="" disabled className="bg-navy text-sand/80">
                   Select niche
@@ -370,7 +370,7 @@ export default function RegisterPage() {
               required
               value={monetization}
               onChange={(e) => setMonetization(e.target.value)}
-              className="w-full rounded-xl border border-white/10 bg-white/[0.08] px-5 py-3.5 text-sand outline-none transition-all focus:border-aqua/50 focus:ring-2 focus:ring-aqua/20 appearance-none"
+              className="w-full rounded-xl border border-white/25 bg-white/[0.12] px-5 py-3.5 text-white outline-none transition-all focus:border-aqua/50 focus:ring-2 focus:ring-aqua/20 appearance-none"
             >
               <option value="" disabled className="bg-navy text-sand/80">
                 Select status
@@ -402,7 +402,7 @@ export default function RegisterPage() {
                     className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-md border transition-all ${
                       topics.includes(topic)
                         ? "border-aqua bg-aqua text-white"
-                        : "border-white/20 bg-transparent"
+                        : "border-white/40 bg-transparent"
                     }`}
                   >
                     {topics.includes(topic) && (
