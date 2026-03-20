@@ -107,27 +107,33 @@ const pillars = [
 
 const speakers = [
   {
-    name: "The Prime Minister",
-    role: "Host & Keynote Speaker",
-    tagline: "Commonwealth of The Bahamas",
+    name: "The Rt. Hon. Philip Edward Davis, KC, MP",
+    role: "Keynote Speaker",
+    tagline: "Prime Minister of The Bahamas",
     featured: true,
   },
   {
-    name: "Greg Michelier",
-    role: "Ambassador-at-Large",
-    tagline: "Technology & AI",
+    name: "Prime Minister Mia Mottley",
+    role: "Speaker II",
+    tagline: "Barbados",
     featured: false,
   },
   {
-    name: "Featured Influencer",
-    role: "Creator Keynote",
-    tagline: "To Be Announced",
+    name: "Deputy PM Chester Cooper",
+    role: "Panelist",
+    tagline: "Minister of Tourism",
+    featured: false,
+  },
+  {
+    name: "Greg Michelier",
+    role: "Closing Remarks",
+    tagline: "Ambassador-at-Large, Technology & AI",
     featured: false,
   },
   {
     name: "Latrae Rahming",
-    role: "Panel Moderator",
-    tagline: "Creator Economy Panel",
+    role: "Host & MC",
+    tagline: "Director of Communications, OPM",
     featured: false,
   },
 ];
@@ -356,6 +362,7 @@ export default function Home() {
               const gradients = [
                 "from-aqua to-coral",
                 "from-coral to-aqua",
+                "from-purple-500 to-pink-400",
                 "from-aqua to-sand",
                 "from-coral to-sand",
               ];
@@ -370,7 +377,7 @@ export default function Home() {
                         : i === 2
                           ? "delay-300"
                           : "delay-400"
-                  } ${s.featured ? "md:col-span-6 md:row-span-2" : "md:col-span-6"}`}
+                  } ${s.featured ? "md:col-span-12 lg:col-span-6 lg:row-span-2" : "md:col-span-6 lg:col-span-3"}`}
                 >
                   <div
                     className={`rounded-3xl border border-navy/8 bg-sand/15 p-5 sm:p-10 text-center h-full flex flex-col items-center justify-center group hover:shadow-xl hover:border-aqua/25 transition-all duration-300 ${
