@@ -162,12 +162,12 @@ export default function Home() {
             <span className="text-navy">Initiative</span>
           </h1>
 
-          <p className="animate-fade-in-up delay-200 text-base sm:text-xl text-navy/80 max-w-2xl mx-auto leading-relaxed">
+          <p className="animate-fade-in-up delay-200 text-base sm:text-xl text-navy max-w-2xl mx-auto leading-relaxed">
             Your talent. Your voice. Your income. It&apos;s time for Bahamian creators to claim their place in the global digital economy.
           </p>
 
           <div className="animate-fade-in-up delay-300 pt-4">
-            <p className="text-xs uppercase tracking-[0.3em] text-navy/70 mb-4 font-medium">
+            <p className="text-xs uppercase tracking-[0.3em] text-navy mb-4 font-medium">
               Summit Begins In
             </p>
             <Countdown />
@@ -228,7 +228,7 @@ export default function Home() {
               <p className="text-4xl sm:text-5xl lg:text-6xl font-extrabold gradient-text">
                 {stat.value}
               </p>
-              <p className="mt-3 text-sm sm:text-base text-navy/70 tracking-wide uppercase font-medium">
+              <p className="mt-3 text-sm sm:text-base text-navy tracking-wide uppercase font-medium">
                 {stat.label}
               </p>
             </div>
@@ -249,7 +249,7 @@ export default function Home() {
           <h2 className="animate-fade-in-up delay-100 text-2xl sm:text-5xl font-extrabold leading-tight">
             The World Is Watching.
           </h2>
-          <p className="animate-fade-in-up delay-200 text-base sm:text-xl text-sand/85 max-w-3xl mx-auto leading-relaxed">
+          <p className="animate-fade-in-up delay-200 text-base sm:text-xl text-sand max-w-3xl mx-auto leading-relaxed">
             Bahamian creators are building audiences of millions. Now it&apos;s time to turn that influence into income &mdash; backed by the full support of the government. This isn&apos;t just an opportunity. It&apos;s a movement.
           </p>
         </div>
@@ -265,7 +265,7 @@ export default function Home() {
             <h2 className="animate-fade-in-up delay-100 text-2xl sm:text-5xl font-extrabold text-navy">
               Why This Matters
             </h2>
-            <p className="animate-fade-in-up delay-200 text-navy/75 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
+            <p className="animate-fade-in-up delay-200 text-navy/90 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
               Here&apos;s what we&apos;re solving — so Bahamian creators can fully
               thrive in the global creator economy.
             </p>
@@ -289,7 +289,7 @@ export default function Home() {
                 <h3 className="text-xl font-bold text-navy mb-3 group-hover:text-coral transition-colors">
                   {p.title}
                 </h3>
-                <p className="text-navy/75 leading-relaxed">{p.desc}</p>
+                <p className="text-navy/90 leading-relaxed">{p.desc}</p>
               </div>
             ))}
           </div>
@@ -332,7 +332,7 @@ export default function Home() {
                 <h3 className="text-xl font-bold text-white mb-3 -mt-4 group-hover:text-aqua transition-colors">
                   {p.title}
                 </h3>
-                <p className="text-sand/85 leading-relaxed">{p.desc}</p>
+                <p className="text-sand leading-relaxed">{p.desc}</p>
               </div>
             ))}
           </div>
@@ -411,7 +411,7 @@ export default function Home() {
                     <p className="text-aqua font-medium text-sm sm:text-base">
                       {s.role}
                     </p>
-                    <p className="text-navy/70 text-sm mt-1">{s.tagline}</p>
+                    <p className="text-navy text-sm mt-1">{s.tagline}</p>
 
                     {s.featured && (
                       <div className="mt-6 inline-block rounded-full border border-coral/50 px-5 py-1.5 text-xs uppercase tracking-widest text-coral font-semibold">
@@ -442,7 +442,7 @@ export default function Home() {
           <h2 className="animate-fade-in-up text-2xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
             This Is Your Moment
           </h2>
-          <p className="animate-fade-in-up delay-100 text-base sm:text-xl text-sand/85 max-w-xl mx-auto leading-relaxed">
+          <p className="animate-fade-in-up delay-100 text-base sm:text-xl text-sand max-w-xl mx-auto leading-relaxed">
             For the first time ever, the Government of The Bahamas is standing behind its digital creators with real resources, real training, and real opportunity. This is historic. Step into the spotlight.
           </p>
           <div className="animate-fade-in-up delay-200">

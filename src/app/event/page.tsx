@@ -97,7 +97,7 @@ export default function EventPage() {
             The Prime Minister{" "}
             <span className="gradient-text">Invites You</span>
           </h1>
-          <p className="mx-auto max-w-2xl text-base text-sand/80 sm:text-lg md:text-xl">
+          <p className="mx-auto max-w-2xl text-base text-white sm:text-lg md:text-xl">
             Join the inaugural Bahamas Creator Economy Launch &mdash; an exclusive
             gathering of creators, government leaders, and platform partners
             charting the future of the digital economy.
@@ -137,7 +137,7 @@ export default function EventPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" d={item.icon} />
                   </svg>
                 </div>
-                <p className="text-xs font-medium uppercase tracking-wider text-sand/80">{item.label}</p>
+                <p className="text-xs font-medium uppercase tracking-wider text-sand">{item.label}</p>
                 <p className="mt-1 text-sm font-bold text-sand">{item.value}</p>
               </div>
             ))}
@@ -150,7 +150,7 @@ export default function EventPage() {
         <h2 className="mb-4 text-center text-2xl font-extrabold tracking-tight sm:text-3xl md:text-4xl">
           Agenda
         </h2>
-        <p className="mb-16 text-center text-sand/80">
+        <p className="mb-16 text-center text-sand">
           An evening of keynotes, panels, and celebration
         </p>
 
@@ -187,7 +187,7 @@ export default function EventPage() {
                     <h3 className="text-base font-bold text-sand md:text-lg">{item.title}</h3>
                   </div>
                   {item.subtitle && (
-                    <p className="mt-2 text-sm text-sand/80">{item.subtitle}</p>
+                    <p className="mt-2 text-sm text-sand">{item.subtitle}</p>
                   )}
                 </div>
               </div>
@@ -201,7 +201,7 @@ export default function EventPage() {
         <h2 className="mb-4 text-center text-2xl font-extrabold tracking-tight sm:text-3xl md:text-4xl">
           Speakers
         </h2>
-        <p className="mb-16 text-center text-sand/80">
+        <p className="mb-16 text-center text-sand">
           Leaders shaping the Bahamian creator economy
         </p>
 
@@ -233,7 +233,7 @@ export default function EventPage() {
                 {speaker.name}
               </h3>
               <p className="mt-1 text-sm font-semibold text-aqua">{speaker.role}</p>
-              <p className="mt-2 text-xs text-sand/80">{speaker.description}</p>
+              <p className="mt-2 text-xs text-sand">{speaker.description}</p>
             </div>
           ))}
         </div>
@@ -244,7 +244,7 @@ export default function EventPage() {
         <h2 className="mb-4 text-center text-2xl font-extrabold tracking-tight sm:text-3xl md:text-4xl">
           Partners &amp; Stakeholders
         </h2>
-        <p className="mb-16 text-center text-sand/80">
+        <p className="mb-16 text-center text-sand">
           A cross-sector coalition powering the creator economy
         </p>
 
@@ -258,7 +258,7 @@ export default function EventPage() {
                 {group.partners.map((partner) => (
                   <li
                     key={partner}
-                    className="flex items-center gap-3 text-sm text-sand/70"
+                    className="flex items-center gap-3 text-sm text-sand"
                   >
                     <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-coral" />
                     {partner}
@@ -277,7 +277,7 @@ export default function EventPage() {
           <h2 className="mb-4 text-2xl font-extrabold tracking-tight sm:text-3xl md:text-5xl">
             Ready to Join?
           </h2>
-          <p className="mb-10 text-base sm:text-lg text-sand/85">
+          <p className="mb-10 text-base sm:text-lg text-sand">
             300 seats. By invitation from the Office of the Prime Minister.
           </p>
           <Link

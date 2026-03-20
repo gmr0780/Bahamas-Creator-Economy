@@ -30,7 +30,7 @@ function Digit({ value, label }: { value: number; label: string }) {
           {String(value).padStart(2, "0")}
         </span>
       </div>
-      <span className="text-[0.6rem] sm:text-sm uppercase tracking-[0.1em] sm:tracking-[0.2em] text-navy/80 font-medium">
+      <span className="text-[0.6rem] sm:text-sm uppercase tracking-[0.1em] sm:tracking-[0.2em] text-navy font-medium">
         {label}
       </span>
     </div>
@@ -73,15 +73,15 @@ export default function Countdown() {
   return (
     <div className="flex items-center gap-1.5 sm:gap-5 justify-center">
       <Digit value={time.days} label="Days" />
-      <span className="text-lg sm:text-4xl font-light text-navy/50 -mt-6">
+      <span className="text-lg sm:text-4xl font-light text-navy -mt-6">
         :
       </span>
       <Digit value={time.hours} label="Hours" />
-      <span className="text-lg sm:text-4xl font-light text-navy/50 -mt-6">
+      <span className="text-lg sm:text-4xl font-light text-navy -mt-6">
         :
       </span>
       <Digit value={time.minutes} label="Minutes" />
-      <span className="text-lg sm:text-4xl font-light text-navy/50 -mt-6">
+      <span className="text-lg sm:text-4xl font-light text-navy -mt-6">
         :
       </span>
       <Digit value={time.seconds} label="Seconds" />

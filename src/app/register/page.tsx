@@ -132,7 +132,7 @@ export default function RegisterPage() {
         {/* Share Section */}
         <div className="mt-10 w-full max-w-md text-center">
           <p className="mb-2 text-lg font-bold text-sand">Share Your Invitation</p>
-          <p className="mb-6 text-sm text-sand/80">
+          <p className="mb-6 text-sm text-sand">
             Let your audience know you&apos;re part of history.
           </p>
 
@@ -181,7 +181,7 @@ export default function RegisterPage() {
           </div>
 
           <div className="mt-8 rounded-2xl bg-white/[0.08] p-4 border border-white/[0.08]">
-            <p className="text-sm text-sand/85 italic">&ldquo;{shareText}&rdquo;</p>
+            <p className="text-sm text-sand italic">&ldquo;{shareText}&rdquo;</p>
           </div>
 
           <Link
@@ -208,7 +208,7 @@ export default function RegisterPage() {
             Register for the{" "}
             <span className="gradient-text">Creator Economy Launch</span>
           </h1>
-          <p className="mx-auto max-w-xl text-base text-sand/85 md:text-lg">
+          <p className="mx-auto max-w-xl text-base text-sand md:text-lg">
             You&apos;ve been invited by the Office of the Prime Minister to join
             the inaugural Creator Economy Launch.
           </p>
@@ -287,7 +287,7 @@ export default function RegisterPage() {
                 onChange={(e) => setPlatform(e.target.value)}
                 className="w-full rounded-xl border border-white/25 bg-white/[0.12] px-5 py-3.5 text-white outline-none transition-all focus:border-aqua/50 focus:ring-2 focus:ring-aqua/20 appearance-none"
               >
-                <option value="" disabled className="bg-navy text-sand/80">
+                <option value="" disabled className="bg-navy text-sand">
                   Select platform
                 </option>
                 {platforms.map((p) => (
@@ -329,7 +329,7 @@ export default function RegisterPage() {
                 onChange={(e) => setFollowers(e.target.value)}
                 className="w-full rounded-xl border border-white/25 bg-white/[0.12] px-5 py-3.5 text-white outline-none transition-all focus:border-aqua/50 focus:ring-2 focus:ring-aqua/20 appearance-none"
               >
-                <option value="" disabled className="bg-navy text-sand/80">
+                <option value="" disabled className="bg-navy text-sand">
                   Select range
                 </option>
                 {followerRanges.map((r) => (
@@ -349,7 +349,7 @@ export default function RegisterPage() {
                 onChange={(e) => setNiche(e.target.value)}
                 className="w-full rounded-xl border border-white/25 bg-white/[0.12] px-5 py-3.5 text-white outline-none transition-all focus:border-aqua/50 focus:ring-2 focus:ring-aqua/20 appearance-none"
               >
-                <option value="" disabled className="bg-navy text-sand/80">
+                <option value="" disabled className="bg-navy text-sand">
                   Select niche
                 </option>
                 {niches.map((n) => (
@@ -372,7 +372,7 @@ export default function RegisterPage() {
               onChange={(e) => setMonetization(e.target.value)}
               className="w-full rounded-xl border border-white/25 bg-white/[0.12] px-5 py-3.5 text-white outline-none transition-all focus:border-aqua/50 focus:ring-2 focus:ring-aqua/20 appearance-none"
             >
-              <option value="" disabled className="bg-navy text-sand/80">
+              <option value="" disabled className="bg-navy text-sand">
                 Select status
               </option>
               {monetizationStatuses.map((s) => (

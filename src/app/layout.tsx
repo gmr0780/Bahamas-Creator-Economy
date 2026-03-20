@@ -49,7 +49,7 @@ export default function RootLayout({
                     Creator Economy
                   </span>
                 </p>
-                <p className="mt-1 text-xs sm:text-sm text-navy/70 flex items-center gap-1.5 justify-center md:justify-start flex-wrap">
+                <p className="mt-1 text-xs sm:text-sm text-navy flex items-center gap-1.5 justify-center md:justify-start flex-wrap">
                   <BahamianFlag width={24} className="rounded-sm shrink-0" />
                   <span>A program of the Office of the Prime Minister, Commonwealth of
                   The Bahamas</span>
@@ -57,7 +57,7 @@ export default function RootLayout({
               </div>
 
               {/* Footer links */}
-              <div className="flex flex-wrap justify-center gap-2 sm:gap-6 text-sm text-navy/60">
+              <div className="flex flex-wrap justify-center gap-2 sm:gap-6 text-sm text-navy">
                 <a href="/platforms" className="hover:text-aqua transition-colors py-2 px-2">
                   Platforms
                 </a>
@@ -74,7 +74,7 @@ export default function RootLayout({
             </div>
 
             <div className="mt-8 border-t border-navy/10 pt-6 text-center">
-              <p className="text-xs text-navy/60">
+              <p className="text-xs text-navy">
                 &copy; {new Date().getFullYear()} Bahamas Creator Economy
                 Initiative. All rights reserved.
               </p>

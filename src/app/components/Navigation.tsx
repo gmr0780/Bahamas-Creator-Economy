@@ -66,7 +66,7 @@ export default function Navigation() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-base font-semibold text-navy/80 transition-colors hover:text-aqua py-2 px-1"
+              className="text-base font-semibold text-navy transition-colors hover:text-aqua py-2 px-1"
             >
               {link.label}
             </Link>
