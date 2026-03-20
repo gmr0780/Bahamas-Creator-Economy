@@ -140,11 +140,11 @@ export default function PlatformsPage() {
         <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-aqua">
           Bahamas Creator Economy
         </p>
-        <h1 className="mx-auto max-w-2xl text-4xl font-extrabold leading-tight text-sand sm:text-5xl">
+        <h1 className="mx-auto max-w-2xl text-4xl font-extrabold leading-tight text-navy sm:text-5xl">
           Platform{" "}
           <span className="gradient-text">Eligibility</span>
         </h1>
-        <p className="mx-auto mt-4 max-w-xl text-lg text-sand/85">
+        <p className="mx-auto mt-4 max-w-xl text-lg text-navy/80">
           Where Bahamian creators can earn direct platform revenue today
         </p>
       </section>

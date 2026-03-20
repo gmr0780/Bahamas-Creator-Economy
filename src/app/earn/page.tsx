@@ -82,11 +82,11 @@ export default function EarnPage() {
         <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-aqua">
           Bahamas Creator Economy
         </p>
-        <h1 className="mx-auto max-w-3xl text-4xl font-extrabold leading-tight text-sand sm:text-5xl">
+        <h1 className="mx-auto max-w-3xl text-4xl font-extrabold leading-tight text-navy sm:text-5xl">
           Revenue Potential{" "}
           <span className="gradient-text">&amp; Tax Guide</span>
         </h1>
-        <p className="mx-auto mt-4 max-w-xl text-lg text-sand/85">
+        <p className="mx-auto mt-4 max-w-xl text-lg text-navy/80">
           What Bahamian creators can realistically earn and how to keep more of
           it
         </p>
@@ -178,37 +178,37 @@ export default function EarnPage() {
             </div>
 
             {/* Tax example box */}
-            <div className="glass rounded-2xl p-8">
+            <div className="glass-dark rounded-2xl p-8">
               <h4 className="mb-6 text-lg font-bold text-aqua">
                 Tax Example: $1,000 AdSense Month
               </h4>
 
               <div className="space-y-4">
-                <div className="flex items-center justify-between border-b border-white/10 pb-3">
-                  <span className="text-sand/70">Total AdSense Earnings</span>
-                  <span className="font-bold text-sand">$1,000</span>
+                <div className="flex items-center justify-between border-b border-white/15 pb-3">
+                  <span className="text-sand font-medium">Total AdSense Earnings</span>
+                  <span className="font-bold text-white">$1,000</span>
                 </div>
-                <div className="flex items-center justify-between border-b border-white/10 pb-3">
-                  <span className="text-sand/70">Revenue from U.S. Viewers</span>
-                  <span className="font-bold text-sand">$300</span>
+                <div className="flex items-center justify-between border-b border-white/15 pb-3">
+                  <span className="text-sand font-medium">Revenue from U.S. Viewers</span>
+                  <span className="font-bold text-white">$300</span>
                 </div>
-                <div className="flex items-center justify-between border-b border-white/10 pb-3">
-                  <span className="text-sand/70">
+                <div className="flex items-center justify-between border-b border-white/15 pb-3">
+                  <span className="text-sand font-medium">
                     U.S. Withholding (30% of $300)
                   </span>
                   <span className="font-bold text-coral">&minus;$90</span>
                 </div>
                 <div className="flex items-center justify-between pt-1">
-                  <span className="font-semibold text-sand">Net Payout</span>
+                  <span className="font-semibold text-white">Net Payout</span>
                   <span className="text-2xl font-extrabold text-aqua">$910</span>
                 </div>
               </div>
 
-              <div className="mt-8 rounded-xl bg-emerald-500/10 border border-emerald-500/20 px-5 py-4">
-                <p className="text-sm leading-relaxed text-emerald-400">
-                  <span className="font-bold">Bahamas Advantage:</span> The
+              <div className="mt-8 rounded-xl bg-emerald-500/15 border border-emerald-500/30 px-5 py-4">
+                <p className="text-sm leading-relaxed text-emerald-300 font-medium">
+                  <span className="font-bold text-emerald-200">Bahamas Advantage:</span> The
                   Bahamas has no personal income tax. Your $910 net payout is
-                  yours to keep -- no further local tax liability.
+                  yours to keep &mdash; no further local tax liability.
                 </p>
               </div>
             </div>

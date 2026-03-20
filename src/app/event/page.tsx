@@ -95,7 +95,7 @@ export default function EventPage() {
             The Prime Minister{" "}
             <span className="gradient-text">Invites You</span>
           </h1>
-          <p className="mx-auto max-w-2xl text-lg text-sand/70 md:text-xl">
+          <p className="mx-auto max-w-2xl text-lg text-navy/80 md:text-xl">
             Join the inaugural Bahamas Creator Economy Launch &mdash; an exclusive
             gathering of creators, government leaders, and platform partners
             charting the future of the digital economy.
