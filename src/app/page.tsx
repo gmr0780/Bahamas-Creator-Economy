@@ -160,12 +160,12 @@ export default function Home() {
             <span className="text-navy">Initiative</span>
           </h1>
 
-          <p className="animate-fade-in-up delay-200 text-lg sm:text-xl text-navy/60 max-w-2xl mx-auto leading-relaxed">
+          <p className="animate-fade-in-up delay-200 text-lg sm:text-xl text-navy/80 max-w-2xl mx-auto leading-relaxed">
             Empowering Bahamian digital creators to earn globally
           </p>
 
           <div className="animate-fade-in-up delay-300 pt-4">
-            <p className="text-xs uppercase tracking-[0.3em] text-navy/35 mb-4 font-medium">
+            <p className="text-xs uppercase tracking-[0.3em] text-navy/70 mb-4 font-medium">
               Summit Begins In
             </p>
             <Countdown />
@@ -193,7 +193,7 @@ export default function Home() {
       <section className="relative px-6 py-24 sm:py-32 bg-white">
         <div className="max-w-4xl mx-auto animate-fade-in-up">
           <blockquote className="border-l-4 border-coral pl-6 sm:pl-10 py-4">
-            <p className="text-xl sm:text-2xl lg:text-3xl font-light leading-relaxed text-navy/85 italic">
+            <p className="text-xl sm:text-2xl lg:text-3xl font-light leading-relaxed text-navy italic">
               &ldquo;This initiative represents our commitment to empowering a
               new generation of Bahamian digital entrepreneurs. The creative
               economy is the future, and The Bahamas will lead the
@@ -226,7 +226,7 @@ export default function Home() {
               <p className="text-4xl sm:text-5xl lg:text-6xl font-extrabold gradient-text">
                 {stat.value}
               </p>
-              <p className="mt-3 text-sm sm:text-base text-navy/50 tracking-wide uppercase font-medium">
+              <p className="mt-3 text-sm sm:text-base text-navy/70 tracking-wide uppercase font-medium">
                 {stat.label}
               </p>
             </div>
@@ -244,7 +244,7 @@ export default function Home() {
             <h2 className="animate-fade-in-up delay-100 text-3xl sm:text-5xl font-extrabold text-navy">
               Why This Matters
             </h2>
-            <p className="animate-fade-in-up delay-200 text-navy/50 max-w-2xl mx-auto text-lg leading-relaxed">
+            <p className="animate-fade-in-up delay-200 text-navy/75 max-w-2xl mx-auto text-lg leading-relaxed">
               Bahamian creators face systemic obstacles that prevent them from
               fully participating in the global creator economy.
             </p>
@@ -268,7 +268,7 @@ export default function Home() {
                 <h3 className="text-xl font-bold text-navy mb-3 group-hover:text-coral transition-colors">
                   {p.title}
                 </h3>
-                <p className="text-navy/55 leading-relaxed">{p.desc}</p>
+                <p className="text-navy/75 leading-relaxed">{p.desc}</p>
               </div>
             ))}
           </div>
@@ -311,7 +311,7 @@ export default function Home() {
                 <h3 className="text-xl font-bold text-white mb-3 -mt-4 group-hover:text-aqua transition-colors">
                   {p.title}
                 </h3>
-                <p className="text-sand/60 leading-relaxed">{p.desc}</p>
+                <p className="text-sand/85 leading-relaxed">{p.desc}</p>
               </div>
             ))}
           </div>
@@ -390,7 +390,7 @@ export default function Home() {
                     <p className="text-aqua font-medium text-sm sm:text-base">
                       {s.role}
                     </p>
-                    <p className="text-navy/45 text-sm mt-1">{s.tagline}</p>
+                    <p className="text-navy/70 text-sm mt-1">{s.tagline}</p>
 
                     {s.featured && (
                       <div className="mt-6 inline-block rounded-full border border-coral/50 px-5 py-1.5 text-xs uppercase tracking-widest text-coral font-semibold">
@@ -421,7 +421,7 @@ export default function Home() {
           <h2 className="animate-fade-in-up text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
             Join the Movement
           </h2>
-          <p className="animate-fade-in-up delay-100 text-lg sm:text-xl text-sand/60 max-w-xl mx-auto leading-relaxed">
+          <p className="animate-fade-in-up delay-100 text-lg sm:text-xl text-sand/85 max-w-xl mx-auto leading-relaxed">
             Be part of the first cohort of officially supported Bahamian digital
             creators. Secure your spot for the March 29 summit.
           </p>
