@@ -180,7 +180,7 @@ export default function RegisterPage() {
             </button>
           </div>
 
-          <div className="mt-8 rounded-2xl bg-white/[0.04] p-4 border border-white/[0.08]">
+          <div className="mt-8 rounded-2xl bg-white/[0.08] p-4 border border-white/[0.08]">
             <p className="text-sm text-sand/85 italic">&ldquo;{shareText}&rdquo;</p>
           </div>
 
@@ -218,7 +218,7 @@ export default function RegisterPage() {
       {/* Motivational copy */}
       <section className="relative z-10 -mt-2 mx-auto max-w-2xl px-6">
         <div className="rounded-2xl border border-aqua/20 bg-aqua/5 p-6 text-center mb-6">
-          <p className="text-base text-sand/90 leading-relaxed">
+          <p className="text-base text-sand leading-relaxed">
             Every great movement starts with a single step. By registering, you&apos;re not just signing up for an event &mdash; you&apos;re joining a national movement to put Bahamian creators on the global map.
           </p>
         </div>
@@ -228,11 +228,11 @@ export default function RegisterPage() {
       <section className="relative z-10 mx-auto max-w-2xl px-6 pb-24">
         <form
           onSubmit={handleSubmit}
-          className="glass rounded-3xl p-5 sm:p-8 md:p-12 space-y-6"
+          className="glass-dark rounded-3xl p-5 sm:p-8 md:p-12 space-y-6"
         >
           {/* Full Name */}
           <div>
-            <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-sand/85">
+            <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-white">
               Full Name
             </label>
             <input
@@ -241,13 +241,13 @@ export default function RegisterPage() {
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
               placeholder="Your full name"
-              className="w-full rounded-xl border border-white/10 bg-white/[0.04] px-5 py-3.5 text-sand placeholder-sand/30 outline-none transition-all focus:border-aqua/50 focus:ring-2 focus:ring-aqua/20"
+              className="w-full rounded-xl border border-white/10 bg-white/[0.08] px-5 py-3.5 text-sand placeholder-sand/50 outline-none transition-all focus:border-aqua/50 focus:ring-2 focus:ring-aqua/20"
             />
           </div>
 
           {/* Email */}
           <div>
-            <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-sand/85">
+            <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-white">
               Email
             </label>
             <input
@@ -256,13 +256,13 @@ export default function RegisterPage() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@email.com"
-              className="w-full rounded-xl border border-white/10 bg-white/[0.04] px-5 py-3.5 text-sand placeholder-sand/30 outline-none transition-all focus:border-aqua/50 focus:ring-2 focus:ring-aqua/20"
+              className="w-full rounded-xl border border-white/10 bg-white/[0.08] px-5 py-3.5 text-sand placeholder-sand/50 outline-none transition-all focus:border-aqua/50 focus:ring-2 focus:ring-aqua/20"
             />
           </div>
 
           {/* Phone */}
           <div>
-            <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-sand/85">
+            <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-white">
               Phone
             </label>
             <input
@@ -271,21 +271,21 @@ export default function RegisterPage() {
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               placeholder="+1 (242) 000-0000"
-              className="w-full rounded-xl border border-white/10 bg-white/[0.04] px-5 py-3.5 text-sand placeholder-sand/30 outline-none transition-all focus:border-aqua/50 focus:ring-2 focus:ring-aqua/20"
+              className="w-full rounded-xl border border-white/10 bg-white/[0.08] px-5 py-3.5 text-sand placeholder-sand/50 outline-none transition-all focus:border-aqua/50 focus:ring-2 focus:ring-aqua/20"
             />
           </div>
 
           {/* Platform + Handle row */}
           <div className="grid gap-6 sm:grid-cols-2">
             <div>
-              <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-sand/85">
+              <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-white">
                 Primary Platform
               </label>
               <select
                 required
                 value={platform}
                 onChange={(e) => setPlatform(e.target.value)}
-                className="w-full rounded-xl border border-white/10 bg-white/[0.04] px-5 py-3.5 text-sand outline-none transition-all focus:border-aqua/50 focus:ring-2 focus:ring-aqua/20 appearance-none"
+                className="w-full rounded-xl border border-white/10 bg-white/[0.08] px-5 py-3.5 text-sand outline-none transition-all focus:border-aqua/50 focus:ring-2 focus:ring-aqua/20 appearance-none"
               >
                 <option value="" disabled className="bg-navy text-sand/80">
                   Select platform
@@ -298,11 +298,11 @@ export default function RegisterPage() {
               </select>
             </div>
             <div>
-              <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-sand/85">
+              <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-white">
                 Social Media Handle
               </label>
               <div className="relative">
-                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-sand/70 font-semibold">
+                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-white font-semibold">
                   @
                 </span>
                 <input
@@ -311,7 +311,7 @@ export default function RegisterPage() {
                   value={handle}
                   onChange={(e) => setHandle(e.target.value)}
                   placeholder="yourhandle"
-                  className="w-full rounded-xl border border-white/10 bg-white/[0.04] pl-9 pr-5 py-3.5 text-sand placeholder-sand/30 outline-none transition-all focus:border-aqua/50 focus:ring-2 focus:ring-aqua/20"
+                  className="w-full rounded-xl border border-white/10 bg-white/[0.08] pl-9 pr-5 py-3.5 text-sand placeholder-sand/50 outline-none transition-all focus:border-aqua/50 focus:ring-2 focus:ring-aqua/20"
                 />
               </div>
             </div>
@@ -320,14 +320,14 @@ export default function RegisterPage() {
           {/* Followers + Niche row */}
           <div className="grid gap-6 sm:grid-cols-2">
             <div>
-              <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-sand/85">
+              <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-white">
                 Follower Count Range
               </label>
               <select
                 required
                 value={followers}
                 onChange={(e) => setFollowers(e.target.value)}
-                className="w-full rounded-xl border border-white/10 bg-white/[0.04] px-5 py-3.5 text-sand outline-none transition-all focus:border-aqua/50 focus:ring-2 focus:ring-aqua/20 appearance-none"
+                className="w-full rounded-xl border border-white/10 bg-white/[0.08] px-5 py-3.5 text-sand outline-none transition-all focus:border-aqua/50 focus:ring-2 focus:ring-aqua/20 appearance-none"
               >
                 <option value="" disabled className="bg-navy text-sand/80">
                   Select range
@@ -340,14 +340,14 @@ export default function RegisterPage() {
               </select>
             </div>
             <div>
-              <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-sand/85">
+              <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-white">
                 Content Niche
               </label>
               <select
                 required
                 value={niche}
                 onChange={(e) => setNiche(e.target.value)}
-                className="w-full rounded-xl border border-white/10 bg-white/[0.04] px-5 py-3.5 text-sand outline-none transition-all focus:border-aqua/50 focus:ring-2 focus:ring-aqua/20 appearance-none"
+                className="w-full rounded-xl border border-white/10 bg-white/[0.08] px-5 py-3.5 text-sand outline-none transition-all focus:border-aqua/50 focus:ring-2 focus:ring-aqua/20 appearance-none"
               >
                 <option value="" disabled className="bg-navy text-sand/80">
                   Select niche
@@ -363,14 +363,14 @@ export default function RegisterPage() {
 
           {/* Monetization */}
           <div>
-            <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-sand/85">
+            <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-white">
               Current Monetization Status
             </label>
             <select
               required
               value={monetization}
               onChange={(e) => setMonetization(e.target.value)}
-              className="w-full rounded-xl border border-white/10 bg-white/[0.04] px-5 py-3.5 text-sand outline-none transition-all focus:border-aqua/50 focus:ring-2 focus:ring-aqua/20 appearance-none"
+              className="w-full rounded-xl border border-white/10 bg-white/[0.08] px-5 py-3.5 text-sand outline-none transition-all focus:border-aqua/50 focus:ring-2 focus:ring-aqua/20 appearance-none"
             >
               <option value="" disabled className="bg-navy text-sand/80">
                 Select status
@@ -385,7 +385,7 @@ export default function RegisterPage() {
 
           {/* Learning Topics */}
           <div>
-            <label className="mb-4 block text-xs font-bold uppercase tracking-widest text-sand/85">
+            <label className="mb-4 block text-xs font-bold uppercase tracking-widest text-white">
               What do you want to learn?
             </label>
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -395,7 +395,7 @@ export default function RegisterPage() {
                   className={`flex cursor-pointer items-center gap-3 rounded-xl border px-4 py-3 text-sm transition-all ${
                     topics.includes(topic)
                       ? "border-aqua/50 bg-aqua/10 text-sand"
-                      : "border-white/10 bg-white/[0.02] text-sand/85 hover:border-white/20"
+                      : "border-white/10 bg-white/[0.02] text-sand hover:border-white/20"
                   }`}
                 >
                   <div
@@ -431,7 +431,7 @@ export default function RegisterPage() {
             >
               Secure My Spot
             </button>
-            <p className="mt-4 text-center text-xs text-sand/70">
+            <p className="mt-4 text-center text-xs text-sand">
               By registering, you confirm your attendance at the Bahamas Creator Economy Launch on March 29, 2026.
             </p>
           </div>
