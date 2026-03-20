@@ -249,7 +249,7 @@ export default function Home() {
           <div className="absolute bottom-0 right-1/4 h-64 w-64 rounded-full bg-coral/10 blur-3xl" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center space-y-6">
-          <p className="animate-fade-in-up text-sm uppercase tracking-[0.25em] text-aqua font-semibold">
+          <p className="animate-fade-in-up text-xl sm:text-3xl md:text-4xl uppercase tracking-[0.15em] sm:tracking-[0.2em] text-aqua font-extrabold">
             A New Era
           </p>
           <h2 className="animate-fade-in-up delay-100 text-2xl sm:text-5xl font-extrabold leading-tight">
