@@ -94,7 +94,7 @@ export default function RegisterPage() {
         <div className="vip-pass relative w-full max-w-md overflow-hidden rounded-3xl shadow-2xl">
           {/* Gradient background */}
           <div className="animate-gradient-shift bg-gradient-to-br from-aqua via-coral to-aqua p-[2px] rounded-3xl">
-            <div className="relative overflow-hidden rounded-[calc(1.5rem-2px)] bg-gradient-to-br from-aqua/90 via-coral/80 to-aqua/90 p-8 md:p-10">
+            <div className="relative overflow-hidden rounded-[calc(1.5rem-2px)] bg-gradient-to-br from-aqua/90 via-coral/80 to-aqua/90 p-6 sm:p-8 md:p-10">
               {/* Shimmer overlay */}
               <div
                 className="animate-shimmer pointer-events-none absolute inset-0"
@@ -109,7 +109,7 @@ export default function RegisterPage() {
                   Office of the Prime Minister
                 </p>
                 <div className="my-6">
-                  <p className="text-4xl font-black uppercase tracking-tight text-white md:text-5xl">
+                  <p className="text-3xl font-black uppercase tracking-tight text-white sm:text-4xl md:text-5xl">
                     Access<br />Granted
                   </p>
                 </div>
@@ -141,7 +141,7 @@ export default function RegisterPage() {
               href={`https://www.instagram.com/?text=${encodedShareText}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full bg-gradient-to-r from-purple-500 to-pink-500 px-5 py-2.5 text-xs font-bold text-white transition-transform hover:scale-105"
+              className="rounded-full bg-gradient-to-r from-purple-500 to-pink-500 px-5 py-3 text-xs font-bold text-white transition-transform hover:scale-105"
             >
               Share on Instagram
             </a>
@@ -149,7 +149,7 @@ export default function RegisterPage() {
               href={`https://www.tiktok.com/`}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full bg-black px-5 py-2.5 text-xs font-bold text-white ring-1 ring-white/20 transition-transform hover:scale-105"
+              className="rounded-full bg-black px-5 py-3 text-xs font-bold text-white ring-1 ring-white/20 transition-transform hover:scale-105"
             >
               Share on TikTok
             </a>
@@ -157,7 +157,7 @@ export default function RegisterPage() {
               href={`https://twitter.com/intent/tweet?text=${encodedShareText}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full bg-zinc-900 px-5 py-2.5 text-xs font-bold text-white ring-1 ring-white/20 transition-transform hover:scale-105"
+              className="rounded-full bg-zinc-900 px-5 py-3 text-xs font-bold text-white ring-1 ring-white/20 transition-transform hover:scale-105"
             >
               Share on X
             </a>
@@ -165,12 +165,12 @@ export default function RegisterPage() {
               href={`https://www.facebook.com/sharer/sharer.php?quote=${encodedShareText}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full bg-blue-600 px-5 py-2.5 text-xs font-bold text-white transition-transform hover:scale-105"
+              className="rounded-full bg-blue-600 px-5 py-3 text-xs font-bold text-white transition-transform hover:scale-105"
             >
               Share on Facebook
             </a>
             <button
-              className="rounded-full bg-white/10 px-5 py-2.5 text-xs font-bold text-sand ring-1 ring-white/20 transition-transform hover:scale-105"
+              className="rounded-full bg-white/10 px-5 py-3 text-xs font-bold text-sand ring-1 ring-white/20 transition-transform hover:scale-105"
               onClick={() => {
                 // Placeholder for html2canvas download
                 alert("Image download coming soon! For now, take a screenshot of your VIP pass.");
@@ -228,7 +228,7 @@ export default function RegisterPage() {
       <section className="relative z-10 mx-auto max-w-2xl px-6 pb-24">
         <form
           onSubmit={handleSubmit}
-          className="glass rounded-3xl p-8 md:p-12 space-y-6"
+          className="glass rounded-3xl p-5 sm:p-8 md:p-12 space-y-6"
         >
           {/* Full Name */}
           <div>

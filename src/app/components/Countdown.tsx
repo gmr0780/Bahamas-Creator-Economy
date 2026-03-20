@@ -25,8 +25,8 @@ function calcTimeLeft(): TimeLeft {
 function Digit({ value, label }: { value: number; label: string }) {
   return (
     <div className="flex flex-col items-center gap-2">
-      <div className="countdown-digit rounded-2xl px-4 py-3 sm:px-6 sm:py-4 min-w-[4rem] sm:min-w-[5.5rem]">
-        <span className="block text-center text-3xl sm:text-5xl font-bold tracking-tight gradient-text tabular-nums">
+      <div className="countdown-digit rounded-xl sm:rounded-2xl px-2.5 py-2 sm:px-6 sm:py-4 min-w-[3.2rem] sm:min-w-[5.5rem]">
+        <span className="block text-center text-2xl sm:text-5xl font-bold tracking-tight gradient-text tabular-nums">
           {String(value).padStart(2, "0")}
         </span>
       </div>
@@ -48,7 +48,7 @@ export default function Countdown() {
 
   if (!time) {
     return (
-      <div className="flex items-center gap-3 sm:gap-5 justify-center">
+      <div className="flex items-center gap-1.5 sm:gap-5 justify-center">
         {["Days", "Hours", "Minutes", "Seconds"].map((label) => (
           <Digit key={label} value={0} label={label} />
         ))}
@@ -71,17 +71,17 @@ export default function Countdown() {
   }
 
   return (
-    <div className="flex items-center gap-3 sm:gap-5 justify-center">
+    <div className="flex items-center gap-1.5 sm:gap-5 justify-center">
       <Digit value={time.days} label="Days" />
-      <span className="text-2xl sm:text-4xl font-light text-navy/50 -mt-6">
+      <span className="text-lg sm:text-4xl font-light text-navy/50 -mt-6">
         :
       </span>
       <Digit value={time.hours} label="Hours" />
-      <span className="text-2xl sm:text-4xl font-light text-navy/50 -mt-6">
+      <span className="text-lg sm:text-4xl font-light text-navy/50 -mt-6">
         :
       </span>
       <Digit value={time.minutes} label="Minutes" />
-      <span className="text-2xl sm:text-4xl font-light text-navy/50 -mt-6">
+      <span className="text-lg sm:text-4xl font-light text-navy/50 -mt-6">
         :
       </span>
       <Digit value={time.seconds} label="Seconds" />

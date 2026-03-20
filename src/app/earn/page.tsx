@@ -82,7 +82,7 @@ export default function EarnPage() {
         <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-aqua">
           Bahamas Creator Economy
         </p>
-        <h1 className="mx-auto max-w-3xl text-4xl font-extrabold leading-tight text-navy sm:text-5xl">
+        <h1 className="mx-auto max-w-3xl text-3xl font-extrabold leading-tight text-navy sm:text-4xl md:text-5xl">
           Revenue Potential{" "}
           <span className="gradient-text">&amp; Tax Guide</span>
         </h1>
@@ -110,8 +110,8 @@ export default function EarnPage() {
 
         {/* Income scenario callout */}
         <div className="mt-14 overflow-hidden rounded-2xl border border-aqua/20 bg-gradient-to-br from-aqua/10 to-coral/5">
-          <div className="border-b border-aqua/20 px-8 py-5">
-            <h4 className="text-lg font-bold text-aqua">
+          <div className="border-b border-aqua/20 px-4 sm:px-8 py-5">
+            <h4 className="text-base sm:text-lg font-bold text-aqua">
               Income Scenario: Finance Creator on YouTube
             </h4>
           </div>
@@ -125,7 +125,7 @@ export default function EarnPage() {
             ].map((item) => (
               <div
                 key={item.label}
-                className="border-b border-white/5 px-8 py-5 last:border-b-0 sm:border-b-0 sm:border-r sm:last:border-r-0"
+                className="border-b border-white/5 px-4 sm:px-8 py-4 sm:py-5 last:border-b-0 sm:border-b-0 sm:border-r sm:last:border-r-0"
               >
                 <p className="mb-1 text-[11px] font-semibold uppercase tracking-widest text-sand/70">
                   {item.label}
@@ -134,13 +134,13 @@ export default function EarnPage() {
               </div>
             ))}
           </div>
-          <div className="border-t border-aqua/20 bg-aqua/5 px-8 py-5">
-            <div className="flex items-baseline justify-between">
+          <div className="border-t border-aqua/20 bg-aqua/5 px-4 sm:px-8 py-5">
+            <div className="flex flex-col sm:flex-row items-start sm:items-baseline justify-between gap-1 sm:gap-0">
               <p className="text-sm font-semibold uppercase tracking-widest text-sand/80">
                 Estimated Net
               </p>
-              <p className="text-3xl font-extrabold text-aqua">
-                ~$3,320<span className="text-lg text-sand/80">/month</span>
+              <p className="text-2xl sm:text-3xl font-extrabold text-aqua">
+                ~$3,320<span className="text-base sm:text-lg text-sand/80">/month</span>
               </p>
             </div>
           </div>
@@ -178,7 +178,7 @@ export default function EarnPage() {
             </div>
 
             {/* Tax example box */}
-            <div className="glass-dark rounded-2xl p-8">
+            <div className="glass-dark rounded-2xl p-5 sm:p-8">
               <h4 className="mb-6 text-lg font-bold text-aqua">
                 Tax Example: $1,000 AdSense Month
               </h4>

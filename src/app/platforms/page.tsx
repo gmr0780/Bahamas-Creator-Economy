@@ -97,8 +97,8 @@ function PlatformCard({ platform }: { platform: Platform }) {
     <div
       className={`glass rounded-2xl border-t-4 ${borderAccent[platform.status]} p-6 transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-aqua/10`}
     >
-      <div className="mb-4 flex items-start justify-between gap-3">
-        <h3 className="text-xl font-bold text-sand">{platform.name}</h3>
+      <div className="mb-4 flex flex-wrap items-start justify-between gap-2">
+        <h3 className="text-lg sm:text-xl font-bold text-sand">{platform.name}</h3>
         <StatusBadge status={platform.status} />
       </div>
 
@@ -140,7 +140,7 @@ export default function PlatformsPage() {
         <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-aqua">
           Bahamas Creator Economy
         </p>
-        <h1 className="mx-auto max-w-2xl text-4xl font-extrabold leading-tight text-navy sm:text-5xl">
+        <h1 className="mx-auto max-w-2xl text-3xl font-extrabold leading-tight text-navy sm:text-4xl md:text-5xl">
           Platform{" "}
           <span className="gradient-text">Eligibility</span>
         </h1>

@@ -97,7 +97,7 @@ export default function EventPage() {
             The Prime Minister{" "}
             <span className="gradient-text">Invites You</span>
           </h1>
-          <p className="mx-auto max-w-2xl text-lg text-navy/80 md:text-xl">
+          <p className="mx-auto max-w-2xl text-lg text-sand/80 md:text-xl">
             Join the inaugural Bahamas Creator Economy Launch &mdash; an exclusive
             gathering of creators, government leaders, and platform partners
             charting the future of the digital economy.
@@ -118,11 +118,11 @@ export default function EventPage() {
 
       {/* Event Details Card */}
       <section className="relative z-10 -mt-10 mx-auto max-w-4xl px-6">
-        <div className="glass rounded-3xl p-8 md:p-12">
+        <div className="glass rounded-3xl p-5 sm:p-8 md:p-12">
           <h2 className="mb-8 text-center text-2xl font-bold tracking-tight md:text-3xl">
             Event Details
           </h2>
-          <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6">
+          <div className="grid grid-cols-2 gap-4 sm:gap-6 sm:grid-cols-3 lg:grid-cols-6">
             {[
               { label: "Date", value: "Mar 29, 2026", icon: "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" },
               { label: "Time", value: "4:00 \u2013 8:00 PM", icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" },

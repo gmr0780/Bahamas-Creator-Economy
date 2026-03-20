@@ -57,17 +57,17 @@ export default function RootLayout({
               </div>
 
               {/* Footer links */}
-              <div className="flex flex-wrap justify-center gap-6 text-sm text-navy/60">
-                <a href="/platforms" className="hover:text-aqua transition-colors">
+              <div className="flex flex-wrap justify-center gap-2 sm:gap-6 text-sm text-navy/60">
+                <a href="/platforms" className="hover:text-aqua transition-colors py-2 px-2">
                   Platforms
                 </a>
-                <a href="/earn" className="hover:text-aqua transition-colors">
+                <a href="/earn" className="hover:text-aqua transition-colors py-2 px-2">
                   Earn
                 </a>
-                <a href="/event" className="hover:text-aqua transition-colors">
+                <a href="/event" className="hover:text-aqua transition-colors py-2 px-2">
                   Event
                 </a>
-                <a href="/register" className="hover:text-aqua transition-colors">
+                <a href="/register" className="hover:text-aqua transition-colors py-2 px-2">
                   Register
                 </a>
               </div>
