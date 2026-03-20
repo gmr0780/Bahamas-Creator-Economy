@@ -68,7 +68,7 @@ function TaxStep({
       </div>
       <div>
         <h4 className="mb-1 text-lg font-bold text-sand">{title}</h4>
-        <p className="text-sm leading-relaxed text-sand/60">{description}</p>
+        <p className="text-sm leading-relaxed text-sand/85">{description}</p>
       </div>
     </div>
   );
@@ -86,7 +86,7 @@ export default function EarnPage() {
           Revenue Potential{" "}
           <span className="gradient-text">&amp; Tax Guide</span>
         </h1>
-        <p className="mx-auto mt-4 max-w-xl text-lg text-sand/60">
+        <p className="mx-auto mt-4 max-w-xl text-lg text-sand/85">
           What Bahamian creators can realistically earn and how to keep more of
           it
         </p>
@@ -99,7 +99,7 @@ export default function EarnPage() {
         </h2>
         <h3 className="mb-10 text-3xl font-bold text-sand">
           Top Earning Niches{" "}
-          <span className="text-sand/40">(RPM in USD)</span>
+          <span className="text-sand/70">(RPM in USD)</span>
         </h3>
 
         <div className="space-y-6">
@@ -127,7 +127,7 @@ export default function EarnPage() {
                 key={item.label}
                 className="border-b border-white/5 px-8 py-5 last:border-b-0 sm:border-b-0 sm:border-r sm:last:border-r-0"
               >
-                <p className="mb-1 text-[11px] font-semibold uppercase tracking-widest text-sand/40">
+                <p className="mb-1 text-[11px] font-semibold uppercase tracking-widest text-sand/70">
                   {item.label}
                 </p>
                 <p className="text-xl font-bold text-sand">{item.value}</p>
@@ -136,11 +136,11 @@ export default function EarnPage() {
           </div>
           <div className="border-t border-aqua/20 bg-aqua/5 px-8 py-5">
             <div className="flex items-baseline justify-between">
-              <p className="text-sm font-semibold uppercase tracking-widest text-sand/50">
+              <p className="text-sm font-semibold uppercase tracking-widest text-sand/80">
                 Estimated Net
               </p>
               <p className="text-3xl font-extrabold text-aqua">
-                ~$3,320<span className="text-lg text-sand/50">/month</span>
+                ~$3,320<span className="text-lg text-sand/80">/month</span>
               </p>
             </div>
           </div>
@@ -221,7 +221,7 @@ export default function EarnPage() {
         <h2 className="mb-4 text-2xl font-bold text-sand sm:text-3xl">
           Turn views into real income
         </h2>
-        <p className="mx-auto mb-8 max-w-md text-sand/60">
+        <p className="mx-auto mb-8 max-w-md text-sand/85">
           Our workshop walks you through every step -- from platform
           applications to tax forms to your first brand deal.
         </p>

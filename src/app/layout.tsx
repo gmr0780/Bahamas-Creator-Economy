@@ -48,7 +48,7 @@ export default function RootLayout({
                     Creator Economy
                   </span>
                 </p>
-                <p className="mt-1 text-sm text-navy/50">
+                <p className="mt-1 text-sm text-navy/70">
                   A program of the Office of the Prime Minister, Commonwealth of
                   The Bahamas
                 </p>
@@ -72,7 +72,7 @@ export default function RootLayout({
             </div>
 
             <div className="mt-8 border-t border-navy/10 pt-6 text-center">
-              <p className="text-xs text-navy/40">
+              <p className="text-xs text-navy/60">
                 &copy; {new Date().getFullYear()} Bahamas Creator Economy
                 Initiative. All rights reserved.
               </p>

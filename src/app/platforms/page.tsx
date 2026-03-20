@@ -102,27 +102,27 @@ function PlatformCard({ platform }: { platform: Platform }) {
         <StatusBadge status={platform.status} />
       </div>
 
-      <p className="mb-5 text-sm leading-relaxed text-sand/70">
+      <p className="mb-5 text-sm leading-relaxed text-sand/90">
         {platform.requirements}
       </p>
 
       <div className="flex gap-4">
         <div className="flex-1 rounded-xl bg-white/5 px-4 py-3">
-          <p className="mb-1 text-[11px] font-semibold uppercase tracking-widest text-sand/40">
+          <p className="mb-1 text-[11px] font-semibold uppercase tracking-widest text-sand/70">
             RPM
           </p>
           <p
-            className={`text-sm font-bold ${isAvailable ? "text-aqua" : "text-sand/40"}`}
+            className={`text-sm font-bold ${isAvailable ? "text-aqua" : "text-sand/70"}`}
           >
             {platform.rpm}
           </p>
         </div>
         <div className="flex-1 rounded-xl bg-white/5 px-4 py-3">
-          <p className="mb-1 text-[11px] font-semibold uppercase tracking-widest text-sand/40">
+          <p className="mb-1 text-[11px] font-semibold uppercase tracking-widest text-sand/70">
             Payout
           </p>
           <p
-            className={`text-sm font-bold ${isAvailable ? "text-aqua" : "text-sand/40"}`}
+            className={`text-sm font-bold ${isAvailable ? "text-aqua" : "text-sand/70"}`}
           >
             {platform.payout}
           </p>
@@ -144,7 +144,7 @@ export default function PlatformsPage() {
           Platform{" "}
           <span className="gradient-text">Eligibility</span>
         </h1>
-        <p className="mx-auto mt-4 max-w-xl text-lg text-sand/60">
+        <p className="mx-auto mt-4 max-w-xl text-lg text-sand/85">
           Where Bahamian creators can earn direct platform revenue today
         </p>
       </section>
@@ -158,7 +158,7 @@ export default function PlatformsPage() {
         </div>
 
         {/* Legend */}
-        <div className="mt-12 flex flex-wrap justify-center gap-6 text-sm text-sand/50">
+        <div className="mt-12 flex flex-wrap justify-center gap-6 text-sm text-sand/80">
           <span className="flex items-center gap-2">
             <span className="inline-block h-3 w-3 rounded-full bg-emerald-500" />
             Available
@@ -179,7 +179,7 @@ export default function PlatformsPage() {
         <h2 className="mb-4 text-2xl font-bold text-sand sm:text-3xl">
           Ready to start earning?
         </h2>
-        <p className="mx-auto mb-8 max-w-md text-sand/60">
+        <p className="mx-auto mb-8 max-w-md text-sand/85">
           Join our live workshop and learn exactly how to get accepted on
           every eligible platform.
         </p>

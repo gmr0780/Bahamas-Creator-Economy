@@ -132,7 +132,7 @@ export default function EventPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" d={item.icon} />
                   </svg>
                 </div>
-                <p className="text-xs font-medium uppercase tracking-wider text-sand/50">{item.label}</p>
+                <p className="text-xs font-medium uppercase tracking-wider text-sand/80">{item.label}</p>
                 <p className="mt-1 text-sm font-bold text-sand">{item.value}</p>
               </div>
             ))}
@@ -145,7 +145,7 @@ export default function EventPage() {
         <h2 className="mb-4 text-center text-3xl font-extrabold tracking-tight md:text-4xl">
           Agenda
         </h2>
-        <p className="mb-16 text-center text-sand/50">
+        <p className="mb-16 text-center text-sand/80">
           An evening of keynotes, panels, and celebration
         </p>
 
@@ -182,7 +182,7 @@ export default function EventPage() {
                     <h3 className="text-base font-bold text-sand md:text-lg">{item.title}</h3>
                   </div>
                   {item.subtitle && (
-                    <p className="mt-2 text-sm text-sand/50">{item.subtitle}</p>
+                    <p className="mt-2 text-sm text-sand/80">{item.subtitle}</p>
                   )}
                 </div>
               </div>
@@ -196,7 +196,7 @@ export default function EventPage() {
         <h2 className="mb-4 text-center text-3xl font-extrabold tracking-tight md:text-4xl">
           Speakers
         </h2>
-        <p className="mb-16 text-center text-sand/50">
+        <p className="mb-16 text-center text-sand/80">
           Leaders shaping the Bahamian creator economy
         </p>
 
@@ -228,7 +228,7 @@ export default function EventPage() {
                 {speaker.name}
               </h3>
               <p className="mt-1 text-sm font-semibold text-aqua">{speaker.role}</p>
-              <p className="mt-2 text-xs text-sand/50">{speaker.description}</p>
+              <p className="mt-2 text-xs text-sand/80">{speaker.description}</p>
             </div>
           ))}
         </div>
@@ -239,7 +239,7 @@ export default function EventPage() {
         <h2 className="mb-4 text-center text-3xl font-extrabold tracking-tight md:text-4xl">
           Partners &amp; Stakeholders
         </h2>
-        <p className="mb-16 text-center text-sand/50">
+        <p className="mb-16 text-center text-sand/80">
           A cross-sector coalition powering the creator economy
         </p>
 

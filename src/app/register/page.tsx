@@ -132,7 +132,7 @@ export default function RegisterPage() {
         {/* Share Section */}
         <div className="mt-10 w-full max-w-md text-center">
           <p className="mb-2 text-lg font-bold text-sand">Share Your Invitation</p>
-          <p className="mb-6 text-sm text-sand/50">
+          <p className="mb-6 text-sm text-sand/80">
             Let your audience know you&apos;re part of history.
           </p>
 
@@ -181,7 +181,7 @@ export default function RegisterPage() {
           </div>
 
           <div className="mt-8 rounded-2xl bg-white/[0.04] p-4 border border-white/[0.08]">
-            <p className="text-sm text-sand/60 italic">&ldquo;{shareText}&rdquo;</p>
+            <p className="text-sm text-sand/85 italic">&ldquo;{shareText}&rdquo;</p>
           </div>
 
           <Link
@@ -208,7 +208,7 @@ export default function RegisterPage() {
             Register for the{" "}
             <span className="gradient-text">Creator Economy Launch</span>
           </h1>
-          <p className="mx-auto max-w-xl text-base text-sand/60 md:text-lg">
+          <p className="mx-auto max-w-xl text-base text-sand/85 md:text-lg">
             You&apos;ve been invited by the Office of the Prime Minister to join
             the inaugural Creator Economy Launch.
           </p>
@@ -223,7 +223,7 @@ export default function RegisterPage() {
         >
           {/* Full Name */}
           <div>
-            <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-sand/60">
+            <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-sand/85">
               Full Name
             </label>
             <input
@@ -238,7 +238,7 @@ export default function RegisterPage() {
 
           {/* Email */}
           <div>
-            <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-sand/60">
+            <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-sand/85">
               Email
             </label>
             <input
@@ -253,7 +253,7 @@ export default function RegisterPage() {
 
           {/* Phone */}
           <div>
-            <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-sand/60">
+            <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-sand/85">
               Phone
             </label>
             <input
@@ -269,7 +269,7 @@ export default function RegisterPage() {
           {/* Platform + Handle row */}
           <div className="grid gap-6 sm:grid-cols-2">
             <div>
-              <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-sand/60">
+              <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-sand/85">
                 Primary Platform
               </label>
               <select
@@ -278,7 +278,7 @@ export default function RegisterPage() {
                 onChange={(e) => setPlatform(e.target.value)}
                 className="w-full rounded-xl border border-white/10 bg-white/[0.04] px-5 py-3.5 text-sand outline-none transition-all focus:border-aqua/50 focus:ring-2 focus:ring-aqua/20 appearance-none"
               >
-                <option value="" disabled className="bg-navy text-sand/50">
+                <option value="" disabled className="bg-navy text-sand/80">
                   Select platform
                 </option>
                 {platforms.map((p) => (
@@ -289,11 +289,11 @@ export default function RegisterPage() {
               </select>
             </div>
             <div>
-              <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-sand/60">
+              <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-sand/85">
                 Social Media Handle
               </label>
               <div className="relative">
-                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-sand/40 font-semibold">
+                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-sand/70 font-semibold">
                   @
                 </span>
                 <input
@@ -311,7 +311,7 @@ export default function RegisterPage() {
           {/* Followers + Niche row */}
           <div className="grid gap-6 sm:grid-cols-2">
             <div>
-              <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-sand/60">
+              <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-sand/85">
                 Follower Count Range
               </label>
               <select
@@ -320,7 +320,7 @@ export default function RegisterPage() {
                 onChange={(e) => setFollowers(e.target.value)}
                 className="w-full rounded-xl border border-white/10 bg-white/[0.04] px-5 py-3.5 text-sand outline-none transition-all focus:border-aqua/50 focus:ring-2 focus:ring-aqua/20 appearance-none"
               >
-                <option value="" disabled className="bg-navy text-sand/50">
+                <option value="" disabled className="bg-navy text-sand/80">
                   Select range
                 </option>
                 {followerRanges.map((r) => (
@@ -331,7 +331,7 @@ export default function RegisterPage() {
               </select>
             </div>
             <div>
-              <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-sand/60">
+              <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-sand/85">
                 Content Niche
               </label>
               <select
@@ -340,7 +340,7 @@ export default function RegisterPage() {
                 onChange={(e) => setNiche(e.target.value)}
                 className="w-full rounded-xl border border-white/10 bg-white/[0.04] px-5 py-3.5 text-sand outline-none transition-all focus:border-aqua/50 focus:ring-2 focus:ring-aqua/20 appearance-none"
               >
-                <option value="" disabled className="bg-navy text-sand/50">
+                <option value="" disabled className="bg-navy text-sand/80">
                   Select niche
                 </option>
                 {niches.map((n) => (
@@ -354,7 +354,7 @@ export default function RegisterPage() {
 
           {/* Monetization */}
           <div>
-            <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-sand/60">
+            <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-sand/85">
               Current Monetization Status
             </label>
             <select
@@ -363,7 +363,7 @@ export default function RegisterPage() {
               onChange={(e) => setMonetization(e.target.value)}
               className="w-full rounded-xl border border-white/10 bg-white/[0.04] px-5 py-3.5 text-sand outline-none transition-all focus:border-aqua/50 focus:ring-2 focus:ring-aqua/20 appearance-none"
             >
-              <option value="" disabled className="bg-navy text-sand/50">
+              <option value="" disabled className="bg-navy text-sand/80">
                 Select status
               </option>
               {monetizationStatuses.map((s) => (
@@ -376,7 +376,7 @@ export default function RegisterPage() {
 
           {/* Learning Topics */}
           <div>
-            <label className="mb-4 block text-xs font-bold uppercase tracking-widest text-sand/60">
+            <label className="mb-4 block text-xs font-bold uppercase tracking-widest text-sand/85">
               What do you want to learn?
             </label>
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -386,7 +386,7 @@ export default function RegisterPage() {
                   className={`flex cursor-pointer items-center gap-3 rounded-xl border px-4 py-3 text-sm transition-all ${
                     topics.includes(topic)
                       ? "border-aqua/50 bg-aqua/10 text-sand"
-                      : "border-white/10 bg-white/[0.02] text-sand/60 hover:border-white/20"
+                      : "border-white/10 bg-white/[0.02] text-sand/85 hover:border-white/20"
                   }`}
                 >
                   <div
@@ -422,7 +422,7 @@ export default function RegisterPage() {
             >
               Secure My Spot
             </button>
-            <p className="mt-4 text-center text-xs text-sand/40">
+            <p className="mt-4 text-center text-xs text-sand/70">
               By registering, you confirm your attendance at the Bahamas Creator Economy Launch on March 29, 2026.
             </p>
           </div>
