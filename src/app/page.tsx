@@ -100,8 +100,8 @@ const pillars = [
   },
   {
     num: "05",
-    title: "Official Creator Registry",
-    desc: "A government-endorsed registry of verified Bahamian creators, building credibility and unlocking institutional partnership opportunities.",
+    title: "Government Creator Partnerships",
+    desc: "Verified Bahamian creators will have the opportunity to promote The Bahamas through official social media campaigns, backed by the Office of the Prime Minister.",
   },
 ];
 
