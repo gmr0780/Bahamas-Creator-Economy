@@ -37,10 +37,10 @@ export default function Navigation() {
           : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-8">
         {/* Logo / Brand */}
         <Link href="/" className="flex items-center gap-2 group">
-          <span className="text-xl font-bold tracking-tight text-navy">
+          <span className="text-2xl sm:text-3xl font-extrabold tracking-tight text-navy">
             Bahamas{" "}
             <span className="gradient-aqua-coral-text">Creator Economy</span>
           </span>
@@ -52,14 +52,14 @@ export default function Navigation() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-navy/70 transition-colors hover:text-aqua"
+              className="text-base font-semibold text-navy/80 transition-colors hover:text-aqua"
             >
               {link.label}
             </Link>
           ))}
           <Link
             href="/register"
-            className="cta-gradient rounded-full px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-aqua/20 transition-all"
+            className="cta-gradient rounded-full px-7 py-3 text-base font-bold text-white shadow-lg shadow-aqua/20 transition-all"
           >
             Register
           </Link>
