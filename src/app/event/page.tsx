@@ -118,7 +118,7 @@ export default function EventPage() {
 
       {/* Event Details Card */}
       <section className="relative z-10 -mt-10 mx-auto max-w-4xl px-6">
-        <div className="glass rounded-3xl p-5 sm:p-8 md:p-12">
+        <div className="glass-dark rounded-3xl p-5 sm:p-8 md:p-12">
           <h2 className="mb-8 text-center text-xl font-bold tracking-tight sm:text-2xl md:text-3xl">
             Event Details
           </h2>
@@ -209,7 +209,7 @@ export default function EventPage() {
           {speakers.map((speaker) => (
             <div
               key={speaker.name}
-              className={`group glass rounded-3xl p-6 text-center transition-all hover:scale-[1.03] ${
+              className={`group glass-dark rounded-3xl p-6 text-center transition-all hover:scale-[1.03] ${
                 speaker.size === "large"
                   ? "sm:col-span-2 lg:col-span-2 lg:row-span-1"
                   : ""
@@ -250,7 +250,7 @@ export default function EventPage() {
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {partnerGroups.map((group) => (
-            <div key={group.label} className="glass rounded-2xl p-6">
+            <div key={group.label} className="glass-dark rounded-2xl p-6">
               <h3 className="mb-4 text-xs font-extrabold uppercase tracking-[0.2em] text-aqua">
                 {group.label}
               </h3>

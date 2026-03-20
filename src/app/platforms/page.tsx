@@ -95,19 +95,19 @@ function PlatformCard({ platform }: { platform: Platform }) {
 
   return (
     <div
-      className={`glass rounded-2xl border-t-4 ${borderAccent[platform.status]} p-6 transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-aqua/10`}
+      className={`glass-dark rounded-2xl border-t-4 ${borderAccent[platform.status]} p-6 transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-aqua/10`}
     >
       <div className="mb-4 flex flex-wrap items-start justify-between gap-2">
-        <h3 className="text-lg sm:text-xl font-bold text-sand">{platform.name}</h3>
+        <h3 className="text-lg sm:text-xl font-bold text-white">{platform.name}</h3>
         <StatusBadge status={platform.status} />
       </div>
 
-      <p className="mb-5 text-sm leading-relaxed text-sand/90">
+      <p className="mb-5 text-sm leading-relaxed text-sand">
         {platform.requirements}
       </p>
 
       <div className="flex gap-4">
-        <div className="flex-1 rounded-xl bg-white/5 px-4 py-3">
+        <div className="flex-1 rounded-xl bg-white/10 px-4 py-3">
           <p className="mb-1 text-[11px] font-semibold uppercase tracking-widest text-sand">
             RPM
           </p>
@@ -117,7 +117,7 @@ function PlatformCard({ platform }: { platform: Platform }) {
             {platform.rpm}
           </p>
         </div>
-        <div className="flex-1 rounded-xl bg-white/5 px-4 py-3">
+        <div className="flex-1 rounded-xl bg-white/10 px-4 py-3">
           <p className="mb-1 text-[11px] font-semibold uppercase tracking-widest text-sand">
             Payout
           </p>
