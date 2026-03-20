@@ -326,7 +326,7 @@ export default function Home() {
                   i === 4 ? "sm:col-span-2 lg:col-span-1 lg:col-start-2" : ""
                 }`}
               >
-                <span className="text-5xl sm:text-6xl font-black text-white/[0.06] block mb-2 leading-none select-none">
+                <span className="text-5xl sm:text-6xl font-black text-white/30 block mb-2 leading-none select-none">
                   {p.num}
                 </span>
                 <h3 className="text-xl font-bold text-white mb-3 -mt-4 group-hover:text-aqua transition-colors">
