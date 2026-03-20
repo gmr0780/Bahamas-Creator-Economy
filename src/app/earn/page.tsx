@@ -79,7 +79,7 @@ export default function EarnPage() {
     <div className="min-h-screen bg-navy">
       {/* Hero */}
       <section className="hero-mesh px-6 pb-16 pt-24 text-center">
-        <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-aqua">
+        <p className="mb-3 text-xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-[0.15em] sm:tracking-[0.2em] text-aqua">
           Bahamas Creator Economy
         </p>
         <h1 className="mx-auto max-w-3xl text-3xl font-extrabold leading-tight text-navy sm:text-4xl md:text-5xl">
@@ -94,7 +94,7 @@ export default function EarnPage() {
 
       {/* ─── Section A: Revenue Potential ─── */}
       <section className="mx-auto max-w-5xl px-6 pb-20">
-        <h2 className="mb-2 text-sm font-semibold uppercase tracking-widest text-coral">
+        <h2 className="mb-2 text-lg sm:text-2xl md:text-3xl font-extrabold uppercase tracking-[0.15em] text-coral">
           Section A
         </h2>
         <h3 className="mb-10 text-2xl sm:text-3xl font-bold text-sand">
@@ -150,7 +150,7 @@ export default function EarnPage() {
       {/* ─── Section B: U.S. Tax Navigation ─── */}
       <section className="border-t border-white/10 px-6 py-20">
         <div className="mx-auto max-w-5xl">
-          <h2 className="mb-2 text-sm font-semibold uppercase tracking-widest text-coral">
+          <h2 className="mb-2 text-lg sm:text-2xl md:text-3xl font-extrabold uppercase tracking-[0.15em] text-coral">
             Section B
           </h2>
           <h3 className="mb-12 text-2xl sm:text-3xl font-bold text-sand">

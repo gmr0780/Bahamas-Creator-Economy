@@ -137,7 +137,7 @@ export default function PlatformsPage() {
     <div className="min-h-screen bg-navy">
       {/* Hero header */}
       <section className="hero-mesh px-6 pb-16 pt-24 text-center">
-        <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-aqua">
+        <p className="mb-3 text-xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-[0.15em] sm:tracking-[0.2em] text-aqua">
           Bahamas Creator Economy
         </p>
         <h1 className="mx-auto max-w-2xl text-3xl font-extrabold leading-tight text-navy sm:text-4xl md:text-5xl">
