@@ -50,7 +50,7 @@ export default function RootLayout({
                   </span>
                 </p>
                 <p className="mt-1 text-sm text-navy/70 flex items-center gap-1.5 justify-center md:justify-start">
-                  <BahamianFlag width={16} className="rounded-sm shrink-0" />
+                  <BahamianFlag width={24} className="rounded-sm shrink-0" />
                   A program of the Office of the Prime Minister, Commonwealth of
                   The Bahamas
                 </p>

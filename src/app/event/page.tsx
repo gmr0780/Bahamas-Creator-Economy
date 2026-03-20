@@ -90,7 +90,7 @@ export default function EventPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-navy/80" />
         <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-aqua flex items-center justify-center gap-2">
-            <BahamianFlag width={20} className="rounded-sm" />
+            <BahamianFlag width={32} className="rounded-sm" />
             March 29, 2026 &middot; Baha Mar Convention Center
           </p>
           <h1 className="mb-6 text-4xl font-extrabold leading-tight tracking-tight md:text-6xl lg:text-7xl">
