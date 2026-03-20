@@ -265,7 +265,7 @@ export default function Home() {
       <section className="px-6 py-24 sm:py-32 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 space-y-4">
-            <p className="animate-fade-in-up text-sm uppercase tracking-[0.25em] text-aqua font-semibold">
+            <p className="animate-fade-in-up text-xl sm:text-3xl md:text-4xl uppercase tracking-[0.15em] sm:tracking-[0.2em] text-aqua font-extrabold">
               The Opportunity
             </p>
             <h2 className="animate-fade-in-up delay-100 text-2xl sm:text-5xl font-extrabold text-navy">
@@ -306,7 +306,7 @@ export default function Home() {
       <section className="px-6 py-24 sm:py-32 bg-navy text-sand">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 space-y-4">
-            <p className="animate-fade-in-up text-sm uppercase tracking-[0.25em] text-coral font-semibold">
+            <p className="animate-fade-in-up text-xl sm:text-3xl md:text-4xl uppercase tracking-[0.15em] sm:tracking-[0.2em] text-coral font-extrabold">
               Our Approach
             </p>
             <h2 className="animate-fade-in-up delay-100 text-2xl sm:text-5xl font-extrabold text-white">
@@ -349,7 +349,7 @@ export default function Home() {
       <section className="px-6 py-24 sm:py-32 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 space-y-4">
-            <p className="animate-fade-in-up text-sm uppercase tracking-[0.25em] text-aqua font-semibold">
+            <p className="animate-fade-in-up text-xl sm:text-3xl md:text-4xl uppercase tracking-[0.15em] sm:tracking-[0.2em] text-aqua font-extrabold">
               Who You&apos;ll Hear From
             </p>
             <h2 className="animate-fade-in-up delay-100 text-2xl sm:text-5xl font-extrabold text-navy">
