@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import Navigation from "./components/Navigation";
+import BahamianFlag from "./components/BahamianFlag";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -48,7 +49,8 @@ export default function RootLayout({
                     Creator Economy
                   </span>
                 </p>
-                <p className="mt-1 text-sm text-navy/70">
+                <p className="mt-1 text-sm text-navy/70 flex items-center gap-1.5 justify-center md:justify-start">
+                  <BahamianFlag width={16} className="rounded-sm shrink-0" />
                   A program of the Office of the Prime Minister, Commonwealth of
                   The Bahamas
                 </p>

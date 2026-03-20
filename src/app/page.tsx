@@ -1,4 +1,5 @@
 import Countdown from "./components/Countdown";
+import BahamianFlag from "./components/BahamianFlag";
 
 /* ──────────────────────────────────────────
    Icon components (simple geometric SVGs)
@@ -148,7 +149,8 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8">
-          <p className="animate-fade-in-up text-sm sm:text-base tracking-[0.25em] uppercase text-aqua font-medium">
+          <p className="animate-fade-in-up text-sm sm:text-base tracking-[0.25em] uppercase text-aqua font-medium flex items-center justify-center gap-2">
+            <BahamianFlag width={20} className="rounded-sm" />
             An Initiative of the Office of the Prime Minister
           </p>
 
@@ -161,7 +163,7 @@ export default function Home() {
           </h1>
 
           <p className="animate-fade-in-up delay-200 text-lg sm:text-xl text-navy/80 max-w-2xl mx-auto leading-relaxed">
-            Empowering Bahamian digital creators to earn globally
+            Your talent. Your voice. Your income. It&apos;s time for Bahamian creators to claim their place in the global digital economy.
           </p>
 
           <div className="animate-fade-in-up delay-300 pt-4">
@@ -231,6 +233,25 @@ export default function Home() {
               </p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* ── INSPIRATIONAL STATEMENT ─────────────────── */}
+      <section className="relative px-6 py-24 sm:py-32 bg-navy text-white overflow-hidden">
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute top-0 left-1/4 h-64 w-64 rounded-full bg-aqua/10 blur-3xl" />
+          <div className="absolute bottom-0 right-1/4 h-64 w-64 rounded-full bg-coral/10 blur-3xl" />
+        </div>
+        <div className="relative z-10 max-w-4xl mx-auto text-center space-y-6">
+          <p className="animate-fade-in-up text-sm uppercase tracking-[0.25em] text-aqua font-semibold">
+            A New Era
+          </p>
+          <h2 className="animate-fade-in-up delay-100 text-3xl sm:text-5xl font-extrabold leading-tight">
+            The World Is Watching.
+          </h2>
+          <p className="animate-fade-in-up delay-200 text-lg sm:text-xl text-sand/85 max-w-3xl mx-auto leading-relaxed">
+            Bahamian creators are building audiences of millions. Now it&apos;s time to turn that influence into income &mdash; backed by the full support of the government. This isn&apos;t just an opportunity. It&apos;s a movement.
+          </p>
         </div>
       </section>
 
@@ -419,11 +440,10 @@ export default function Home() {
 
         <div className="relative z-10 max-w-3xl mx-auto text-center space-y-8">
           <h2 className="animate-fade-in-up text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
-            Join the Movement
+            This Is Your Moment
           </h2>
           <p className="animate-fade-in-up delay-100 text-lg sm:text-xl text-sand/85 max-w-xl mx-auto leading-relaxed">
-            Be part of the first cohort of officially supported Bahamian digital
-            creators. Secure your spot for the March 29 summit.
+            For the first time ever, the Government of The Bahamas is standing behind its digital creators with real resources, real training, and real opportunity. This is historic. Don&apos;t watch from the sidelines.
           </p>
           <div className="animate-fade-in-up delay-200">
             <a

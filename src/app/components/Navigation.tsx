@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import BahamianFlag from "./BahamianFlag";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -39,7 +40,8 @@ export default function Navigation() {
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-8">
         {/* Logo / Brand */}
-        <Link href="/" className="flex items-center gap-2 group">
+        <Link href="/" className="flex items-center gap-2.5 group">
+          <BahamianFlag width={24} className="shrink-0 rounded-sm shadow-sm" />
           <span className="text-2xl sm:text-3xl font-extrabold tracking-tight text-navy">
             Bahamas{" "}
             <span className="gradient-aqua-coral-text">Creator Economy</span>

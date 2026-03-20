@@ -215,8 +215,17 @@ export default function RegisterPage() {
         </div>
       </section>
 
+      {/* Motivational copy */}
+      <section className="relative z-10 -mt-2 mx-auto max-w-2xl px-6">
+        <div className="rounded-2xl border border-aqua/20 bg-aqua/5 p-6 text-center mb-6">
+          <p className="text-base text-sand/90 leading-relaxed">
+            Every great movement starts with a single step. By registering, you&apos;re not just signing up for an event &mdash; you&apos;re joining a national movement to put Bahamian creators on the global map.
+          </p>
+        </div>
+      </section>
+
       {/* Form */}
-      <section className="relative z-10 -mt-6 mx-auto max-w-2xl px-6 pb-24">
+      <section className="relative z-10 mx-auto max-w-2xl px-6 pb-24">
         <form
           onSubmit={handleSubmit}
           className="glass rounded-3xl p-8 md:p-12 space-y-6"
