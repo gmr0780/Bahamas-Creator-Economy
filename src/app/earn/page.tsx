@@ -97,7 +97,7 @@ export default function EarnPage() {
         <h2 className="mb-2 text-sm font-semibold uppercase tracking-widest text-coral">
           Section A
         </h2>
-        <h3 className="mb-10 text-3xl font-bold text-sand">
+        <h3 className="mb-10 text-2xl sm:text-3xl font-bold text-sand">
           Top Earning Niches{" "}
           <span className="text-sand/70">(RPM in USD)</span>
         </h3>
@@ -130,7 +130,7 @@ export default function EarnPage() {
                 <p className="mb-1 text-[11px] font-semibold uppercase tracking-widest text-sand/70">
                   {item.label}
                 </p>
-                <p className="text-xl font-bold text-sand">{item.value}</p>
+                <p className="text-lg sm:text-xl font-bold text-sand">{item.value}</p>
               </div>
             ))}
           </div>
@@ -153,7 +153,7 @@ export default function EarnPage() {
           <h2 className="mb-2 text-sm font-semibold uppercase tracking-widest text-coral">
             Section B
           </h2>
-          <h3 className="mb-12 text-3xl font-bold text-sand">
+          <h3 className="mb-12 text-2xl sm:text-3xl font-bold text-sand">
             U.S. Tax Navigation for Bahamian Creators
           </h3>
 
@@ -227,7 +227,7 @@ export default function EarnPage() {
         </p>
         <Link
           href="/#register"
-          className="cta-gradient inline-block rounded-full px-8 py-4 text-lg font-bold text-white shadow-lg"
+          className="cta-gradient inline-block rounded-full px-6 sm:px-8 py-4 text-base sm:text-lg font-bold text-white shadow-lg"
         >
           Register for the Event
         </Link>

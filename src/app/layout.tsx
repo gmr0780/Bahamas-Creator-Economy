@@ -33,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${spaceGrotesk.variable} antialiased`}>
-      <body className="min-h-screen flex flex-col bg-white text-navy">
+      <body className="min-h-screen flex flex-col bg-white text-navy overflow-x-hidden">
         <Navigation />
 
         <main className="flex-1">{children}</main>
@@ -49,10 +49,10 @@ export default function RootLayout({
                     Creator Economy
                   </span>
                 </p>
-                <p className="mt-1 text-sm text-navy/70 flex items-center gap-1.5 justify-center md:justify-start">
+                <p className="mt-1 text-xs sm:text-sm text-navy/70 flex items-center gap-1.5 justify-center md:justify-start flex-wrap">
                   <BahamianFlag width={24} className="rounded-sm shrink-0" />
-                  A program of the Office of the Prime Minister, Commonwealth of
-                  The Bahamas
+                  <span>A program of the Office of the Prime Minister, Commonwealth of
+                  The Bahamas</span>
                 </p>
               </div>
 

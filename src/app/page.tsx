@@ -54,26 +54,26 @@ function IconGuidance() {
    Data
    ────────────────────────────────────────── */
 
-const problems = [
+const opportunities = [
   {
     icon: <IconPlatform />,
-    title: "Platform Gaps",
-    desc: "Many global creator platforms are not optimized for Caribbean users, limiting discoverability and monetization options for Bahamian creators.",
+    title: "Platform Opportunity",
+    desc: "We're opening doors to global creator platforms for Caribbean users — expanding discoverability and unlocking new monetization paths for Bahamian creators.",
   },
   {
     icon: <IconTax />,
-    title: "Tax Confusion",
-    desc: "Creators face uncertainty navigating international tax treaties, W-8BEN forms, and VAT obligations across multiple revenue streams.",
+    title: "Tax Clarity Ahead",
+    desc: "We're making it simple to navigate international tax treaties and W-8BEN forms — so you can focus on creating, not paperwork.",
   },
   {
     icon: <IconPayment />,
-    title: "Payment Barriers",
-    desc: "Limited access to payment processors, high foreign-exchange fees, and banking friction make it difficult to receive global earnings efficiently.",
+    title: "Payment Solutions",
+    desc: "We're building better pathways to payment processors, reducing foreign-exchange fees, and streamlining banking — so your global earnings reach you faster.",
   },
   {
     icon: <IconGuidance />,
-    title: "No Official Guidance",
-    desc: "There is currently no government-backed framework or resource center to support digital creators in building sustainable careers.",
+    title: "Government-Backed Support",
+    desc: "The government is launching a dedicated framework and resource center to help you build a sustainable career as a digital creator. You won't be doing this alone.",
   },
 ];
 
@@ -149,12 +149,12 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8">
-          <p className="animate-fade-in-up text-sm sm:text-base tracking-[0.25em] uppercase text-aqua font-medium flex items-center justify-center gap-2">
-            <BahamianFlag width={32} className="rounded-sm" />
-            An Initiative of the Office of the Prime Minister
+          <p className="animate-fade-in-up text-xs sm:text-base tracking-[0.15em] sm:tracking-[0.25em] uppercase text-aqua font-medium flex items-center justify-center gap-2 flex-wrap">
+            <BahamianFlag width={32} className="rounded-sm shrink-0" />
+            <span>An Initiative of the Office of the Prime Minister</span>
           </p>
 
-          <h1 className="animate-fade-in-up delay-100 text-4xl sm:text-6xl lg:text-7xl font-extrabold leading-[1.08] tracking-tight">
+          <h1 className="animate-fade-in-up delay-100 text-3xl sm:text-6xl lg:text-7xl font-extrabold leading-[1.08] tracking-tight">
             <span className="text-navy">The Bahamas</span>
             <br />
             <span className="gradient-text">Creator Economy</span>
@@ -162,7 +162,7 @@ export default function Home() {
             <span className="text-navy">Initiative</span>
           </h1>
 
-          <p className="animate-fade-in-up delay-200 text-lg sm:text-xl text-navy/80 max-w-2xl mx-auto leading-relaxed">
+          <p className="animate-fade-in-up delay-200 text-base sm:text-xl text-navy/80 max-w-2xl mx-auto leading-relaxed">
             Your talent. Your voice. Your income. It&apos;s time for Bahamian creators to claim their place in the global digital economy.
           </p>
 
@@ -176,7 +176,7 @@ export default function Home() {
           <div className="animate-fade-in-up delay-400 pt-6">
             <a
               href="/register"
-              className="cta-gradient animate-pulse-glow inline-block rounded-full px-10 py-4 text-lg sm:text-xl font-bold text-white shadow-2xl transition-all"
+              className="cta-gradient animate-pulse-glow inline-block rounded-full px-8 sm:px-10 py-4 text-base sm:text-xl font-bold text-white shadow-2xl transition-all"
             >
               Register Now
             </a>
@@ -223,7 +223,7 @@ export default function Home() {
               key={stat.label}
               className={`animate-fade-in-scale ${
                 i === 0 ? "delay-100" : i === 1 ? "delay-200" : "delay-300"
-              } glass rounded-3xl p-8 sm:p-10 text-center shadow-sm`}
+              } glass rounded-3xl p-6 sm:p-10 text-center shadow-sm`}
             >
               <p className="text-4xl sm:text-5xl lg:text-6xl font-extrabold gradient-text">
                 {stat.value}
@@ -246,33 +246,33 @@ export default function Home() {
           <p className="animate-fade-in-up text-sm uppercase tracking-[0.25em] text-aqua font-semibold">
             A New Era
           </p>
-          <h2 className="animate-fade-in-up delay-100 text-3xl sm:text-5xl font-extrabold leading-tight">
+          <h2 className="animate-fade-in-up delay-100 text-2xl sm:text-5xl font-extrabold leading-tight">
             The World Is Watching.
           </h2>
-          <p className="animate-fade-in-up delay-200 text-lg sm:text-xl text-sand/85 max-w-3xl mx-auto leading-relaxed">
+          <p className="animate-fade-in-up delay-200 text-base sm:text-xl text-sand/85 max-w-3xl mx-auto leading-relaxed">
             Bahamian creators are building audiences of millions. Now it&apos;s time to turn that influence into income &mdash; backed by the full support of the government. This isn&apos;t just an opportunity. It&apos;s a movement.
           </p>
         </div>
       </section>
 
-      {/* ── PROBLEM SECTION ───────────────────────── */}
+      {/* ── OPPORTUNITY SECTION ──────────────────────── */}
       <section className="px-6 py-24 sm:py-32 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 space-y-4">
             <p className="animate-fade-in-up text-sm uppercase tracking-[0.25em] text-aqua font-semibold">
-              The Challenge
+              The Opportunity
             </p>
-            <h2 className="animate-fade-in-up delay-100 text-3xl sm:text-5xl font-extrabold text-navy">
+            <h2 className="animate-fade-in-up delay-100 text-2xl sm:text-5xl font-extrabold text-navy">
               Why This Matters
             </h2>
-            <p className="animate-fade-in-up delay-200 text-navy/75 max-w-2xl mx-auto text-lg leading-relaxed">
-              Bahamian creators face systemic obstacles that prevent them from
-              fully participating in the global creator economy.
+            <p className="animate-fade-in-up delay-200 text-navy/75 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
+              Here&apos;s what we&apos;re solving — so Bahamian creators can fully
+              thrive in the global creator economy.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {problems.map((p, i) => (
+            {opportunities.map((p, i) => (
               <div
                 key={p.title}
                 className={`animate-fade-in-up ${
@@ -283,7 +283,7 @@ export default function Home() {
                       : i === 2
                         ? "delay-300"
                         : "delay-400"
-                } rounded-2xl border border-navy/8 bg-sand/20 p-8 group hover:border-aqua/30 hover:shadow-lg transition-all duration-300`}
+                } rounded-2xl border border-navy/8 bg-sand/20 p-5 sm:p-8 group hover:border-aqua/30 hover:shadow-lg transition-all duration-300`}
               >
                 <div className="text-aqua mb-5">{p.icon}</div>
                 <h3 className="text-xl font-bold text-navy mb-3 group-hover:text-coral transition-colors">
@@ -303,7 +303,7 @@ export default function Home() {
             <p className="animate-fade-in-up text-sm uppercase tracking-[0.25em] text-coral font-semibold">
               Our Approach
             </p>
-            <h2 className="animate-fade-in-up delay-100 text-3xl sm:text-5xl font-extrabold text-white">
+            <h2 className="animate-fade-in-up delay-100 text-2xl sm:text-5xl font-extrabold text-white">
               Five Pillars of Support
             </h2>
           </div>
@@ -322,7 +322,7 @@ export default function Home() {
                         : i === 3
                           ? "delay-400"
                           : "delay-500"
-                } glass-dark rounded-2xl p-8 group hover:bg-white/10 transition-all duration-300 ${
+                } glass-dark rounded-2xl p-5 sm:p-8 group hover:bg-white/10 transition-all duration-300 ${
                   i === 4 ? "sm:col-span-2 lg:col-span-1 lg:col-start-2" : ""
                 }`}
               >
@@ -346,7 +346,7 @@ export default function Home() {
             <p className="animate-fade-in-up text-sm uppercase tracking-[0.25em] text-aqua font-semibold">
               Who You&apos;ll Hear From
             </p>
-            <h2 className="animate-fade-in-up delay-100 text-3xl sm:text-5xl font-extrabold text-navy">
+            <h2 className="animate-fade-in-up delay-100 text-2xl sm:text-5xl font-extrabold text-navy">
               Featured Speakers
             </h2>
           </div>
@@ -373,7 +373,7 @@ export default function Home() {
                   } ${s.featured ? "md:col-span-6 md:row-span-2" : "md:col-span-6"}`}
                 >
                   <div
-                    className={`rounded-3xl border border-navy/8 bg-sand/15 p-8 sm:p-10 text-center h-full flex flex-col items-center justify-center group hover:shadow-xl hover:border-aqua/25 transition-all duration-300 ${
+                    className={`rounded-3xl border border-navy/8 bg-sand/15 p-5 sm:p-10 text-center h-full flex flex-col items-center justify-center group hover:shadow-xl hover:border-aqua/25 transition-all duration-300 ${
                       s.featured ? "py-16 sm:py-20" : ""
                     }`}
                   >
@@ -439,16 +439,16 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 max-w-3xl mx-auto text-center space-y-8">
-          <h2 className="animate-fade-in-up text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
+          <h2 className="animate-fade-in-up text-2xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
             This Is Your Moment
           </h2>
-          <p className="animate-fade-in-up delay-100 text-lg sm:text-xl text-sand/85 max-w-xl mx-auto leading-relaxed">
-            For the first time ever, the Government of The Bahamas is standing behind its digital creators with real resources, real training, and real opportunity. This is historic. Don&apos;t watch from the sidelines.
+          <p className="animate-fade-in-up delay-100 text-base sm:text-xl text-sand/85 max-w-xl mx-auto leading-relaxed">
+            For the first time ever, the Government of The Bahamas is standing behind its digital creators with real resources, real training, and real opportunity. This is historic. Step into the spotlight.
           </p>
           <div className="animate-fade-in-up delay-200">
             <a
               href="/register"
-              className="cta-gradient animate-pulse-glow inline-block rounded-full px-12 py-5 text-lg sm:text-xl font-bold text-white shadow-2xl transition-all"
+              className="cta-gradient animate-pulse-glow inline-block rounded-full px-8 sm:px-12 py-5 text-base sm:text-xl font-bold text-white shadow-2xl transition-all"
             >
               Register Now
             </a>

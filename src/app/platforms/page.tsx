@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     "Where Bahamian creators can earn direct platform revenue today. YouTube, Twitch, TikTok, Meta, X and more.",
 };
 
-type PlatformStatus = "AVAILABLE" | "NOT ELIGIBLE" | "HIGH THRESHOLD";
+type PlatformStatus = "AVAILABLE" | "COMING SOON" | "HIGH THRESHOLD";
 
 interface Platform {
   name: string;
@@ -36,17 +36,17 @@ const platforms: Platform[] = [
   },
   {
     name: "Meta CMP",
-    status: "NOT ELIGIBLE",
+    status: "COMING SOON",
     requirements:
-      "Not available in The Bahamas. Meta unified all programs into CMP in late 2025.",
+      "Not yet available in The Bahamas — we're actively working to bring access. Meta unified all programs into CMP in late 2025.",
     rpm: "N/A",
     payout: "N/A",
   },
   {
     name: "TikTok Creator Rewards",
-    status: "NOT ELIGIBLE",
+    status: "COMING SOON",
     requirements:
-      "Not available in The Bahamas. Pivot to brand sponsorships.",
+      "Not yet available in The Bahamas — we're working on it. In the meantime, brand sponsorships are a powerful earning path.",
     rpm: "N/A",
     payout: "N/A",
   },
@@ -60,9 +60,9 @@ const platforms: Platform[] = [
   },
   {
     name: "Instagram Reels",
-    status: "NOT ELIGIBLE",
+    status: "COMING SOON",
     requirements:
-      "Falls under Meta\u2019s unified CMP. Check Creator Studio for updates.",
+      "Falls under Meta\u2019s unified CMP — not yet available, but stay tuned for updates via Creator Studio.",
     rpm: "N/A",
     payout: "N/A",
   },
@@ -71,7 +71,7 @@ const platforms: Platform[] = [
 function StatusBadge({ status }: { status: PlatformStatus }) {
   const styles: Record<PlatformStatus, string> = {
     AVAILABLE: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30",
-    "NOT ELIGIBLE": "bg-red-500/20 text-red-400 border-red-500/30",
+    "COMING SOON": "bg-sky-500/20 text-sky-400 border-sky-500/30",
     "HIGH THRESHOLD": "bg-amber-500/20 text-amber-400 border-amber-500/30",
   };
 
@@ -87,7 +87,7 @@ function StatusBadge({ status }: { status: PlatformStatus }) {
 function PlatformCard({ platform }: { platform: Platform }) {
   const borderAccent: Record<PlatformStatus, string> = {
     AVAILABLE: "border-t-emerald-500",
-    "NOT ELIGIBLE": "border-t-red-500",
+    "COMING SOON": "border-t-sky-500",
     "HIGH THRESHOLD": "border-t-amber-500",
   };
 
@@ -168,8 +168,8 @@ export default function PlatformsPage() {
             High Threshold
           </span>
           <span className="flex items-center gap-2">
-            <span className="inline-block h-3 w-3 rounded-full bg-red-500" />
-            Not Eligible
+            <span className="inline-block h-3 w-3 rounded-full bg-sky-500" />
+            Coming Soon
           </span>
         </div>
       </section>
@@ -185,7 +185,7 @@ export default function PlatformsPage() {
         </p>
         <Link
           href="/#register"
-          className="cta-gradient inline-block rounded-full px-8 py-4 text-lg font-bold text-white shadow-lg"
+          className="cta-gradient inline-block rounded-full px-6 sm:px-8 py-4 text-base sm:text-lg font-bold text-white shadow-lg"
         >
           Register for the Event
         </Link>

@@ -25,12 +25,12 @@ function calcTimeLeft(): TimeLeft {
 function Digit({ value, label }: { value: number; label: string }) {
   return (
     <div className="flex flex-col items-center gap-2">
-      <div className="countdown-digit rounded-xl sm:rounded-2xl px-2.5 py-2 sm:px-6 sm:py-4 min-w-[3.2rem] sm:min-w-[5.5rem]">
-        <span className="block text-center text-2xl sm:text-5xl font-bold tracking-tight gradient-text tabular-nums">
+      <div className="countdown-digit rounded-xl sm:rounded-2xl px-1.5 py-2 sm:px-6 sm:py-4 min-w-[2.8rem] sm:min-w-[5.5rem]">
+        <span className="block text-center text-xl sm:text-5xl font-bold tracking-tight gradient-text tabular-nums">
           {String(value).padStart(2, "0")}
         </span>
       </div>
-      <span className="text-xs sm:text-sm uppercase tracking-[0.2em] text-navy/80 font-medium">
+      <span className="text-[0.6rem] sm:text-sm uppercase tracking-[0.1em] sm:tracking-[0.2em] text-navy/80 font-medium">
         {label}
       </span>
     </div>

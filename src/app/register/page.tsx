@@ -204,7 +204,7 @@ export default function RegisterPage() {
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-aqua">
             By Invitation Only
           </p>
-          <h1 className="mb-4 text-3xl font-extrabold leading-tight tracking-tight md:text-5xl">
+          <h1 className="mb-4 text-2xl font-extrabold leading-tight tracking-tight sm:text-3xl md:text-5xl">
             Register for the{" "}
             <span className="gradient-text">Creator Economy Launch</span>
           </h1>

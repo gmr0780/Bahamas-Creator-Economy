@@ -89,26 +89,26 @@ export default function EventPage() {
       <section className="hero-mesh relative overflow-hidden py-24 md:py-32">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-navy/80" />
         <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-aqua flex items-center justify-center gap-2">
-            <BahamianFlag width={32} className="rounded-sm" />
-            March 29, 2026 &middot; Baha Mar Convention Center
+          <p className="mb-4 text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] sm:tracking-[0.3em] text-aqua flex items-center justify-center gap-2 flex-wrap">
+            <BahamianFlag width={32} className="rounded-sm shrink-0" />
+            <span>March 29, 2026 &middot; Baha Mar Convention Center</span>
           </p>
-          <h1 className="mb-6 text-4xl font-extrabold leading-tight tracking-tight md:text-6xl lg:text-7xl">
+          <h1 className="mb-6 text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl md:text-6xl lg:text-7xl">
             The Prime Minister{" "}
             <span className="gradient-text">Invites You</span>
           </h1>
-          <p className="mx-auto max-w-2xl text-lg text-sand/80 md:text-xl">
+          <p className="mx-auto max-w-2xl text-base text-sand/80 sm:text-lg md:text-xl">
             Join the inaugural Bahamas Creator Economy Launch &mdash; an exclusive
             gathering of creators, government leaders, and platform partners
             charting the future of the digital economy.
           </p>
-          <p className="mx-auto mt-4 max-w-2xl text-base text-aqua/90 font-medium italic">
+          <p className="mx-auto mt-4 max-w-2xl text-sm sm:text-base text-aqua/90 font-medium italic">
             For the first time in Caribbean history, a national government is standing behind its digital creators. This is that moment.
           </p>
           <div className="mt-10">
             <Link
               href="/register"
-              className="cta-gradient inline-block rounded-full px-10 py-4 text-lg font-bold text-white shadow-lg"
+              className="cta-gradient inline-block rounded-full px-8 sm:px-10 py-4 text-base sm:text-lg font-bold text-white shadow-lg"
             >
               Register Now
             </Link>
@@ -119,10 +119,10 @@ export default function EventPage() {
       {/* Event Details Card */}
       <section className="relative z-10 -mt-10 mx-auto max-w-4xl px-6">
         <div className="glass rounded-3xl p-5 sm:p-8 md:p-12">
-          <h2 className="mb-8 text-center text-2xl font-bold tracking-tight md:text-3xl">
+          <h2 className="mb-8 text-center text-xl font-bold tracking-tight sm:text-2xl md:text-3xl">
             Event Details
           </h2>
-          <div className="grid grid-cols-2 gap-4 sm:gap-6 sm:grid-cols-3 lg:grid-cols-6">
+          <div className="grid grid-cols-2 gap-4 sm:gap-6 min-[480px]:grid-cols-3 lg:grid-cols-6">
             {[
               { label: "Date", value: "Mar 29, 2026", icon: "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" },
               { label: "Time", value: "4:00 \u2013 8:00 PM", icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" },
@@ -147,7 +147,7 @@ export default function EventPage() {
 
       {/* Agenda Timeline */}
       <section className="mx-auto max-w-4xl px-6 py-24">
-        <h2 className="mb-4 text-center text-3xl font-extrabold tracking-tight md:text-4xl">
+        <h2 className="mb-4 text-center text-2xl font-extrabold tracking-tight sm:text-3xl md:text-4xl">
           Agenda
         </h2>
         <p className="mb-16 text-center text-sand/80">
@@ -198,7 +198,7 @@ export default function EventPage() {
 
       {/* Speakers */}
       <section className="mx-auto max-w-5xl px-6 py-24">
-        <h2 className="mb-4 text-center text-3xl font-extrabold tracking-tight md:text-4xl">
+        <h2 className="mb-4 text-center text-2xl font-extrabold tracking-tight sm:text-3xl md:text-4xl">
           Speakers
         </h2>
         <p className="mb-16 text-center text-sand/80">
@@ -241,7 +241,7 @@ export default function EventPage() {
 
       {/* Partners */}
       <section className="mx-auto max-w-6xl px-6 py-24">
-        <h2 className="mb-4 text-center text-3xl font-extrabold tracking-tight md:text-4xl">
+        <h2 className="mb-4 text-center text-2xl font-extrabold tracking-tight sm:text-3xl md:text-4xl">
           Partners &amp; Stakeholders
         </h2>
         <p className="mb-16 text-center text-sand/80">
@@ -274,15 +274,15 @@ export default function EventPage() {
       <section className="relative overflow-hidden py-24">
         <div className="absolute inset-0 bg-gradient-to-r from-aqua/10 via-coral/10 to-aqua/10" />
         <div className="relative z-10 mx-auto max-w-3xl px-6 text-center">
-          <h2 className="mb-4 text-3xl font-extrabold tracking-tight md:text-5xl">
+          <h2 className="mb-4 text-2xl font-extrabold tracking-tight sm:text-3xl md:text-5xl">
             Ready to Join?
           </h2>
-          <p className="mb-10 text-lg text-sand/85">
+          <p className="mb-10 text-base sm:text-lg text-sand/85">
             300 seats. By invitation from the Office of the Prime Minister.
           </p>
           <Link
             href="/register"
-            className="cta-gradient inline-block rounded-full px-12 py-5 text-lg font-bold text-white shadow-xl"
+            className="cta-gradient inline-block rounded-full px-8 sm:px-12 py-5 text-base sm:text-lg font-bold text-white shadow-xl"
           >
             Register Now
           </Link>
