@@ -214,11 +214,6 @@ export default function EarnPage() {
                 </div>
               </div>
 
-              <div className="mt-8 rounded-xl bg-emerald-500/15 border border-emerald-500/30 px-5 py-4">
-                <p className="text-sm leading-relaxed text-emerald-300 font-medium">
-                  <span className="font-bold text-emerald-200">Note:</span> The Bahamas currently does not impose personal income tax. However, business and freelance income reporting obligations may apply. Consult a local advisor for your specific situation.
-                </p>
-              </div>
             </div>
           </div>
 
@@ -228,7 +223,6 @@ export default function EarnPage() {
             <ul className="text-xs text-sand space-y-1 list-disc pl-4">
               <li>IRS Form W-8BEN: <span className="text-aqua">irs.gov/forms-pubs/about-form-w-8-ben</span></li>
               <li>Google AdSense Tax Info for Non-U.S. Creators: <span className="text-aqua">support.google.com/adsense (Managing U.S. tax info)</span></li>
-              <li>Bahamas tax policy: The Bahamas does not currently levy personal income tax (Bahamas Ministry of Finance)</li>
               <li>RPM ranges: Industry benchmarks from publicly available creator economy reports, early 2026. Actual results vary.</li>
             </ul>
           </div>
