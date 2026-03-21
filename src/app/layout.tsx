@@ -12,8 +12,8 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: {
-    default: "Bahamas Creator Economy Initiative",
-    template: "%s | Bahamas Creator Economy Initiative",
+    default: "242Creators.com — Bahamas Creator Economy Initiative",
+    template: "%s | 242Creators.com",
   },
   description:
     "Empowering Bahamian creators to build, monetize, and thrive on global digital platforms. A program of the Office of the Prime Minister, Commonwealth of The Bahamas.",

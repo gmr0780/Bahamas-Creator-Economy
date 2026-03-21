@@ -1,5 +1,6 @@
 import Countdown from "./components/Countdown";
 import BahamianFlag from "./components/BahamianFlag";
+import SpotsCounter from "./components/SpotsCounter";
 
 /* ──────────────────────────────────────────
    Icon components (simple geometric SVGs)
@@ -461,6 +462,9 @@ export default function Home() {
             >
               Register Now
             </a>
+          </div>
+          <div className="animate-fade-in-up delay-300 pt-4">
+            <SpotsCounter />
           </div>
         </div>
       </section>

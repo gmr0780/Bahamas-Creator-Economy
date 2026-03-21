@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, FormEvent } from "react";
+import { useState, useEffect, FormEvent } from "react";
 import Link from "next/link";
 
 const platforms = ["YouTube", "TikTok", "Instagram", "Twitch", "X/Twitter", "Facebook", "Other"];
@@ -80,9 +80,44 @@ export default function RegisterPage() {
     });
   }
 
-  function handleSubmit(e: FormEvent) {
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
+  const [spotsLeft, setSpotsLeft] = useState<number | null>(null);
+  const [registrationOpen, setRegistrationOpen] = useState(true);
+
+  useEffect(() => {
+    fetch("/api/registrations/count")
+      .then((r) => r.json())
+      .then((data) => {
+        setSpotsLeft(data.cap - data.count);
+        setRegistrationOpen(data.open);
+      })
+      .catch(() => {});
+  }, []);
+
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
+    setError("");
+    try {
+      const res = await fetch("/api/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fullName, email, phone, platform, handle, followers, niche, monetization, topics,
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setError(data.error || "Registration failed. Please try again.");
+        setSubmitting(false);
+        return;
+      }
+      setSubmitted(true);
+    } catch {
+      setError("Something went wrong. Please try again.");
+      setSubmitting(false);
+    }
   }
 
   const encodedShareText = encodeURIComponent(shareText);
@@ -425,15 +460,30 @@ export default function RegisterPage() {
 
           {/* Submit */}
           <div className="pt-4">
-            <button
-              type="submit"
-              className="cta-gradient w-full rounded-2xl py-4 text-lg font-extrabold text-white shadow-xl transition-all"
-            >
-              Secure My Spot
-            </button>
-            <p className="mt-4 text-center text-xs text-sand">
-              By registering, you confirm your attendance at the Bahamas Creator Economy Launch on March 29, 2026.
-            </p>
+            {error && (
+              <p className="mb-4 text-center text-sm text-coral font-semibold">{error}</p>
+            )}
+            {!registrationOpen ? (
+              <p className="text-center text-lg text-coral font-bold">Registration is currently closed.</p>
+            ) : (
+              <>
+                <button
+                  type="submit"
+                  disabled={submitting}
+                  className="cta-gradient w-full rounded-2xl py-4 text-lg font-extrabold text-white shadow-xl transition-all disabled:opacity-60"
+                >
+                  {submitting ? "Submitting..." : "Secure My Spot"}
+                </button>
+                {spotsLeft !== null && (
+                  <p className="mt-3 text-center text-sm text-aqua font-bold">
+                    {spotsLeft > 0 ? `${spotsLeft} spots remaining` : "Event is full"}
+                  </p>
+                )}
+                <p className="mt-2 text-center text-xs text-sand">
+                  By registering, you confirm your attendance at the Bahamas Creator Economy Launch on March 29, 2026.
+                </p>
+              </>
+            )}
           </div>
         </form>
       </section>

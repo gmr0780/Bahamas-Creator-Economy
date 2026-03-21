@@ -1,0 +1,29 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Registration {
+  id             String   @id @default(cuid())
+  fullName       String
+  email          String   @unique
+  phone          String
+  platform       String
+  handle         String
+  followers      String
+  niche          String
+  monetization   String
+  topics         String[]
+  status         String   @default("pending")
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model Setting {
+  key   String @id
+  value String
+}
