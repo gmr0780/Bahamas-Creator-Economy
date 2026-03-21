@@ -73,9 +73,24 @@ export default function RootLayout({
               </div>
             </div>
 
-            <div className="mt-8 border-t border-navy/10 pt-6 text-center">
+            {/* Disclaimer */}
+            <div className="mt-6 border-t border-navy/10 pt-6">
+              <p className="text-[11px] text-navy/80 text-center max-w-3xl mx-auto leading-relaxed">
+                The information on this website is for educational and informational purposes only and does not constitute tax, legal, or financial advice. Earnings estimates are illustrative and not guarantees. Tax treatment varies by platform, payment type, and personal circumstances. Consult a qualified professional for advice specific to your situation.
+              </p>
+            </div>
+
+            {/* Legal links & copyright */}
+            <div className="mt-4 flex flex-wrap justify-center gap-4 text-[11px] text-navy/70">
+              <a href="/disclaimer" className="hover:text-aqua transition-colors">Disclaimer</a>
+              <a href="/privacy" className="hover:text-aqua transition-colors">Privacy Policy</a>
+              <a href="/terms" className="hover:text-aqua transition-colors">Terms of Use</a>
+              <span>Contact: <a href="mailto:info@242creators.com" className="text-aqua hover:underline">info@242creators.com</a></span>
+            </div>
+
+            <div className="mt-4 text-center">
               <p className="text-xs text-navy">
-                &copy; {new Date().getFullYear()} Bahamas Creator Economy
+                &copy; {new Date().getFullYear()} 242Creators.com &mdash; Bahamas Creator Economy
                 Initiative. All rights reserved.
               </p>
             </div>
