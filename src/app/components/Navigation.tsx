@@ -6,6 +6,7 @@ import BahamianFlag from "./BahamianFlag";
 
 const navLinks = [
   { href: "/", label: "Home" },
+  { href: "/learn", label: "Learn" },
   { href: "/platforms", label: "Platforms" },
   { href: "/earn", label: "Earn" },
   { href: "/event", label: "Event" },

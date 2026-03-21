@@ -27,3 +27,16 @@ model Setting {
   key   String @id
   value String
 }
+
+model Guide {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       String
+  subtitle    String   @default("")
+  icon        String   @default("")
+  order       Int      @default(0)
+  published   Boolean  @default(false)
+  content     String   @db.Text
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
