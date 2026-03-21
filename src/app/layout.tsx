@@ -17,6 +17,9 @@ export const metadata: Metadata = {
   },
   description:
     "Empowering Bahamian creators to build, monetize, and thrive on global digital platforms. A program of the Office of the Prime Minister, Commonwealth of The Bahamas.",
+  icons: {
+    icon: "/favicon.svg",
+  },
   keywords: [
     "Bahamas",
     "creator economy",
