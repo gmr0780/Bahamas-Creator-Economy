@@ -108,30 +108,35 @@ const pillars = [
 const speakers = [
   {
     name: "The Rt. Hon. Philip Edward Davis, KC, MP",
+    initials: "PD",
     role: "Keynote Speaker",
     tagline: "Prime Minister of The Bahamas",
     featured: true,
   },
   {
     name: "Prime Minister Mia Mottley",
+    initials: "MM",
     role: "Speaker II",
     tagline: "Barbados",
     featured: false,
   },
   {
     name: "Deputy PM Chester Cooper",
+    initials: "CC",
     role: "Panelist",
     tagline: "Minister of Tourism",
     featured: false,
   },
   {
     name: "Greg Michelier",
+    initials: "GM",
     role: "Closing Remarks",
     tagline: "Ambassador-at-Large, Technology & AI",
     featured: false,
   },
   {
     name: "Latrae Rahming",
+    initials: "LR",
     role: "Host & MC",
     tagline: "Director of Communications, OPM",
     featured: false,
@@ -399,10 +404,7 @@ export default function Home() {
                             : "text-xl sm:text-2xl"
                         }`}
                       >
-                        {s.name
-                          .split(" ")
-                          .map((w) => w[0])
-                          .join("")}
+                        {s.initials}
                       </span>
                     </div>
 
