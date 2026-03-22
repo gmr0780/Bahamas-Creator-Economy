@@ -30,6 +30,7 @@ const speakers = [
   {
     name: "Prime Minister Mia Mottley",
     initials: "MM",
+    image: "/speakers/mia-mottley.webp",
     role: "Guest Speaker",
     description: "Barbados: What Does This Step Mean for the Region?",
     gradient: "from-coral to-orange-300",

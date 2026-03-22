@@ -119,6 +119,7 @@ const speakers = [
   {
     name: "Prime Minister Mia Mottley",
     initials: "MM",
+    image: "/speakers/mia-mottley.webp",
     role: "Guest Speaker",
     tagline: "Barbados",
     featured: false,
