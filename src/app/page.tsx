@@ -412,7 +412,7 @@ export default function Home() {
                         <img
                           src={s.image}
                           alt={s.name}
-                          className={`h-full w-full object-cover ${s.imageZoom ? "scale-150 object-[center_30%]" : "object-top"}`}
+                          className={`h-full w-full object-cover ${s.imageZoom ? "scale-125 object-center" : "object-top"}`}
                         />
                       ) : (
                         <span
