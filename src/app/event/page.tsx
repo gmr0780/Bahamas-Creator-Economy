@@ -21,6 +21,7 @@ const speakers = [
   {
     name: "Hon. Philip Edward Davis, KC, MP",
     initials: "PD",
+    image: "/speakers/pm-davis.jpeg",
     role: "Keynote Speaker",
     description: "Prime Minister of The Bahamas",
     gradient: "from-aqua to-cyan-300",
@@ -202,15 +203,23 @@ export default function EventPage() {
                   : ""
               }`}
             >
-              {/* Avatar placeholder */}
+              {/* Avatar */}
               <div
                 className={`mx-auto mb-5 flex items-center justify-center rounded-full bg-gradient-to-br ${speaker.gradient} ${
                   speaker.size === "large" ? "h-28 w-28" : "h-20 w-20"
-                } shadow-lg`}
+                } shadow-lg overflow-hidden`}
               >
-                <span className="text-2xl font-extrabold text-white/90">
-                  {speaker.initials}
-                </span>
+                {speaker.image ? (
+                  <img
+                    src={speaker.image}
+                    alt={speaker.name}
+                    className="h-full w-full object-cover"
+                  />
+                ) : (
+                  <span className="text-2xl font-extrabold text-white/90">
+                    {speaker.initials}
+                  </span>
+                )}
               </div>
               <h3
                 className={`font-extrabold tracking-tight text-sand ${

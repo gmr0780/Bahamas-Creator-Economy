@@ -111,6 +111,7 @@ const speakers = [
   {
     name: "Hon. Philip Edward Davis, KC, MP",
     initials: "PD",
+    image: "/speakers/pm-davis.jpeg",
     role: "Keynote Speaker",
     tagline: "Prime Minister of The Bahamas",
     featured: true,
@@ -394,23 +395,31 @@ export default function Home() {
                       s.featured ? "py-16 sm:py-20" : ""
                     }`}
                   >
-                    {/* Avatar placeholder */}
+                    {/* Avatar */}
                     <div
-                      className={`rounded-full bg-gradient-to-br ${gradients[i]} flex items-center justify-center mb-6 shadow-lg ${
+                      className={`rounded-full bg-gradient-to-br ${gradients[i]} flex items-center justify-center mb-6 shadow-lg overflow-hidden ${
                         s.featured
                           ? "h-32 w-32 sm:h-40 sm:w-40"
                           : "h-20 w-20 sm:h-24 sm:w-24"
                       }`}
                     >
-                      <span
-                        className={`font-bold text-white/90 ${
-                          s.featured
-                            ? "text-3xl sm:text-4xl"
-                            : "text-xl sm:text-2xl"
-                        }`}
-                      >
-                        {s.initials}
-                      </span>
+                      {s.image ? (
+                        <img
+                          src={s.image}
+                          alt={s.name}
+                          className="h-full w-full object-cover"
+                        />
+                      ) : (
+                        <span
+                          className={`font-bold text-white/90 ${
+                            s.featured
+                              ? "text-3xl sm:text-4xl"
+                              : "text-xl sm:text-2xl"
+                          }`}
+                        >
+                          {s.initials}
+                        </span>
+                      )}
                     </div>
 
                     <h3
