@@ -45,7 +45,7 @@ export default function UrgencyBanner() {
   }
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-[70] gradient-aqua-coral">
+    <div className="w-full gradient-aqua-coral">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-2 sm:px-6">
         {/* Spacer to keep text centered */}
         <div className="hidden sm:block sm:w-24" />
