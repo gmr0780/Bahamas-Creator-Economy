@@ -220,7 +220,7 @@ export default function Home() {
             <footer className="mt-6 flex items-center gap-4">
               <div className="h-px flex-1 max-w-16 bg-coral/40" />
               <cite className="not-italic text-sm sm:text-base text-coral font-semibold tracking-wide">
-                The Prime Minister, Commonwealth of The Bahamas
+                Philip &ldquo;Brave&rdquo; Davis, Prime Minister, Commonwealth of The Bahamas
               </cite>
             </footer>
           </blockquote>
