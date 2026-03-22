@@ -137,16 +137,18 @@ export default function PlatformsPage() {
     <div className="min-h-screen bg-navy">
       {/* Hero header */}
       <section className="hero-mesh px-6 pb-16 pt-24 text-center">
-        <p className="mb-3 text-xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-[0.15em] sm:tracking-[0.2em] text-aqua">
-          Bahamas Creator Economy
-        </p>
-        <h1 className="mx-auto max-w-2xl text-3xl font-extrabold leading-tight text-navy sm:text-4xl md:text-5xl">
-          Platform{" "}
-          <span className="gradient-text">Eligibility</span>
-        </h1>
-        <p className="mx-auto mt-4 max-w-xl text-lg text-navy">
-          Where Bahamian creators can earn direct platform revenue today
-        </p>
+        <div className="mx-auto max-w-4xl">
+          <p className="mb-3 text-xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-[0.15em] sm:tracking-[0.2em] text-aqua">
+            Bahamas Creator Economy
+          </p>
+          <h1 className="mx-auto max-w-2xl text-3xl font-extrabold leading-tight text-navy sm:text-4xl md:text-5xl">
+            Platform{" "}
+            <span className="gradient-text">Eligibility</span>
+          </h1>
+          <p className="mx-auto mt-4 max-w-xl text-lg text-navy">
+            Where Bahamian creators can earn direct platform revenue today
+          </p>
+        </div>
       </section>
 
       {/* Platform cards grid */}
@@ -176,19 +178,21 @@ export default function PlatformsPage() {
 
       {/* CTA */}
       <section className="border-t border-white/10 px-6 py-20 text-center">
-        <h2 className="mb-4 text-2xl font-bold text-sand sm:text-3xl">
-          Ready to start earning?
-        </h2>
-        <p className="mx-auto mb-8 max-w-md text-sand">
-          Join our live workshop and learn exactly how to get accepted on
-          every eligible platform.
-        </p>
-        <Link
-          href="/#register"
-          className="cta-gradient inline-block rounded-full px-6 sm:px-8 py-4 text-base sm:text-lg font-bold text-white shadow-lg"
-        >
-          Register for the Event
-        </Link>
+        <div className="mx-auto max-w-3xl">
+          <h2 className="mb-4 text-2xl font-bold text-sand sm:text-3xl">
+            Ready to start earning?
+          </h2>
+          <p className="mx-auto mb-8 max-w-md text-sand">
+            Join our live workshop and learn exactly how to get accepted on
+            every eligible platform.
+          </p>
+          <Link
+            href="/#register"
+            className="cta-gradient inline-block rounded-full px-6 sm:px-8 py-4 text-base sm:text-lg font-bold text-white shadow-lg"
+          >
+            Register for the Event
+          </Link>
+        </div>
       </section>
     </div>
   );
