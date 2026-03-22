@@ -38,7 +38,7 @@ const platforms: Platform[] = [
     name: "Meta CMP",
     status: "COMING SOON",
     requirements:
-      "Not yet available in The Bahamas — we're actively working to bring access. Meta unified all programs into CMP in late 2025.",
+      "Not yet available in The Bahamas. We're actively working to bring access. Meta unified all programs into CMP in late 2025.",
     rpm: "N/A",
     payout: "N/A",
   },
@@ -46,7 +46,7 @@ const platforms: Platform[] = [
     name: "TikTok Creator Rewards",
     status: "COMING SOON",
     requirements:
-      "Not yet available in The Bahamas — we're working on it. In the meantime, brand sponsorships are a powerful earning path.",
+      "Not yet available in The Bahamas. We're working on it. In the meantime, brand sponsorships are a powerful earning path.",
     rpm: "N/A",
     payout: "N/A",
   },
@@ -62,7 +62,7 @@ const platforms: Platform[] = [
     name: "Instagram Reels",
     status: "COMING SOON",
     requirements:
-      "Falls under Meta\u2019s unified CMP — not yet available, but stay tuned for updates via Creator Studio.",
+      "Falls under Meta\u2019s unified CMP. Not yet available, but stay tuned for updates via Creator Studio.",
     rpm: "N/A",
     payout: "N/A",
   },

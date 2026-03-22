@@ -238,7 +238,7 @@ export default function EarnPage() {
             Turn views into real income
           </h2>
           <p className="mx-auto mb-8 max-w-md text-sand">
-            Our workshop walks you through every step &mdash; from platform
+            Our workshop walks you through every step, from platform
             applications to tax documentation to your first brand deal.
           </p>
           <Link

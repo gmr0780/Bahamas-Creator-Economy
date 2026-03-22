@@ -60,17 +60,17 @@ const opportunities = [
   {
     icon: <IconPlatform />,
     title: "Platform Opportunity",
-    desc: "We're opening doors to global creator platforms for Caribbean users — expanding discoverability and unlocking new monetization paths for Bahamian creators.",
+    desc: "We're opening doors to global creator platforms for Caribbean users, expanding discoverability and unlocking new monetization paths for Bahamian creators.",
   },
   {
     icon: <IconTax />,
     title: "Tax Clarity Ahead",
-    desc: "We're making it simple to navigate international tax treaties and W-8BEN forms — so you can focus on creating, not paperwork.",
+    desc: "We're making it simple to navigate international tax treaties and W-8BEN forms so you can focus on creating, not paperwork.",
   },
   {
     icon: <IconPayment />,
     title: "Payment Solutions",
-    desc: "We're building better pathways to payment processors, reducing foreign-exchange fees, and streamlining banking — so your global earnings reach you faster.",
+    desc: "We're building better pathways to payment processors, reducing foreign-exchange fees, and streamlining banking so your global earnings reach you faster.",
   },
   {
     icon: <IconGuidance />,
@@ -266,7 +266,7 @@ export default function Home() {
             The World Is Watching.
           </h2>
           <p className="animate-fade-in-up delay-200 text-base sm:text-xl text-sand max-w-3xl mx-auto leading-relaxed">
-            Bahamian creators are building audiences of millions. Now it&apos;s time to turn that influence into income &mdash; backed by the full support of the government. This isn&apos;t just an opportunity. It&apos;s a movement.
+            Bahamian creators are building audiences of millions. Now it&apos;s time to turn that influence into income, backed by the full support of the government. This isn&apos;t just an opportunity. It&apos;s a movement.
           </p>
         </div>
       </section>
@@ -282,7 +282,7 @@ export default function Home() {
               Why This Matters
             </h2>
             <p className="animate-fade-in-up delay-200 text-navy/90 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
-              Here&apos;s what we&apos;re solving — so Bahamian creators can fully
+              Here&apos;s what we&apos;re solving so Bahamian creators can fully
               thrive in the global creator economy.
             </p>
           </div>

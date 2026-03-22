@@ -52,10 +52,10 @@ export default async function LearnPage() {
               return (
                 <div>
                   <div className="mb-6">
-                    <p className="text-sm font-extrabold uppercase tracking-[0.2em] text-aqua mb-1">
+                    <p className="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-[0.15em] text-aqua mb-2">
                       Start
                     </p>
-                    <p className="text-sand/70 text-sm">
+                    <p className="text-sand text-base sm:text-lg">
                       Begin your creator journey
                     </p>
                   </div>
@@ -89,10 +89,10 @@ export default async function LearnPage() {
               return (
                 <div>
                   <div className="mb-6">
-                    <p className="text-sm font-extrabold uppercase tracking-[0.2em] text-coral mb-1">
+                    <p className="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-[0.15em] text-coral mb-2">
                       Earn
                     </p>
-                    <p className="text-sand/70 text-sm">
+                    <p className="text-sand text-base sm:text-lg">
                       Turn your content into income
                     </p>
                   </div>
@@ -126,10 +126,10 @@ export default async function LearnPage() {
               return (
                 <div>
                   <div className="mb-6">
-                    <p className="text-sm font-extrabold uppercase tracking-[0.2em] gradient-aqua-coral-text mb-1">
+                    <p className="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-[0.15em] gradient-aqua-coral-text mb-2">
                       Connect
                     </p>
-                    <p className="text-sand/70 text-sm">
+                    <p className="text-sand text-base sm:text-lg">
                       Get brand-ready and get discovered
                     </p>
                   </div>

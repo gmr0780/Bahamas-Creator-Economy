@@ -5,13 +5,13 @@ const agendaItems = [
   { time: "4:00 PM", tag: "WELCOME", tagColor: "bg-aqua", title: "Welcome", subtitle: "Latrae Rahming, Director of Communications, OPM" },
   { time: "4:05 PM", tag: "ANTHEM", tagColor: "bg-coral", title: "National Anthem", subtitle: "Creative and Performing Arts School of The Bahamas (CAPAS)" },
   { time: "4:10 PM", tag: "SPEAKER", tagColor: "bg-aqua", title: "Speaker I", subtitle: "Speaker To Be Announced" },
-  { time: "4:30 PM", tag: "SPEAKER", tagColor: "bg-aqua", title: "Speaker II — Prime Minister Mia Mottley, Barbados", subtitle: "What Does This Step Mean for the Region?" },
+  { time: "4:30 PM", tag: "SPEAKER", tagColor: "bg-aqua", title: "Speaker II: Prime Minister Mia Mottley, Barbados", subtitle: "What Does This Step Mean for the Region?" },
   { time: "4:50 PM", tag: "MUSIC", tagColor: "bg-coral", title: "Musical Selection", subtitle: "\"Redemption Song\" performed by CAPAS" },
   { time: "5:00 PM", tag: "INTRO", tagColor: "bg-aqua", title: "Introduction of the Prime Minister", subtitle: "Latrae Rahming, Director of Communications, OPM" },
-  { time: "5:05 PM", tag: "KEYNOTE", tagColor: "bg-gradient-to-r from-aqua to-coral", title: "Keynote Address", subtitle: "The Rt. Hon. Philip Edward Davis, KC, MP — Prime Minister of The Bahamas" },
-  { time: "5:25 PM", tag: "PANEL", tagColor: "bg-coral", title: "Panel I — Leveraging the Creative Space & Using AI", subtitle: "Presented by Burson — How creators build sustainable income. Followed by Q&A." },
-  { time: "5:50 PM", tag: "PANEL", tagColor: "bg-coral", title: "Panel II — How to Monetize: Platform Strategies", subtitle: "TikTok | X | Meta | YouTube | Google" },
-  { time: "6:15 PM", tag: "PANEL", tagColor: "bg-coral", title: "Panel III — Building Domestic Brand Power", subtitle: "Deputy PM Chester Cooper, Minister of Tourism | Inga Bowleg, John Bull" },
+  { time: "5:05 PM", tag: "KEYNOTE", tagColor: "bg-gradient-to-r from-aqua to-coral", title: "Keynote Address", subtitle: "The Rt. Hon. Philip Edward Davis, KC, MP: Prime Minister of The Bahamas" },
+  { time: "5:25 PM", tag: "PANEL", tagColor: "bg-coral", title: "Panel I: Leveraging the Creative Space & Using AI", subtitle: "Presented by Burson. How creators build sustainable income. Followed by Q&A." },
+  { time: "5:50 PM", tag: "PANEL", tagColor: "bg-coral", title: "Panel II: How to Monetize: Platform Strategies", subtitle: "TikTok | X | Meta | YouTube | Google" },
+  { time: "6:15 PM", tag: "PANEL", tagColor: "bg-coral", title: "Panel III: Building Domestic Brand Power", subtitle: "Deputy PM Chester Cooper, Minister of Tourism | Inga Bowleg, John Bull" },
   { time: "6:35 PM", tag: "CLOSING", tagColor: "bg-aqua", title: "Closing Remarks", subtitle: "Ambassador-at-Large Greg Michelier" },
   { time: "6:40 PM", tag: "MIXER", tagColor: "bg-gradient-to-r from-aqua to-coral", title: "Mixer Announcement", subtitle: "Transition to evening reception" },
   { time: "6:45 PM", tag: "RECEPTION", tagColor: "bg-coral", title: "Mix & Mingle Reception", subtitle: "6:45 PM – 8:00 PM" },
@@ -28,14 +28,14 @@ const speakers = [
   {
     name: "Prime Minister Mia Mottley",
     role: "Speaker II",
-    description: "Barbados — What Does This Step Mean for the Region?",
+    description: "Barbados: What Does This Step Mean for the Region?",
     gradient: "from-coral to-orange-300",
     size: "normal",
   },
   {
     name: "Deputy PM Chester Cooper",
     role: "Panelist",
-    description: "Minister of Tourism — Building Domestic Brand Power",
+    description: "Minister of Tourism: Building Domestic Brand Power",
     gradient: "from-purple-500 to-pink-400",
     size: "normal",
   },
@@ -117,7 +117,7 @@ export default function EventPage() {
             <span className="gradient-text">Invites You</span>
           </h1>
           <p className="mx-auto max-w-2xl text-base text-white sm:text-lg md:text-xl">
-            Join the inaugural Bahamas Creator Economy Launch &mdash; an exclusive
+            Join the inaugural Bahamas Creator Economy Launch, an exclusive
             gathering of creators, government leaders, and platform partners
             charting the future of the digital economy.
           </p>

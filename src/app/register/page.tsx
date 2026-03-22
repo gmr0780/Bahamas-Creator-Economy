@@ -254,7 +254,7 @@ export default function RegisterPage() {
       <section className="relative z-10 -mt-2 mx-auto max-w-2xl px-6">
         <div className="rounded-2xl border border-aqua/20 bg-aqua/5 p-6 text-center mb-6">
           <p className="text-base text-sand leading-relaxed">
-            Every great movement starts with a single step. By registering, you&apos;re not just signing up for an event &mdash; you&apos;re joining a national movement to put Bahamian creators on the global map.
+            Every great movement starts with a single step. By registering, you&apos;re not just signing up for an event. You&apos;re joining a national movement to put Bahamian creators on the global map.
           </p>
         </div>
       </section>
