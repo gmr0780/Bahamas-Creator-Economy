@@ -213,7 +213,7 @@ export default function EventPage() {
                   <img
                     src={speaker.image}
                     alt={speaker.name}
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-cover object-top"
                   />
                 ) : (
                   <span className="text-2xl font-extrabold text-white/90">

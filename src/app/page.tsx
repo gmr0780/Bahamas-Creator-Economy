@@ -407,7 +407,7 @@ export default function Home() {
                         <img
                           src={s.image}
                           alt={s.name}
-                          className="h-full w-full object-cover"
+                          className="h-full w-full object-cover object-top"
                         />
                       ) : (
                         <span
