@@ -62,44 +62,6 @@ const speakers = [
   },
 ];
 
-const partnerGroups = [
-  {
-    label: "Government Lead",
-    partners: [
-      "Office of the Prime Minister",
-      "Ministry of Finance",
-      "Ministry of Youth",
-      "Ambassador-at-Large",
-    ],
-  },
-  {
-    label: "Program Delivery",
-    partners: [
-      "National Training Agency",
-      "University of The Bahamas",
-      "Bahamas Chamber of Commerce",
-      "Bahamas Information Services",
-    ],
-  },
-  {
-    label: "Private Sector",
-    partners: [
-      "Banking Partners",
-      "Payoneer",
-      "Legal / Accounting",
-      "BTC / Aliv",
-    ],
-  },
-  {
-    label: "Platform Engagement",
-    partners: [
-      "Google / YouTube",
-      "Meta",
-      "Twitch / Amazon",
-      "Affiliate Networks",
-    ],
-  },
-];
 
 export default function EventPage() {
   return (
@@ -258,36 +220,6 @@ export default function EventPage() {
         </div>
       </section>
 
-      {/* Partners */}
-      <section className="mx-auto max-w-6xl px-6 py-24">
-        <h2 className="mb-4 text-center text-2xl font-extrabold tracking-tight sm:text-3xl md:text-4xl">
-          Partners &amp; Stakeholders
-        </h2>
-        <p className="mb-16 text-center text-sand">
-          A cross-sector coalition powering the creator economy
-        </p>
-
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {partnerGroups.map((group) => (
-            <div key={group.label} className="glass-dark rounded-2xl p-6">
-              <h3 className="mb-4 text-xs font-extrabold uppercase tracking-[0.2em] text-aqua">
-                {group.label}
-              </h3>
-              <ul className="space-y-3">
-                {group.partners.map((partner) => (
-                  <li
-                    key={partner}
-                    className="flex items-center gap-3 text-sm text-sand"
-                  >
-                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-coral" />
-                    {partner}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* CTA */}
       <section className="relative overflow-hidden py-24">
