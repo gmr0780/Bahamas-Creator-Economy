@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import Navigation from "./components/Navigation";
 import UrgencyBanner from "./components/UrgencyBanner";
+import PageTracker from "./components/PageTracker";
 import BahamianFlag from "./components/BahamianFlag";
 import "./globals.css";
 
@@ -47,6 +48,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${spaceGrotesk.variable} antialiased`}>
       <body className="min-h-screen flex flex-col bg-white text-navy overflow-x-hidden">
+        <PageTracker />
         <UrgencyBanner />
         <Navigation />
 
@@ -101,10 +103,13 @@ export default function RootLayout({
               <a href="/terms" className="hover:text-aqua transition-colors">Terms of Use</a>
             </div>
 
-            <div className="mt-4 text-center">
+            <div className="mt-4 text-center space-y-2">
               <p className="text-xs text-navy">
-                &copy; {new Date().getFullYear()} 242Creators.com &mdash; Bahamas Creator Economy
+                &copy; {new Date().getFullYear()} 242Creators.com. Bahamas Creator Economy
                 Initiative. All rights reserved.
+              </p>
+              <p className="text-xs font-semibold text-aqua">
+                Proudly Built in The Bahamas 🇧🇸
               </p>
             </div>
           </div>

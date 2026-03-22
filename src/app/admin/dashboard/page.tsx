@@ -58,6 +58,8 @@ export default function AdminDashboardPage() {
   const [filter, setFilter] = useState<'all' | Status>('all');
   const [page, setPage] = useState(1);
   const [updatingId, setUpdatingId] = useState<string | null>(null);
+  const [deleteConfirm, setDeleteConfirm] = useState<string | null>(null);
+  const [deletingId, setDeletingId] = useState<string | null>(null);
 
   const fetchData = useCallback(async () => {
     try {
@@ -115,6 +117,25 @@ export default function AdminDashboardPage() {
     }
   }
 
+  async function handleDelete(id: string) {
+    setDeletingId(id);
+    try {
+      const res = await fetch(`/api/admin/registrations/${id}`, { method: 'DELETE' });
+      if (res.status === 401) {
+        router.push('/admin');
+        return;
+      }
+      if (res.ok) {
+        setDeleteConfirm(null);
+        await fetchData();
+      }
+    } catch {
+      // silently fail
+    } finally {
+      setDeletingId(null);
+    }
+  }
+
   function handleLogout() {
     document.cookie = 'admin_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT';
     router.push('/admin');
@@ -148,6 +169,12 @@ export default function AdminDashboardPage() {
             <span className="text-sm font-semibold text-white">Admin</span>
           </div>
           <div className="flex items-center gap-3">
+            <Link
+              href="/admin/analytics"
+              className="rounded-lg border border-white/10 px-3 py-1.5 text-xs font-semibold text-sand/80 transition-colors hover:border-aqua/30 hover:text-aqua"
+            >
+              Analytics
+            </Link>
             <Link
               href="/admin/guides"
               className="rounded-lg border border-white/10 px-3 py-1.5 text-xs font-semibold text-sand/80 transition-colors hover:border-aqua/30 hover:text-aqua"
@@ -265,12 +292,15 @@ export default function AdminDashboardPage() {
                   <th className="px-4 py-3 text-xs font-bold uppercase tracking-widest text-sand/50">
                     Date
                   </th>
+                  <th className="px-4 py-3 text-xs font-bold uppercase tracking-widest text-sand/50">
+                    Actions
+                  </th>
                 </tr>
               </thead>
               <tbody>
                 {registrations.length === 0 ? (
                   <tr>
-                    <td colSpan={7} className="px-4 py-12 text-center text-sand/40">
+                    <td colSpan={8} className="px-4 py-12 text-center text-sand/40">
                       {search || filter !== 'all'
                         ? 'No registrations match your filters.'
                         : 'No registrations yet.'}
@@ -310,6 +340,32 @@ export default function AdminDashboardPage() {
                           day: 'numeric',
                           year: 'numeric',
                         })}
+                      </td>
+                      <td className="px-4 py-3">
+                        {deleteConfirm === reg.id ? (
+                          <div className="flex items-center gap-2">
+                            <button
+                              onClick={() => handleDelete(reg.id)}
+                              disabled={deletingId === reg.id}
+                              className="rounded-lg bg-red-500/20 border border-red-500/30 px-3 py-1 text-xs font-bold text-red-400 transition-colors hover:bg-red-500/30 disabled:opacity-40"
+                            >
+                              {deletingId === reg.id ? 'Deleting...' : 'Confirm'}
+                            </button>
+                            <button
+                              onClick={() => setDeleteConfirm(null)}
+                              className="rounded-lg border border-white/10 px-3 py-1 text-xs font-bold text-sand/60 transition-colors hover:text-sand"
+                            >
+                              Cancel
+                            </button>
+                          </div>
+                        ) : (
+                          <button
+                            onClick={() => setDeleteConfirm(reg.id)}
+                            className="rounded-lg border border-white/10 px-3 py-1 text-xs font-bold text-sand/60 transition-colors hover:border-red-500/30 hover:text-red-400"
+                          >
+                            Delete
+                          </button>
+                        )}
                       </td>
                     </tr>
                   ))

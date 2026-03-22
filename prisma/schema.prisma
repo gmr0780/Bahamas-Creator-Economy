@@ -28,6 +28,17 @@ model Setting {
   value String
 }
 
+model PageView {
+  id        String   @id @default(cuid())
+  path      String
+  referrer  String   @default("")
+  userAgent String   @default("")
+  createdAt DateTime @default(now())
+
+  @@index([path])
+  @@index([createdAt])
+}
+
 model Guide {
   id          String   @id @default(cuid())
   slug        String   @unique
