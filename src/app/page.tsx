@@ -133,6 +133,7 @@ const speakers = [
   {
     name: "Greg Michelier",
     initials: "GM",
+    image: "/speakers/greg-michelier.jpg",
     role: "Closing Remarks",
     tagline: "Ambassador-at-Large, Technology & AI",
     featured: false,
@@ -140,6 +141,7 @@ const speakers = [
   {
     name: "Latrae Rahming",
     initials: "LR",
+    image: "/speakers/latrae-rahming.jpeg",
     role: "Host & MC",
     tagline: "Director of Communications, OPM",
     featured: false,

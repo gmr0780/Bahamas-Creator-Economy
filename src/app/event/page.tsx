@@ -46,6 +46,7 @@ const speakers = [
   {
     name: "Greg Michelier",
     initials: "GM",
+    image: "/speakers/greg-michelier.jpg",
     role: "Closing Remarks",
     description: "Ambassador-at-Large, Technology & AI",
     gradient: "from-aqua to-teal-300",
@@ -54,6 +55,7 @@ const speakers = [
   {
     name: "Latrae Rahming",
     initials: "LR",
+    image: "/speakers/latrae-rahming.jpeg",
     role: "Host & MC",
     description: "Director of Communications, OPM",
     gradient: "from-coral to-pink-300",
