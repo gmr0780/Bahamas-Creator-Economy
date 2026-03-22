@@ -18,6 +18,18 @@ export const metadata: Metadata = {
   },
   description:
     "Empowering Bahamian creators to build, monetize, and thrive on global digital platforms. A program of the Office of the Prime Minister, Commonwealth of The Bahamas.",
+  metadataBase: new URL("https://242creators.com"),
+  openGraph: {
+    title: "Bahamas Creator Economy Initiative",
+    description: "Empowering Bahamian digital creators to earn globally. A program of the Office of the Prime Minister.",
+    siteName: "242Creators.com",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Bahamas Creator Economy Initiative",
+    description: "Empowering Bahamian digital creators to earn globally. March 29, 2026.",
+  },
   keywords: [
     "Bahamas",
     "creator economy",
