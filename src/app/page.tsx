@@ -1,6 +1,7 @@
 import Countdown from "./components/Countdown";
 import BahamianFlag from "./components/BahamianFlag";
 import SpotsCounter from "./components/SpotsCounter";
+import HeroAnimation from "./components/HeroAnimation";
 
 /* ──────────────────────────────────────────
    Icon components (simple geometric SVGs)
@@ -153,6 +154,9 @@ export default function Home() {
     <>
       {/* ── HERO ─────────────────────────────────── */}
       <section className="hero-mesh relative min-h-[100dvh] flex items-center justify-center px-4 py-28 sm:py-32">
+        {/* Animated hero background */}
+        <HeroAnimation />
+
         {/* Decorative blurs */}
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
           <div className="absolute -top-32 -left-32 h-96 w-96 rounded-full bg-aqua/15 blur-3xl animate-float" />

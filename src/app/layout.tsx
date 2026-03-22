@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import Navigation from "./components/Navigation";
+import UrgencyBanner from "./components/UrgencyBanner";
 import BahamianFlag from "./components/BahamianFlag";
 import "./globals.css";
 
@@ -34,6 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${spaceGrotesk.variable} antialiased`}>
       <body className="min-h-screen flex flex-col bg-white text-navy overflow-x-hidden">
+        <UrgencyBanner />
         <Navigation />
 
         <main className="flex-1">{children}</main>
