@@ -120,6 +120,7 @@ const speakers = [
     name: "Prime Minister Mia Mottley",
     initials: "MM",
     image: "/speakers/mia-mottley.webp",
+    imageZoom: true,
     role: "Guest Speaker",
     tagline: "Barbados",
     featured: false,
@@ -127,6 +128,7 @@ const speakers = [
   {
     name: "Deputy PM Chester Cooper",
     initials: "CC",
+    image: "/speakers/chester-cooper.webp",
     role: "Panelist",
     tagline: "Minister of Tourism",
     featured: false,
@@ -410,7 +412,7 @@ export default function Home() {
                         <img
                           src={s.image}
                           alt={s.name}
-                          className="h-full w-full object-cover object-top"
+                          className={`h-full w-full object-cover object-top ${s.imageZoom ? "scale-150" : ""}`}
                         />
                       ) : (
                         <span

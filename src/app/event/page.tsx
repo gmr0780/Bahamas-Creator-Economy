@@ -31,6 +31,7 @@ const speakers = [
     name: "Prime Minister Mia Mottley",
     initials: "MM",
     image: "/speakers/mia-mottley.webp",
+    imageZoom: true,
     role: "Guest Speaker",
     description: "Barbados: What Does This Step Mean for the Region?",
     gradient: "from-coral to-orange-300",
@@ -39,6 +40,7 @@ const speakers = [
   {
     name: "Deputy PM Chester Cooper",
     initials: "CC",
+    image: "/speakers/chester-cooper.webp",
     role: "Panelist",
     description: "Minister of Tourism: Building Domestic Brand Power",
     gradient: "from-purple-500 to-pink-400",
@@ -216,7 +218,7 @@ export default function EventPage() {
                   <img
                     src={speaker.image}
                     alt={speaker.name}
-                    className="h-full w-full object-cover object-top"
+                    className={`h-full w-full object-cover object-top ${speaker.imageZoom ? "scale-150" : ""}`}
                   />
                 ) : (
                   <span className="text-2xl font-extrabold text-white/90">
