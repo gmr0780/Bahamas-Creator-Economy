@@ -45,17 +45,15 @@ export default async function LearnPage() {
               <Link
                 key={guide.id}
                 href={`/learn/${guide.slug}`}
-                className="glass-dark group rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-aqua/10 hover:border-aqua/30 flex items-start gap-4"
+                className="glass-dark group rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-aqua/10 hover:border-aqua/30"
               >
-                <div className="text-3xl shrink-0 mt-0.5">{guide.icon}</div>
-                <div>
-                  <h3 className="mb-1 text-lg font-bold text-sand group-hover:text-aqua transition-colors">
-                    {guide.title}
-                  </h3>
-                  <p className="text-sm text-sand leading-relaxed">
-                    {guide.subtitle}
-                  </p>
-                </div>
+                <div className="mb-2 text-3xl">{guide.icon}</div>
+                <h3 className="mb-1 text-lg font-bold text-sand group-hover:text-aqua transition-colors">
+                  {guide.title}
+                </h3>
+                <p className="text-sm text-sand leading-relaxed">
+                  {guide.subtitle}
+                </p>
               </Link>
             ))}
           </div>
