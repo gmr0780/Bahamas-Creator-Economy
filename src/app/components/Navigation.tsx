@@ -44,8 +44,8 @@ export default function Navigation() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-        scrolled
+      className={`${mobileOpen ? "fixed" : "sticky"} top-0 z-50 w-full transition-all duration-300 ${
+        scrolled || mobileOpen
           ? "bg-white/80 backdrop-blur-xl shadow-sm border-b border-navy/5"
           : "bg-transparent"
       }`}
