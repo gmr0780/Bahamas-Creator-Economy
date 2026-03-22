@@ -20,6 +20,7 @@ const agendaItems = [
 const speakers = [
   {
     name: "Hon. Philip Edward Davis, KC, MP",
+    initials: "PD",
     role: "Keynote Speaker",
     description: "Prime Minister of The Bahamas",
     gradient: "from-aqua to-cyan-300",
@@ -27,6 +28,7 @@ const speakers = [
   },
   {
     name: "Prime Minister Mia Mottley",
+    initials: "MM",
     role: "Guest Speaker",
     description: "Barbados: What Does This Step Mean for the Region?",
     gradient: "from-coral to-orange-300",
@@ -34,6 +36,7 @@ const speakers = [
   },
   {
     name: "Deputy PM Chester Cooper",
+    initials: "CC",
     role: "Panelist",
     description: "Minister of Tourism: Building Domestic Brand Power",
     gradient: "from-purple-500 to-pink-400",
@@ -41,6 +44,7 @@ const speakers = [
   },
   {
     name: "Greg Michelier",
+    initials: "GM",
     role: "Closing Remarks",
     description: "Ambassador-at-Large, Technology & AI",
     gradient: "from-aqua to-teal-300",
@@ -48,6 +52,7 @@ const speakers = [
   },
   {
     name: "Latrae Rahming",
+    initials: "LR",
     role: "Host & MC",
     description: "Director of Communications, OPM",
     gradient: "from-coral to-pink-300",
@@ -55,6 +60,7 @@ const speakers = [
   },
   {
     name: "Speaker I",
+    initials: "TBA",
     role: "To Be Announced",
     description: "Details coming soon",
     gradient: "from-amber-400 to-orange-300",
@@ -203,7 +209,7 @@ export default function EventPage() {
                 } shadow-lg`}
               >
                 <span className="text-2xl font-extrabold text-white/90">
-                  {speaker.name.split(" ").map((w) => w[0]).join("")}
+                  {speaker.initials}
                 </span>
               </div>
               <h3
