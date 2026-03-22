@@ -85,7 +85,6 @@ export default function RootLayout({
               <a href="/disclaimer" className="hover:text-aqua transition-colors">Disclaimer</a>
               <a href="/privacy" className="hover:text-aqua transition-colors">Privacy Policy</a>
               <a href="/terms" className="hover:text-aqua transition-colors">Terms of Use</a>
-              <span>Contact: <a href="mailto:info@242creators.com" className="text-aqua hover:underline">info@242creators.com</a></span>
             </div>
 
             <div className="mt-4 text-center">
