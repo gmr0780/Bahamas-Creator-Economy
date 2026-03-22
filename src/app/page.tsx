@@ -109,7 +109,7 @@ const pillars = [
 
 const speakers = [
   {
-    name: "The Rt. Hon. Philip Edward Davis, KC, MP",
+    name: "Hon. Philip Edward Davis, KC, MP",
     initials: "PD",
     role: "Keynote Speaker",
     tagline: "Prime Minister of The Bahamas",

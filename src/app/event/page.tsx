@@ -8,7 +8,7 @@ const agendaItems = [
   { time: "4:30 PM", tag: "GUEST", tagColor: "bg-aqua", title: "Guest Speaker: Prime Minister Mia Mottley, Barbados", subtitle: "What Does This Step Mean for the Region?" },
   { time: "4:50 PM", tag: "MUSIC", tagColor: "bg-coral", title: "Musical Selection", subtitle: "\"Redemption Song\" performed by CAPAS" },
   { time: "5:00 PM", tag: "INTRO", tagColor: "bg-aqua", title: "Introduction of the Prime Minister", subtitle: "Latrae Rahming, Director of Communications, OPM" },
-  { time: "5:05 PM", tag: "KEYNOTE", tagColor: "bg-gradient-to-r from-aqua to-coral", title: "Keynote Address", subtitle: "The Rt. Hon. Philip Edward Davis, KC, MP: Prime Minister of The Bahamas" },
+  { time: "5:05 PM", tag: "KEYNOTE", tagColor: "bg-gradient-to-r from-aqua to-coral", title: "Keynote Address", subtitle: "Hon. Philip Edward Davis, KC, MP: Prime Minister of The Bahamas" },
   { time: "5:25 PM", tag: "PANEL", tagColor: "bg-coral", title: "Panel I: Leveraging the Creative Space & Using AI", subtitle: "Presented by Burson. How creators build sustainable income. Followed by Q&A." },
   { time: "5:50 PM", tag: "PANEL", tagColor: "bg-coral", title: "Panel II: How to Monetize: Platform Strategies", subtitle: "TikTok | X | Meta | YouTube | Google" },
   { time: "6:15 PM", tag: "PANEL", tagColor: "bg-coral", title: "Panel III: Building Domestic Brand Power", subtitle: "Deputy PM Chester Cooper, Minister of Tourism | Inga Bowleg, John Bull" },
@@ -19,7 +19,7 @@ const agendaItems = [
 
 const speakers = [
   {
-    name: "The Rt. Hon. Philip Edward Davis, KC, MP",
+    name: "Hon. Philip Edward Davis, KC, MP",
     role: "Keynote Speaker",
     description: "Prime Minister of The Bahamas",
     gradient: "from-aqua to-cyan-300",
