@@ -75,8 +75,9 @@ export default function EarnPage() {
   return (
     <div className="min-h-screen bg-navy">
       {/* Hero */}
-      <section className="hero-mesh px-6 pb-16 pt-24 text-center">
-        <div className="mx-auto max-w-4xl">
+      <section className="hero-mesh relative px-6 pb-24 pt-24 text-center">
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-navy" />
+        <div className="relative z-10 mx-auto max-w-4xl">
           <p className="mb-3 text-xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-[0.15em] sm:tracking-[0.2em] text-aqua">
             Bahamas Creator Economy
           </p>
