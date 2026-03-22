@@ -22,16 +22,14 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close mobile menu on resize to desktop
   useEffect(() => {
     const onResize = () => {
-      if (window.innerWidth >= 768) setMobileOpen(false);
+      if (window.innerWidth >= 1024) setMobileOpen(false);
     };
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
-  // Prevent body scroll when mobile menu is open
   useEffect(() => {
     if (mobileOpen) {
       document.body.style.overflow = "hidden";
@@ -51,46 +49,46 @@ export default function Navigation() {
           : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 sm:py-5 lg:px-8">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 sm:py-4 lg:px-8">
         {/* Logo / Brand */}
-        <Link href="/" className="flex items-center gap-2.5 group min-w-0 mr-2">
-          <BahamianFlag width={36} className="shrink-0 rounded-sm shadow-sm" />
-          <span className="text-base sm:text-2xl md:text-3xl font-extrabold tracking-tight text-navy truncate">
+        <Link href="/" className="flex items-center gap-2 group shrink-0">
+          <BahamianFlag width={32} className="shrink-0 rounded-sm shadow-sm" />
+          <span className="text-base sm:text-xl lg:text-2xl font-extrabold tracking-tight text-navy">
             Bahamas{" "}
             <span className="gradient-aqua-coral-text">Creator Economy</span>
           </span>
         </Link>
 
-        {/* Desktop nav links */}
-        <div className="hidden md:flex items-center gap-8">
+        {/* Desktop nav links — show at lg (1024px+) */}
+        <div className="hidden lg:flex items-center gap-6">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-lg md:text-xl font-bold text-navy transition-colors hover:text-aqua py-2 px-1"
+              className="text-base lg:text-lg font-bold text-navy transition-colors hover:text-aqua py-2 px-1"
             >
               {link.label}
             </Link>
           ))}
           <Link
             href="/register"
-            className="cta-gradient rounded-full px-7 py-3 text-base font-bold text-white shadow-lg shadow-aqua/20 transition-all"
+            className="cta-gradient rounded-full px-6 py-2.5 text-base font-bold text-white shadow-lg shadow-aqua/20 transition-all"
           >
             Register
           </Link>
         </div>
 
-        {/* Mobile hamburger */}
+        {/* Mobile/tablet hamburger — show below lg */}
         <button
           type="button"
-          className="md:hidden relative z-[60] flex h-11 w-11 items-center justify-center rounded-lg text-navy"
+          className="lg:hidden relative z-[60] flex h-11 w-11 items-center justify-center rounded-lg"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
         >
           <div className="flex flex-col gap-1.5">
             <span
-              className={`block h-0.5 w-6 bg-navy transition-all duration-300 ${
-                mobileOpen ? "translate-y-2 rotate-45" : ""
+              className={`block h-0.5 w-6 transition-all duration-300 ${
+                mobileOpen ? "translate-y-2 rotate-45 bg-navy" : "bg-navy"
               }`}
             />
             <span
@@ -99,8 +97,8 @@ export default function Navigation() {
               }`}
             />
             <span
-              className={`block h-0.5 w-6 bg-navy transition-all duration-300 ${
-                mobileOpen ? "-translate-y-2 -rotate-45" : ""
+              className={`block h-0.5 w-6 transition-all duration-300 ${
+                mobileOpen ? "-translate-y-2 -rotate-45 bg-navy" : "bg-navy"
               }`}
             />
           </div>
@@ -108,29 +106,33 @@ export default function Navigation() {
       </nav>
 
       {/* Mobile menu overlay */}
-      {mobileOpen && (
-        <div className="md:hidden fixed inset-0 top-0 z-40 bg-white/95 backdrop-blur-xl">
-          <div className="flex flex-col items-center justify-center h-full gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-2xl font-semibold text-navy transition-colors hover:text-aqua py-2 px-4"
-                onClick={() => setMobileOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
+      <div
+        className={`lg:hidden fixed inset-0 z-[55] bg-white backdrop-blur-xl transition-all duration-300 ${
+          mobileOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
+        }`}
+      >
+        <div className="flex flex-col items-center justify-center h-full gap-6">
+          {navLinks.map((link) => (
             <Link
-              href="/register"
-              className="cta-gradient rounded-full px-10 py-3.5 text-lg font-semibold text-white shadow-lg"
+              key={link.href}
+              href={link.href}
+              className="text-2xl font-bold text-navy transition-colors hover:text-aqua py-2 px-4"
               onClick={() => setMobileOpen(false)}
             >
-              Register
+              {link.label}
             </Link>
-          </div>
+          ))}
+          <Link
+            href="/register"
+            className="cta-gradient rounded-full px-10 py-4 text-lg font-bold text-white shadow-lg mt-4"
+            onClick={() => setMobileOpen(false)}
+          >
+            Register
+          </Link>
         </div>
-      )}
+      </div>
     </header>
   );
 }
