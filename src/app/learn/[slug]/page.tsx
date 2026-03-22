@@ -159,34 +159,63 @@ export default async function GuidePage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* Content */}
-      <section className="mx-auto max-w-3xl px-6 pb-12">
-        {/* Back link */}
-        <Link
-          href="/learn"
-          className="mb-10 inline-flex items-center gap-2 text-sm font-semibold text-aqua hover:text-coral transition-colors"
-        >
-          <span>&larr;</span> Back to Learn
-        </Link>
+      {/* Guide Navigation Sidebar + Content */}
+      <section className="mx-auto max-w-6xl px-6 pb-12">
+        <div className="flex flex-col lg:flex-row gap-8">
+          {/* Sidebar — all guides list */}
+          <aside className="lg:w-72 shrink-0">
+            <div className="lg:sticky lg:top-24">
+              <Link
+                href="/learn"
+                className="mb-4 inline-flex items-center gap-2 text-base font-bold text-aqua hover:text-coral transition-colors"
+              >
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+                All Guides
+              </Link>
+              <nav className="space-y-1">
+                {allGuides.map((g) => (
+                  <Link
+                    key={g.slug}
+                    href={`/learn/${g.slug}`}
+                    className={`block rounded-xl px-4 py-3 text-sm font-semibold transition-all ${
+                      g.slug === slug
+                        ? "bg-aqua/20 text-aqua border border-aqua/30"
+                        : "text-sand hover:bg-white/5 hover:text-aqua"
+                    }`}
+                  >
+                    {g.title}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+          </aside>
 
-        {/* Rendered content */}
-        <article className="prose-custom">
-          {renderContent(guide.content)}
-        </article>
+          {/* Main content */}
+          <div className="flex-1 min-w-0">
+            <article className="prose-custom max-w-3xl">
+              {renderContent(guide.content)}
+            </article>
+          </div>
+        </div>
       </section>
 
       {/* Prev / Next navigation */}
-      <section className="mx-auto max-w-3xl px-6 pb-20">
-        <div className="flex items-stretch gap-4 border-t border-white/10 pt-10">
+      <section className="mx-auto max-w-6xl px-6 pb-20">
+        <div className="flex flex-col sm:flex-row items-stretch gap-4 border-t border-white/10 pt-10 lg:pl-80">
           {prevGuide ? (
             <Link
               href={`/learn/${prevGuide.slug}`}
-              className="glass-dark flex-1 rounded-xl p-5 transition-all hover:-translate-y-0.5 hover:border-aqua/30"
+              className="glass-dark flex-1 rounded-xl p-5 transition-all hover:-translate-y-0.5 hover:border-aqua/30 group"
             >
-              <p className="text-xs font-semibold uppercase tracking-widest text-sand/50 mb-1">
-                Previous
+              <p className="text-xs font-bold uppercase tracking-widest text-aqua mb-2 flex items-center gap-1">
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+                Previous Guide
               </p>
-              <p className="font-bold text-sand">{prevGuide.title}</p>
+              <p className="font-bold text-sand group-hover:text-aqua transition-colors">{prevGuide.title}</p>
             </Link>
           ) : (
             <div className="flex-1" />
@@ -194,12 +223,15 @@ export default async function GuidePage({ params }: PageProps) {
           {nextGuide ? (
             <Link
               href={`/learn/${nextGuide.slug}`}
-              className="glass-dark flex-1 rounded-xl p-5 text-right transition-all hover:-translate-y-0.5 hover:border-aqua/30"
+              className="glass-dark flex-1 rounded-xl p-5 text-right transition-all hover:-translate-y-0.5 hover:border-aqua/30 group"
             >
-              <p className="text-xs font-semibold uppercase tracking-widest text-sand/50 mb-1">
-                Next
+              <p className="text-xs font-bold uppercase tracking-widest text-aqua mb-2 flex items-center justify-end gap-1">
+                Next Guide
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
               </p>
-              <p className="font-bold text-sand">{nextGuide.title}</p>
+              <p className="font-bold text-sand group-hover:text-aqua transition-colors">{nextGuide.title}</p>
             </Link>
           ) : (
             <div className="flex-1" />
