@@ -136,16 +136,17 @@ export default function PlatformsPage() {
   return (
     <div className="min-h-screen bg-navy">
       {/* Hero header */}
-      <section className="bg-navy px-6 pb-16 pt-24 text-center">
-        <div className="mx-auto max-w-4xl">
+      <section className="hero-mesh relative px-6 pb-32 pt-24 text-center">
+        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-b from-transparent via-navy/50 to-navy" />
+        <div className="relative z-10 mx-auto max-w-4xl">
           <p className="mb-3 text-xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-[0.15em] sm:tracking-[0.2em] text-aqua">
             Bahamas Creator Economy
           </p>
-          <h1 className="mx-auto max-w-2xl text-3xl font-extrabold leading-tight text-white sm:text-4xl md:text-5xl">
+          <h1 className="mx-auto max-w-2xl text-3xl font-extrabold leading-tight text-navy sm:text-4xl md:text-5xl">
             Platform{" "}
             <span className="gradient-text">Eligibility</span>
           </h1>
-          <p className="mx-auto mt-4 max-w-xl text-lg text-sand">
+          <p className="mx-auto mt-4 max-w-xl text-lg text-navy">
             Where Bahamian creators can earn direct platform revenue today
           </p>
         </div>
