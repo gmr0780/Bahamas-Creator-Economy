@@ -108,8 +108,9 @@ export default function RootLayout({
                 &copy; {new Date().getFullYear()} 242Creators.com. Bahamas Creator Economy
                 Initiative. All rights reserved.
               </p>
-              <p className="text-xs font-semibold text-aqua">
-                Proudly Built in The Bahamas 🇧🇸
+              <p className="text-xs font-semibold text-aqua flex items-center justify-center gap-2">
+                <BahamianFlag width={20} className="rounded-sm" />
+                Proudly Bahamian Built
               </p>
             </div>
           </div>
