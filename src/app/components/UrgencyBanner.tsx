@@ -67,7 +67,7 @@ export default function UrgencyBanner() {
           <button
             onClick={handleDismiss}
             aria-label="Dismiss banner"
-            className="flex h-6 w-6 items-center justify-center rounded-full text-white/80 transition-colors hover:bg-white/20 hover:text-white"
+            className="flex h-11 w-11 items-center justify-center rounded-full text-white/80 transition-colors hover:bg-white/20 hover:text-white -mr-2"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

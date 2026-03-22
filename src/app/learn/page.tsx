@@ -42,7 +42,7 @@ export default async function LearnPage() {
             Guides coming soon. Check back shortly!
           </p>
         ) : (
-          <div className="space-y-16">
+          <div className="space-y-10 sm:space-y-16">
             {/* START Phase — Orders 1-3 */}
             {(() => {
               const startGuides = guides.filter(
@@ -158,7 +158,7 @@ export default async function LearnPage() {
       </section>
 
       {/* CTA */}
-      <section className="border-t border-white/10 px-6 py-20 text-center">
+      <section className="border-t border-white/10 px-6 py-12 sm:py-20 text-center">
         <div className="mx-auto max-w-3xl">
           <h2 className="mb-4 text-2xl font-bold text-sand sm:text-3xl">
             Ready to start your creator journey?

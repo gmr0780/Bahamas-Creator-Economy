@@ -164,7 +164,7 @@ export default async function GuidePage({ params }: PageProps) {
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Sidebar — all guides list */}
           <aside className="lg:w-72 shrink-0">
-            <div className="lg:sticky lg:top-24">
+            <div className="max-h-64 overflow-y-auto lg:max-h-none lg:overflow-visible lg:sticky lg:top-24">
               <Link
                 href="/learn"
                 className="mb-4 inline-flex items-center gap-2 text-base font-bold text-aqua hover:text-coral transition-colors"
@@ -240,7 +240,7 @@ export default async function GuidePage({ params }: PageProps) {
       </section>
 
       {/* CTA */}
-      <section className="border-t border-white/10 px-6 py-20 text-center">
+      <section className="border-t border-white/10 px-6 py-12 sm:py-20 text-center">
         <div className="mx-auto max-w-3xl">
           <h2 className="mb-4 text-2xl font-bold text-sand sm:text-3xl">
             Ready to put this into practice?

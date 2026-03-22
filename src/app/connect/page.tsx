@@ -113,7 +113,7 @@ export default function ConnectPage() {
           {platforms.map((platform) => (
             <div
               key={platform.name}
-              className="glass-dark rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-aqua/10 hover:border-aqua/30 flex flex-col"
+              className="glass-dark rounded-2xl p-5 sm:p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-aqua/10 hover:border-aqua/30 flex flex-col"
             >
               {/* Logo placeholder */}
               <div
@@ -153,7 +153,7 @@ export default function ConnectPage() {
       </section>
 
       {/* CTA */}
-      <section className="border-t border-white/10 px-6 py-20 text-center">
+      <section className="border-t border-white/10 px-6 py-12 sm:py-20 text-center">
         <div className="mx-auto max-w-3xl">
           <h2 className="mb-4 text-2xl font-bold text-sand sm:text-3xl">
             Ready to connect with brands?
