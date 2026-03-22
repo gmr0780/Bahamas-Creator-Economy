@@ -59,6 +59,7 @@ const speakers = [
     name: "Latrae Rahming",
     initials: "LR",
     image: "/speakers/latrae-rahming.jpeg",
+    imageClass: "scale-125 -translate-y-[8%]",
     role: "Host & MC",
     description: "Director of Communications, OPM",
     gradient: "from-coral to-pink-300",
@@ -218,7 +219,7 @@ export default function EventPage() {
                   <img
                     src={speaker.image}
                     alt={speaker.name}
-                    className={`h-full w-full object-cover ${speaker.imageZoom ? "scale-[1.6] translate-y-[40%]" : "object-top"}`}
+                    className={`h-full w-full object-cover ${speaker.imageClass ? speaker.imageClass : speaker.imageZoom ? "scale-[1.6] translate-y-[40%]" : "object-top"}`}
                   />
                 ) : (
                   <span className="text-2xl font-extrabold text-white/90">

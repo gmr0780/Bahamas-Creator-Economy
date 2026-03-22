@@ -145,6 +145,7 @@ const speakers = [
     name: "Latrae Rahming",
     initials: "LR",
     image: "/speakers/latrae-rahming.jpeg",
+    imageClass: "scale-125 -translate-y-[8%]",
     role: "Host & MC",
     tagline: "Director of Communications, OPM",
     featured: false,
@@ -412,7 +413,7 @@ export default function Home() {
                         <img
                           src={s.image}
                           alt={s.name}
-                          className={`h-full w-full object-cover ${s.imageZoom ? "scale-[1.6] translate-y-[40%]" : "object-top"}`}
+                          className={`h-full w-full object-cover ${s.imageClass ? s.imageClass : s.imageZoom ? "scale-[1.6] translate-y-[40%]" : "object-top"}`}
                         />
                       ) : (
                         <span
