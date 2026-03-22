@@ -541,6 +541,322 @@ As your creator income grows, staying organized financially becomes essential.
 
 The tools you use should serve your creative goals, not complicate them. Start with free options, master them, and upgrade only when a paid tool will genuinely save you time or improve your results. The best content comes from your ideas and effort — tools just help you execute more efficiently.`,
   },
+  {
+    slug: "media-kit",
+    title: "Building Your Media Kit",
+    subtitle: "Present your value to brands like a pro",
+    icon: "\u{1F4CA}",
+    order: 7,
+    published: true,
+    content: `## What Is a Media Kit and Why You Need One
+
+A media kit is your professional resume as a digital creator. It is a concise, visually appealing document that tells brands exactly who you are, who your audience is, and why partnering with you is a smart investment. Think of it as your highlight reel — the document that opens doors to paid partnerships.
+
+Every creator who wants to work with brands needs a media kit. Even if you have never landed a paid deal, having a polished media kit signals that you are serious and professional. Brands receive dozens of pitches every week, and a strong media kit immediately sets you apart from creators who send a casual DM with no supporting information.
+
+Whether you have 1,000 followers or 100,000, a media kit gives you credibility. It shows brands you understand the business side of content creation and makes their decision to work with you easier.
+
+## Key Sections Every Media Kit Needs
+
+### Your Bio and Brand Story
+
+Start with a short, compelling bio. Two to three sentences that communicate who you are, what you create, and what makes you unique. This is not your life story — it is your elevator pitch. Include your name or brand name, your primary platforms, and your content focus.
+
+### Audience Demographics
+
+Brands do not just care about how many followers you have — they care about who those followers are. Include key demographic data pulled directly from your platform analytics.
+
+- **Age breakdown.** What percentage of your audience falls into key brackets like 18-24, 25-34, and 35-44?
+- **Gender split.** Useful for brands targeting specific demographics.
+- **Top locations.** Where are your followers based? Country and city-level data matters for brands with geographic targeting.
+- **Interests and behaviors.** What else does your audience engage with? This helps brands see alignment.
+
+### Engagement Rates
+
+Your engagement rate is often more important to brands than your follower count. Calculate it by dividing your average likes plus comments by your follower count, then multiply by 100. Include average engagement rates for each platform you are active on.
+
+- **Present real numbers.** Use averages from your last 10 to 20 posts, not cherry-picked outliers.
+- **Include average views.** For video content, average view count per post or video is critical.
+- **Show trends.** If your engagement or following is growing, highlight the growth rate.
+
+### Past Collaborations and Content Samples
+
+If you have worked with brands before, showcase those partnerships. Include the brand name, what you created, and if possible, the results — views, engagement, clicks, or sales generated. Even two or three examples add significant credibility.
+
+If you have not done paid work yet, include examples of your best organic content. Screenshots of high-performing posts, links to your top videos, or a curated selection that represents your style and quality.
+
+### Rate Card
+
+Your rate card tells brands what your services cost. This saves time for both parties and positions you as a professional who knows their worth.
+
+## How to Present Your Numbers Authentically
+
+Authenticity is everything. Brands and their agencies have tools that detect inflated metrics, and getting caught misrepresenting your numbers will destroy your reputation permanently.
+
+- **Use real, current data.** Pull numbers directly from your platform analytics, not third-party estimation tools.
+- **Do not buy followers or engagement.** Purchased followers tank your engagement rate and are easily detectable. Brands check.
+- **Acknowledge your size honestly.** If you are a micro-creator, own it. Micro-creators often deliver better ROI than large accounts because of their tight-knit communities.
+- **Highlight what is genuinely impressive.** Maybe your follower count is modest, but your save rate is exceptional. Or your audience is highly concentrated in a valuable demographic. Lead with your real strengths.
+
+## Setting Your Rate Card
+
+Pricing your services is one of the trickiest parts of being a creator, but having a clear rate card in your media kit removes awkwardness from negotiations.
+
+- **CPM-based pricing** means charging a set amount per 1,000 views you expect to deliver. Industry benchmarks range from twenty to fifty dollars CPM, depending on niche and platform. If your average video gets 10,000 views and you charge thirty dollars CPM, that is three hundred dollars per video.
+- **Flat rate pricing** is simpler — a set fee per deliverable. One TikTok might be one rate, an Instagram carousel another, a YouTube integration another.
+- **Package deals** bundle multiple deliverables together at a slight discount. For example, one YouTube video plus three Instagram Stories plus one TikTok as a package. Brands love packages because they get multi-platform coverage.
+- **Always leave room for negotiation.** Set your rates slightly above your minimum so you have space to negotiate without going below your floor.
+
+## Free Tools to Create Your Media Kit
+
+You do not need to hire a designer or buy expensive software to create a professional media kit.
+
+- **Canva** is the most popular choice. Search for "media kit template" in Canva and you will find dozens of free, professional templates. Customize with your brand colors, fonts, and images. Export as a PDF.
+- **Google Slides** works well if you prefer more control over layout. Create a two to three slide presentation with your information and export as PDF.
+- **Figma** offers free accounts and provides more design flexibility if you are comfortable with design tools.
+
+Keep your media kit to one to three pages. Brands are busy — they need to scan your key information quickly. Update the design to match your brand aesthetic so the document feels cohesive with your content.
+
+## Common Mistakes to Avoid
+
+- **Inflating your numbers.** This will backfire. Brands verify metrics, and dishonesty ends relationships before they start.
+- **No clear pricing.** If a brand has to ask what you charge, you have already created friction. Include at least a starting range.
+- **Missing contact information.** Always include your email, primary social handles, and any booking links. Make it effortless for brands to reach you.
+- **Outdated information.** A media kit with last year's numbers signals that you are not actively pursuing partnerships.
+- **Too long or too cluttered.** Keep it focused and scannable. If a brand cannot find your key metrics in ten seconds, simplify your layout.
+- **No visual examples.** Brands want to see your content style. Include screenshots or thumbnails of your best work.
+
+## When to Update Your Media Kit
+
+Your media kit is a living document. Update it regularly to reflect your current performance and partnerships.
+
+- **Monthly metric updates.** Refresh your follower counts, engagement rates, and average views at least once per month.
+- **After every brand collaboration.** Add new partnerships and results to your portfolio section.
+- **When your niche or content style evolves.** If you pivot or expand your content focus, your media kit should reflect that.
+- **Quarterly full refresh.** Every three months, review the entire document and ensure everything is current, accurate, and well-presented.
+
+## Your Unique Value as a Bahamian Creator
+
+As a Bahamian creator, your media kit should highlight what makes you uniquely valuable to brands.
+
+- **Caribbean culture and lifestyle.** You offer an authentic window into island life, Junkanoo, Bahamian cuisine, and Caribbean culture that brands targeting the region — or wanting tropical, aspirational content — cannot get elsewhere.
+- **Tourism tie-ins.** The Bahamas is a global tourism destination. Travel brands, resorts, airlines, and tourism boards are natural partners for Bahamian creators.
+- **Bilingual and multicultural audiences.** If your audience spans multiple languages or cultures, that is a selling point for brands with international reach.
+- **Authenticity that resonates.** Your perspective as a Bahamian is genuinely unique in the creator space. Lean into that distinctiveness — it is your competitive advantage.`,
+  },
+  {
+    slug: "how-brands-find-you",
+    title: "How Brands Find You",
+    subtitle: "Get discovered by the brands you want to work with",
+    icon: "\u{1F50D}",
+    order: 8,
+    published: true,
+    content: `## Getting on the Radar of Brands
+
+Landing brand deals is not just about reaching out to companies — it is also about making yourself easy to find. Brands and their marketing agencies are actively searching for creators every single day, using specialized platforms, social media searches, and talent networks. The creators who get discovered are the ones who have positioned themselves to be found.
+
+This guide covers exactly how brands find creators, the platforms they use to search, and what you can do to make sure you show up when they are looking.
+
+## Creator Marketplaces and Influencer Platforms
+
+The most systematic way brands find creators is through dedicated influencer marketing platforms. These are databases and marketplaces where brands search for creators based on niche, audience demographics, engagement rates, location, and content style.
+
+- **Agentio** is an AI-native platform connecting creators with premium brands across Instagram and YouTube. It uses artificial intelligence to match creators with relevant campaigns and handles much of the negotiation process. If you have an established audience, Agentio can surface you to brands you might never have reached on your own.
+- **AspireIQ** is a community-driven platform that focuses on building long-term relationships between creators and brands. It is particularly popular with lifestyle, beauty, and fashion companies looking for authentic partnerships rather than one-off posts.
+- **CreatorIQ** is an enterprise-level platform used by Fortune 500 companies and major agencies. If you have a larger audience — typically 50,000 followers or more — having a presence here can connect you with blue-chip brands.
+- **Grin** focuses on e-commerce brands, particularly those running Shopify stores. If you create content around product reviews, unboxing, or lifestyle content that naturally features products, Grin is a strong platform to be on.
+- **Klear** stands out for its analytics capabilities. Brands using Klear are data-driven and value creators who can demonstrate strong performance metrics. If your engagement rates and audience demographics are your selling points, Klear helps those numbers speak for themselves.
+
+### Optimizing Your Profile on These Platforms
+
+Simply signing up is not enough. To get discovered, you need to optimize your profiles on these marketplaces.
+
+- **Complete every field.** Fill out your bio, niche categories, audience demographics, content examples, and rate information completely. Incomplete profiles get skipped.
+- **Use relevant keywords.** Include terms that brands search for — your niche, your location, your content type. If you are a Bahamian food creator, make sure "Bahamas," "Caribbean," "food," and "cooking" appear in your profile.
+- **Upload your best content samples.** Curate three to five pieces that showcase your style, production quality, and audience engagement.
+- **Keep your metrics current.** Update your follower counts and engagement rates regularly. Stale data makes brands question whether you are active.
+
+## Direct Discovery Through Social Media
+
+Many brand partnerships start not from marketplaces but from brands finding you organically on social platforms.
+
+- **Hashtags are search terms.** When you use relevant hashtags on your content, you make yourself discoverable to brands searching those terms. A resort brand searching for Bahamian travel content will look through hashtags like BahamasTravel, CaribbeanCreator, and NassauLife.
+- **Trending content gets noticed.** When your content hits the explore page or trends on TikTok, brands take notice. Marketing teams monitor trending content daily looking for potential partners.
+- **Tagged and mentioned content.** When you tag brands in organic content — not as a pitch, but because you genuinely use their products — their marketing teams see it. This is one of the most effective ways to get on a brand's radar naturally.
+- **Platform-native creator programs.** YouTube BrandConnect, TikTok Creator Marketplace, and Instagram's branded content tools all help brands discover creators directly within the platforms.
+
+## Agencies and Talent Managers
+
+As the creator economy matures, agencies and talent managers play an increasingly important role in connecting creators with brands.
+
+- **When you might need a manager.** If you are consistently landing deals and spending more time on business negotiations than content creation, a manager can handle the business side while you focus on creating.
+- **What managers do.** They negotiate deals, find brand partnerships, handle contracts, and help you grow strategically. In exchange, they typically take 10 to 20 percent of your brand deal revenue.
+- **Finding a manager.** Look for managers who specialize in your niche and have a track record of working with creators at your level. Ask other creators for recommendations, attend industry events, and look at who represents creators you admire.
+- **Be cautious of bad deals.** Never sign with a manager who asks for upfront fees, demands exclusivity without delivering results, or locks you into long-term contracts without performance benchmarks.
+
+## Making Yourself Discoverable
+
+Beyond specific platforms, there are fundamental practices that make you easier for brands to find.
+
+- **SEO on your profiles.** Your bio on every platform should clearly state what you do and who you serve. Think of your bio as a search result — would a brand know what you offer from reading it?
+- **Consistent branding across platforms.** Use the same name, profile picture, and visual style everywhere. When a brand finds you on one platform, they should be able to find you on others instantly.
+- **Niche authority.** Brands want to work with creators who are clearly the go-to voice in their space. The more focused and authoritative your content is within your niche, the more attractive you are to relevant brands.
+- **Professional email in your bio.** Include a business email in your profile bio on every platform. Many brand deals start with a simple email from a marketing team that found your profile.
+
+## Engagement Rate vs. Follower Count
+
+One of the most important shifts in the creator economy is the growing emphasis on engagement over raw follower counts.
+
+- **Why micro-creators get deals.** Creators with 1,000 to 50,000 followers often have engagement rates two to five times higher than accounts with millions of followers. Brands have learned that a smaller, highly engaged audience converts better than a massive, passive one.
+- **The math works in your favor.** A creator with 5,000 followers and an 8 percent engagement rate delivers 400 engaged viewers per post. A creator with 100,000 followers and a 1 percent rate delivers 1,000 — only 2.5 times more engagement despite having 20 times the followers. The cost difference is enormous.
+- **Brands are getting smarter.** Marketing teams now use engagement rate as a primary filter when searching for creators. High engagement is your best asset, especially when you are still growing.
+
+## Building a Portfolio Before Your First Paid Deal
+
+You do not need to wait for a brand to pay you before you start building a portfolio of brand-friendly content.
+
+- **Gifted collaborations.** Reach out to brands and offer to create content in exchange for free products. This gives you real brand partnership experience and content samples for your media kit.
+- **Spec work.** Create a piece of content featuring a product you love, exactly as you would for a paid deal. Use this as a sample to show brands your capabilities.
+- **UGC-style content.** Practice creating user-generated content style videos — the type of authentic, testimonial-style content brands frequently commission. Build a reel of examples.
+- **Document everything.** Screenshot your analytics, save performance data, and track the reach and engagement of any brand-adjacent content you create.
+
+## The Bahamian Advantage
+
+As a Bahamian creator, you have built-in appeal for specific brand categories that are actively searching for authentic Caribbean voices.
+
+- **Tourism brands.** Hotels, resorts, airlines, cruise lines, and tourism boards spend massive budgets on influencer marketing. They need local creators who can showcase destinations authentically.
+- **Local businesses.** Bahamian businesses are increasingly investing in social media marketing and prefer working with local creators who understand the market.
+- **Regional Caribbean brands.** Companies operating across the Caribbean look for creators who can speak to island culture and lifestyle.
+- **International brands seeking diversity.** Global brands actively seek diverse creator partnerships, and a Bahamian perspective offers something genuinely different from the majority of creators in North America and Europe.
+
+Position yourself at the intersection of your niche and your Bahamian identity. That combination makes you uniquely discoverable and valuable to brands that no other creator can replicate.`,
+  },
+  {
+    slug: "first-brand-deal",
+    title: "Your First Brand Deal",
+    subtitle: "From pitch to payment — a step-by-step walkthrough",
+    icon: "\u{270D}\u{FE0F}",
+    order: 9,
+    published: true,
+    content: `## Your First Brand Deal Is Closer Than You Think
+
+Landing your first brand deal is one of the most exciting milestones in your creator journey. It is the moment your content stops being just a passion project and starts becoming a business. The truth is, you do not need a massive following or years of experience to get your first paid partnership. You need a clear strategy, a professional approach, and the confidence to put yourself out there.
+
+This guide walks you through the entire process — from finding the right brand to pitch, all the way through to getting paid and building a long-term partnership.
+
+## Identifying Brands That Align With Your Content
+
+The first step is choosing the right brands to approach. The best brand partnerships feel natural to your audience because the product or service genuinely fits your content.
+
+- **Start with products you already use.** Look around your home, check your recent purchases, think about the apps on your phone. These are brands you can promote authentically because you already believe in them.
+- **Consider your audience's needs.** What products or services would genuinely help your followers? A fitness creator's audience needs workout gear and supplements. A travel creator's audience needs luggage and booking platforms.
+- **Research brands that work with creators at your level.** Look at creators in your niche with similar follower counts. What brands are sponsoring them? Those same brands may be open to working with you.
+- **Think local and regional.** Bahamian businesses, Caribbean brands, and tourism-related companies are excellent targets for your first deal. They value local creators and are often more approachable than international corporations.
+- **Check the brand's social media.** If a brand is already reposting user-generated content or running creator campaigns, they are clearly open to partnerships.
+
+## Writing a Pitch That Gets Responses
+
+Your pitch is your first impression. A great pitch is specific, concise, and focuses on the value you bring to the brand — not what you want from them.
+
+### Pitch Email Template
+
+Subject: Content Partnership Idea — [Your Name] x [Brand Name]
+
+Hi [Name or Team],
+
+I am [Your Name], a [your niche] creator based in The Bahamas with [follower count] engaged followers across [platforms]. I have been a genuine fan of [Brand Name] — I [specific detail about how you use their product].
+
+I would love to create a [specific content idea — e.g., "three-part Instagram Reel series showcasing how I use your product in my daily island routine"]. My audience of [brief audience description] aligns perfectly with your target market.
+
+My recent content averages [view count] views with a [engagement rate] percent engagement rate. I have attached my media kit with full details.
+
+Would you be open to a quick chat about a potential collaboration? I would love to share more ideas.
+
+Best regards,
+[Your Name]
+[Your Email]
+[Your Social Links]
+
+- **Personalize every pitch.** Reference the brand's recent campaigns, a product launch, or a company value that resonates with you. Generic pitches get deleted.
+- **Keep it under 200 words.** Marketing teams receive hundreds of emails. Respect their time.
+- **Propose a specific idea.** Do not just say you want to collaborate. Tell them exactly what content you would create.
+- **Attach your media kit.** Make it easy for them to review your metrics without asking for more information.
+- **Follow up.** If you do not hear back in five to seven business days, send one polite follow-up. Many deals happen on the second touchpoint.
+
+## What to Expect in Negotiations
+
+Once a brand responds with interest, the negotiation process begins. This can feel intimidating the first time, but it follows a predictable pattern.
+
+- **The brand will share a brief or ask about your rates.** Be prepared with your rate card from your media kit.
+- **There may be back and forth on pricing.** This is normal and expected. Do not take a counter-offer personally — it is standard business practice.
+- **Discuss deliverables clearly.** Exactly how many posts, videos, or Stories are included? What platforms? What format?
+- **Ask about timelines.** When does the content need to go live? How much lead time do you have for creation?
+- **Clarify revision expectations.** How many rounds of revisions are included? Most deals include one to two rounds.
+
+## Understanding the Brief
+
+Once you agree to the partnership, the brand will send a creative brief outlining what they need.
+
+- **Read it thoroughly.** The brief will specify the key messages, hashtags, tags, disclosure requirements, and any dos and don'ts.
+- **Deliverables.** The exact content pieces you need to create — one YouTube video, two Instagram Stories, one TikTok, etc.
+- **Timelines.** Draft submission date, revision periods, and go-live date. Put every date in your calendar immediately.
+- **Usage rights.** Pay close attention to how the brand can use your content beyond your own channels. Can they run it as an ad? For how long? This affects pricing.
+- **Ask questions early.** If anything in the brief is unclear, ask before you start creating. It is much easier to clarify expectations upfront than to redo content later.
+
+## Contracts 101
+
+Never start work without a signed contract or written agreement. This protects both you and the brand.
+
+- **Key terms to look for.** Deliverables, deadlines, payment amount, payment timeline, usage rights, exclusivity clauses, and cancellation terms.
+- **Red flags.** Unlimited revisions, perpetual usage rights without extra compensation, exclusivity periods longer than 30 days without additional payment, and vague payment terms.
+- **Payment terms.** Net 30 means payment within 30 days of content delivery or publication. Net 60 is 60 days. For your first deal, try to negotiate net 30 or even payment upon delivery.
+- **If there is no contract, create a simple one.** Even a detailed email confirming all terms that both parties agree to is better than nothing. Get the deliverables, timeline, payment amount, and usage rights in writing.
+
+## Pricing Your First Deal
+
+Setting the right price for your first deal can feel daunting. Here is how to approach it with confidence.
+
+- **Do not work for free.** Even for your first deal, your time and creative skills have value. Gifted products are fine for building your portfolio, but paid deals should involve actual payment.
+- **Be realistic but do not undervalue yourself.** Research what creators at your level charge. Use CPM-based pricing as a baseline — if your content averages 5,000 views and you charge twenty-five dollars CPM, that is one hundred twenty-five dollars per video.
+- **Factor in your time.** Consider the hours you will spend concepting, filming, editing, and communicating with the brand. Your effective hourly rate should be reasonable.
+- **Start slightly above your minimum.** This gives you room to negotiate without going below what you are willing to accept.
+- **Package deals add value.** Offering a bundle — for example, one video plus three Stories — can increase the total deal value while giving the brand more coverage.
+
+## Delivering Great Content
+
+Your first brand deal is your chance to prove that you are professional, reliable, and capable of delivering results. Exceeding expectations here can lead to repeat business and referrals.
+
+- **Submit on time or early.** Nothing builds a professional reputation faster than meeting deadlines without being chased.
+- **Follow the brief exactly.** Hit every required talking point, use the specified hashtags, and tag the correct accounts.
+- **Add your creative touch.** Brands hire creators because they want authentic content, not corporate ads. Follow the brief, but deliver it in your unique style.
+- **Send drafts for approval.** Before posting, share your content with the brand for review. This is standard practice and shows professionalism.
+- **Provide extra value.** Add a bonus Story, share the post to your close friends list, or create an extra piece of content. Going above and beyond gets noticed.
+
+## Getting Paid
+
+The work is done, the content is live — now it is time to get paid.
+
+- **Send your invoice promptly.** As soon as your deliverables are complete and approved, send a professional invoice. Include your name, the brand name, a description of the work, the agreed amount, and your payment details.
+- **Payment methods.** PayPal, Wise, and direct bank transfer are the most common methods for creator payments. Set up accounts on these platforms in advance. As a Bahamian creator, Wise is particularly useful for receiving international payments.
+- **Follow up professionally.** If payment is late, send a polite reminder at the agreed-upon due date. If it remains unpaid after a second reminder, escalate firmly but professionally.
+- **Keep records.** Save every invoice, payment confirmation, and contract. You will need these for tax purposes and for tracking your business growth.
+
+## After the Deal
+
+Your first brand deal is not the end — it is the beginning of a business relationship.
+
+- **Ask for a testimonial.** A short quote from the brand about your work adds tremendous credibility to your media kit.
+- **Share performance results.** Send the brand a recap of how the content performed — views, engagement, clicks, saves. This demonstrates ROI and professionalism.
+- **Build a case study.** Document the partnership for your portfolio. What was the brief? What did you create? What were the results? This becomes powerful proof for future brand pitches.
+- **Stay in touch.** Follow up with the brand quarterly. Share updates on your growth, propose new ideas, and maintain the relationship. Many creators earn the majority of their brand deal income from repeat partnerships.
+- **Ask for referrals.** If the brand was happy with your work, ask if they can refer you to other brands or departments within their company.
+
+## Celebrate Your Milestone
+
+Your first brand deal is a genuine achievement. It is proof that your content has value, that your audience is meaningful, and that you are building something real. Take a moment to appreciate what you have accomplished.
+
+Then update your media kit, refine your pitch based on what you learned, and start reaching out to the next brand on your list. Every deal gets easier, your confidence grows, and your rates go up. This is just the beginning of your creator business.`,
+  },
 ];
 
 export async function POST() {

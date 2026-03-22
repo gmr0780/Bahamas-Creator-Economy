@@ -10,6 +10,7 @@ const navLinks = [
   { href: "/platforms", label: "Platforms" },
   { href: "/earn", label: "Earn" },
   { href: "/event", label: "Event" },
+  { href: "/connect", label: "Connect" },
 ];
 
 export default function Navigation() {

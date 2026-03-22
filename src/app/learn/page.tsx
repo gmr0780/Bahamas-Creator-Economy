@@ -35,29 +35,124 @@ export default async function LearnPage() {
         </div>
       </section>
 
-      {/* Guide Cards Grid */}
+      {/* Guide Cards by Phase */}
       <section className="mx-auto max-w-5xl px-6 pb-20">
         {guides.length === 0 ? (
           <p className="text-center text-sand/60 text-lg py-12">
             Guides coming soon. Check back shortly!
           </p>
         ) : (
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {guides.map((guide) => (
-              <Link
-                key={guide.id}
-                href={`/learn/${guide.slug}`}
-                className="glass-dark group rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-aqua/10 hover:border-aqua/30"
-              >
-                <div className="mb-2 text-3xl">{guide.icon}</div>
-                <h3 className="mb-1 text-lg font-bold text-sand group-hover:text-aqua transition-colors">
-                  {guide.title}
-                </h3>
-                <p className="text-sm text-sand leading-relaxed">
-                  {guide.subtitle}
-                </p>
-              </Link>
-            ))}
+          <div className="space-y-16">
+            {/* START Phase — Orders 1-3 */}
+            {(() => {
+              const startGuides = guides.filter(
+                (g) => g.order >= 1 && g.order <= 3
+              );
+              if (startGuides.length === 0) return null;
+              return (
+                <div>
+                  <div className="mb-6">
+                    <p className="text-sm font-extrabold uppercase tracking-[0.2em] text-aqua mb-1">
+                      Start
+                    </p>
+                    <p className="text-sand/70 text-sm">
+                      Begin your creator journey
+                    </p>
+                  </div>
+                  <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    {startGuides.map((guide) => (
+                      <Link
+                        key={guide.id}
+                        href={`/learn/${guide.slug}`}
+                        className="glass-dark group rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-aqua/10 hover:border-aqua/30"
+                      >
+                        <div className="mb-2 text-3xl">{guide.icon}</div>
+                        <h3 className="mb-1 text-lg font-bold text-sand group-hover:text-aqua transition-colors">
+                          {guide.title}
+                        </h3>
+                        <p className="text-sm text-sand leading-relaxed">
+                          {guide.subtitle}
+                        </p>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              );
+            })()}
+
+            {/* EARN Phase — Orders 4-6 */}
+            {(() => {
+              const earnGuides = guides.filter(
+                (g) => g.order >= 4 && g.order <= 6
+              );
+              if (earnGuides.length === 0) return null;
+              return (
+                <div>
+                  <div className="mb-6">
+                    <p className="text-sm font-extrabold uppercase tracking-[0.2em] text-coral mb-1">
+                      Earn
+                    </p>
+                    <p className="text-sand/70 text-sm">
+                      Turn your content into income
+                    </p>
+                  </div>
+                  <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    {earnGuides.map((guide) => (
+                      <Link
+                        key={guide.id}
+                        href={`/learn/${guide.slug}`}
+                        className="glass-dark group rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-aqua/10 hover:border-aqua/30"
+                      >
+                        <div className="mb-2 text-3xl">{guide.icon}</div>
+                        <h3 className="mb-1 text-lg font-bold text-sand group-hover:text-aqua transition-colors">
+                          {guide.title}
+                        </h3>
+                        <p className="text-sm text-sand leading-relaxed">
+                          {guide.subtitle}
+                        </p>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              );
+            })()}
+
+            {/* CONNECT Phase — Orders 7-9 */}
+            {(() => {
+              const connectGuides = guides.filter(
+                (g) => g.order >= 7 && g.order <= 9
+              );
+              if (connectGuides.length === 0) return null;
+              return (
+                <div>
+                  <div className="mb-6">
+                    <p className="text-sm font-extrabold uppercase tracking-[0.2em] gradient-aqua-coral-text mb-1">
+                      Connect
+                    </p>
+                    <p className="text-sand/70 text-sm">
+                      Get brand-ready and get discovered
+                    </p>
+                  </div>
+                  <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    {connectGuides.map((guide) => (
+                      <Link
+                        key={guide.id}
+                        href={`/learn/${guide.slug}`}
+                        className="glass-dark group rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-aqua/10 hover:border-aqua/30"
+                      >
+                        <div className="mb-2 text-3xl">{guide.icon}</div>
+                        <h3 className="mb-1 text-lg font-bold text-sand group-hover:text-aqua transition-colors">
+                          {guide.title}
+                        </h3>
+                        <p className="text-sm text-sand leading-relaxed">
+                          {guide.subtitle}
+                        </p>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              );
+            })()}
           </div>
         )}
       </section>
