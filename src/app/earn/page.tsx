@@ -238,8 +238,7 @@ export default function EarnPage() {
             Turn views into real income
           </h2>
           <p className="mx-auto mb-8 max-w-md text-sand">
-            Our workshop walks you through every step, from platform
-            applications to tax documentation to your first brand deal.
+            Join the Bahamas Creator Economy Launch on March 29 for keynotes, panels, and networking with creators, government leaders, and platform partners.
           </p>
           <Link
             href="/#register"

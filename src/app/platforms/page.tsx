@@ -183,8 +183,7 @@ export default function PlatformsPage() {
             Ready to start earning?
           </h2>
           <p className="mx-auto mb-8 max-w-md text-sand">
-            Join our live workshop and learn exactly how to get accepted on
-            every eligible platform.
+            Join the Bahamas Creator Economy Launch on March 29 for keynotes, panels, and direct guidance on getting accepted on every eligible platform.
           </p>
           <Link
             href="/#register"
