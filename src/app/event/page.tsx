@@ -5,7 +5,7 @@ const agendaItems = [
   { time: "4:00 PM", tag: "WELCOME", tagColor: "bg-aqua", title: "Welcome", subtitle: "Latrae Rahming, Director of Communications, OPM" },
   { time: "4:05 PM", tag: "ANTHEM", tagColor: "bg-coral", title: "National Anthem", subtitle: "Creative and Performing Arts School of The Bahamas (CAPAS)" },
   { time: "4:10 PM", tag: "SPEAKER", tagColor: "bg-aqua", title: "Speaker I", subtitle: "Speaker To Be Announced" },
-  { time: "4:30 PM", tag: "SPEAKER", tagColor: "bg-aqua", title: "Speaker II: Prime Minister Mia Mottley, Barbados", subtitle: "What Does This Step Mean for the Region?" },
+  { time: "4:30 PM", tag: "GUEST", tagColor: "bg-aqua", title: "Guest Speaker: Prime Minister Mia Mottley, Barbados", subtitle: "What Does This Step Mean for the Region?" },
   { time: "4:50 PM", tag: "MUSIC", tagColor: "bg-coral", title: "Musical Selection", subtitle: "\"Redemption Song\" performed by CAPAS" },
   { time: "5:00 PM", tag: "INTRO", tagColor: "bg-aqua", title: "Introduction of the Prime Minister", subtitle: "Latrae Rahming, Director of Communications, OPM" },
   { time: "5:05 PM", tag: "KEYNOTE", tagColor: "bg-gradient-to-r from-aqua to-coral", title: "Keynote Address", subtitle: "The Rt. Hon. Philip Edward Davis, KC, MP: Prime Minister of The Bahamas" },
@@ -27,7 +27,7 @@ const speakers = [
   },
   {
     name: "Prime Minister Mia Mottley",
-    role: "Speaker II",
+    role: "Guest Speaker",
     description: "Barbados: What Does This Step Mean for the Region?",
     gradient: "from-coral to-orange-300",
     size: "normal",

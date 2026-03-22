@@ -118,7 +118,7 @@ const speakers = [
   {
     name: "Prime Minister Mia Mottley",
     initials: "MM",
-    role: "Speaker II",
+    role: "Guest Speaker",
     tagline: "Barbados",
     featured: false,
   },
@@ -220,7 +220,7 @@ export default function Home() {
             <footer className="mt-6 flex items-center gap-4">
               <div className="h-px flex-1 max-w-16 bg-coral/40" />
               <cite className="not-italic text-sm sm:text-base text-coral font-semibold tracking-wide">
-                Philip &ldquo;Brave&rdquo; Davis, Prime Minister, Commonwealth of The Bahamas
+                Philip Brave Davis, Prime Minister, Commonwealth of The Bahamas
               </cite>
             </footer>
           </blockquote>
@@ -266,7 +266,7 @@ export default function Home() {
             The World Is Watching.
           </h2>
           <p className="animate-fade-in-up delay-200 text-base sm:text-xl text-sand max-w-3xl mx-auto leading-relaxed">
-            Bahamian creators are building audiences of millions. Now it&apos;s time to turn that influence into income, backed by the full support of the government. This isn&apos;t just an opportunity. It&apos;s a movement.
+            Bahamian creators are building audiences of millions. Now it&apos;s time to turn that influence into income, backed by the full support of the government. This is opportunity. This is a movement.
           </p>
         </div>
       </section>
