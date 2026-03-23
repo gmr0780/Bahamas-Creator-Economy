@@ -87,14 +87,14 @@ function PlatformCard({ platform }: { platform: Platform }) {
 
   return (
     <div
-      className={`glass-dark rounded-2xl border-t-4 ${borderAccent[platform.status]} p-6 transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-aqua/10`}
+      className={`glass-dark rounded-2xl border-t-4 ${borderAccent[platform.status]} p-6 transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-aqua/10 h-full flex flex-col`}
     >
-      <div className="mb-4 flex flex-wrap items-start justify-between gap-2">
+      <div className="mb-3 flex flex-wrap items-start justify-between gap-2">
         <h3 className="text-lg sm:text-xl font-bold text-white">{platform.name}</h3>
         <StatusBadge status={platform.status} />
       </div>
 
-      <p className="mb-5 text-sm leading-relaxed text-sand">
+      <p className="mb-auto text-sm leading-relaxed text-sand pb-5">
         {platform.requirements}
       </p>
 
