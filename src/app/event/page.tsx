@@ -96,7 +96,7 @@ export default function EventPage() {
             gathering of creators, government leaders, and platform partners
             charting the future of the digital economy.
           </p>
-          <p className="mx-auto mt-4 max-w-2xl text-sm sm:text-base text-aqua/90 font-medium italic">
+          <p className="mx-auto mt-4 max-w-2xl text-sm sm:text-base text-navy font-bold italic">
             For the first time in Caribbean history, a national government is standing behind its digital creators. This is that moment.
           </p>
           <div className="mt-10">
