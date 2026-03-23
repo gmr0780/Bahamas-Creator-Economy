@@ -144,16 +144,45 @@ export default function PlatformsPage() {
         </div>
       </section>
 
-      {/* Platform cards grid */}
-      <section className="mx-auto max-w-6xl px-6 pb-24">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {platforms.map((p) => (
-            <PlatformCard key={p.name} platform={p} />
-          ))}
+      {/* Platform list */}
+      <section className="mx-auto max-w-4xl px-6 pb-24">
+        <div className="space-y-4">
+          {platforms.map((p) => {
+            const isAvailable = p.status === "AVAILABLE";
+            const borderColor = isAvailable ? "border-l-emerald-500" : "border-l-sky-500";
+            return (
+              <div
+                key={p.name}
+                className={`glass-dark rounded-xl border-l-4 ${borderColor} p-5 sm:p-6`}
+              >
+                <div className="flex flex-col sm:flex-row sm:items-start gap-4">
+                  {/* Left: name, status, requirements */}
+                  <div className="flex-1 min-w-0">
+                    <div className="flex flex-wrap items-center gap-3 mb-2">
+                      <h3 className="text-lg font-bold text-white">{p.name}</h3>
+                      <StatusBadge status={p.status} />
+                    </div>
+                    <p className="text-sm leading-relaxed text-sand">{p.requirements}</p>
+                  </div>
+                  {/* Right: RPM + Payout */}
+                  <div className="flex gap-3 sm:gap-4 shrink-0 sm:w-56">
+                    <div className="flex-1 rounded-lg bg-white/10 px-3 py-2 text-center">
+                      <p className="text-[10px] font-semibold uppercase tracking-widest text-sand mb-1">RPM</p>
+                      <p className={`text-sm font-bold ${isAvailable ? "text-aqua" : "text-sand"}`}>{p.rpm}</p>
+                    </div>
+                    <div className="flex-1 rounded-lg bg-white/10 px-3 py-2 text-center">
+                      <p className="text-[10px] font-semibold uppercase tracking-widest text-sand mb-1">Payout</p>
+                      <p className={`text-sm font-bold ${isAvailable ? "text-aqua" : "text-sand"}`}>{p.payout}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
 
         {/* Legend */}
-        <div className="mt-12 flex flex-wrap justify-center gap-6 text-sm text-sand">
+        <div className="mt-10 flex flex-wrap justify-center gap-6 text-sm text-sand">
           <span className="flex items-center gap-2">
             <span className="inline-block h-3 w-3 rounded-full bg-emerald-500" />
             Available
