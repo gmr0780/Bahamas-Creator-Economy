@@ -83,8 +83,8 @@ export default function EventPage() {
       <section className="hero-mesh relative overflow-hidden py-24 md:py-32">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-navy/80" />
         <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
-          <p className="mb-4 text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] sm:tracking-[0.3em] text-aqua flex items-center justify-center gap-2 flex-wrap">
-            <BahamianFlag width={32} className="rounded-sm shrink-0" />
+          <p className="mb-4 text-base sm:text-xl md:text-2xl font-extrabold uppercase tracking-[0.15em] sm:tracking-[0.2em] text-aqua flex items-center justify-center gap-3 flex-wrap">
+            <BahamianFlag width={40} className="rounded-sm shrink-0" />
             <span>March 29, 2026 &middot; Baha Mar Convention Center</span>
           </p>
           <h1 className="mb-6 text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl md:text-6xl lg:text-7xl">
