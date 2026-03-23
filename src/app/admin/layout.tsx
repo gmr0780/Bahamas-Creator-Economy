@@ -7,16 +7,27 @@ export default function AdminLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // Hide the public site Navigation and Footer when admin pages are active
   useEffect(() => {
-    document.body.classList.add('admin-active');
+    // Hide public site nav, footer, banner
+    const nav = document.querySelector('header.sticky, header.fixed') as HTMLElement;
+    const footer = document.querySelector('footer') as HTMLElement;
+    const banner = document.querySelector('[class*="gradient-aqua-coral"]') as HTMLElement;
+
+    if (nav) nav.style.display = 'none';
+    if (footer) footer.style.display = 'none';
+    if (banner) banner.style.display = 'none';
+    document.body.style.overflow = 'hidden';
+
     return () => {
-      document.body.classList.remove('admin-active');
+      if (nav) nav.style.display = '';
+      if (footer) footer.style.display = '';
+      if (banner) banner.style.display = '';
+      document.body.style.overflow = '';
     };
   }, []);
 
   return (
-    <div className="fixed inset-0 z-50 overflow-auto bg-navy text-sand">
+    <div className="fixed inset-0 z-[100] overflow-auto bg-navy text-sand">
       {children}
     </div>
   );
