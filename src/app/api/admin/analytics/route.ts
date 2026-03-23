@@ -43,6 +43,8 @@ export async function GET() {
   for (const r of recentReferrers) {
     try {
       const host = new URL(r.referrer).hostname;
+      // Filter out self-referrals
+      if (host === "242creators.com" || host === "www.242creators.com" || host.includes("railway.app")) continue;
       referrerCounts[host] = (referrerCounts[host] || 0) + 1;
     } catch {
       referrerCounts[r.referrer] = (referrerCounts[r.referrer] || 0) + 1;
