@@ -82,28 +82,28 @@ const opportunities = [
 const pillars = [
   {
     num: "01",
-    title: "Training Workshops",
-    desc: "Intensive, hands-on workshops covering content creation, audience growth, and platform-specific monetization strategies tailored for the Bahamian context.",
+    title: "Creator Education",
+    desc: "Free guides and resources on 242Creators.com covering platforms, monetization, brand deals, and more. Start learning today.",
   },
   {
     num: "02",
-    title: "Tax & Payment Setup Clinics",
-    desc: "Guided sessions to properly configure tax documentation, open compliant payment accounts, and optimize cross-border earnings.",
+    title: "Industry Panels",
+    desc: "Learn directly from platform leaders at TikTok, X, Meta, YouTube, and Google at the March 29 launch event.",
   },
   {
     num: "03",
-    title: "Niche & Growth Strategy",
-    desc: "Personalized coaching to identify high-value content niches, leverage The Bahamas' unique cultural assets, and accelerate channel growth.",
+    title: "Networking & Community",
+    desc: "Connect with fellow Bahamian creators, brands, and government leaders building the creator economy together.",
   },
   {
     num: "04",
-    title: "Brand & Sponsor Matchmaking",
-    desc: "Direct introductions to brands and sponsors seeking authentic Caribbean voices, with contract guidance and rate benchmarking.",
+    title: "Government Creator Partnerships",
+    desc: "Verified Bahamian creators will have the opportunity to promote The Bahamas through official social media campaigns, backed by the Office of the Prime Minister.",
   },
   {
     num: "05",
-    title: "Government Creator Partnerships",
-    desc: "Verified Bahamian creators will have the opportunity to promote The Bahamas through official social media campaigns, backed by the Office of the Prime Minister.",
+    title: "Platform Access",
+    desc: "We're actively working to expand platform eligibility and monetization access for Bahamian creators across all major platforms.",
   },
 ];
 
