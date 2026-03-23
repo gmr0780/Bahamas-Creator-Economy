@@ -219,7 +219,7 @@ export default function EventPage() {
                   <img
                     src={speaker.image}
                     alt={speaker.name}
-                    className={`h-full w-full object-cover ${speaker.imageClass ? speaker.imageClass : speaker.imageZoom ? "scale-[1.6] translate-y-[40%]" : "object-top"}`}
+                    className={`h-full w-full object-cover ${speaker.imageClass ? speaker.imageClass : speaker.imageZoom ? "scale-[1.6] translate-y-[30%]" : "object-top"}`}
                   />
                 ) : (
                   <span className="text-2xl font-extrabold text-white/90">
