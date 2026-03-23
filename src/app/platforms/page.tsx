@@ -52,7 +52,7 @@ const platforms: Platform[] = [
   },
   {
     name: "X (Twitter) Revenue",
-    status: "HIGH THRESHOLD",
+    status: "AVAILABLE",
     requirements:
       "Bahamas eligible. Requires 5M impressions per 90 days.",
     rpm: "Low",
@@ -165,10 +165,6 @@ export default function PlatformsPage() {
           <span className="flex items-center gap-2">
             <span className="inline-block h-3 w-3 rounded-full bg-emerald-500" />
             Available
-          </span>
-          <span className="flex items-center gap-2">
-            <span className="inline-block h-3 w-3 rounded-full bg-amber-500" />
-            High Threshold
           </span>
           <span className="flex items-center gap-2">
             <span className="inline-block h-3 w-3 rounded-full bg-sky-500" />
