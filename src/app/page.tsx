@@ -145,7 +145,7 @@ const speakers = [
     name: "Latrae Rahming",
     initials: "LR",
     image: "/speakers/latrae-rahming.jpeg",
-    imageClass: "scale-125 -translate-y-[8%]",
+    imageClass: "object-top",
     role: "Host & MC",
     tagline: "Director of Communications, OPM",
     featured: false,
