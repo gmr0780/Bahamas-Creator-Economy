@@ -88,7 +88,7 @@ const pillars = [
   {
     num: "02",
     title: "Industry Panels",
-    desc: "Learn directly from platform leaders at TikTok, X, Meta, YouTube, and Google at the March 29 launch event.",
+    desc: "Panel discussions featuring creators, brands, and industry voices at the March 29 launch event.",
   },
   {
     num: "03",
