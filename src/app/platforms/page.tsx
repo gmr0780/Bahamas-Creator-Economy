@@ -35,10 +35,10 @@ const platforms: Platform[] = [
     payout: "PayPal / Wire",
   },
   {
-    name: "Meta CMP",
+    name: "Meta (Facebook, Instagram, Reels)",
     status: "COMING SOON",
     requirements:
-      "Not yet available in The Bahamas. We're actively working to bring access. Meta unified all programs into CMP in late 2025.",
+      "Not yet available in The Bahamas. Meta unified all monetization programs (Facebook, Instagram Reels, In-Stream) into one Content Monetization Program. We're actively working to bring access.",
     rpm: "N/A",
     payout: "N/A",
   },
@@ -57,14 +57,6 @@ const platforms: Platform[] = [
       "Bahamas eligible. Requires 5M impressions per 90 days.",
     rpm: "Low",
     payout: "Stripe only",
-  },
-  {
-    name: "Instagram Reels",
-    status: "COMING SOON",
-    requirements:
-      "Falls under Meta\u2019s unified CMP. Not yet available, but stay tuned for updates via Creator Studio.",
-    rpm: "N/A",
-    payout: "N/A",
   },
 ];
 
