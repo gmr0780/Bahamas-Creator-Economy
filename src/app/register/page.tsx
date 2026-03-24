@@ -125,7 +125,7 @@ export default function RegisterPage() {
   if (submitted) {
     return (
       <div className="flex min-h-screen flex-col items-center justify-center bg-navy px-6 py-24">
-        {/* VIP Pass Card */}
+        {/* Event Pass Card */}
         <div className="vip-pass relative w-full max-w-md overflow-hidden rounded-3xl shadow-2xl">
           {/* Gradient background */}
           <div className="animate-gradient-shift bg-gradient-to-br from-aqua via-coral to-aqua p-[2px] rounded-3xl">
@@ -157,7 +157,7 @@ export default function RegisterPage() {
                   March 29, 2026
                 </p>
                 <div className="mt-6 inline-block rounded-full bg-white/20 px-5 py-2 text-xs font-bold uppercase tracking-widest text-white backdrop-blur-sm">
-                  VIP Invitation
+                  Event Pass
                 </div>
               </div>
             </div>

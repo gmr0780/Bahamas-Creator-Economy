@@ -58,7 +58,7 @@ export async function sendConfirmationEmail({
         <p style="color:#F5E6D0;font-size:14px;margin:0 0 4px;">242 Influencers & Creative Conference</p>
         <p style="color:#F5E6D0;font-size:14px;margin:0 0 20px;">Sunday, March 29, 2026</p>
         <div style="display:inline-block;background:rgba(255,255,255,0.15);border-radius:20px;padding:8px 20px;">
-          <span style="color:white;font-size:12px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;">VIP Invitation</span>
+          <span style="color:white;font-size:12px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;">Event Pass</span>
         </div>
       </div>
     </div>
