@@ -48,7 +48,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Create registration
-    await prisma.registration.create({
+    const registration = await prisma.registration.create({
       data: {
         fullName: body.fullName,
         email: body.email,
@@ -67,6 +67,7 @@ export async function POST(request: NextRequest) {
     sendConfirmationEmail({
       to: body.email,
       fullName: body.fullName,
+      registrationId: registration.id,
     }).catch((err) => console.error("Email failed:", err));
 
     return NextResponse.json({

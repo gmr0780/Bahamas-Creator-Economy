@@ -31,7 +31,7 @@ export async function GET(request: NextRequest) {
       ];
     }
 
-    const [registrations, total, totalAll, approved, pending, rejected, capSetting] = await Promise.all([
+    const [registrations, total, totalAll, approved, pending, rejected, checkedIn, capSetting] = await Promise.all([
       prisma.registration.findMany({
         where,
         orderBy: { createdAt: "desc" },
@@ -43,6 +43,7 @@ export async function GET(request: NextRequest) {
       prisma.registration.count({ where: { status: "approved" } }),
       prisma.registration.count({ where: { status: "pending" } }),
       prisma.registration.count({ where: { status: "rejected" } }),
+      prisma.registration.count({ where: { checkedIn: true } }),
       prisma.setting.findUnique({ where: { key: "registration_cap" } }),
     ]);
 
@@ -58,6 +59,7 @@ export async function GET(request: NextRequest) {
         approved,
         pending,
         rejected,
+        checkedIn,
         cap,
       },
     });

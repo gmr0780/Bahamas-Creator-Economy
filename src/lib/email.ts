@@ -1,4 +1,5 @@
 import { Resend } from "resend";
+import QRCode from "qrcode";
 
 function getResend() {
   const key = process.env.RESEND_API_KEY;
@@ -12,12 +13,19 @@ function getResend() {
 export async function sendConfirmationEmail({
   to,
   fullName,
+  registrationId,
 }: {
   to: string;
   fullName: string;
+  registrationId: string;
 }) {
   const resend = getResend();
   if (!resend) return { success: false, error: "Email not configured" };
+
+  const qrDataUrl = await QRCode.toDataURL(
+    `https://242creators.com/checkin/${registrationId}`,
+    { width: 200, margin: 1, color: { dark: "#0C1B2A", light: "#FFFFFF" } }
+  );
 
   try {
     await resend.emails.send({
@@ -53,6 +61,12 @@ export async function sendConfirmationEmail({
           <span style="color:white;font-size:12px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;">VIP Invitation</span>
         </div>
       </div>
+    </div>
+
+    <!-- QR Code -->
+    <div style="text-align:center;margin-top:24px;">
+      <img src="${qrDataUrl}" alt="Check-in QR Code" width="200" height="200" style="border-radius:12px;" />
+      <p style="color:#F5E6D0;font-size:13px;margin:12px 0 0;">Show this QR code at the door</p>
     </div>
 
     <!-- Event Details -->

@@ -31,6 +31,7 @@ interface DashboardData {
     approved: number;
     pending: number;
     rejected: number;
+    checkedIn: number;
     cap: number;
   };
 }
@@ -152,7 +153,7 @@ export default function AdminDashboardPage() {
     );
   }
 
-  const stats = data?.stats ?? { total: 0, approved: 0, pending: 0, rejected: 0, cap: 400 };
+  const stats = data?.stats ?? { total: 0, approved: 0, pending: 0, rejected: 0, checkedIn: 0, cap: 400 };
   const registrations = data?.registrations ?? [];
   const totalPages = data?.totalPages ?? 1;
 
@@ -199,12 +200,13 @@ export default function AdminDashboardPage() {
 
       <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6">
         {/* Stats bar */}
-        <div className="mb-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+        <div className="mb-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
           {[
             { label: 'Total', value: stats.total, color: 'text-white' },
             { label: 'Approved', value: stats.approved, color: 'text-green-400' },
             { label: 'Pending', value: stats.pending, color: 'text-yellow-400' },
             { label: 'Rejected', value: stats.rejected, color: 'text-red-400' },
+            { label: 'Checked In', value: stats.checkedIn, color: 'text-aqua' },
             { label: 'Spots Left', value: stats.cap - stats.total, color: 'text-aqua' },
           ].map((stat) => (
             <div
