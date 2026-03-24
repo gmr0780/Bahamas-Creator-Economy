@@ -36,19 +36,17 @@ interface DashboardData {
   };
 }
 
-const STATUSES = ['pending', 'approved', 'rejected'] as const;
+const STATUSES = ['pending', 'approved'] as const;
 type Status = (typeof STATUSES)[number];
 
 const STATUS_COLORS: Record<Status, string> = {
   approved: 'bg-green-500/20 text-green-400 border-green-500/30',
   pending: 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30',
-  rejected: 'bg-red-500/20 text-red-400 border-red-500/30',
 };
 
-function nextStatus(current: string): Status {
+function nextStatus(current: string): Status | null {
   if (current === 'pending') return 'approved';
-  if (current === 'approved') return 'rejected';
-  return 'pending';
+  return null;
 }
 
 export default function AdminDashboardPage() {
@@ -97,6 +95,7 @@ export default function AdminDashboardPage() {
 
   async function handleStatusChange(id: string, currentStatus: string) {
     const newStatus = nextStatus(currentStatus);
+    if (!newStatus) return;
     setUpdatingId(id);
     try {
       const res = await fetch(`/api/admin/registrations/${id}`, {
@@ -205,7 +204,6 @@ export default function AdminDashboardPage() {
             { label: 'Total', value: stats.total, color: 'text-white' },
             { label: 'Approved', value: stats.approved, color: 'text-green-400' },
             { label: 'Pending', value: stats.pending, color: 'text-yellow-400' },
-            { label: 'Rejected', value: stats.rejected, color: 'text-red-400' },
             { label: 'Checked In', value: stats.checkedIn, color: 'text-aqua' },
             { label: 'Spots Left', value: stats.cap - stats.total, color: 'text-aqua' },
           ].map((stat) => (
@@ -237,7 +235,7 @@ export default function AdminDashboardPage() {
 
             {/* Filter buttons */}
             <div className="flex gap-2">
-              {(['all', 'pending', 'approved', 'rejected'] as const).map((f) => (
+              {(['all', 'pending', 'approved'] as const).map((f) => (
                 <button
                   key={f}
                   onClick={() => setFilter(f)}
