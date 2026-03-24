@@ -68,6 +68,16 @@ const speakers = [
     size: "normal",
   },
   {
+    name: "Alexa Alianiello",
+    initials: "AA",
+    image: "/speakers/alexa-alianiello.jpeg",
+    imageClass: "scale-150 -translate-y-[10%]",
+    role: "Presenter",
+    description: "Agentio | Connecting Creators to Brands and Revenue",
+    gradient: "from-indigo-400 to-violet-400",
+    size: "normal",
+  },
+  {
     name: "Tanya Leis",
     initials: "TL",
     image: "/speakers/tanya-leis.png",
