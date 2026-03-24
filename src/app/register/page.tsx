@@ -44,7 +44,7 @@ const learningTopics = [
 ];
 
 const shareText =
-  "I'm joining the first-ever Bahamas Creator Economy Launch, backed by the Office of the Prime Minister \u{1F1E7}\u{1F1F8} #BahamasCreatorEconomy";
+  "I'm attending the 242 Influencers & Creative Conference, backed by the Office of the Prime Minister \u{1F1E7}\u{1F1F8} #242Creators #BahamasCreatorEconomy";
 
 export default function RegisterPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -151,7 +151,7 @@ export default function RegisterPage() {
                 <div className="my-6 h-px bg-white/30" />
                 <p className="text-2xl font-extrabold text-white">{fullName}</p>
                 <p className="mt-3 text-sm font-semibold text-white/80">
-                  Bahamas Creator Economy Launch
+                  242 Influencers &amp; Creative Conference
                 </p>
                 <p className="mt-1 text-sm font-medium text-white/60">
                   March 29, 2026
@@ -172,24 +172,34 @@ export default function RegisterPage() {
           </p>
 
           <div className="flex flex-wrap justify-center gap-3">
-            <a
-              href={`https://www.instagram.com/?text=${encodedShareText}`}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => {
+                if (navigator.share) {
+                  navigator.share({ title: "242 Influencers & Creative Conference", text: shareText, url: "https://242creators.com/register" });
+                } else {
+                  navigator.clipboard.writeText(shareText + " https://242creators.com/register");
+                  alert("Copied to clipboard! Paste it on Instagram.");
+                }
+              }}
               className="rounded-full bg-gradient-to-r from-purple-500 to-pink-500 px-5 py-3 text-xs font-bold text-white transition-transform hover:scale-105"
             >
               Share on Instagram
-            </a>
-            <a
-              href={`https://www.tiktok.com/`}
-              target="_blank"
-              rel="noopener noreferrer"
+            </button>
+            <button
+              onClick={() => {
+                if (navigator.share) {
+                  navigator.share({ title: "242 Influencers & Creative Conference", text: shareText, url: "https://242creators.com/register" });
+                } else {
+                  navigator.clipboard.writeText(shareText + " https://242creators.com/register");
+                  alert("Copied to clipboard! Paste it on TikTok.");
+                }
+              }}
               className="rounded-full bg-black px-5 py-3 text-xs font-bold text-white ring-1 ring-white/20 transition-transform hover:scale-105"
             >
               Share on TikTok
-            </a>
+            </button>
             <a
-              href={`https://twitter.com/intent/tweet?text=${encodedShareText}`}
+              href={`https://twitter.com/intent/tweet?text=${encodedShareText}&url=https://242creators.com`}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-full bg-zinc-900 px-5 py-3 text-xs font-bold text-white ring-1 ring-white/20 transition-transform hover:scale-105"
@@ -197,7 +207,7 @@ export default function RegisterPage() {
               Share on X
             </a>
             <a
-              href={`https://www.facebook.com/sharer/sharer.php?quote=${encodedShareText}`}
+              href={`https://www.facebook.com/sharer/sharer.php?u=https://242creators.com&quote=${encodedShareText}`}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-full bg-blue-600 px-5 py-3 text-xs font-bold text-white transition-transform hover:scale-105"
@@ -207,11 +217,11 @@ export default function RegisterPage() {
             <button
               className="rounded-full bg-white/10 px-5 py-3 text-xs font-bold text-sand ring-1 ring-white/20 transition-transform hover:scale-105"
               onClick={() => {
-                // Placeholder for html2canvas download
-                alert("Image download coming soon! For now, take a screenshot of your VIP pass.");
+                navigator.clipboard.writeText(shareText + "\n\nRegister: https://242creators.com/register");
+                alert("Share text copied to clipboard!");
               }}
             >
-              Download Image
+              Copy Text
             </button>
           </div>
 
