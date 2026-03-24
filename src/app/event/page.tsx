@@ -4,37 +4,48 @@ import BahamianFlag from "../components/BahamianFlag";
 const agendaItems = [
   { time: "4:00 PM", tag: "WELCOME", tagColor: "bg-aqua", title: "Welcome", subtitle: "Latrae Rahming, Director of Communications, OPM" },
   { time: "4:05 PM", tag: "ANTHEM", tagColor: "bg-coral", title: "National Anthem", subtitle: "Creative and Performing Arts School of The Bahamas (CAPAS)" },
-  { time: "4:10 PM", tag: "SPEAKER", tagColor: "bg-aqua", title: "Speaker I", subtitle: "Speaker To Be Announced" },
-  { time: "4:30 PM", tag: "GUEST", tagColor: "bg-aqua", title: "Guest Speaker: Prime Minister Mia Mottley, Barbados", subtitle: "What Does This Step Mean for the Region?" },
-  { time: "4:50 PM", tag: "MUSIC", tagColor: "bg-coral", title: "Musical Selection", subtitle: "\"Redemption Song\" performed by CAPAS" },
-  { time: "5:00 PM", tag: "INTRO", tagColor: "bg-aqua", title: "Introduction of the Prime Minister", subtitle: "Latrae Rahming, Director of Communications, OPM" },
-  { time: "5:05 PM", tag: "KEYNOTE", tagColor: "bg-gradient-to-r from-aqua to-coral", title: "Keynote Address", subtitle: "Hon. Philip Edward Davis, KC, MP: Prime Minister of The Bahamas" },
-  { time: "5:25 PM", tag: "PANEL", tagColor: "bg-coral", title: "Panel I: Leveraging the Creative Space & Using AI", subtitle: "Presented by Burson. How creators build sustainable income. Followed by Q&A." },
-  { time: "5:50 PM", tag: "PANEL", tagColor: "bg-coral", title: "Panel II: How to Monetize: Platform Strategies", subtitle: "TikTok | X | Meta | YouTube | Google" },
-  { time: "6:15 PM", tag: "PANEL", tagColor: "bg-coral", title: "Panel III: Building Domestic Brand Power", subtitle: "Deputy PM Chester Cooper, Minister of Tourism | Inga Bowleg, John Bull" },
-  { time: "6:35 PM", tag: "CLOSING", tagColor: "bg-aqua", title: "Closing Remarks", subtitle: "Ambassador-at-Large Greg Michelier" },
-  { time: "6:40 PM", tag: "MIXER", tagColor: "bg-gradient-to-r from-aqua to-coral", title: "Mixer Announcement", subtitle: "Transition to evening reception" },
-  { time: "6:45 PM", tag: "RECEPTION", tagColor: "bg-coral", title: "Mix & Mingle Reception", subtitle: "6:45 PM – 8:00 PM" },
+  { time: "4:10 PM", tag: "SPEAKER", tagColor: "bg-aqua", title: "Speaker I: Greg Michelier", subtitle: "Bahamas Ambassador-at-Large to Technology and AI. \"The Future We Are Choosing\"" },
+  { time: "4:25 PM", tag: "GUEST", tagColor: "bg-aqua", title: "Speaker II: The Rt. Hon. Mia Amor Mottley, KC, MP", subtitle: "Prime Minister of Barbados. \"Owning Our Product as a Region\"" },
+  { time: "4:35 PM", tag: "CAPAS", tagColor: "bg-coral", title: "CAPAS Presentation", subtitle: "48-Hour Short Film Challenge Winner. Video Screening" },
+  { time: "4:45 PM", tag: "INTRO", tagColor: "bg-aqua", title: "Introduction of the Prime Minister", subtitle: "Latrae Rahming, Director of Communications, OPM" },
+  { time: "4:50 PM", tag: "KEYNOTE", tagColor: "bg-gradient-to-r from-aqua to-coral", title: "Keynote Address", subtitle: "The Rt. Hon. Philip Edward Davis, KC, MP. Prime Minister of The Bahamas" },
+  { time: "5:10 PM", tag: "PRESENT", tagColor: "bg-coral", title: "AI for Creators: The New Digital Renaissance", subtitle: "Tanya Leis | Burson" },
+  { time: "5:25 PM", tag: "PRESENT", tagColor: "bg-coral", title: "Create with Purpose: The 4 Cs Framework for Creator Success", subtitle: "Aimée Legault | Burson" },
+  { time: "5:40 PM", tag: "PANEL", tagColor: "bg-coral", title: "Panel I: Building Domestic Brand Power", subtitle: "Host: Jillian Grey. Deputy PM Chester Cooper, Minister of Tourism" },
+  { time: "6:00 PM", tag: "PRESENT", tagColor: "bg-coral", title: "Connecting Content Creators to Brands and Audiences for Revenue", subtitle: "Alexa Alianiello" },
+  { time: "6:15 PM", tag: "PANEL", tagColor: "bg-aqua", title: "Panel II: Leveraging Our Platforms", subtitle: "Host: Ahmad Rashad Thompson. Panel: Baha Yogi, Vocab, Das Quey, Bodine, and Zhano" },
+  { time: "6:35 PM", tag: "PLATFORM", tagColor: "bg-gradient-to-r from-aqua to-coral", title: "Platform Presentations: Creator Eligibility & Monetisation", subtitle: "TikTok | X (Keith) | Meta | YouTube" },
+  { time: "7:00 PM", tag: "CLOSING", tagColor: "bg-aqua", title: "Closing Thanks", subtitle: "" },
+  { time: "7:05 PM", tag: "RECEPTION", tagColor: "bg-gradient-to-r from-aqua to-coral", title: "242 After Hours: Mix & Mingle Reception", subtitle: "7:05 PM – 8:00 PM" },
 ];
 
 const speakers = [
   {
-    name: "Hon. Philip Edward Davis, KC, MP",
+    name: "The Rt. Hon. Philip Edward Davis, KC, MP",
     initials: "PD",
     image: "/speakers/pm-davis.jpeg",
-    role: "Keynote Speaker",
+    role: "Keynote Address",
     description: "Prime Minister of The Bahamas",
     gradient: "from-aqua to-cyan-300",
     size: "large",
   },
   {
-    name: "Prime Minister Mia Mottley",
+    name: "The Rt. Hon. Mia Amor Mottley, KC, MP",
     initials: "MM",
     image: "/speakers/mia-mottley.webp",
     imageZoom: true,
     role: "Guest Speaker",
-    description: "Barbados: What Does This Step Mean for the Region?",
+    description: "Prime Minister of Barbados",
     gradient: "from-coral to-orange-300",
+    size: "normal",
+  },
+  {
+    name: "Greg Michelier",
+    initials: "GM",
+    image: "/speakers/greg-michelier.jpg",
+    role: "Speaker I",
+    description: "Ambassador-at-Large to Technology and AI",
+    gradient: "from-aqua to-teal-300",
     size: "normal",
   },
   {
@@ -42,17 +53,8 @@ const speakers = [
     initials: "CC",
     image: "/speakers/chester-cooper.webp",
     role: "Panelist",
-    description: "Minister of Tourism: Building Domestic Brand Power",
+    description: "Minister of Tourism",
     gradient: "from-purple-500 to-pink-400",
-    size: "normal",
-  },
-  {
-    name: "Greg Michelier",
-    initials: "GM",
-    image: "/speakers/greg-michelier.jpg",
-    role: "Closing Remarks",
-    description: "Ambassador-at-Large, Technology & AI",
-    gradient: "from-aqua to-teal-300",
     size: "normal",
   },
   {
@@ -60,16 +62,16 @@ const speakers = [
     initials: "LR",
     image: "/speakers/latrae-rahming.jpeg",
     imageClass: "object-top",
-    role: "Host & MC",
+    role: "Host",
     description: "Director of Communications, OPM",
     gradient: "from-coral to-pink-300",
     size: "normal",
   },
   {
-    name: "Speaker I",
-    initials: "TBA",
-    role: "To Be Announced",
-    description: "Details coming soon",
+    name: "Ahmad Rashad Thompson",
+    initials: "AT",
+    role: "Panel Host",
+    description: "Leveraging Our Platforms",
     gradient: "from-amber-400 to-orange-300",
     size: "normal",
   },
@@ -85,16 +87,15 @@ export default function EventPage() {
         <div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
           <p className="mb-4 text-base sm:text-xl md:text-2xl font-extrabold uppercase tracking-[0.15em] sm:tracking-[0.2em] text-aqua flex items-center justify-center gap-3 flex-wrap">
             <BahamianFlag width={40} className="rounded-sm shrink-0" />
-            <span>March 29, 2026 &middot; Baha Mar Convention Center</span>
+            <span>Sunday, March 29, 2026 &middot; Nassau, The Bahamas</span>
           </p>
           <h1 className="mb-6 text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl md:text-6xl lg:text-7xl">
-            The Prime Minister{" "}
-            <span className="gradient-text">Invites You</span>
+            242 Influencers &amp;{" "}
+            <span className="gradient-text">Creative Conference</span>
           </h1>
           <p className="mx-auto max-w-2xl text-base text-white sm:text-lg md:text-xl">
-            Join the inaugural Bahamas Creator Economy Launch, an exclusive
-            gathering of creators, government leaders, and platform partners
-            charting the future of the digital economy.
+            An exclusive gathering of creators, government leaders, and platform partners
+            charting the future of the digital economy. 4:00 PM to 8:00 PM.
           </p>
           <p className="mx-auto mt-4 max-w-2xl text-sm sm:text-base text-navy font-bold italic">
             For the first time in Caribbean history, a national government is standing behind its digital creators. This is that moment.

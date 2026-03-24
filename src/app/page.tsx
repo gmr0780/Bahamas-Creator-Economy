@@ -109,20 +109,20 @@ const pillars = [
 
 const speakers = [
   {
-    name: "Hon. Philip Edward Davis, KC, MP",
+    name: "The Rt. Hon. Philip Edward Davis, KC, MP",
     initials: "PD",
     image: "/speakers/pm-davis.jpeg",
-    role: "Keynote Speaker",
+    role: "Keynote Address",
     tagline: "Prime Minister of The Bahamas",
     featured: true,
   },
   {
-    name: "Prime Minister Mia Mottley",
+    name: "The Rt. Hon. Mia Amor Mottley, KC, MP",
     initials: "MM",
     image: "/speakers/mia-mottley.webp",
     imageZoom: true,
     role: "Guest Speaker",
-    tagline: "Barbados",
+    tagline: "Prime Minister of Barbados",
     featured: false,
   },
   {
@@ -137,8 +137,8 @@ const speakers = [
     name: "Greg Michelier",
     initials: "GM",
     image: "/speakers/greg-michelier.jpg",
-    role: "Closing Remarks",
-    tagline: "Ambassador-at-Large, Technology & AI",
+    role: "Speaker I",
+    tagline: "Ambassador-at-Large to Technology and AI",
     featured: false,
   },
   {
@@ -146,7 +146,7 @@ const speakers = [
     initials: "LR",
     image: "/speakers/latrae-rahming.jpeg",
     imageClass: "object-top",
-    role: "Host & MC",
+    role: "Host",
     tagline: "Director of Communications, OPM",
     featured: false,
   },
