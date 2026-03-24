@@ -81,6 +81,7 @@ const speakers = [
     name: "Tanya Leis",
     initials: "TL",
     image: "/speakers/tanya-leis.png",
+    imageClass: "scale-125 object-top",
     role: "Presenter",
     description: "EVP, Digital Issues & Crisis Lead, Burson North America",
     gradient: "from-rose-400 to-pink-400",
