@@ -166,9 +166,9 @@ export default function RegisterPage() {
 
         {/* Share Section */}
         <div className="mt-10 w-full max-w-md text-center">
-          <p className="mb-2 text-lg font-bold text-sand">Share to Your Story</p>
-          <p className="mb-6 text-sm text-sand">
-            Save your event pass and post it to Instagram, TikTok, or Facebook
+          <p className="mb-2 text-2xl font-extrabold text-white">Share to Your Story</p>
+          <p className="mb-6 text-sand">
+            Let your followers know you&apos;re attending
           </p>
 
           {/* Pass preview */}
@@ -180,15 +180,41 @@ export default function RegisterPage() {
             />
           </div>
 
-          {/* Download + Share buttons */}
+          {/* Save button */}
+          <a
+            href={`/api/pass?name=${encodeURIComponent(fullName)}`}
+            download={`242-event-pass-${fullName.replace(/\s+/g, '-').toLowerCase()}.png`}
+            className="cta-gradient rounded-full px-8 py-4 text-base font-bold text-white shadow-xl transition-transform hover:scale-105 block"
+          >
+            Save Event Pass to Camera Roll
+          </a>
+
+          {/* Steps */}
+          <div className="mt-8 glass-dark rounded-2xl p-6 text-left">
+            <p className="text-sm font-bold text-white mb-4">How to share:</p>
+            <div className="space-y-3">
+              <div className="flex gap-3">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-aqua/20 text-xs font-bold text-aqua">1</span>
+                <p className="text-sm text-sand">Tap <span className="font-bold text-white">&quot;Save Event Pass&quot;</span> above to download the image</p>
+              </div>
+              <div className="flex gap-3">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-aqua/20 text-xs font-bold text-aqua">2</span>
+                <p className="text-sm text-sand">Open <span className="font-bold text-white">Instagram, TikTok, or Facebook</span></p>
+              </div>
+              <div className="flex gap-3">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-aqua/20 text-xs font-bold text-aqua">3</span>
+                <p className="text-sm text-sand">Create a <span className="font-bold text-white">Story</span> and select the event pass from your camera roll</p>
+              </div>
+              <div className="flex gap-3">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-aqua/20 text-xs font-bold text-aqua">4</span>
+                <p className="text-sm text-sand">Post it! Tag <span className="font-bold text-aqua">#242Creators</span> <span className="font-bold text-aqua">#BahamasCreatorEconomy</span></p>
+              </div>
+            </div>
+          </div>
+
+          {/* Also share via */}
+          <p className="mt-6 text-xs font-bold text-sand uppercase tracking-widest mb-3">Also share via</p>
           <div className="flex flex-col gap-3">
-            <a
-              href={`/api/pass?name=${encodeURIComponent(fullName)}`}
-              download={`242-event-pass-${fullName.replace(/\s+/g, '-').toLowerCase()}.png`}
-              className="cta-gradient rounded-full px-8 py-4 text-base font-bold text-white shadow-xl transition-transform hover:scale-105 block"
-            >
-              Save Event Pass
-            </a>
 
             <div className="flex flex-wrap justify-center gap-3 mt-2">
               <a
