@@ -36,11 +36,11 @@ const platforms: Platform[] = [
   },
   {
     name: "Meta (Facebook, Instagram, Reels)",
-    status: "AVAILABLE",
+    status: "COMING SOON",
     requirements:
-      "Meta's new Creator Fast Track program offers guaranteed pay ($1K-$3K/mo) and immediate access to Content Monetization for creators with 100K+ followers. Apply now at Facebook's Professional Dashboard.",
-    rpm: "$1-$10+",
-    payout: "Bank Transfer",
+      "Meta's Creator Fast Track program is expanding. Content Monetization access for Bahamian creators is in progress. Stay tuned for updates.",
+    rpm: "TBD",
+    payout: "TBD",
   },
   {
     name: "TikTok Creator Rewards",
