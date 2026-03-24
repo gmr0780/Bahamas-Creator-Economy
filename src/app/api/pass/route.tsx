@@ -18,10 +18,10 @@ export async function GET(request: NextRequest) {
           alignItems: "center",
           justifyContent: "center",
           background: "linear-gradient(180deg, #0C1B2A 0%, #0C1B2A 30%, #0891B2 65%, #FF6B6B 100%)",
-          padding: "80px 60px",
+          padding: "100px 60px 80px",
         }}
       >
-        {/* Flag bar at top */}
+        {/* Bahamian flag band at top */}
         <div
           style={{
             position: "absolute",
@@ -29,21 +29,25 @@ export async function GET(request: NextRequest) {
             left: 0,
             right: 0,
             display: "flex",
-            flexDirection: "column",
+            flexDirection: "row",
+            height: "60px",
           }}
         >
-          <div style={{ height: "6px", background: "#00ABC0" }} />
-          <div style={{ height: "6px", background: "#FFD700" }} />
-          <div style={{ height: "6px", background: "#00ABC0" }} />
+          <div style={{ width: "30%", background: "#000000" }} />
+          <div style={{ flex: 1, display: "flex", flexDirection: "column" }}>
+            <div style={{ flex: 1, background: "#00ABC0" }} />
+            <div style={{ flex: 1, background: "#FFD700" }} />
+            <div style={{ flex: 1, background: "#00ABC0" }} />
+          </div>
         </div>
 
         {/* OPM */}
         <p
           style={{
-            fontSize: 24,
+            fontSize: 26,
             fontWeight: 700,
-            color: "rgba(8,145,178,0.8)",
-            letterSpacing: "0.25em",
+            color: "rgba(255,255,255,0.7)",
+            letterSpacing: "0.2em",
             textTransform: "uppercase",
             margin: 0,
           }}
