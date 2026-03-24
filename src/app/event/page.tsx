@@ -71,7 +71,7 @@ const speakers = [
     name: "Alexa Alianiello",
     initials: "AA",
     image: "/speakers/alexa-alianiello.jpeg",
-    imageClass: "scale-150 -translate-y-[10%]",
+    imageClass: "scale-150 translate-y-[5%]",
     role: "Presenter",
     description: "Agentio | Connecting Creators to Brands and Revenue",
     gradient: "from-indigo-400 to-violet-400",
