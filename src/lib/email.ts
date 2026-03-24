@@ -93,6 +93,17 @@ export async function sendConfirmationEmail({
       <a href="https://242creators.com/event" style="display:inline-block;background:linear-gradient(135deg,#0891B2,#FF6B6B);color:white;font-size:16px;font-weight:700;text-decoration:none;padding:14px 32px;border-radius:30px;">View Full Programme</a>
     </div>
 
+    <!-- Share -->
+    <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:24px;margin-top:24px;text-align:center;">
+      <h3 style="color:white;font-size:16px;font-weight:700;margin:0 0 8px;">Share the News</h3>
+      <p style="color:#F5E6D0;font-size:13px;margin:0 0 16px;">Let your audience know you're attending</p>
+      <div>
+        <a href="https://twitter.com/intent/tweet?text=I'm%20attending%20the%20242%20Influencers%20%26%20Creative%20Conference%2C%20backed%20by%20the%20Office%20of%20the%20Prime%20Minister%20%F0%9F%87%A7%F0%9F%87%B8%20%23242Creators%20%23BahamasCreatorEconomy&url=https://242creators.com" style="display:inline-block;background:#0C1B2A;border:1px solid rgba(255,255,255,0.2);color:white;font-size:13px;font-weight:700;text-decoration:none;padding:10px 20px;border-radius:20px;margin:4px;">Share on X</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://242creators.com&quote=I'm%20attending%20the%20242%20Influencers%20%26%20Creative%20Conference" style="display:inline-block;background:#1877F2;color:white;font-size:13px;font-weight:700;text-decoration:none;padding:10px 20px;border-radius:20px;margin:4px;">Share on Facebook</a>
+        <a href="https://wa.me/?text=I'm%20attending%20the%20242%20Influencers%20%26%20Creative%20Conference%2C%20backed%20by%20the%20Office%20of%20the%20Prime%20Minister%20%F0%9F%87%A7%F0%9F%87%B8%20Register%3A%20https%3A%2F%2F242creators.com%2Fregister" style="display:inline-block;background:#25D366;color:white;font-size:13px;font-weight:700;text-decoration:none;padding:10px 20px;border-radius:20px;margin:4px;">Share on WhatsApp</a>
+      </div>
+    </div>
+
     <!-- Footer -->
     <div style="text-align:center;margin-top:40px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.1);">
       <p style="color:#0891B2;font-size:13px;font-weight:700;margin:0 0 4px;">242Creators.com</p>
