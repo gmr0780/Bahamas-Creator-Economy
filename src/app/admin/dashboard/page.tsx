@@ -16,6 +16,7 @@ interface Registration {
   monetization: string;
   topics: string[];
   status: string;
+  source: string;
   createdAt: string;
   updatedAt: string;
 }
@@ -28,9 +29,8 @@ interface DashboardData {
   totalPages: number;
   stats: {
     total: number;
-    approved: number;
-    pending: number;
-    rejected: number;
+    website: number;
+    vip: number;
     checkedIn: number;
     cap: number;
   };
@@ -216,7 +216,7 @@ export default function AdminDashboardPage() {
     );
   }
 
-  const stats = data?.stats ?? { total: 0, approved: 0, pending: 0, rejected: 0, checkedIn: 0, cap: 400 };
+  const stats = data?.stats ?? { total: 0, website: 0, vip: 0, checkedIn: 0, cap: 400 };
   const registrations = data?.registrations ?? [];
   const totalPages = data?.totalPages ?? 1;
 
@@ -263,11 +263,13 @@ export default function AdminDashboardPage() {
 
       <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6">
         {/* Stats bar */}
-        <div className="mb-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
+        <div className="mb-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
           {[
-            { label: 'Registered', value: stats.total, color: 'text-white' },
-            { label: 'Checked In', value: stats.checkedIn, color: 'text-aqua' },
-            { label: 'Spots Left', value: stats.cap - stats.total, color: 'text-coral' },
+            { label: 'Total', value: stats.total, color: 'text-white' },
+            { label: 'Online', value: stats.website, color: 'text-aqua' },
+            { label: 'VIP', value: stats.vip, color: 'text-coral' },
+            { label: 'Checked In', value: stats.checkedIn, color: 'text-green-400' },
+            { label: 'Spots Left', value: stats.cap - stats.total, color: 'text-yellow-400' },
           ].map((stat) => (
             <div
               key={stat.label}
@@ -367,7 +369,12 @@ export default function AdminDashboardPage() {
                       className="border-b border-white/5 transition-colors hover:bg-white/[0.03]"
                     >
                       <td className="px-4 py-3 font-medium text-white">
-                        {reg.fullName}
+                        <span className="flex items-center gap-2">
+                          {reg.fullName}
+                          {reg.source === 'vip' && (
+                            <span className="inline-block rounded-full bg-coral/20 border border-coral/30 px-2 py-0.5 text-[10px] font-bold text-coral uppercase">VIP</span>
+                          )}
+                        </span>
                       </td>
                       <td className="px-4 py-3 text-sand/70">{reg.email}</td>
                       <td className="px-4 py-3 text-sand/70">{reg.platform}</td>

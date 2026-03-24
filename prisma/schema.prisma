@@ -19,6 +19,7 @@ model Registration {
   monetization   String
   topics         String[]
   status         String   @default("pending")
+  source         String   @default("website")
   checkedIn      Boolean  @default(false)
   checkedInAt    DateTime?
   createdAt      DateTime @default(now())
