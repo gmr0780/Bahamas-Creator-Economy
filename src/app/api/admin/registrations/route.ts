@@ -31,7 +31,7 @@ export async function GET(request: NextRequest) {
       ];
     }
 
-    const [registrations, total] = await Promise.all([
+    const [registrations, total, totalAll, approved, pending, rejected, capSetting] = await Promise.all([
       prisma.registration.findMany({
         where,
         orderBy: { createdAt: "desc" },
@@ -39,13 +39,27 @@ export async function GET(request: NextRequest) {
         take: limit,
       }),
       prisma.registration.count({ where }),
+      prisma.registration.count(),
+      prisma.registration.count({ where: { status: "approved" } }),
+      prisma.registration.count({ where: { status: "pending" } }),
+      prisma.registration.count({ where: { status: "rejected" } }),
+      prisma.setting.findUnique({ where: { key: "registration_cap" } }),
     ]);
+
+    const cap = parseInt(capSetting?.value ?? "400", 10);
 
     return NextResponse.json({
       registrations,
       total,
       page,
       totalPages: Math.ceil(total / limit),
+      stats: {
+        total: totalAll,
+        approved,
+        pending,
+        rejected,
+        cap,
+      },
     });
   } catch (error) {
     console.error("Registrations error:", error);
