@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "../../../../lib/db";
 import { isAuthenticated } from "../../../../lib/auth";
+import { sendConfirmationEmail } from "../../../../lib/email";
 
 export const dynamic = "force-dynamic";
 
@@ -67,6 +68,79 @@ export async function GET(request: NextRequest) {
     console.error("Registrations error:", error);
     return NextResponse.json(
       { error: "An error occurred." },
+      { status: 500 }
+    );
+  }
+}
+
+export async function POST(request: NextRequest) {
+  if (!(await isAuthenticated())) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  try {
+    const body = await request.json();
+    const {
+      fullName,
+      email,
+      phone,
+      platform,
+      handle,
+      followers,
+      niche,
+      monetization,
+      topics,
+      sendEmail,
+    } = body;
+
+    if (!fullName || !email) {
+      return NextResponse.json(
+        { error: "Full name and email are required." },
+        { status: 400 }
+      );
+    }
+
+    // Check for duplicate email
+    const existing = await prisma.registration.findUnique({
+      where: { email },
+    });
+    if (existing) {
+      return NextResponse.json(
+        { error: "A registration with this email already exists." },
+        { status: 409 }
+      );
+    }
+
+    // Admin-added registrations are auto-approved and bypass the cap
+    const registration = await prisma.registration.create({
+      data: {
+        fullName,
+        email,
+        phone: phone ?? "",
+        platform: platform ?? "",
+        handle: handle ?? "",
+        followers: followers ?? "",
+        niche: niche ?? "",
+        monetization: monetization ?? "",
+        topics: topics ?? [],
+        status: "approved",
+      },
+    });
+
+    // Send confirmation email with QR code if requested
+    if (sendEmail) {
+      await sendConfirmationEmail({
+        to: email,
+        fullName,
+        registrationId: registration.id,
+      });
+    }
+
+    return NextResponse.json({ registration }, { status: 201 });
+  } catch (error) {
+    console.error("Admin add registration error:", error);
+    return NextResponse.json(
+      { error: "An error occurred while creating the registration." },
       { status: 500 }
     );
   }

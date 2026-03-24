@@ -36,6 +36,11 @@ interface DashboardData {
   };
 }
 
+const PLATFORMS = ['YouTube', 'TikTok', 'Instagram', 'Twitch', 'X/Twitter', 'Facebook', 'Other'];
+const FOLLOWER_RANGES = ['Under 1K', '1K-10K', '10K-50K', '50K-100K', '100K-500K', '500K+'];
+const NICHES = ['Finance/Investing', 'Business', 'Technology', 'Entertainment', 'Lifestyle', 'Food/Travel', 'Education', 'Music', 'Sports', 'Other'];
+const MONETIZATION_STATUSES = ['Not yet earning', 'Earning under $500/mo', 'Earning $500-2000/mo', 'Earning $2000+/mo'];
+
 const STATUSES = ['pending', 'approved'] as const;
 type Status = (typeof STATUSES)[number];
 
@@ -59,6 +64,22 @@ export default function AdminDashboardPage() {
   const [updatingId, setUpdatingId] = useState<string | null>(null);
   const [deleteConfirm, setDeleteConfirm] = useState<string | null>(null);
   const [deletingId, setDeletingId] = useState<string | null>(null);
+
+  // Add Registration modal state
+  const [showAddModal, setShowAddModal] = useState(false);
+  const [addForm, setAddForm] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    platform: '',
+    handle: '',
+    followers: '',
+    niche: '',
+    monetization: '',
+    sendEmail: true,
+  });
+  const [addSubmitting, setAddSubmitting] = useState(false);
+  const [addError, setAddError] = useState('');
 
   const fetchData = useCallback(async () => {
     try {
@@ -139,6 +160,49 @@ export default function AdminDashboardPage() {
   function handleLogout() {
     document.cookie = 'admin_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT';
     router.push('/admin');
+  }
+
+  async function handleAddRegistration(e: React.FormEvent) {
+    e.preventDefault();
+    setAddSubmitting(true);
+    setAddError('');
+    try {
+      const res = await fetch('/api/admin/registrations', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...addForm,
+          topics: [],
+        }),
+      });
+      if (res.status === 401) {
+        router.push('/admin');
+        return;
+      }
+      const data = await res.json();
+      if (!res.ok) {
+        setAddError(data.error || 'Failed to add registration.');
+        return;
+      }
+      // Success: close modal, reset form, refresh data
+      setShowAddModal(false);
+      setAddForm({
+        fullName: '',
+        email: '',
+        phone: '',
+        platform: '',
+        handle: '',
+        followers: '',
+        niche: '',
+        monetization: '',
+        sendEmail: true,
+      });
+      await fetchData();
+    } catch {
+      setAddError('Something went wrong. Please try again.');
+    } finally {
+      setAddSubmitting(false);
+    }
   }
 
   if (loading) {
@@ -251,18 +315,29 @@ export default function AdminDashboardPage() {
             </div>
           </div>
 
-          {/* Export */}
-          <a
-            href="/api/admin/export"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg border border-white/10 px-4 py-2 text-xs font-semibold text-sand/80 transition-colors hover:border-aqua/30 hover:text-aqua"
-          >
-            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-            </svg>
-            Export CSV
-          </a>
+          {/* Add Registration + Export */}
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => { setShowAddModal(true); setAddError(''); }}
+              className="inline-flex items-center gap-2 rounded-lg border border-aqua/30 bg-aqua/10 px-4 py-2 text-xs font-semibold text-aqua transition-colors hover:bg-aqua/20"
+            >
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+              </svg>
+              Add Registration
+            </button>
+            <a
+              href="/api/admin/export"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg border border-white/10 px-4 py-2 text-xs font-semibold text-sand/80 transition-colors hover:border-aqua/30 hover:text-aqua"
+            >
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              Export CSV
+            </a>
+          </div>
         </div>
 
         {/* Table */}
@@ -400,6 +475,211 @@ export default function AdminDashboardPage() {
           </div>
         )}
       </div>
+
+      {/* Add Registration Modal */}
+      {showAddModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          {/* Dark overlay */}
+          <div
+            className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+            onClick={() => setShowAddModal(false)}
+          />
+
+          {/* Modal card */}
+          <div className="relative glass-dark rounded-2xl border border-white/10 w-full max-w-lg max-h-[90vh] overflow-y-auto p-6 sm:p-8">
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-lg font-bold text-white">Add Registration</h2>
+              <button
+                onClick={() => setShowAddModal(false)}
+                className="rounded-lg border border-white/10 p-1.5 text-sand/60 transition-colors hover:border-white/20 hover:text-sand"
+              >
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+
+            <form onSubmit={handleAddRegistration} className="space-y-4">
+              {/* Full Name */}
+              <div>
+                <label className="mb-1.5 block text-xs font-bold uppercase tracking-widest text-sand/50">
+                  Full Name <span className="text-coral">*</span>
+                </label>
+                <input
+                  type="text"
+                  required
+                  value={addForm.fullName}
+                  onChange={(e) => setAddForm((f) => ({ ...f, fullName: e.target.value }))}
+                  placeholder="Full name"
+                  className="w-full rounded-xl border border-white/20 bg-white/[0.08] px-4 py-2.5 text-sm text-white placeholder-sand/40 outline-none transition-all focus:border-aqua/40 focus:ring-2 focus:ring-aqua/15"
+                />
+              </div>
+
+              {/* Email */}
+              <div>
+                <label className="mb-1.5 block text-xs font-bold uppercase tracking-widest text-sand/50">
+                  Email <span className="text-coral">*</span>
+                </label>
+                <input
+                  type="email"
+                  required
+                  value={addForm.email}
+                  onChange={(e) => setAddForm((f) => ({ ...f, email: e.target.value }))}
+                  placeholder="email@example.com"
+                  className="w-full rounded-xl border border-white/20 bg-white/[0.08] px-4 py-2.5 text-sm text-white placeholder-sand/40 outline-none transition-all focus:border-aqua/40 focus:ring-2 focus:ring-aqua/15"
+                />
+              </div>
+
+              {/* Phone */}
+              <div>
+                <label className="mb-1.5 block text-xs font-bold uppercase tracking-widest text-sand/50">
+                  Phone
+                </label>
+                <input
+                  type="tel"
+                  value={addForm.phone}
+                  onChange={(e) => setAddForm((f) => ({ ...f, phone: e.target.value }))}
+                  placeholder="+1 (242) 000-0000"
+                  className="w-full rounded-xl border border-white/20 bg-white/[0.08] px-4 py-2.5 text-sm text-white placeholder-sand/40 outline-none transition-all focus:border-aqua/40 focus:ring-2 focus:ring-aqua/15"
+                />
+              </div>
+
+              {/* Platform + Handle */}
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div>
+                  <label className="mb-1.5 block text-xs font-bold uppercase tracking-widest text-sand/50">
+                    Platform
+                  </label>
+                  <select
+                    value={addForm.platform}
+                    onChange={(e) => setAddForm((f) => ({ ...f, platform: e.target.value }))}
+                    className="w-full rounded-xl border border-white/20 bg-white/[0.08] px-4 py-2.5 text-sm text-white outline-none transition-all focus:border-aqua/40 focus:ring-2 focus:ring-aqua/15 appearance-none"
+                  >
+                    <option value="" className="bg-navy text-sand">Select platform</option>
+                    {PLATFORMS.map((p) => (
+                      <option key={p} value={p} className="bg-navy text-sand">{p}</option>
+                    ))}
+                  </select>
+                </div>
+                <div>
+                  <label className="mb-1.5 block text-xs font-bold uppercase tracking-widest text-sand/50">
+                    Social Handle
+                  </label>
+                  <input
+                    type="text"
+                    value={addForm.handle}
+                    onChange={(e) => setAddForm((f) => ({ ...f, handle: e.target.value }))}
+                    placeholder="@handle"
+                    className="w-full rounded-xl border border-white/20 bg-white/[0.08] px-4 py-2.5 text-sm text-white placeholder-sand/40 outline-none transition-all focus:border-aqua/40 focus:ring-2 focus:ring-aqua/15"
+                  />
+                </div>
+              </div>
+
+              {/* Followers + Niche */}
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div>
+                  <label className="mb-1.5 block text-xs font-bold uppercase tracking-widest text-sand/50">
+                    Follower Range
+                  </label>
+                  <select
+                    value={addForm.followers}
+                    onChange={(e) => setAddForm((f) => ({ ...f, followers: e.target.value }))}
+                    className="w-full rounded-xl border border-white/20 bg-white/[0.08] px-4 py-2.5 text-sm text-white outline-none transition-all focus:border-aqua/40 focus:ring-2 focus:ring-aqua/15 appearance-none"
+                  >
+                    <option value="" className="bg-navy text-sand">Select range</option>
+                    {FOLLOWER_RANGES.map((r) => (
+                      <option key={r} value={r} className="bg-navy text-sand">{r}</option>
+                    ))}
+                  </select>
+                </div>
+                <div>
+                  <label className="mb-1.5 block text-xs font-bold uppercase tracking-widest text-sand/50">
+                    Niche
+                  </label>
+                  <select
+                    value={addForm.niche}
+                    onChange={(e) => setAddForm((f) => ({ ...f, niche: e.target.value }))}
+                    className="w-full rounded-xl border border-white/20 bg-white/[0.08] px-4 py-2.5 text-sm text-white outline-none transition-all focus:border-aqua/40 focus:ring-2 focus:ring-aqua/15 appearance-none"
+                  >
+                    <option value="" className="bg-navy text-sand">Select niche</option>
+                    {NICHES.map((n) => (
+                      <option key={n} value={n} className="bg-navy text-sand">{n}</option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+
+              {/* Monetization */}
+              <div>
+                <label className="mb-1.5 block text-xs font-bold uppercase tracking-widest text-sand/50">
+                  Monetization Status
+                </label>
+                <select
+                  value={addForm.monetization}
+                  onChange={(e) => setAddForm((f) => ({ ...f, monetization: e.target.value }))}
+                  className="w-full rounded-xl border border-white/20 bg-white/[0.08] px-4 py-2.5 text-sm text-white outline-none transition-all focus:border-aqua/40 focus:ring-2 focus:ring-aqua/15 appearance-none"
+                >
+                  <option value="" className="bg-navy text-sand">Select status</option>
+                  {MONETIZATION_STATUSES.map((s) => (
+                    <option key={s} value={s} className="bg-navy text-sand">{s}</option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Send Email checkbox */}
+              <label className="flex items-center gap-3 cursor-pointer">
+                <div
+                  className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-md border transition-all ${
+                    addForm.sendEmail
+                      ? 'border-aqua bg-aqua text-white'
+                      : 'border-white/40 bg-transparent'
+                  }`}
+                >
+                  {addForm.sendEmail && (
+                    <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  )}
+                </div>
+                <input
+                  type="checkbox"
+                  checked={addForm.sendEmail}
+                  onChange={(e) => setAddForm((f) => ({ ...f, sendEmail: e.target.checked }))}
+                  className="sr-only"
+                />
+                <span className="text-sm text-sand/80">Send invite email with QR code</span>
+              </label>
+
+              {/* Error message */}
+              {addError && (
+                <p className="text-sm text-coral font-semibold">{addError}</p>
+              )}
+
+              {/* Submit */}
+              <div className="flex gap-3 pt-2">
+                <button
+                  type="submit"
+                  disabled={addSubmitting}
+                  className="flex-1 rounded-xl bg-aqua/20 border border-aqua/30 px-4 py-2.5 text-sm font-bold text-aqua transition-colors hover:bg-aqua/30 disabled:opacity-50"
+                >
+                  {addSubmitting
+                    ? 'Adding...'
+                    : addForm.sendEmail
+                    ? 'Add & Invite'
+                    : 'Add'}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setShowAddModal(false)}
+                  className="rounded-xl border border-white/10 px-4 py-2.5 text-sm font-semibold text-sand/60 transition-colors hover:border-white/20 hover:text-sand"
+                >
+                  Cancel
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
