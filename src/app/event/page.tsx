@@ -88,6 +88,7 @@ const speakers = [
   {
     name: "Ahmad Rashad Thompson",
     initials: "AT",
+    image: "/speakers/ahmad-thompson.jpeg",
     role: "Panel Host",
     description: "Leveraging Our Platforms",
     gradient: "from-amber-400 to-orange-300",
