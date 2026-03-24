@@ -21,7 +21,7 @@ export async function GET(request: NextRequest) {
           padding: "100px 60px 80px",
         }}
       >
-        {/* Bahamian flag band at top */}
+        {/* Bahamian flag colors — clean horizontal stripes */}
         <div
           style={{
             position: "absolute",
@@ -29,16 +29,12 @@ export async function GET(request: NextRequest) {
             left: 0,
             right: 0,
             display: "flex",
-            flexDirection: "row",
-            height: "60px",
+            flexDirection: "column",
           }}
         >
-          <div style={{ width: "30%", background: "#000000" }} />
-          <div style={{ flex: 1, display: "flex", flexDirection: "column" }}>
-            <div style={{ flex: 1, background: "#00ABC0" }} />
-            <div style={{ flex: 1, background: "#FFD700" }} />
-            <div style={{ flex: 1, background: "#00ABC0" }} />
-          </div>
+          <div style={{ height: "16px", background: "#00ABC0" }} />
+          <div style={{ height: "16px", background: "#FFD700" }} />
+          <div style={{ height: "16px", background: "#00ABC0" }} />
         </div>
 
         {/* OPM */}
