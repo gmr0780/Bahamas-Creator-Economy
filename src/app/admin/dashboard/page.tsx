@@ -269,7 +269,7 @@ export default function AdminDashboardPage() {
             { label: 'Online', value: stats.website, color: 'text-aqua' },
             { label: 'VIP', value: stats.vip, color: 'text-coral' },
             { label: 'Checked In', value: stats.checkedIn, color: 'text-green-400' },
-            { label: 'Spots Left', value: stats.cap - stats.total, color: 'text-yellow-400' },
+            { label: 'Online Spots Left', value: stats.cap - stats.website, color: 'text-yellow-400' },
           ].map((stat) => (
             <div
               key={stat.label}

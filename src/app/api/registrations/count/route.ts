@@ -5,7 +5,7 @@ export const dynamic = "force-dynamic";
 
 export async function GET() {
   try {
-    const count = await prisma.registration.count();
+    const count = await prisma.registration.count({ where: { source: "website" } });
 
     const capSetting = await prisma.setting.findUnique({
       where: { key: "registration_cap" },

@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
       where: { key: "registration_cap" },
     });
     const cap = parseInt(capSetting?.value ?? "400", 10);
-    const count = await prisma.registration.count();
+    const count = await prisma.registration.count({ where: { source: "website" } });
 
     if (count >= cap) {
       return NextResponse.json(
