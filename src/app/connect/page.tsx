@@ -26,14 +26,6 @@ const platforms: Platform[] = [
       "Creators with established audiences looking for premium brand partnerships.",
   },
   {
-    name: "AspireIQ",
-    letter: "A",
-    gradient: "from-purple-500 to-pink-400",
-    description:
-      "Community-driven influencer marketing platform that helps creators build long-term brand relationships rather than one-off campaigns. Strong focus on authentic partnerships.",
-    bestFor: "Lifestyle, beauty, and fashion creators.",
-  },
-  {
     name: "CreatorIQ",
     letter: "C",
     gradient: "from-coral to-orange-300",
@@ -59,23 +51,6 @@ const platforms: Platform[] = [
       "Influencer marketing platform with strong analytics and data capabilities. Helps brands find creators based on detailed audience insights and performance metrics.",
     bestFor:
       "Data-driven creators who want to showcase their metrics.",
-  },
-  {
-    name: "Hashtag Paid (#paid)",
-    letter: "#",
-    gradient: "from-rose-400 to-red-500",
-    description:
-      "Marketplace connecting creators directly with brands for sponsored content opportunities. Streamlined process from discovery to payment with transparent pricing.",
-    bestFor:
-      "Micro and mid-tier creators (5K\u2013500K followers).",
-  },
-  {
-    name: "Collabstr",
-    letter: "C",
-    gradient: "from-amber-400 to-yellow-500",
-    description:
-      "Freelance marketplace for influencers with simple, direct bookings. Brands browse creator profiles and book collaborations without lengthy negotiations.",
-    bestFor: "Creators just starting with brand deals.",
   },
   {
     name: "Stan Store",
