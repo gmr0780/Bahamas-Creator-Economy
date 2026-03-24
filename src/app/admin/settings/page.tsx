@@ -6,6 +6,7 @@ import Link from 'next/link';
 
 interface Settings {
   registrationCap: number;
+  vipCap: number;
   registrationOpen: boolean;
 }
 
@@ -16,6 +17,7 @@ export default function AdminSettingsPage() {
   const [saved, setSaved] = useState(false);
   const [settings, setSettings] = useState<Settings>({
     registrationCap: 400,
+    vipCap: 100,
     registrationOpen: true,
   });
 
@@ -31,6 +33,7 @@ export default function AdminSettingsPage() {
           const json = await res.json();
           setSettings({
             registrationCap: json.registrationCap ?? 400,
+            vipCap: json.vipCap ?? 100,
             registrationOpen: json.registrationOpen ?? true,
           });
         }
@@ -124,7 +127,30 @@ export default function AdminSettingsPage() {
               className="w-full rounded-xl border border-white/25 bg-white/[0.12] px-5 py-3.5 text-white outline-none transition-all focus:border-aqua/50 focus:ring-2 focus:ring-aqua/20"
             />
             <p className="mt-1.5 text-xs text-sand/40">
-              Maximum number of registrations allowed.
+              Maximum number of online registrations allowed.
+            </p>
+          </div>
+
+          {/* VIP Cap */}
+          <div>
+            <label
+              htmlFor="vipCap"
+              className="mb-2 block text-xs font-bold uppercase tracking-widest text-white/70"
+            >
+              VIP Cap
+            </label>
+            <input
+              id="vipCap"
+              type="number"
+              min={1}
+              value={settings.vipCap}
+              onChange={(e) =>
+                setSettings((s) => ({ ...s, vipCap: Number(e.target.value) }))
+              }
+              className="w-full rounded-xl border border-white/25 bg-white/[0.12] px-5 py-3.5 text-white outline-none transition-all focus:border-aqua/50 focus:ring-2 focus:ring-aqua/20"
+            />
+            <p className="mt-1.5 text-xs text-sand/40">
+              Maximum number of VIP registrations (added from admin).
             </p>
           </div>
 

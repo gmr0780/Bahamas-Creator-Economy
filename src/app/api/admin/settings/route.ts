@@ -11,12 +11,16 @@ export async function GET() {
 
   try {
     const settings = await prisma.setting.findMany();
-    const result: Record<string, string> = {};
+    const raw: Record<string, string> = {};
     for (const s of settings) {
-      result[s.key] = s.value;
+      raw[s.key] = s.value;
     }
 
-    return NextResponse.json(result);
+    return NextResponse.json({
+      registrationCap: parseInt(raw.registrationCap ?? raw.registration_cap ?? "400", 10),
+      vipCap: parseInt(raw.vipCap ?? "100", 10),
+      registrationOpen: (raw.registrationOpen ?? raw.registration_open ?? "true") === "true",
+    });
   } catch (error) {
     console.error("Settings error:", error);
     return NextResponse.json(
