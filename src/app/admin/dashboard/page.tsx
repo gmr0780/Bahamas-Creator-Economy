@@ -263,13 +263,11 @@ export default function AdminDashboardPage() {
 
       <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6">
         {/* Stats bar */}
-        <div className="mb-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+        <div className="mb-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
           {[
-            { label: 'Total', value: stats.total, color: 'text-white' },
-            { label: 'Approved', value: stats.approved, color: 'text-green-400' },
-            { label: 'Pending', value: stats.pending, color: 'text-yellow-400' },
+            { label: 'Registered', value: stats.total, color: 'text-white' },
             { label: 'Checked In', value: stats.checkedIn, color: 'text-aqua' },
-            { label: 'Spots Left', value: stats.cap - stats.total, color: 'text-aqua' },
+            { label: 'Spots Left', value: stats.cap - stats.total, color: 'text-coral' },
           ].map((stat) => (
             <div
               key={stat.label}
@@ -297,22 +295,6 @@ export default function AdminDashboardPage() {
               className="w-full rounded-xl border border-white/20 bg-white/[0.08] px-4 py-2.5 text-sm text-white placeholder-sand/40 outline-none transition-all focus:border-aqua/40 focus:ring-2 focus:ring-aqua/15 sm:max-w-xs"
             />
 
-            {/* Filter buttons */}
-            <div className="flex gap-2">
-              {(['all', 'pending', 'approved'] as const).map((f) => (
-                <button
-                  key={f}
-                  onClick={() => setFilter(f)}
-                  className={`rounded-lg px-3 py-1.5 text-xs font-semibold capitalize transition-all ${
-                    filter === f
-                      ? 'bg-aqua/20 text-aqua border border-aqua/30'
-                      : 'border border-white/10 text-sand/60 hover:border-white/20 hover:text-sand'
-                  }`}
-                >
-                  {f}
-                </button>
-              ))}
-            </div>
           </div>
 
           {/* Add Registration + Export */}
@@ -362,9 +344,6 @@ export default function AdminDashboardPage() {
                     Followers
                   </th>
                   <th className="px-4 py-3 text-xs font-bold uppercase tracking-widest text-sand/50">
-                    Status
-                  </th>
-                  <th className="px-4 py-3 text-xs font-bold uppercase tracking-widest text-sand/50">
                     Date
                   </th>
                   <th className="px-4 py-3 text-xs font-bold uppercase tracking-widest text-sand/50">
@@ -375,7 +354,7 @@ export default function AdminDashboardPage() {
               <tbody>
                 {registrations.length === 0 ? (
                   <tr>
-                    <td colSpan={8} className="px-4 py-12 text-center text-sand/40">
+                    <td colSpan={7} className="px-4 py-12 text-center text-sand/40">
                       {search || filter !== 'all'
                         ? 'No registrations match your filters.'
                         : 'No registrations yet.'}
@@ -394,21 +373,6 @@ export default function AdminDashboardPage() {
                       <td className="px-4 py-3 text-sand/70">{reg.platform}</td>
                       <td className="px-4 py-3 text-sand/70">@{reg.handle}</td>
                       <td className="px-4 py-3 text-sand/70">{reg.followers}</td>
-                      <td className="px-4 py-3">
-                        <button
-                          onClick={() => handleStatusChange(reg.id, reg.status)}
-                          disabled={updatingId === reg.id}
-                          className={`inline-flex items-center rounded-full border px-3 py-1 text-xs font-bold capitalize transition-all hover:opacity-80 disabled:opacity-40 ${
-                            STATUS_COLORS[reg.status as Status] ?? STATUS_COLORS.pending
-                          }`}
-                        >
-                          {updatingId === reg.id ? (
-                            <span className="inline-block h-3 w-3 animate-spin rounded-full border border-current border-t-transparent" />
-                          ) : (
-                            reg.status
-                          )}
-                        </button>
-                      </td>
                       <td className="px-4 py-3 text-sand/50 whitespace-nowrap">
                         {new Date(reg.createdAt).toLocaleDateString('en-US', {
                           month: 'short',
