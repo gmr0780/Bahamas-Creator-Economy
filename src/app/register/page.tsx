@@ -180,14 +180,43 @@ export default function RegisterPage() {
             />
           </div>
 
-          {/* Save button */}
-          <a
-            href={`/api/pass?name=${encodeURIComponent(fullName)}`}
-            download={`242-event-pass-${fullName.replace(/\s+/g, '-').toLowerCase()}.png`}
-            className="cta-gradient rounded-full px-8 py-4 text-base font-bold text-white shadow-xl transition-transform hover:scale-105 block"
-          >
-            Save Event Pass to Camera Roll
-          </a>
+          {/* Share / Save buttons */}
+          <div className="flex flex-col gap-3">
+            <button
+              onClick={async () => {
+                try {
+                  const res = await fetch(`/api/pass?name=${encodeURIComponent(fullName)}`);
+                  const blob = await res.blob();
+                  const file = new File([blob], `242-event-pass.png`, { type: "image/png" });
+                  if (navigator.canShare && navigator.canShare({ files: [file] })) {
+                    await navigator.share({
+                      files: [file],
+                      title: "242 Influencers & Creative Conference",
+                      text: shareText,
+                    });
+                    return;
+                  }
+                } catch (e: unknown) {
+                  if (e instanceof Error && e.name === "AbortError") return;
+                }
+                // Fallback: download
+                const a = document.createElement("a");
+                a.href = `/api/pass?name=${encodeURIComponent(fullName)}`;
+                a.download = `242-event-pass-${fullName.replace(/\\s+/g, "-").toLowerCase()}.png`;
+                a.click();
+              }}
+              className="cta-gradient rounded-full px-8 py-4 text-base font-bold text-white shadow-xl transition-transform hover:scale-105 block w-full"
+            >
+              Share Event Pass
+            </button>
+            <a
+              href={`/api/pass?name=${encodeURIComponent(fullName)}`}
+              download={`242-event-pass-${fullName.replace(/\s+/g, '-').toLowerCase()}.png`}
+              className="rounded-full border border-white/20 px-8 py-3 text-sm font-bold text-sand transition-transform hover:scale-105 block"
+            >
+              Save to Camera Roll
+            </a>
+          </div>
 
           {/* Steps */}
           <div className="mt-8 glass-dark rounded-2xl p-6 text-left">
