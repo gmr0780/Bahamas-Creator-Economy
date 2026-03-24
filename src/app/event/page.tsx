@@ -5,10 +5,10 @@ const agendaItems = [
   { time: "4:00 PM", tag: "WELCOME", tagColor: "bg-aqua", title: "Welcome", subtitle: "Latrae Rahming, Director of Communications, OPM" },
   { time: "4:05 PM", tag: "ANTHEM", tagColor: "bg-coral", title: "National Anthem", subtitle: "Creative and Performing Arts School of The Bahamas (CAPAS)" },
   { time: "4:10 PM", tag: "SPEAKER", tagColor: "bg-aqua", title: "Speaker I: Greg Michelier", subtitle: "Bahamas Ambassador-at-Large to Technology and AI. \"The Future We Are Choosing\"" },
-  { time: "4:25 PM", tag: "GUEST", tagColor: "bg-aqua", title: "Speaker II: The Rt. Hon. Mia Amor Mottley, KC, MP", subtitle: "Prime Minister of Barbados. \"Owning Our Product as a Region\"" },
+  { time: "4:25 PM", tag: "GUEST", tagColor: "bg-aqua", title: "Speaker II: The Hon. Mia Amor Mottley, KC, MP", subtitle: "Prime Minister of Barbados. \"Owning Our Product as a Region\"" },
   { time: "4:35 PM", tag: "CAPAS", tagColor: "bg-coral", title: "CAPAS Presentation", subtitle: "48-Hour Short Film Challenge Winner. Video Screening" },
   { time: "4:45 PM", tag: "INTRO", tagColor: "bg-aqua", title: "Introduction of the Prime Minister", subtitle: "Latrae Rahming, Director of Communications, OPM" },
-  { time: "4:50 PM", tag: "KEYNOTE", tagColor: "bg-gradient-to-r from-aqua to-coral", title: "Keynote Address", subtitle: "The Rt. Hon. Philip Edward Davis, KC, MP. Prime Minister of The Bahamas" },
+  { time: "4:50 PM", tag: "KEYNOTE", tagColor: "bg-gradient-to-r from-aqua to-coral", title: "Keynote Address", subtitle: "The Hon. Philip Edward Davis, KC, MP. Prime Minister of The Bahamas" },
   { time: "5:10 PM", tag: "PRESENT", tagColor: "bg-coral", title: "AI for Creators: The New Digital Renaissance", subtitle: "Tanya Leis | Burson" },
   { time: "5:25 PM", tag: "PRESENT", tagColor: "bg-coral", title: "Create with Purpose: The 4 Cs Framework for Creator Success", subtitle: "Aimée Legault | Burson" },
   { time: "5:40 PM", tag: "PANEL", tagColor: "bg-coral", title: "Panel I: Building Domestic Brand Power", subtitle: "Host: Jillian Grey. Deputy PM Chester Cooper, Minister of Tourism" },
@@ -21,7 +21,7 @@ const agendaItems = [
 
 const speakers = [
   {
-    name: "The Rt. Hon. Philip Edward Davis, KC, MP",
+    name: "The Hon. Philip Edward Davis, KC, MP",
     initials: "PD",
     image: "/speakers/pm-davis.jpeg",
     role: "Keynote Address",
@@ -30,7 +30,7 @@ const speakers = [
     size: "large",
   },
   {
-    name: "The Rt. Hon. Mia Amor Mottley, KC, MP",
+    name: "The Hon. Mia Amor Mottley, KC, MP",
     initials: "MM",
     image: "/speakers/mia-mottley.webp",
     imageZoom: true,

@@ -109,7 +109,7 @@ const pillars = [
 
 const speakers = [
   {
-    name: "The Rt. Hon. Philip Edward Davis, KC, MP",
+    name: "The Hon. Philip Edward Davis, KC, MP",
     initials: "PD",
     image: "/speakers/pm-davis.jpeg",
     role: "Keynote Address",
@@ -117,7 +117,7 @@ const speakers = [
     featured: true,
   },
   {
-    name: "The Rt. Hon. Mia Amor Mottley, KC, MP",
+    name: "The Hon. Mia Amor Mottley, KC, MP",
     initials: "MM",
     image: "/speakers/mia-mottley.webp",
     imageZoom: true,
