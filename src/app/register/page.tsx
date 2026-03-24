@@ -166,67 +166,56 @@ export default function RegisterPage() {
 
         {/* Share Section */}
         <div className="mt-10 w-full max-w-md text-center">
-          <p className="mb-2 text-lg font-bold text-sand">Share Your Invitation</p>
+          <p className="mb-2 text-lg font-bold text-sand">Share to Your Story</p>
           <p className="mb-6 text-sm text-sand">
-            Let your audience know you&apos;re part of history.
+            Save your event pass and post it to Instagram, TikTok, or Facebook
           </p>
 
-          <div className="flex flex-wrap justify-center gap-3">
-            <button
-              onClick={() => {
-                if (navigator.share) {
-                  navigator.share({ title: "242 Influencers & Creative Conference", text: shareText, url: "https://242creators.com/register" });
-                } else {
-                  navigator.clipboard.writeText(shareText + " https://242creators.com/register");
-                  alert("Copied to clipboard! Paste it on Instagram.");
-                }
-              }}
-              className="rounded-full bg-gradient-to-r from-purple-500 to-pink-500 px-5 py-3 text-xs font-bold text-white transition-transform hover:scale-105"
-            >
-              Share on Instagram
-            </button>
-            <button
-              onClick={() => {
-                if (navigator.share) {
-                  navigator.share({ title: "242 Influencers & Creative Conference", text: shareText, url: "https://242creators.com/register" });
-                } else {
-                  navigator.clipboard.writeText(shareText + " https://242creators.com/register");
-                  alert("Copied to clipboard! Paste it on TikTok.");
-                }
-              }}
-              className="rounded-full bg-black px-5 py-3 text-xs font-bold text-white ring-1 ring-white/20 transition-transform hover:scale-105"
-            >
-              Share on TikTok
-            </button>
-            <a
-              href={`https://twitter.com/intent/tweet?text=${encodedShareText}&url=https://242creators.com`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full bg-zinc-900 px-5 py-3 text-xs font-bold text-white ring-1 ring-white/20 transition-transform hover:scale-105"
-            >
-              Share on X
-            </a>
-            <a
-              href={`https://www.facebook.com/sharer/sharer.php?u=https://242creators.com&quote=${encodedShareText}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full bg-blue-600 px-5 py-3 text-xs font-bold text-white transition-transform hover:scale-105"
-            >
-              Share on Facebook
-            </a>
-            <button
-              className="rounded-full bg-white/10 px-5 py-3 text-xs font-bold text-sand ring-1 ring-white/20 transition-transform hover:scale-105"
-              onClick={() => {
-                navigator.clipboard.writeText(shareText + "\n\nRegister: https://242creators.com/register");
-                alert("Share text copied to clipboard!");
-              }}
-            >
-              Copy Text
-            </button>
+          {/* Pass preview */}
+          <div className="mb-6 rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+            <img
+              src={`/api/pass?name=${encodeURIComponent(fullName)}`}
+              alt="Your Event Pass"
+              className="w-full"
+            />
           </div>
 
-          <div className="mt-8 rounded-2xl bg-white/[0.08] p-4 border border-white/[0.08]">
-            <p className="text-sm text-sand italic">&ldquo;{shareText}&rdquo;</p>
+          {/* Download + Share buttons */}
+          <div className="flex flex-col gap-3">
+            <a
+              href={`/api/pass?name=${encodeURIComponent(fullName)}`}
+              download={`242-event-pass-${fullName.replace(/\s+/g, '-').toLowerCase()}.png`}
+              className="cta-gradient rounded-full px-8 py-4 text-base font-bold text-white shadow-xl transition-transform hover:scale-105 block"
+            >
+              Save Event Pass
+            </a>
+
+            <div className="flex flex-wrap justify-center gap-3 mt-2">
+              <a
+                href={`https://twitter.com/intent/tweet?text=${encodedShareText}&url=https://242creators.com`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full bg-zinc-900 px-5 py-3 text-xs font-bold text-white ring-1 ring-white/20 transition-transform hover:scale-105"
+              >
+                Share on X
+              </a>
+              <a
+                href={`https://www.facebook.com/sharer/sharer.php?u=https://242creators.com&quote=${encodedShareText}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full bg-blue-600 px-5 py-3 text-xs font-bold text-white transition-transform hover:scale-105"
+              >
+                Share on Facebook
+              </a>
+              <a
+                href={`https://wa.me/?text=${encodeURIComponent(shareText + "\n\nRegister: https://242creators.com/register")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full bg-green-600 px-5 py-3 text-xs font-bold text-white transition-transform hover:scale-105"
+              >
+                Share on WhatsApp
+              </a>
+            </div>
           </div>
 
           <Link
