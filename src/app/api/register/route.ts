@@ -119,7 +119,7 @@ export async function POST(request: NextRequest) {
             niche: body.niche,
             monetization: body.monetization,
             topics: body.topics ?? [],
-            status: "pending",
+            status: "approved",
           },
         });
 
