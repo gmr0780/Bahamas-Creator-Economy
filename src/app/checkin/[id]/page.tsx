@@ -253,6 +253,12 @@ export default function CheckinPage({
                 hour12: true,
               })}
             </p>
+            <a
+              href="/door/scan"
+              className="mt-6 inline-block w-full rounded-xl bg-aqua/20 border border-aqua/30 py-3 text-sm font-bold text-aqua transition-colors hover:bg-aqua/30"
+            >
+              Scan Next Attendee
+            </a>
           </div>
         )}
 
@@ -274,6 +280,12 @@ export default function CheckinPage({
                 hour12: true,
               })}
             </p>
+            <a
+              href="/door/scan"
+              className="mt-6 inline-block w-full rounded-xl bg-aqua/20 border border-aqua/30 py-3 text-sm font-bold text-aqua transition-colors hover:bg-aqua/30"
+            >
+              Scan Next Attendee
+            </a>
           </div>
         )}
       </div>
