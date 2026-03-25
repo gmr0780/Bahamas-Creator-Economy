@@ -29,7 +29,7 @@ export async function sendConfirmationEmail({
 
   try {
     await resend.emails.send({
-      from: "242 Influencers & Creative Conference <noreply@242creators.com>",
+      from: "242 Creators <noreply@242creators.com>",
       to,
       subject: "You're Registered! 242 Influencers & Creative Conference",
       html: `
