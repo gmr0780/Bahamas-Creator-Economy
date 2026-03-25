@@ -16,8 +16,8 @@ export async function createToken() {
 
 export async function verifyToken(token: string) {
   try {
-    await jwtVerify(token, getJwtSecret());
-    return true;
+    const { payload } = await jwtVerify(token, getJwtSecret());
+    return payload.role === "admin";
   } catch {
     return false;
   }

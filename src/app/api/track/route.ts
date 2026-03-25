@@ -17,8 +17,8 @@ export async function POST(req: Request) {
 
     await prisma.pageView.create({
       data: {
-        path: path || "/",
-        referrer: referrer || "",
+        path: (typeof path === "string" ? path : "/").slice(0, 500),
+        referrer: (typeof referrer === "string" ? referrer : "").slice(0, 1000),
         userAgent: userAgent.slice(0, 500),
         ip,
       },

@@ -70,7 +70,7 @@ export async function POST(request: NextRequest) {
       if (!Array.isArray(body.topics) || !body.topics.every((t: unknown) => typeof t === "string")) {
         return NextResponse.json({ error: "Topics must be an array of strings." }, { status: 400 });
       }
-      body.topics = body.topics.map((t: string) => t.trim().slice(0, MAX_LENGTH));
+      body.topics = body.topics.slice(0, 20).map((t: string) => t.trim().slice(0, MAX_LENGTH));
     }
 
     // Check if registration is open

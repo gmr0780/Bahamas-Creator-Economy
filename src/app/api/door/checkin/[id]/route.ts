@@ -41,6 +41,14 @@ export async function POST(
       return NextResponse.json({ error: "Not found" }, { status: 404 });
     }
 
+    if (registration.status !== "approved") {
+      return NextResponse.json({
+        error: "Registration not approved",
+        status: registration.status,
+        fullName: registration.fullName,
+      }, { status: 403 });
+    }
+
     if (registration.checkedIn) {
       return NextResponse.json({
         alreadyCheckedIn: true,
