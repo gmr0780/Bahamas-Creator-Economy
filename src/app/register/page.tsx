@@ -256,7 +256,7 @@ export default function RegisterPage() {
               </div>
               <div className="flex gap-3">
                 <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-aqua/20 text-xs font-bold text-aqua">2</span>
-                <p className="text-sm text-sand">Open <span className="font-bold text-white">Instagram, TikTok, or Facebook</span></p>
+                <p className="text-sm text-sand">Open <span className="font-bold text-white">X, Instagram, TikTok, or Facebook</span></p>
               </div>
               <div className="flex gap-3">
                 <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-aqua/20 text-xs font-bold text-aqua">3</span>

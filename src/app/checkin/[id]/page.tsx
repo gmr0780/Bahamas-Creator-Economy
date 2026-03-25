@@ -176,8 +176,9 @@ export default function CheckinPage({
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <h2 className="text-lg font-bold text-green-400">Valid Registration</h2>
-                <p className="mt-2 text-sm text-sand/60">Please ask staff to check you in.</p>
+                <h2 className="text-lg font-bold text-green-400">You&apos;re All Set</h2>
+                <p className="mt-2 text-sm text-sand/80">Your registration is confirmed. Present this QR code to staff at the door on event day.</p>
+                <p className="mt-4 text-xs text-sand/50">Sunday, March 29, 2026 &middot; 4:00 PM &middot; Baha Mar</p>
               </>
             )}
           </div>
