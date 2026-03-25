@@ -97,6 +97,11 @@ export default function CheckinPage({
         setState({ type: 'not-found' });
         return;
       }
+      if (res.status === 403) {
+        const data = await res.json();
+        setState({ type: 'error', message: `Registration not approved (status: ${data.status ?? 'unknown'}).` });
+        return;
+      }
       const data = await res.json();
       if (data.alreadyCheckedIn) {
         setState({
@@ -246,13 +251,15 @@ export default function CheckinPage({
             </div>
             <h2 className="text-2xl font-black text-green-400">Checked In!</h2>
             <p className="mt-2 text-lg font-bold text-white">{state.fullName}</p>
-            <p className="mt-1 text-xs text-sand/50">
-              {new Date(state.checkedInAt).toLocaleTimeString('en-US', {
-                hour: 'numeric',
-                minute: '2-digit',
-                hour12: true,
-              })}
-            </p>
+            {state.checkedInAt && !isNaN(new Date(state.checkedInAt).getTime()) && (
+              <p className="mt-1 text-xs text-sand/50">
+                {new Date(state.checkedInAt).toLocaleTimeString('en-US', {
+                  hour: 'numeric',
+                  minute: '2-digit',
+                  hour12: true,
+                })}
+              </p>
+            )}
             <a
               href="/door/scan"
               className="mt-6 inline-block w-full rounded-xl bg-aqua/20 border border-aqua/30 py-3 text-sm font-bold text-aqua transition-colors hover:bg-aqua/30"
@@ -272,14 +279,16 @@ export default function CheckinPage({
             </div>
             <h2 className="text-lg font-bold text-yellow-400">Already Checked In</h2>
             <p className="mt-2 text-lg font-bold text-white">{state.fullName}</p>
-            <p className="mt-1 text-sm text-sand/60">
-              Checked in at{' '}
-              {new Date(state.checkedInAt).toLocaleTimeString('en-US', {
-                hour: 'numeric',
-                minute: '2-digit',
-                hour12: true,
-              })}
-            </p>
+            {state.checkedInAt && !isNaN(new Date(state.checkedInAt).getTime()) && (
+              <p className="mt-1 text-sm text-sand/60">
+                Checked in at{' '}
+                {new Date(state.checkedInAt).toLocaleTimeString('en-US', {
+                  hour: 'numeric',
+                  minute: '2-digit',
+                  hour12: true,
+                })}
+              </p>
+            )}
             <a
               href="/door/scan"
               className="mt-6 inline-block w-full rounded-xl bg-aqua/20 border border-aqua/30 py-3 text-sm font-bold text-aqua transition-colors hover:bg-aqua/30"
