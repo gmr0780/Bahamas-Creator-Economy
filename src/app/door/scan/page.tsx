@@ -42,6 +42,13 @@ export default function DoorScanPage() {
     processedRef.current = false;
 
     try {
+      // Request camera permission explicitly first to trigger browser prompt
+      const stream = await navigator.mediaDevices.getUserMedia({
+        video: { facingMode: 'environment' },
+      });
+      // Stop the test stream — html5-qrcode will open its own
+      stream.getTracks().forEach((t) => t.stop());
+
       const scanner = new Html5Qrcode('qr-reader');
       scannerRef.current = scanner;
 
@@ -60,7 +67,13 @@ export default function DoorScanPage() {
       );
     } catch (err) {
       console.error('Camera error:', err);
-      setCameraError('Could not access camera. Please check permissions or use the manual lookup below.');
+      const msg =
+        err instanceof DOMException && err.name === 'NotAllowedError'
+          ? 'Camera permission denied. Tap the lock icon in your browser address bar and allow camera access, then try again.'
+          : err instanceof DOMException && err.name === 'NotFoundError'
+          ? 'No camera found on this device. Use the manual lookup below.'
+          : 'Could not access camera. Make sure no other app is using it, then try again.';
+      setCameraError(msg);
       setScanning(false);
     }
   }
