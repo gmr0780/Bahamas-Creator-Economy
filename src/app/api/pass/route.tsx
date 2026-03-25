@@ -21,22 +21,6 @@ export async function GET(request: NextRequest) {
           padding: "100px 60px 80px",
         }}
       >
-        {/* Bahamian flag colors — clean horizontal stripes */}
-        <div
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
-          <div style={{ height: "16px", background: "#00ABC0" }} />
-          <div style={{ height: "16px", background: "#FFD700" }} />
-          <div style={{ height: "16px", background: "#00ABC0" }} />
-        </div>
-
         {/* OPM */}
         <p
           style={{
@@ -51,6 +35,14 @@ export async function GET(request: NextRequest) {
           Office of the Prime Minister
         </p>
 
+        {/* Bahamian Flag */}
+        <svg width="200" height="120" viewBox="0 0 500 300" style={{ marginTop: 30 }}>
+          <rect width="500" height="100" fill="#00ABC0" />
+          <rect y="100" width="500" height="100" fill="#FFD700" />
+          <rect y="200" width="500" height="100" fill="#00ABC0" />
+          <polygon points="0,0 180,150 0,300" fill="#000000" />
+        </svg>
+
         {/* 242 */}
         <p
           style={{
@@ -58,7 +50,7 @@ export async function GET(request: NextRequest) {
             fontWeight: 900,
             color: "#0891B2",
             lineHeight: 1,
-            margin: "40px 0 0",
+            margin: "30px 0 0",
           }}
         >
           242
