@@ -17,6 +17,8 @@ interface Registration {
   topics: string[];
   status: string;
   source: string;
+  checkedIn: boolean;
+  checkedInAt: string | null;
   createdAt: string;
   updatedAt: string;
 }
@@ -61,6 +63,7 @@ export default function AdminDashboardPage() {
   const [search, setSearch] = useState('');
   const [debouncedSearch, setDebouncedSearch] = useState('');
   const [filter, setFilter] = useState<'all' | Status>('all');
+  const [checkedInFilter, setCheckedInFilter] = useState<'all' | 'yes' | 'no'>('all');
   const [page, setPage] = useState(1);
   const [updatingId, setUpdatingId] = useState<string | null>(null);
   const [deleteConfirm, setDeleteConfirm] = useState<string | null>(null);
@@ -90,6 +93,7 @@ export default function AdminDashboardPage() {
       });
       if (debouncedSearch) params.set('search', debouncedSearch);
       if (filter !== 'all') params.set('status', filter);
+      if (checkedInFilter !== 'all') params.set('checkedIn', checkedInFilter === 'yes' ? 'true' : 'false');
 
       const res = await fetch(`/api/admin/registrations?${params}`);
       if (res.status === 401) {
@@ -104,7 +108,7 @@ export default function AdminDashboardPage() {
     } finally {
       setLoading(false);
     }
-  }, [page, debouncedSearch, filter, router]);
+  }, [page, debouncedSearch, filter, checkedInFilter, router]);
 
   useEffect(() => {
     fetchData();
@@ -121,7 +125,7 @@ export default function AdminDashboardPage() {
   // Reset to page 1 when filters change
   useEffect(() => {
     setPage(1);
-  }, [debouncedSearch, filter]);
+  }, [debouncedSearch, filter, checkedInFilter]);
 
   async function handleStatusChange(id: string, currentStatus: string) {
     const newStatus = nextStatus(currentStatus);
@@ -306,6 +310,26 @@ export default function AdminDashboardPage() {
               className="w-full rounded-xl border border-white/20 bg-white/[0.08] px-4 py-2.5 text-sm text-white placeholder-sand/40 outline-none transition-all focus:border-aqua/40 focus:ring-2 focus:ring-aqua/15 sm:max-w-xs"
             />
 
+            {/* Checked-in filter */}
+            <div className="flex gap-1.5">
+              {(['all', 'yes', 'no'] as const).map((val) => (
+                <button
+                  key={val}
+                  onClick={() => setCheckedInFilter(val)}
+                  className={`rounded-lg px-3 py-2 text-xs font-bold transition-colors ${
+                    checkedInFilter === val
+                      ? val === 'yes'
+                        ? 'bg-green-500/20 text-green-400 border border-green-500/30'
+                        : val === 'no'
+                        ? 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/30'
+                        : 'bg-white/10 text-white border border-white/20'
+                      : 'border border-white/10 text-sand/50 hover:text-sand/80'
+                  }`}
+                >
+                  {val === 'all' ? 'All' : val === 'yes' ? 'Checked In' : 'Not Checked In'}
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* Add Registration + Export */}
@@ -358,6 +382,9 @@ export default function AdminDashboardPage() {
                     Date
                   </th>
                   <th className="px-4 py-3 text-xs font-bold uppercase tracking-widest text-sand/50">
+                    Checked In
+                  </th>
+                  <th className="px-4 py-3 text-xs font-bold uppercase tracking-widest text-sand/50">
                     Actions
                   </th>
                 </tr>
@@ -365,7 +392,7 @@ export default function AdminDashboardPage() {
               <tbody>
                 {registrations.length === 0 ? (
                   <tr>
-                    <td colSpan={7} className="px-4 py-12 text-center text-sand/40">
+                    <td colSpan={8} className="px-4 py-12 text-center text-sand/40">
                       {search || filter !== 'all'
                         ? 'No registrations match your filters.'
                         : 'No registrations yet.'}
@@ -403,6 +430,24 @@ export default function AdminDashboardPage() {
                             hour12: true,
                           })}
                         </span>
+                      </td>
+                      <td className="px-4 py-3 whitespace-nowrap">
+                        {reg.checkedIn ? (
+                          <span className="inline-flex items-center gap-1.5 rounded-full bg-green-500/20 border border-green-500/30 px-2.5 py-1 text-[11px] font-bold text-green-400">
+                            <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                            {reg.checkedInAt
+                              ? new Date(reg.checkedInAt).toLocaleTimeString('en-US', {
+                                  hour: 'numeric',
+                                  minute: '2-digit',
+                                  hour12: true,
+                                })
+                              : 'Yes'}
+                          </span>
+                        ) : (
+                          <span className="text-sand/30 text-xs">&mdash;</span>
+                        )}
                       </td>
                       <td className="px-4 py-3">
                         {deleteConfirm === reg.id ? (

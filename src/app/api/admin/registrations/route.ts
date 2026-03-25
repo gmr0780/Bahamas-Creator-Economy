@@ -13,6 +13,7 @@ export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
     const status = searchParams.get("status");
+    const checkedInParam = searchParams.get("checkedIn");
     const search = searchParams.get("search");
     const page = parseInt(searchParams.get("page") ?? "1", 10);
     const limit = Math.min(parseInt(searchParams.get("limit") ?? "20", 10), 100);
@@ -22,6 +23,12 @@ export async function GET(request: NextRequest) {
 
     if (status) {
       where.status = status;
+    }
+
+    if (checkedInParam === "true") {
+      where.checkedIn = true;
+    } else if (checkedInParam === "false") {
+      where.checkedIn = false;
     }
 
     if (search) {
