@@ -120,12 +120,13 @@ export default function EarnPage() {
               This is a hypothetical example for educational purposes only. Individual results will vary.
             </p>
           </div>
-          <div className="grid gap-px sm:grid-cols-2 lg:grid-cols-5">
+          <div className="grid gap-px sm:grid-cols-2 lg:grid-cols-3">
             {[
               { label: "Monthly Views", value: "100,000" },
               { label: "Est. RPM", value: "$20.00" },
-              { label: "Est. Platform Revenue", value: "$2,000/mo" },
-              { label: "Est. U.S. Withholding", value: "\u2212$180" },
+              { label: "Est. Ad Revenue", value: "$2,000/mo" },
+              { label: "Assumed U.S. Share (30%)", value: "$600" },
+              { label: "U.S. Withholding (30% of $600)", value: "\u2212$180" },
               { label: "Est. Sponsorships", value: "+$1,500/mo" },
             ].map((item) => (
               <div
