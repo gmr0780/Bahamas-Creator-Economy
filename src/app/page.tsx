@@ -190,7 +190,7 @@ export default function Home() {
 
         <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8">
           <p className="animate-fade-in-up text-base sm:text-xl md:text-2xl lg:text-3xl tracking-[0.1em] sm:tracking-[0.15em] uppercase text-aqua font-extrabold flex items-center justify-center gap-3 flex-wrap">
-            <BahamianFlag width={48} className="rounded-sm shrink-0" />
+            <BahamianFlag width={72} className="rounded-sm shrink-0" />
             <span>An Initiative of the Office of the Prime Minister</span>
           </p>
 
