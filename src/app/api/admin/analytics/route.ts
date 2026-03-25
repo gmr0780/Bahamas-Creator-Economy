@@ -13,7 +13,7 @@ export async function GET() {
   const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
   const weekAgo = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000);
 
-  const [totalViews, todayViews, weekViews, topPages, recentReferrers] =
+  const [totalViews, todayViews, weekViews, topPages, recentReferrers, uniqueIps, todayUniqueIps, topIps] =
     await Promise.all([
       prisma.pageView.count(),
       prisma.pageView.count({
@@ -35,6 +35,21 @@ export async function GET() {
         select: { referrer: true },
         orderBy: { createdAt: "desc" },
         take: 50,
+      }),
+      prisma.pageView.groupBy({
+        by: ["ip"],
+        where: { ip: { not: "" } },
+      }).then((r) => r.length),
+      prisma.pageView.groupBy({
+        by: ["ip"],
+        where: { ip: { not: "" }, createdAt: { gte: today } },
+      }).then((r) => r.length),
+      prisma.pageView.groupBy({
+        by: ["ip"],
+        where: { ip: { not: "" } },
+        _count: { ip: true },
+        orderBy: { _count: { ip: "desc" } },
+        take: 20,
       }),
     ]);
 
@@ -59,7 +74,10 @@ export async function GET() {
     totalViews,
     todayViews,
     weekViews,
+    uniqueVisitors: uniqueIps,
+    todayUniqueVisitors: todayUniqueIps,
     topPages: topPages.map((p) => ({ path: p.path, views: p._count.path })),
     topReferrers,
+    topIps: topIps.map((ip) => ({ ip: ip.ip, views: ip._count.ip })),
   });
 }

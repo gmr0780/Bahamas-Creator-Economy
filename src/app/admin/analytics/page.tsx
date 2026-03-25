@@ -8,8 +8,11 @@ interface Analytics {
   totalViews: number;
   todayViews: number;
   weekViews: number;
+  uniqueVisitors: number;
+  todayUniqueVisitors: number;
   topPages: { path: string; views: number }[];
   topReferrers: { source: string; count: number }[];
+  topIps: { ip: string; views: number }[];
 }
 
 export default function AnalyticsPage() {
@@ -64,11 +67,13 @@ export default function AnalyticsPage() {
 
       <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6">
         {/* Stats */}
-        <div className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <div className="mb-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
           {[
-            { label: 'Total Page Views', value: data?.totalViews ?? 0, color: 'text-white' },
-            { label: 'Today', value: data?.todayViews ?? 0, color: 'text-aqua' },
+            { label: 'Total Views', value: data?.totalViews ?? 0, color: 'text-white' },
+            { label: 'Today Views', value: data?.todayViews ?? 0, color: 'text-aqua' },
             { label: 'Last 7 Days', value: data?.weekViews ?? 0, color: 'text-coral' },
+            { label: 'Unique Visitors', value: data?.uniqueVisitors ?? 0, color: 'text-green-400' },
+            { label: 'Today Unique', value: data?.todayUniqueVisitors ?? 0, color: 'text-yellow-400' },
           ].map((stat) => (
             <div key={stat.label} className="glass-dark rounded-xl px-6 py-5 text-center">
               <p className="text-xs font-bold uppercase tracking-widest text-sand/60 mb-2">
@@ -125,6 +130,28 @@ export default function AnalyticsPage() {
               <p className="text-sm text-sand/50">No referrer data yet. This shows where your traffic comes from.</p>
             )}
           </div>
+        </div>
+
+        {/* Top IPs */}
+        <div className="mt-6 glass-dark rounded-xl p-6">
+          <h3 className="mb-4 text-lg font-bold text-white">Top IP Addresses</h3>
+          {data?.topIps && data.topIps.length > 0 ? (
+            <div className="space-y-3">
+              {data.topIps.map((ip, i) => (
+                <div key={ip.ip} className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <span className="flex h-6 w-6 items-center justify-center rounded-full bg-green-500/20 text-xs font-bold text-green-400">
+                      {i + 1}
+                    </span>
+                    <span className="text-sm text-sand font-mono">{ip.ip}</span>
+                  </div>
+                  <span className="text-sm font-bold text-white">{ip.views.toLocaleString()} views</span>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p className="text-sm text-sand/50">No IP data yet.</p>
+          )}
         </div>
       </div>
     </div>

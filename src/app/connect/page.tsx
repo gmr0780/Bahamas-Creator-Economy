@@ -13,6 +13,7 @@ interface Platform {
   gradient: string;
   description: string;
   bestFor: string;
+  url: string;
 }
 
 const platforms: Platform[] = [
@@ -24,6 +25,7 @@ const platforms: Platform[] = [
       "AI-native platform for creator advertising. Connects creators with premium brands across Instagram and YouTube using artificial intelligence to match campaigns with the right voices.",
     bestFor:
       "Creators with established audiences looking for premium brand partnerships.",
+    url: "https://www.agentio.com",
   },
   {
     name: "CreatorIQ",
@@ -33,6 +35,7 @@ const platforms: Platform[] = [
       "Enterprise influencer marketing platform used by major brands and agencies worldwide. Connects creators with Fortune 500 companies and large-scale campaigns.",
     bestFor:
       "Creators with larger audiences (50K+) seeking Fortune 500 partnerships.",
+    url: "https://creatoriq.com",
   },
   {
     name: "Grin",
@@ -42,6 +45,7 @@ const platforms: Platform[] = [
       "Creator management platform focused on e-commerce brands. Integrates directly with Shopify stores to track performance and manage creator relationships end-to-end.",
     bestFor:
       "Creators in product review, unboxing, and lifestyle niches.",
+    url: "https://grin.co",
   },
   {
     name: "Klear",
@@ -51,6 +55,7 @@ const platforms: Platform[] = [
       "Influencer marketing platform with strong analytics and data capabilities. Helps brands find creators based on detailed audience insights and performance metrics.",
     bestFor:
       "Data-driven creators who want to showcase their metrics.",
+    url: "https://klear.com",
   },
   {
     name: "Stan Store",
@@ -60,6 +65,7 @@ const platforms: Platform[] = [
       "Not a marketplace but a monetization platform for selling digital products, bookings, and memberships directly from your link in bio. All-in-one creator storefront.",
     bestFor:
       "Creators wanting to sell their own products and services.",
+    url: "https://stan.store",
   },
 ];
 
@@ -112,6 +118,14 @@ export default function ConnectPage() {
                 </p>
                 <p className="text-sm text-sand/70">{platform.bestFor}</p>
               </div>
+              <a
+                href={platform.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-block rounded-full border border-aqua/30 bg-aqua/10 px-5 py-2 text-xs font-bold text-aqua transition-colors hover:bg-aqua/20"
+              >
+                Visit {platform.name}
+              </a>
             </div>
           ))}
         </div>

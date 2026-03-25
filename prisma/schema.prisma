@@ -36,6 +36,7 @@ model PageView {
   path      String
   referrer  String   @default("")
   userAgent String   @default("")
+  ip        String   @default("")
   createdAt DateTime @default(now())
 
   @@index([path])
