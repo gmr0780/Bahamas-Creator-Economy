@@ -395,6 +395,14 @@ export default function AdminDashboardPage() {
                           day: 'numeric',
                           year: 'numeric',
                         })}
+                        <br />
+                        <span className="text-[11px] text-sand/40">
+                          {new Date(reg.createdAt).toLocaleTimeString('en-US', {
+                            hour: 'numeric',
+                            minute: '2-digit',
+                            hour12: true,
+                          })}
+                        </span>
                       </td>
                       <td className="px-4 py-3">
                         {deleteConfirm === reg.id ? (
