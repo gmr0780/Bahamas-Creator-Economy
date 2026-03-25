@@ -35,7 +35,7 @@ export async function sendConfirmationEmail({
     await resend.emails.send({
       from: "242 Creators Conference <noreply@242creators.com>",
       to,
-      subject: "You're Registered! 242 Influencers & Creative Conference",
+      subject: "You're Registered for the 242 Creators Conference",
       html: `
 <!DOCTYPE html>
 <html>
@@ -49,7 +49,7 @@ export async function sendConfirmationEmail({
     <!-- Header -->
     <div style="text-align:center;margin-bottom:32px;">
       <h1 style="color:#0891B2;font-size:36px;font-weight:900;margin:0;">242</h1>
-      <p style="color:#0891B2;font-size:14px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;margin:4px 0 0;">Influencers & Creative Conference</p>
+      <p style="color:#0891B2;font-size:14px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;margin:4px 0 0;">Influencers &amp; Creative Conference</p>
     </div>
 
     <!-- Main Card -->
@@ -59,7 +59,7 @@ export async function sendConfirmationEmail({
         <h2 style="color:white;font-size:32px;font-weight:900;margin:0 0 8px;">ACCESS GRANTED</h2>
         <div style="height:1px;background:rgba(255,255,255,0.2);margin:20px 0;"></div>
         <p style="color:white;font-size:24px;font-weight:800;margin:0 0 8px;">${escapeHtml(fullName)}</p>
-        <p style="color:#F5E6D0;font-size:14px;margin:0 0 4px;">242 Influencers & Creative Conference</p>
+        <p style="color:#F5E6D0;font-size:14px;margin:0 0 4px;">242 Influencers &amp; Creative Conference</p>
         <p style="color:#F5E6D0;font-size:14px;margin:0 0 20px;">Sunday, March 29, 2026</p>
         <div style="display:inline-block;background:rgba(255,255,255,0.15);border-radius:20px;padding:8px 20px;">
           <span style="color:white;font-size:12px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;">Event Pass</span>
