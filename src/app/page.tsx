@@ -161,7 +161,7 @@ const speakers = [
     featured: false,
   },
   {
-    name: "Ahmad Rashad Thompson",
+    name: "Amad Rashad Thompson",
     initials: "AT",
     image: "/speakers/ahmad-thompson.jpeg",
     role: "Panel Host",
