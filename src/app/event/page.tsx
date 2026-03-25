@@ -14,7 +14,7 @@ const agendaItems = [
   { time: "5:25 PM", tag: "PRESENT", tagColor: "bg-coral", title: "Create with Purpose: The 4 Cs Framework for Creator Success", subtitle: "Aimée Legault | Burson" },
   { time: "5:40 PM", tag: "PANEL", tagColor: "bg-coral", title: "Panel I: Building Domestic Brand Power", subtitle: "Host: Khrisna Russell. Deputy PM Chester Cooper, Minister of Tourism" },
   { time: "6:00 PM", tag: "PRESENT", tagColor: "bg-coral", title: "Connecting Content Creators to Brands and Audiences for Revenue", subtitle: "Alexa Alianiello" },
-  { time: "6:15 PM", tag: "PANEL", tagColor: "bg-aqua", title: "Panel II: Leveraging Our Platforms", subtitle: "Host: Amad Rashad Thompson. Panel: Baha Yogi, Vocab, Das Quay, Bodine, and Zhaneo" },
+  { time: "6:15 PM", tag: "PANEL", tagColor: "bg-aqua", title: "Panel II: Leveraging Our Platforms", subtitle: "Host: Amad Rashad Thompson. Panel: Baha Yogi, Vocab, Das Quay, Bodine, and Zhane'o" },
   { time: "6:35 PM", tag: "PLATFORM", tagColor: "bg-gradient-to-r from-aqua to-coral", title: "Platform Presentations: Creator Eligibility & Monetisation", subtitle: "Featuring X" },
   { time: "7:00 PM", tag: "CLOSING", tagColor: "bg-aqua", title: "Closing Remarks", subtitle: "Latrae Rahming, Director of Communications, OPM" },
   { time: "7:05 PM", tag: "RECEPTION", tagColor: "bg-gradient-to-r from-aqua to-coral", title: "242 After Hours: Mix & Mingle Reception", subtitle: "7:05 PM – 8:00 PM" },
