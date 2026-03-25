@@ -101,7 +101,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Check duplicate email
-    const existing = await prisma.registration.findFirst({
+    const existing = await prisma.registration.findUnique({
       where: { email: body.email },
     });
 
@@ -113,20 +113,37 @@ export async function POST(request: NextRequest) {
     }
 
     // Create registration
-    const registration = await prisma.registration.create({
-      data: {
-        fullName: body.fullName,
-        email: body.email,
-        phone: body.phone,
-        platform: body.platform,
-        handle: body.handle,
-        followers: body.followers,
-        niche: body.niche,
-        monetization: body.monetization,
-        topics: body.topics ?? [],
-        status: "pending",
-      },
-    });
+    let registration;
+    try {
+      registration = await prisma.registration.create({
+        data: {
+          fullName: body.fullName,
+          email: body.email,
+          phone: body.phone,
+          platform: body.platform,
+          handle: body.handle,
+          followers: body.followers,
+          niche: body.niche,
+          monetization: body.monetization,
+          topics: body.topics ?? [],
+          status: "pending",
+        },
+      });
+    } catch (createError: unknown) {
+      // Handle race condition: unique constraint violation on email
+      if (
+        createError &&
+        typeof createError === "object" &&
+        "code" in createError &&
+        (createError as { code: string }).code === "P2002"
+      ) {
+        return NextResponse.json(
+          { error: "This email has already been registered." },
+          { status: 400 }
+        );
+      }
+      throw createError;
+    }
 
     // Send confirmation email (non-blocking)
     sendConfirmationEmail({

@@ -38,14 +38,35 @@ export async function PATCH(request: NextRequest) {
   try {
     const body = await request.json();
 
-    const ALLOWED_KEYS = ['registrationCap', 'registration_cap', 'registrationOpen', 'registration_open', 'vipCap'];
+    // Map camelCase <-> snake_case so both formats stay in sync
+    const KEY_ALIASES: Record<string, string> = {
+      registrationCap: 'registration_cap',
+      registration_cap: 'registrationCap',
+      registrationOpen: 'registration_open',
+      registration_open: 'registrationOpen',
+    };
+    const ALLOWED_KEYS = new Set(['registrationCap', 'registration_cap', 'registrationOpen', 'registration_open', 'vipCap']);
+
     for (const [key, value] of Object.entries(body)) {
-      if (!ALLOWED_KEYS.includes(key)) continue;
+      if (!ALLOWED_KEYS.has(key)) continue;
+      const strValue = String(value);
+
+      // Write the key itself
       await prisma.setting.upsert({
         where: { key },
-        update: { value: String(value) },
-        create: { key, value: String(value) },
+        update: { value: strValue },
+        create: { key, value: strValue },
       });
+
+      // Also write its alias so snake_case and camelCase stay in sync
+      const alias = KEY_ALIASES[key];
+      if (alias) {
+        await prisma.setting.upsert({
+          where: { key: alias },
+          update: { value: strValue },
+          create: { key: alias, value: strValue },
+        });
+      }
     }
 
     const settings = await prisma.setting.findMany();

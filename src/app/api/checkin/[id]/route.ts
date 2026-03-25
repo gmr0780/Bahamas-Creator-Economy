@@ -14,6 +14,9 @@ export async function GET(
       where: { id },
       select: {
         fullName: true,
+        platform: true,
+        handle: true,
+        status: true,
         checkedIn: true,
         checkedInAt: true,
       },

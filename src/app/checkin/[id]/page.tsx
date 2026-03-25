@@ -20,8 +20,15 @@ type PageState =
   | { type: 'checked-in'; fullName: string; checkedInAt: string }
   | { type: 'already-checked-in'; fullName: string; checkedInAt: string };
 
-function hasDoorCookie(): boolean {
-  return document.cookie.split(';').some((c) => c.trim().startsWith('door_token='));
+async function checkDoorStaff(): Promise<boolean> {
+  try {
+    const res = await fetch('/api/door/verify');
+    if (!res.ok) return false;
+    const data = await res.json();
+    return data.isDoorStaff === true;
+  } catch {
+    return false;
+  }
 }
 
 export default function CheckinPage({
@@ -55,7 +62,8 @@ export default function CheckinPage({
           return;
         }
 
-        setState({ type: 'info', data, isDoorStaff: hasDoorCookie() });
+        const isDoor = await checkDoorStaff();
+        setState({ type: 'info', data, isDoorStaff: isDoor });
       } catch {
         setState({ type: 'error', message: 'Connection error.' });
       }
