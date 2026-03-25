@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Countdown from "./components/Countdown";
 import BahamianFlag from "./components/BahamianFlag";
 import SpotsCounter from "./components/SpotsCounter";
@@ -422,17 +423,18 @@ export default function Home() {
                   >
                     {/* Avatar */}
                     <div
-                      className={`rounded-full bg-gradient-to-br ${gradients[i]} flex items-center justify-center mb-6 shadow-lg overflow-hidden ${
+                      className={`relative rounded-full bg-gradient-to-br ${gradients[i]} flex items-center justify-center mb-6 shadow-lg overflow-hidden ${
                         s.featured
                           ? "h-32 w-32 sm:h-40 sm:w-40"
                           : "h-20 w-20 sm:h-24 sm:w-24"
                       }`}
                     >
                       {s.image ? (
-                        <img
+                        <Image
                           src={s.image}
                           alt={s.name}
-                          className={`h-full w-full object-cover ${s.imageClass ? s.imageClass : s.imageZoom ? "scale-[1.6] translate-y-[30%]" : "object-top"}`}
+                          fill
+                          className={`object-cover ${s.imageClass ? s.imageClass : s.imageZoom ? "scale-[1.6] translate-y-[30%]" : "object-top"}`}
                         />
                       ) : (
                         <span

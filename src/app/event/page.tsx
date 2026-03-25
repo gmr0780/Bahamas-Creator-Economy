@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import BahamianFlag from "../components/BahamianFlag";
 
@@ -242,15 +243,16 @@ export default function EventPage() {
             >
               {/* Avatar */}
               <div
-                className={`mx-auto mb-5 flex items-center justify-center rounded-full bg-gradient-to-br ${speaker.gradient} ${
+                className={`relative mx-auto mb-5 flex items-center justify-center rounded-full bg-gradient-to-br ${speaker.gradient} ${
                   speaker.size === "large" ? "h-28 w-28" : "h-20 w-20"
                 } shadow-lg overflow-hidden`}
               >
                 {speaker.image ? (
-                  <img
+                  <Image
                     src={speaker.image}
                     alt={speaker.name}
-                    className={`h-full w-full object-cover ${speaker.imageClass ? speaker.imageClass : speaker.imageZoom ? "scale-[1.6] translate-y-[30%]" : "object-top"}`}
+                    fill
+                    className={`object-cover ${speaker.imageClass ? speaker.imageClass : speaker.imageZoom ? "scale-[1.6] translate-y-[30%]" : "object-top"}`}
                   />
                 ) : (
                   <span className="text-2xl font-extrabold text-white/90">

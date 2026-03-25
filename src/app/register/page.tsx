@@ -321,10 +321,11 @@ export default function RegisterPage() {
         >
           {/* Full Name */}
           <div>
-            <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-white">
+            <label htmlFor="reg-fullname" className="mb-2 block text-xs font-bold uppercase tracking-widest text-white">
               Full Name
             </label>
             <input
+              id="reg-fullname"
               type="text"
               required
               value={fullName}
@@ -336,10 +337,11 @@ export default function RegisterPage() {
 
           {/* Email */}
           <div>
-            <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-white">
+            <label htmlFor="reg-email" className="mb-2 block text-xs font-bold uppercase tracking-widest text-white">
               Email
             </label>
             <input
+              id="reg-email"
               type="email"
               required
               value={email}
@@ -351,10 +353,11 @@ export default function RegisterPage() {
 
           {/* Phone */}
           <div>
-            <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-white">
+            <label htmlFor="reg-phone" className="mb-2 block text-xs font-bold uppercase tracking-widest text-white">
               Phone
             </label>
             <input
+              id="reg-phone"
               type="tel"
               required
               value={phone}
@@ -367,10 +370,11 @@ export default function RegisterPage() {
           {/* Platform + Handle row */}
           <div className="grid gap-6 sm:grid-cols-2">
             <div>
-              <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-white">
+              <label htmlFor="reg-platform" className="mb-2 block text-xs font-bold uppercase tracking-widest text-white">
                 Primary Platform
               </label>
               <select
+                id="reg-platform"
                 required
                 value={platform}
                 onChange={(e) => setPlatform(e.target.value)}
@@ -387,7 +391,7 @@ export default function RegisterPage() {
               </select>
             </div>
             <div>
-              <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-white">
+              <label htmlFor="reg-handle" className="mb-2 block text-xs font-bold uppercase tracking-widest text-white">
                 Social Media Handle
               </label>
               <div className="relative">
@@ -395,6 +399,7 @@ export default function RegisterPage() {
                   @
                 </span>
                 <input
+                  id="reg-handle"
                   type="text"
                   required
                   value={handle}
@@ -409,10 +414,11 @@ export default function RegisterPage() {
           {/* Followers + Niche row */}
           <div className="grid gap-6 sm:grid-cols-2">
             <div>
-              <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-white">
+              <label htmlFor="reg-followers" className="mb-2 block text-xs font-bold uppercase tracking-widest text-white">
                 Follower Count Range
               </label>
               <select
+                id="reg-followers"
                 required
                 value={followers}
                 onChange={(e) => setFollowers(e.target.value)}
@@ -429,10 +435,11 @@ export default function RegisterPage() {
               </select>
             </div>
             <div>
-              <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-white">
+              <label htmlFor="reg-niche" className="mb-2 block text-xs font-bold uppercase tracking-widest text-white">
                 Content Niche
               </label>
               <select
+                id="reg-niche"
                 required
                 value={niche}
                 onChange={(e) => setNiche(e.target.value)}
@@ -452,10 +459,11 @@ export default function RegisterPage() {
 
           {/* Monetization */}
           <div>
-            <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-white">
+            <label htmlFor="reg-monetization" className="mb-2 block text-xs font-bold uppercase tracking-widest text-white">
               Current Monetization Status
             </label>
             <select
+              id="reg-monetization"
               required
               value={monetization}
               onChange={(e) => setMonetization(e.target.value)}

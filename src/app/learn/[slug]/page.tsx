@@ -103,8 +103,8 @@ function renderContent(content: string) {
 }
 
 function renderInlineFormatting(text: string): React.ReactNode {
-  // Split on **bold** markers
-  const parts = text.split(/(\*\*[^*]+\*\*)/g);
+  // Split on **bold** markers and [text](url) link markers
+  const parts = text.split(/(\*\*[^*]+\*\*|\[[^\]]+\]\(https?:\/\/[^)]+\))/g);
   if (parts.length === 1) return text;
 
   return parts.map((part, idx) => {
@@ -113,6 +113,20 @@ function renderInlineFormatting(text: string): React.ReactNode {
         <strong key={idx} className="font-bold text-sand">
           {part.slice(2, -2)}
         </strong>
+      );
+    }
+    const linkMatch = part.match(/^\[([^\]]+)\]\((https?:\/\/[^)]+)\)$/);
+    if (linkMatch) {
+      return (
+        <a
+          key={idx}
+          href={linkMatch[2]}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-aqua underline hover:text-coral"
+        >
+          {linkMatch[1]}
+        </a>
       );
     }
     return part;

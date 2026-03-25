@@ -59,6 +59,7 @@ export default function AdminDashboardPage() {
   const [data, setData] = useState<DashboardData | null>(null);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
+  const [debouncedSearch, setDebouncedSearch] = useState('');
   const [filter, setFilter] = useState<'all' | Status>('all');
   const [page, setPage] = useState(1);
   const [updatingId, setUpdatingId] = useState<string | null>(null);
@@ -87,7 +88,7 @@ export default function AdminDashboardPage() {
         page: String(page),
         pageSize: '20',
       });
-      if (search) params.set('search', search);
+      if (debouncedSearch) params.set('search', debouncedSearch);
       if (filter !== 'all') params.set('status', filter);
 
       const res = await fetch(`/api/admin/registrations?${params}`);
@@ -103,16 +104,24 @@ export default function AdminDashboardPage() {
     } finally {
       setLoading(false);
     }
-  }, [page, search, filter, router]);
+  }, [page, debouncedSearch, filter, router]);
 
   useEffect(() => {
     fetchData();
   }, [fetchData]);
 
-  // Debounce search
+  // Debounce search: update debouncedSearch 500ms after user stops typing
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDebouncedSearch(search);
+    }, 500);
+    return () => clearTimeout(timer);
+  }, [search]);
+
+  // Reset to page 1 when filters change
   useEffect(() => {
     setPage(1);
-  }, [search, filter]);
+  }, [debouncedSearch, filter]);
 
   async function handleStatusChange(id: string, currentStatus: string) {
     const newStatus = nextStatus(currentStatus);
