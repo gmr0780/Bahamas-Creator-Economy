@@ -229,6 +229,23 @@ export default function RegisterPage() {
             )}
           </div>
 
+          {/* QR Security Warning */}
+          <div className="mt-4 rounded-xl border border-yellow-500/30 bg-yellow-500/10 p-4">
+            <p className="text-xs font-bold text-yellow-400 text-center">
+              Do not share your QR code with anyone. It allows a single entry only.
+            </p>
+          </div>
+
+          {/* Retrieve later */}
+          <div className="mt-4 text-center">
+            <p className="text-xs text-sand/60">
+              Lost your QR code?{' '}
+              <a href="/retrieve" className="text-aqua underline underline-offset-2 hover:text-coral transition-colors">
+                Retrieve it here
+              </a>
+            </p>
+          </div>
+
           {/* Steps */}
           <div className="mt-8 glass-dark rounded-2xl p-6 text-left">
             <p className="text-sm font-bold text-white mb-4">How to share:</p>

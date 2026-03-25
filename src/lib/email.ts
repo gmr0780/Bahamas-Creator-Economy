@@ -51,6 +51,10 @@ ${checkinUrl}
 
 Please present this link or QR code at the door for check-in.
 
+IMPORTANT: Do not share your QR code with anyone. It allows a single entry only.
+
+Lost your QR code? Retrieve it at: https://242creators.com/retrieve
+
 WHAT TO EXPECT
 - Keynote by the Prime Minister of The Bahamas
 - Guest Speaker: Prime Minister Mia Mottley of Barbados
@@ -130,6 +134,7 @@ A program of the Office of the Prime Minister, Commonwealth of The Bahamas
     <div style="background:#f0fafb;border:1px solid #0891B2;border-radius:8px;padding:24px;margin:24px 0;text-align:center;">
       <h3 style="font-size:16px;font-weight:700;margin:0 0 8px;color:#1a1a1a;">Your Check-In</h3>
       <p style="font-size:14px;color:#555;margin:0 0 16px;">Present this QR code at the door, or use the link below.</p>
+      <p style="font-size:12px;color:#d97706;font-weight:700;margin:0 0 16px;background:#fef3c7;border:1px solid #fde68a;border-radius:6px;padding:8px 12px;">Do not share your QR code with anyone. It allows a single entry only.</p>
       <p style="margin:0 0 16px;"><img src="cid:checkin-qr" alt="Check-in QR Code" width="180" height="180" style="border-radius:8px;border:1px solid #e0e0e0;" /></p>
       <a href="${checkinUrl}" style="display:inline-block;background:#0891B2;color:#ffffff;font-size:14px;font-weight:700;text-decoration:none;padding:12px 28px;border-radius:6px;">Open Check-In Link</a>
     </div>
@@ -149,6 +154,11 @@ A program of the Office of the Prime Minister, Commonwealth of The Bahamas
     <!-- CTA -->
     <div style="text-align:center;margin:32px 0;">
       <a href="https://242creators.com/event" style="display:inline-block;background:#0891B2;color:#ffffff;font-size:14px;font-weight:700;text-decoration:none;padding:12px 28px;border-radius:6px;">View Full Programme</a>
+    </div>
+
+    <!-- Retrieve -->
+    <div style="text-align:center;margin-top:24px;">
+      <p style="font-size:13px;color:#555;">Lost your QR code? <a href="https://242creators.com/retrieve" style="color:#0891B2;text-decoration:underline;">Retrieve it here</a></p>
     </div>
 
     <!-- Footer -->
