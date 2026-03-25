@@ -12,7 +12,7 @@ const agendaItems = [
   { time: "4:50 PM", tag: "KEYNOTE", tagColor: "bg-gradient-to-r from-aqua to-coral", title: "Keynote Address", subtitle: "Prime Minister Philip Edward Davis, KC. Prime Minister of The Bahamas" },
   { time: "5:10 PM", tag: "PRESENT", tagColor: "bg-coral", title: "AI for Creators: The New Digital Renaissance", subtitle: "Tanya Leis | Burson" },
   { time: "5:25 PM", tag: "PRESENT", tagColor: "bg-coral", title: "Create with Purpose: The 4 Cs Framework for Creator Success", subtitle: "Aimée Legault | Burson" },
-  { time: "5:40 PM", tag: "PANEL", tagColor: "bg-coral", title: "Panel I: Building Domestic Brand Power", subtitle: "Host: Jillian Grey. Deputy PM Chester Cooper, Minister of Tourism" },
+  { time: "5:40 PM", tag: "PANEL", tagColor: "bg-coral", title: "Panel I: Building Domestic Brand Power", subtitle: "Deputy PM Chester Cooper, Minister of Tourism" },
   { time: "6:00 PM", tag: "PRESENT", tagColor: "bg-coral", title: "Connecting Content Creators to Brands and Audiences for Revenue", subtitle: "Alexa Alianiello" },
   { time: "6:15 PM", tag: "PANEL", tagColor: "bg-aqua", title: "Panel II: Leveraging Our Platforms", subtitle: "Host: Ahmad Rashad Thompson. Panel: Baha Yogi, Vocab, Das Quey, Bodine, and Zhano" },
   { time: "6:35 PM", tag: "PLATFORM", tagColor: "bg-gradient-to-r from-aqua to-coral", title: "Platform Presentations: Creator Eligibility & Monetisation", subtitle: "" },
