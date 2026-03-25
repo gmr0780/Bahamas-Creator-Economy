@@ -86,63 +86,76 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Check cap
+    // Check cap + duplicate + create atomically in a transaction
     const capSetting = await prisma.setting.findUnique({
       where: { key: "registration_cap" },
     });
     const cap = parseInt(capSetting?.value ?? "400", 10);
-    const count = await prisma.registration.count({ where: { source: "website" } });
 
-    if (count >= cap) {
-      return NextResponse.json(
-        { error: "Registration is full. All spots have been taken." },
-        { status: 400 }
-      );
-    }
-
-    // Check duplicate email
-    const existing = await prisma.registration.findUnique({
-      where: { email: body.email },
-    });
-
-    if (existing) {
-      return NextResponse.json(
-        { error: "This email has already been registered." },
-        { status: 400 }
-      );
-    }
-
-    // Create registration
     let registration;
+    let count: number;
     try {
-      registration = await prisma.registration.create({
-        data: {
-          fullName: body.fullName,
-          email: body.email,
-          phone: body.phone,
-          platform: body.platform,
-          handle: body.handle,
-          followers: body.followers,
-          niche: body.niche,
-          monetization: body.monetization,
-          topics: body.topics ?? [],
-          status: "pending",
-        },
-      });
-    } catch (createError: unknown) {
+      const result = await prisma.$transaction(async (tx) => {
+        const currentCount = await tx.registration.count({ where: { source: "website" } });
+        if (currentCount >= cap) {
+          throw new Error("FULL");
+        }
+
+        const existing = await tx.registration.findUnique({
+          where: { email: body.email },
+        });
+        if (existing) {
+          throw new Error("DUPLICATE");
+        }
+
+        const created = await tx.registration.create({
+          data: {
+            fullName: body.fullName,
+            email: body.email,
+            phone: body.phone,
+            platform: body.platform,
+            handle: body.handle,
+            followers: body.followers,
+            niche: body.niche,
+            monetization: body.monetization,
+            topics: body.topics ?? [],
+            status: "pending",
+          },
+        });
+
+        return { registration: created, count: currentCount };
+      }, { isolationLevel: "Serializable" });
+
+      registration = result.registration;
+      count = result.count;
+    } catch (txError: unknown) {
+      if (txError instanceof Error) {
+        if (txError.message === "FULL") {
+          return NextResponse.json(
+            { error: "Registration is full. All spots have been taken." },
+            { status: 400 }
+          );
+        }
+        if (txError.message === "DUPLICATE") {
+          return NextResponse.json(
+            { error: "This email has already been registered." },
+            { status: 400 }
+          );
+        }
+      }
       // Handle race condition: unique constraint violation on email
       if (
-        createError &&
-        typeof createError === "object" &&
-        "code" in createError &&
-        (createError as { code: string }).code === "P2002"
+        txError &&
+        typeof txError === "object" &&
+        "code" in txError &&
+        (txError as { code: string }).code === "P2002"
       ) {
         return NextResponse.json(
           { error: "This email has already been registered." },
           { status: 400 }
         );
       }
-      throw createError;
+      throw txError;
     }
 
     // Send confirmation email (non-blocking)

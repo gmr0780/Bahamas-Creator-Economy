@@ -77,19 +77,23 @@ export async function POST(request: NextRequest) {
   }
 
   try {
+    const MAX_LENGTH = 200;
+    function trimStr(val: unknown): string {
+      return typeof val === "string" ? val.trim().slice(0, MAX_LENGTH) : "";
+    }
+
     const body = await request.json();
-    const {
-      fullName,
-      email,
-      phone,
-      platform,
-      handle,
-      followers,
-      niche,
-      monetization,
-      topics,
-      sendEmail,
-    } = body;
+
+    const fullName = trimStr(body.fullName);
+    const email = trimStr(body.email);
+    const phone = trimStr(body.phone);
+    const platform = trimStr(body.platform);
+    const handle = trimStr(body.handle);
+    const followers = trimStr(body.followers);
+    const niche = trimStr(body.niche);
+    const monetization = trimStr(body.monetization);
+    const topics = body.topics;
+    const sendEmail = body.sendEmail;
 
     if (!fullName || !email) {
       return NextResponse.json(
@@ -98,17 +102,11 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Validate email format and max lengths
+    // Validate email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email) || email.length > 200) {
+    if (!emailRegex.test(email)) {
       return NextResponse.json(
         { error: "Invalid email format." },
-        { status: 400 }
-      );
-    }
-    if (fullName.length > 200) {
-      return NextResponse.json(
-        { error: "Full name is too long." },
         { status: 400 }
       );
     }

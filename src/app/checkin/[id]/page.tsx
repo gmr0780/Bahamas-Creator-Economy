@@ -11,11 +11,17 @@ interface RegistrationInfo {
   checkedInAt: string | null;
 }
 
+interface MinimalInfo {
+  valid: boolean;
+  checkedIn: boolean;
+}
+
 type PageState =
   | { type: 'loading' }
   | { type: 'not-found' }
   | { type: 'error'; message: string }
   | { type: 'info'; data: RegistrationInfo; isDoorStaff: boolean }
+  | { type: 'minimal'; data: MinimalInfo }
   | { type: 'checking-in' }
   | { type: 'checked-in'; fullName: string; checkedInAt: string }
   | { type: 'already-checked-in'; fullName: string; checkedInAt: string };
@@ -51,19 +57,27 @@ export default function CheckinPage({
           setState({ type: 'error', message: 'Failed to load registration.' });
           return;
         }
-        const data: RegistrationInfo = await res.json();
+        const data = await res.json();
 
-        if (data.checkedIn && data.checkedInAt) {
+        // Unauthenticated response: { valid, checkedIn } only
+        if ('valid' in data && !('fullName' in data)) {
+          setState({ type: 'minimal', data: data as MinimalInfo });
+          return;
+        }
+
+        const fullData = data as RegistrationInfo;
+
+        if (fullData.checkedIn && fullData.checkedInAt) {
           setState({
             type: 'already-checked-in',
-            fullName: data.fullName,
-            checkedInAt: data.checkedInAt,
+            fullName: fullData.fullName,
+            checkedInAt: fullData.checkedInAt,
           });
           return;
         }
 
         const isDoor = await checkDoorStaff();
-        setState({ type: 'info', data, isDoorStaff: isDoor });
+        setState({ type: 'info', data: fullData, isDoorStaff: isDoor });
       } catch {
         setState({ type: 'error', message: 'Connection error.' });
       }
@@ -139,6 +153,33 @@ export default function CheckinPage({
           <div className="rounded-2xl border border-red-500/30 bg-red-500/10 p-8 text-center">
             <h2 className="text-lg font-bold text-red-400">Error</h2>
             <p className="mt-2 text-sm text-sand/60">{state.message}</p>
+          </div>
+        )}
+
+        {/* Minimal Info (unauthenticated) */}
+        {state.type === 'minimal' && (
+          <div className="rounded-2xl border border-white/10 bg-white/[0.05] p-8 text-center">
+            {state.data.checkedIn ? (
+              <>
+                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-yellow-500/20">
+                  <svg className="h-8 w-8 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <h2 className="text-lg font-bold text-yellow-400">Already Checked In</h2>
+                <p className="mt-2 text-sm text-sand/60">This registration has already been checked in.</p>
+              </>
+            ) : (
+              <>
+                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-500/20">
+                  <svg className="h-8 w-8 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <h2 className="text-lg font-bold text-green-400">Valid Registration</h2>
+                <p className="mt-2 text-sm text-sand/60">Please ask staff to check you in.</p>
+              </>
+            )}
           </div>
         )}
 
