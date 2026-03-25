@@ -86,6 +86,9 @@ export default function RootLayout({
                 <a href="/register" className="hover:text-aqua transition-colors py-2 px-2">
                   Register
                 </a>
+                <a href="/retrieve" className="hover:text-aqua transition-colors py-2 px-2">
+                  My Pass
+                </a>
               </div>
             </div>
 

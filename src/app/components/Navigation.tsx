@@ -11,6 +11,7 @@ const navLinks = [
   { href: "/earn", label: "Earn" },
   { href: "/event", label: "Event" },
   { href: "/connect", label: "Connect" },
+  { href: "/retrieve", label: "My Pass" },
 ];
 
 export default function Navigation() {
