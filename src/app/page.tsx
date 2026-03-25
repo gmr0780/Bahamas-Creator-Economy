@@ -159,6 +159,14 @@ const speakers = [
     tagline: "VP, Influencer Marketing, Burson Canada",
     featured: false,
   },
+  {
+    name: "Ahmad Rashad Thompson",
+    initials: "AT",
+    image: "/speakers/ahmad-thompson.jpeg",
+    role: "Panel Host",
+    tagline: "Leveraging Our Platforms",
+    featured: false,
+  },
 ];
 
 /* ──────────────────────────────────────────
@@ -391,6 +399,8 @@ export default function Home() {
                 "from-purple-500 to-pink-400",
                 "from-aqua to-sand",
                 "from-coral to-sand",
+                "from-indigo-400 to-violet-400",
+                "from-amber-400 to-orange-300",
               ];
               return (
                 <div

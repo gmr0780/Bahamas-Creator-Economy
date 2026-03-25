@@ -270,6 +270,7 @@ export default function EventPage() {
             </div>
           ))}
         </div>
+        <p className="mt-10 text-center text-xl font-bold text-aqua">and more!</p>
       </section>
 
 
