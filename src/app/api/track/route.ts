@@ -1,14 +1,19 @@
 import { NextResponse } from "next/server";
 import { prisma } from "../../../lib/db";
+import { rateLimit } from "../../../lib/rate-limit";
 
 export const dynamic = "force-dynamic";
 
 export async function POST(req: Request) {
   try {
+    const forwarded = req.headers.get("x-forwarded-for");
+    const ip = forwarded ? forwarded.split(",")[0].trim() : "unknown";
+    if (!rateLimit(ip, 30, 60 * 1000)) {
+      return NextResponse.json({ ok: true }); // silent rate limit
+    }
+
     const { path, referrer } = await req.json();
     const userAgent = req.headers.get("user-agent") || "";
-    const forwarded = req.headers.get("x-forwarded-for");
-    const ip = forwarded ? forwarded.split(",")[0].trim() : "";
 
     await prisma.pageView.create({
       data: {

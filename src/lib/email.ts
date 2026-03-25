@@ -1,6 +1,10 @@
 import { Resend } from "resend";
 import QRCode from "qrcode";
 
+function escapeHtml(str: string): string {
+  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+
 function getResend() {
   const key = process.env.RESEND_API_KEY;
   if (!key) {
@@ -54,7 +58,7 @@ export async function sendConfirmationEmail({
         <p style="color:#0891B2;font-size:12px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;margin:0 0 16px;">Office of the Prime Minister</p>
         <h2 style="color:white;font-size:32px;font-weight:900;margin:0 0 8px;">ACCESS GRANTED</h2>
         <div style="height:1px;background:rgba(255,255,255,0.2);margin:20px 0;"></div>
-        <p style="color:white;font-size:24px;font-weight:800;margin:0 0 8px;">${fullName}</p>
+        <p style="color:white;font-size:24px;font-weight:800;margin:0 0 8px;">${escapeHtml(fullName)}</p>
         <p style="color:#F5E6D0;font-size:14px;margin:0 0 4px;">242 Influencers & Creative Conference</p>
         <p style="color:#F5E6D0;font-size:14px;margin:0 0 20px;">Sunday, March 29, 2026</p>
         <div style="display:inline-block;background:rgba(255,255,255,0.15);border-radius:20px;padding:8px 20px;">

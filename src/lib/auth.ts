@@ -1,20 +1,22 @@
 import { SignJWT, jwtVerify } from "jose";
 import { cookies } from "next/headers";
 
-const secret = new TextEncoder().encode(
-  process.env.ADMIN_PASSWORD || "change-me-in-production"
-);
+function getJwtSecret() {
+  const jwt = process.env.JWT_SECRET;
+  if (!jwt) throw new Error("JWT_SECRET environment variable is not set");
+  return new TextEncoder().encode(jwt);
+}
 
 export async function createToken() {
   return new SignJWT({ role: "admin" })
     .setProtectedHeader({ alg: "HS256" })
     .setExpirationTime("24h")
-    .sign(secret);
+    .sign(getJwtSecret());
 }
 
 export async function verifyToken(token: string) {
   try {
-    await jwtVerify(token, secret);
+    await jwtVerify(token, getJwtSecret());
     return true;
   } catch {
     return false;

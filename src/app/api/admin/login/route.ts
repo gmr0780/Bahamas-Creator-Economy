@@ -1,10 +1,16 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createToken } from "../../../../lib/auth";
+import { rateLimit } from "../../../../lib/rate-limit";
 
 export const dynamic = "force-dynamic";
 
 export async function POST(request: NextRequest) {
   try {
+    const ip = request.headers.get("x-forwarded-for")?.split(",")[0].trim() || "unknown";
+    if (!rateLimit(ip, 5, 15 * 60 * 1000)) {
+      return NextResponse.json({ error: "Too many attempts. Try again later." }, { status: 429 });
+    }
+
     const { password } = await request.json();
 
     if (password !== process.env.ADMIN_PASSWORD) {

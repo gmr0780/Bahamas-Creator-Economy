@@ -38,7 +38,9 @@ export async function PATCH(request: NextRequest) {
   try {
     const body = await request.json();
 
+    const ALLOWED_KEYS = ['registrationCap', 'registration_cap', 'registrationOpen', 'registration_open', 'vipCap'];
     for (const [key, value] of Object.entries(body)) {
+      if (!ALLOWED_KEYS.includes(key)) continue;
       await prisma.setting.upsert({
         where: { key },
         update: { value: String(value) },

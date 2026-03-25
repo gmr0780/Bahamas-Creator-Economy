@@ -98,6 +98,21 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Validate email format and max lengths
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email) || email.length > 200) {
+      return NextResponse.json(
+        { error: "Invalid email format." },
+        { status: 400 }
+      );
+    }
+    if (fullName.length > 200) {
+      return NextResponse.json(
+        { error: "Full name is too long." },
+        { status: 400 }
+      );
+    }
+
     // Check for duplicate email
     const existing = await prisma.registration.findUnique({
       where: { email },

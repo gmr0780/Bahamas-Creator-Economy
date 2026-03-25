@@ -5,7 +5,7 @@ export const runtime = "edge";
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
-  const name = searchParams.get("name") || "Creator";
+  const name = (searchParams.get("name") || "Creator").slice(0, 100);
 
   return new ImageResponse(
     (

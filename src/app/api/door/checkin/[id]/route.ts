@@ -6,17 +6,17 @@ import { prisma } from "../../../../../lib/db";
 export const dynamic = "force-dynamic";
 
 async function isDoorAuthenticated(): Promise<boolean> {
-  const doorPassword = process.env.DOOR_PASSWORD;
-  if (!doorPassword) return false;
+  const jwtSecret = process.env.JWT_SECRET;
+  if (!jwtSecret) return false;
 
   const cookieStore = await cookies();
   const token = cookieStore.get("door_token")?.value;
   if (!token) return false;
 
   try {
-    const secret = new TextEncoder().encode(doorPassword);
-    await jwtVerify(token, secret);
-    return true;
+    const secret = new TextEncoder().encode(jwtSecret);
+    const { payload } = await jwtVerify(token, secret);
+    return payload.role === "door";
   } catch {
     return false;
   }
