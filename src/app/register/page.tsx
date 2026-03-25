@@ -80,6 +80,7 @@ export default function RegisterPage() {
     });
   }
 
+  const [registrationId, setRegistrationId] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
   const [spotsLeft, setSpotsLeft] = useState<number | null>(null);
@@ -113,6 +114,7 @@ export default function RegisterPage() {
         setSubmitting(false);
         return;
       }
+      setRegistrationId(data.registrationId ?? null);
       setSubmitted(true);
     } catch {
       setError("Something went wrong. Please try again.");
@@ -216,6 +218,15 @@ export default function RegisterPage() {
             >
               Save to Camera Roll
             </a>
+            {registrationId && (
+              <a
+                href={`/api/qr/${registrationId}`}
+                download="242-checkin-qr.png"
+                className="rounded-full border border-aqua/30 bg-aqua/10 px-8 py-3 text-sm font-bold text-aqua transition-transform hover:scale-105 block"
+              >
+                Download Check-In QR Code
+              </a>
+            )}
           </div>
 
           {/* Steps */}
