@@ -216,10 +216,10 @@ export default function Home() {
 
           <div className="animate-fade-in-up delay-400 pt-6">
             <a
-              href="/register"
+              href="/retrieve"
               className="cta-gradient animate-pulse-glow inline-block rounded-full px-8 sm:px-10 py-4 text-base sm:text-xl font-bold text-white shadow-2xl transition-all"
             >
-              Register Now
+              Retrieve My Pass
             </a>
           </div>
 
@@ -497,10 +497,10 @@ export default function Home() {
           </p>
           <div className="animate-fade-in-up delay-200">
             <a
-              href="/register"
+              href="/retrieve"
               className="cta-gradient animate-pulse-glow inline-block rounded-full px-8 sm:px-12 py-5 text-base sm:text-xl font-bold text-white shadow-2xl transition-all"
             >
-              Register Now
+              Retrieve My Pass
             </a>
           </div>
           <div className="animate-fade-in-up delay-300 pt-4">

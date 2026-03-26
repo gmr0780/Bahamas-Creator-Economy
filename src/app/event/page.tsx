@@ -133,10 +133,10 @@ export default function EventPage() {
           </p>
           <div className="mt-10">
             <Link
-              href="/register"
+              href="/retrieve"
               className="cta-gradient inline-block rounded-full px-8 sm:px-10 py-4 text-base sm:text-lg font-bold text-white shadow-lg"
             >
-              Register Now
+              Retrieve My Pass
             </Link>
           </div>
         </div>

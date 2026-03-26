@@ -243,10 +243,10 @@ export default function EarnPage() {
             Join the Bahamas Creator Economy Launch on March 29 for keynotes, panels, and networking with creators, government leaders, and platform partners.
           </p>
           <Link
-            href="/#register"
+            href="/retrieve"
             className="cta-gradient inline-block rounded-full px-6 sm:px-8 py-4 text-base sm:text-lg font-bold text-white shadow-lg"
           >
-            Register for the Event
+            Retrieve My Pass
           </Link>
         </div>
       </section>
