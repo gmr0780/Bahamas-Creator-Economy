@@ -176,6 +176,23 @@ const speakers = [
     tagline: "Leveraging Our Platforms",
     featured: false,
   },
+  {
+    name: "Greg Michelier",
+    initials: "GM",
+    image: "/speakers/greg-michelier.jpg",
+    role: "Closing Remarks",
+    tagline: "Ambassador-at-Large to Technology and AI",
+    featured: false,
+  },
+  {
+    name: "Latrae Rahming",
+    initials: "LR",
+    image: "/speakers/latrae-rahming.jpeg",
+    imageClass: "object-top",
+    role: "Host",
+    tagline: "Director of Communications, OPM",
+    featured: false,
+  },
 ];
 
 /* ──────────────────────────────────────────
@@ -411,6 +428,8 @@ export default function Home() {
                 "from-indigo-400 to-violet-400",
                 "from-amber-400 to-orange-300",
                 "from-blue-400 to-indigo-400",
+                "from-aqua to-teal-300",
+                "from-coral to-pink-300",
               ];
               return (
                 <div
