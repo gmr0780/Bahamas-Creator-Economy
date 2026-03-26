@@ -5,7 +5,7 @@ import BahamianFlag from "../components/BahamianFlag";
 const agendaItems = [
   { time: "4:00 PM", tag: "WELCOME", tagColor: "bg-aqua", title: "Welcome", subtitle: "Latrae Rahming, Director of Communications, OPM" },
   { time: "4:05 PM", tag: "ANTHEM", tagColor: "bg-coral", title: "National Anthem", subtitle: "Creative and Performing Arts School of The Bahamas (CAPAS)" },
-  { time: "4:10 PM", tag: "SPEAKER", tagColor: "bg-aqua", title: "Speaker I: Greg Michelier", subtitle: "Bahamas Ambassador-at-Large to Technology and AI. \"The Future We Are Choosing\"" },
+  { time: "4:10 PM", tag: "SPEAKER", tagColor: "bg-aqua", title: "Speaker I: United States Ambassador Herschel Walker", subtitle: "" },
   { time: "4:25 PM", tag: "GUEST", tagColor: "bg-aqua", title: "Speaker II: Prime Minister Mia Amor Mottley", subtitle: "Prime Minister of Barbados. \"Owning Our Product as a Region\"" },
   { time: "4:35 PM", tag: "CAPAS", tagColor: "bg-coral", title: "CAPAS Presentation", subtitle: "48-Hour Short Film Challenge Winner. Video Screening" },
   { time: "4:45 PM", tag: "INTRO", tagColor: "bg-aqua", title: "Introduction of the Prime Minister", subtitle: "Latrae Rahming, Director of Communications, OPM" },
@@ -16,7 +16,7 @@ const agendaItems = [
   { time: "6:00 PM", tag: "PRESENT", tagColor: "bg-coral", title: "Connecting Content Creators to Brands and Audiences for Revenue", subtitle: "Alexa Alianiello" },
   { time: "6:15 PM", tag: "PANEL", tagColor: "bg-aqua", title: "Panel II: Leveraging Our Platforms", subtitle: "Host: Amad Rashad Thompson. Panel: Baha Yogi, Vocab, Das Quay, Bodine, and Zhane'o" },
   { time: "6:35 PM", tag: "PLATFORM", tagColor: "bg-gradient-to-r from-aqua to-coral", title: "Platform Presentations: Creator Eligibility & Monetisation", subtitle: "Featuring X" },
-  { time: "7:00 PM", tag: "CLOSING", tagColor: "bg-aqua", title: "Closing Remarks", subtitle: "Latrae Rahming, Director of Communications, OPM" },
+  { time: "7:00 PM", tag: "CLOSING", tagColor: "bg-aqua", title: "Closing Remarks", subtitle: "Greg Michelier, Ambassador-at-Large to Technology and AI" },
   { time: "7:05 PM", tag: "RECEPTION", tagColor: "bg-gradient-to-r from-aqua to-coral", title: "242 After Hours: Mix & Mingle Reception", subtitle: "7:05 PM – 8:00 PM" },
 ];
 
@@ -41,10 +41,18 @@ const speakers = [
     size: "normal",
   },
   {
+    name: "U.S. Ambassador Herschel Walker",
+    initials: "HW",
+    role: "Speaker I",
+    description: "United States Ambassador to The Bahamas",
+    gradient: "from-blue-400 to-indigo-400",
+    size: "normal",
+  },
+  {
     name: "Greg Michelier",
     initials: "GM",
     image: "/speakers/greg-michelier.jpg",
-    role: "Speaker I",
+    role: "Closing Remarks",
     description: "Ambassador-at-Large to Technology and AI",
     gradient: "from-aqua to-teal-300",
     size: "normal",
