@@ -276,21 +276,66 @@ export default function EventPage() {
       </section>
 
 
+      {/* What You Need */}
+      <section className="mx-auto max-w-4xl px-6 py-24">
+        <h2 className="mb-4 text-center text-2xl font-extrabold tracking-tight sm:text-3xl md:text-4xl">
+          What You Need to Enter
+        </h2>
+        <p className="mb-12 text-center text-sand">
+          Make sure you have these ready on March 29
+        </p>
+
+        <div className="grid gap-6 sm:grid-cols-3">
+          <div className="glass-dark rounded-2xl p-6 text-center">
+            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-aqua/20">
+              <svg className="h-8 w-8 text-aqua" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" />
+              </svg>
+            </div>
+            <h3 className="text-lg font-bold text-white mb-2">Your QR Code</h3>
+            <p className="text-sm text-sand">Check your email for your QR code. It was sent when you registered. This is your entry pass.</p>
+            <Link href="/retrieve" className="mt-4 inline-block text-sm font-bold text-aqua underline underline-offset-4 hover:text-coral">
+              Retrieve My QR Code
+            </Link>
+          </div>
+
+          <div className="glass-dark rounded-2xl p-6 text-center">
+            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-aqua/20">
+              <svg className="h-8 w-8 text-aqua" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2" />
+              </svg>
+            </div>
+            <h3 className="text-lg font-bold text-white mb-2">Photo ID</h3>
+            <p className="text-sm text-sand">Bring a valid photo ID that matches the name you registered with.</p>
+          </div>
+
+          <div className="glass-dark rounded-2xl p-6 text-center">
+            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-aqua/20">
+              <svg className="h-8 w-8 text-aqua" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 className="text-lg font-bold text-white mb-2">Your Phone</h3>
+            <p className="text-sm text-sand">Have your phone charged and ready. You will need it to show your QR code and to connect with other creators.</p>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="relative overflow-hidden py-24">
         <div className="absolute inset-0 bg-gradient-to-r from-aqua/10 via-coral/10 to-aqua/10" />
         <div className="relative z-10 mx-auto max-w-3xl px-6 text-center">
           <h2 className="mb-4 text-2xl font-extrabold tracking-tight sm:text-3xl md:text-5xl">
-            Ready to Join?
+            See You There
           </h2>
           <p className="mb-10 text-base sm:text-lg text-sand">
-            400 seats. By invitation from the Office of the Prime Minister.
+            Sunday, March 29, 2026. 4:00 PM. Nassau, The Bahamas.
           </p>
           <Link
-            href="/register"
+            href="/retrieve"
             className="cta-gradient inline-block rounded-full px-8 sm:px-12 py-5 text-base sm:text-lg font-bold text-white shadow-xl"
           >
-            Register Now
+            Retrieve My QR Code
           </Link>
         </div>
       </section>
