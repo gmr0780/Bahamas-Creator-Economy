@@ -118,6 +118,14 @@ const speakers = [
     featured: true,
   },
   {
+    name: "U.S. Ambassador Herschel Walker",
+    initials: "HW",
+    image: "/speakers/herschel-walker.jpeg",
+    role: "Speaker I",
+    tagline: "United States Ambassador to The Bahamas",
+    featured: false,
+  },
+  {
     name: "Prime Minister Mia Amor Mottley",
     initials: "MM",
     image: "/speakers/mia-mottley.webp",
@@ -402,6 +410,7 @@ export default function Home() {
                 "from-coral to-sand",
                 "from-indigo-400 to-violet-400",
                 "from-amber-400 to-orange-300",
+                "from-blue-400 to-indigo-400",
               ];
               return (
                 <div
