@@ -7,7 +7,7 @@ const agendaItems = [
   { time: "4:05 PM", tag: "ANTHEM", tagColor: "bg-coral", title: "National Anthem", subtitle: "Creative and Performing Arts School of The Bahamas (CAPAS)" },
   { time: "4:10 PM", tag: "SPEAKER", tagColor: "bg-aqua", title: "Speaker I: United States Ambassador Herschel Walker", subtitle: "" },
   { time: "4:25 PM", tag: "GUEST", tagColor: "bg-aqua", title: "Speaker II: Prime Minister Mia Amor Mottley", subtitle: "Prime Minister of Barbados. \"Owning Our Product as a Region\"" },
-  { time: "4:35 PM", tag: "CAPAS", tagColor: "bg-coral", title: "CAPAS Presentation", subtitle: "48-Hour Short Film Challenge Winner. Video Screening" },
+  { time: "4:35 PM", tag: "CAPAS", tagColor: "bg-coral", title: "CAPAS Presentation by Ian Poitier", subtitle: "48-Hour Short Film Challenge Winner. Video Screening" },
   { time: "4:45 PM", tag: "INTRO", tagColor: "bg-aqua", title: "Introduction of the Prime Minister", subtitle: "Latrae Rahming, Director of Communications, OPM" },
   { time: "4:50 PM", tag: "KEYNOTE", tagColor: "bg-gradient-to-r from-aqua to-coral", title: "Keynote Address", subtitle: "Prime Minister Philip Edward Davis, KC. Prime Minister of The Bahamas" },
   { time: "5:10 PM", tag: "PRESENT", tagColor: "bg-coral", title: "AI for Creators: The New Digital Renaissance", subtitle: "Tanya Leis | Burson" },
