@@ -43,6 +43,7 @@ const speakers = [
   {
     name: "U.S. Ambassador Herschel Walker",
     initials: "HW",
+    image: "/speakers/herschel-walker.jpeg",
     role: "Speaker I",
     description: "United States Ambassador to The Bahamas",
     gradient: "from-blue-400 to-indigo-400",
