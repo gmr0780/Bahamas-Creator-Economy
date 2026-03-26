@@ -17,6 +17,16 @@ const navLinks = [
 export default function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isFull, setIsFull] = useState(false);
+
+  useEffect(() => {
+    fetch("/api/registrations/count")
+      .then((r) => r.json())
+      .then((data) => {
+        if (data.count >= data.cap || !data.open) setIsFull(true);
+      })
+      .catch(() => {});
+  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -74,10 +84,10 @@ export default function Navigation() {
               </Link>
             ))}
             <Link
-              href="/register"
+              href={isFull ? "/retrieve" : "/register"}
               className="cta-gradient rounded-full px-4 xl:px-6 py-2.5 text-sm xl:text-base font-bold text-white shadow-lg shadow-aqua/20 transition-all"
             >
-              Register
+              {isFull ? "My Pass" : "Register"}
             </Link>
           </div>
 
@@ -124,11 +134,11 @@ export default function Navigation() {
               </Link>
             ))}
             <Link
-              href="/register"
+              href={isFull ? "/retrieve" : "/register"}
               className="cta-gradient rounded-full px-10 py-4 text-lg font-bold text-white shadow-lg mt-4"
               onClick={() => setMobileOpen(false)}
             >
-              Register
+              {isFull ? "My Pass" : "Register"}
             </Link>
           </div>
         </div>
