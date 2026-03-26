@@ -177,6 +177,13 @@ const speakers = [
     featured: false,
   },
   {
+    name: "Jamie Bierman",
+    initials: "JB",
+    role: "Platform Presenter",
+    tagline: "X (formerly Twitter)",
+    featured: false,
+  },
+  {
     name: "Greg Michelier",
     initials: "GM",
     image: "/speakers/greg-michelier.jpg",
@@ -430,6 +437,7 @@ export default function Home() {
                 "from-blue-400 to-indigo-400",
                 "from-aqua to-teal-300",
                 "from-coral to-pink-300",
+                "from-zinc-600 to-zinc-400",
               ];
               return (
                 <div

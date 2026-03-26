@@ -15,7 +15,7 @@ const agendaItems = [
   { time: "5:40 PM", tag: "PANEL", tagColor: "bg-coral", title: "Panel I: Building Domestic Brand Power", subtitle: "Host: Khrisna Russell. Deputy PM Chester Cooper, Minister of Tourism" },
   { time: "6:00 PM", tag: "PRESENT", tagColor: "bg-coral", title: "Connecting Content Creators to Brands and Audiences for Revenue", subtitle: "Alexa Alianiello" },
   { time: "6:15 PM", tag: "PANEL", tagColor: "bg-aqua", title: "Panel II: Leveraging Our Platforms", subtitle: "Host: Amad Rashad Thompson. Panel: Baha Yogi, Vocab, Das Quay, Bodine, and Zhane'o" },
-  { time: "6:35 PM", tag: "PLATFORM", tagColor: "bg-gradient-to-r from-aqua to-coral", title: "Platform Presentations: Creator Eligibility & Monetisation", subtitle: "Featuring X" },
+  { time: "6:35 PM", tag: "PLATFORM", tagColor: "bg-gradient-to-r from-aqua to-coral", title: "Platform Presentations: Creator Eligibility & Monetisation", subtitle: "Featuring Jamie Bierman from X" },
   { time: "7:00 PM", tag: "CLOSING", tagColor: "bg-aqua", title: "Closing Remarks", subtitle: "Greg Michelier, Ambassador-at-Large to Technology and AI" },
   { time: "7:05 PM", tag: "RECEPTION", tagColor: "bg-gradient-to-r from-aqua to-coral", title: "242 After Hours: Mix & Mingle Reception", subtitle: "7:05 PM – 8:00 PM" },
 ];
@@ -113,6 +113,14 @@ const speakers = [
     role: "Panel Host",
     description: "Leveraging Our Platforms",
     gradient: "from-amber-400 to-orange-300",
+    size: "normal",
+  },
+  {
+    name: "Jamie Bierman",
+    initials: "JB",
+    role: "Platform Presenter",
+    description: "X (formerly Twitter)",
+    gradient: "from-zinc-600 to-zinc-400",
     size: "normal",
   },
 ];
