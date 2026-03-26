@@ -553,8 +553,18 @@ export default function RegisterPage() {
             {error && (
               <p className="mb-4 text-center text-sm text-coral font-semibold">{error}</p>
             )}
-            {!registrationOpen ? (
-              <p className="text-center text-lg text-coral font-bold">Registration is currently closed.</p>
+            {!registrationOpen || (spotsLeft !== null && spotsLeft <= 0) ? (
+              <div className="text-center space-y-4">
+                <p className="text-xl text-coral font-extrabold">Registration is now closed</p>
+                <p className="text-sand">All 400 online spots have been filled.</p>
+                <p className="text-sand">Already registered? You will need your QR code for entry on March 29.</p>
+                <a
+                  href="/retrieve"
+                  className="cta-gradient inline-block rounded-full px-8 py-4 text-base font-bold text-white shadow-xl"
+                >
+                  Retrieve My QR Code
+                </a>
+              </div>
             ) : (
               <>
                 <button

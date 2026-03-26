@@ -37,7 +37,7 @@ export default function UrgencyBanner() {
 
   let message: string;
   if (spotsLeft <= 0) {
-    message = "March 29 — Event is at capacity";
+    message = "March 29 — Registration is now closed. Already registered? Retrieve your QR code under My Pass";
   } else if (spotsLeft < 50) {
     message = `March 29, 2026 — Only ${spotsLeft} spots left! Register now`;
   } else {
