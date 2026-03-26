@@ -332,6 +332,25 @@ export default function RegisterPage() {
         </div>
       </section>
 
+      {!registrationOpen || (spotsLeft !== null && spotsLeft <= 0) ? (
+        <section className="relative z-10 mx-auto max-w-2xl px-6 pb-24">
+          <div className="glass-dark rounded-3xl p-8 sm:p-12 text-center space-y-6">
+            <p className="text-3xl font-extrabold text-coral">Registration is Now Closed</p>
+            <p className="text-lg text-sand">All 400 online spots have been filled.</p>
+            <div className="h-px bg-white/10" />
+            <p className="text-sand font-semibold">Already registered?</p>
+            <p className="text-sand">You will need your QR code for entry on March 29. Make sure you have it ready.</p>
+            <a
+              href="/retrieve"
+              className="cta-gradient inline-block rounded-full px-10 py-4 text-lg font-bold text-white shadow-xl"
+            >
+              Retrieve My QR Code
+            </a>
+            <p className="text-sm text-sand">Can&apos;t find your email? Check your spam folder or search for &quot;242 Creators Conference&quot;</p>
+          </div>
+        </section>
+      ) : (
+        <>
       {/* Motivational copy */}
       <section className="relative z-10 -mt-2 mx-auto max-w-2xl px-6">
         <div className="rounded-2xl border border-aqua/20 bg-aqua/5 p-6 text-center mb-6">
@@ -553,40 +572,26 @@ export default function RegisterPage() {
             {error && (
               <p className="mb-4 text-center text-sm text-coral font-semibold">{error}</p>
             )}
-            {!registrationOpen || (spotsLeft !== null && spotsLeft <= 0) ? (
-              <div className="text-center space-y-4">
-                <p className="text-xl text-coral font-extrabold">Registration is now closed</p>
-                <p className="text-sand">All 400 online spots have been filled.</p>
-                <p className="text-sand">Already registered? You will need your QR code for entry on March 29.</p>
-                <a
-                  href="/retrieve"
-                  className="cta-gradient inline-block rounded-full px-8 py-4 text-base font-bold text-white shadow-xl"
-                >
-                  Retrieve My QR Code
-                </a>
-              </div>
-            ) : (
-              <>
-                <button
-                  type="submit"
-                  disabled={submitting}
-                  className="cta-gradient w-full rounded-2xl py-4 text-lg font-extrabold text-white shadow-xl transition-all disabled:opacity-60"
-                >
-                  {submitting ? "Submitting..." : "Secure My Spot"}
-                </button>
-                {spotsLeft !== null && (
-                  <p className="mt-3 text-center text-sm text-aqua font-bold">
-                    {spotsLeft > 0 ? `${spotsLeft} spots remaining` : "Event is full"}
-                  </p>
-                )}
-                <p className="mt-2 text-center text-xs text-sand">
-                  By registering, you confirm your attendance at the Bahamas Creator Economy Launch on March 29, 2026.
-                </p>
-              </>
+            <button
+              type="submit"
+              disabled={submitting}
+              className="cta-gradient w-full rounded-2xl py-4 text-lg font-extrabold text-white shadow-xl transition-all disabled:opacity-60"
+            >
+              {submitting ? "Submitting..." : "Secure My Spot"}
+            </button>
+            {spotsLeft !== null && spotsLeft > 0 && (
+              <p className="mt-3 text-center text-sm text-aqua font-bold">
+                {spotsLeft} spots remaining
+              </p>
             )}
+            <p className="mt-2 text-center text-xs text-sand">
+              By registering, you confirm your attendance at the Bahamas Creator Economy Launch on March 29, 2026.
+            </p>
           </div>
         </form>
       </section>
+        </>
+      )}
     </div>
   );
 }
