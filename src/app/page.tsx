@@ -179,6 +179,7 @@ const speakers = [
   {
     name: "Jamie Bierman",
     initials: "JB",
+    image: "/speakers/jamie-bierman.jpeg",
     role: "Platform Presenter",
     tagline: "X (formerly Twitter)",
     featured: false,

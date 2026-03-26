@@ -118,6 +118,7 @@ const speakers = [
   {
     name: "Jamie Bierman",
     initials: "JB",
+    image: "/speakers/jamie-bierman.jpeg",
     role: "Platform Presenter",
     description: "X (formerly Twitter)",
     gradient: "from-zinc-600 to-zinc-400",
