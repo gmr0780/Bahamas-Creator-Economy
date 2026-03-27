@@ -247,7 +247,13 @@ export default function Home() {
             <Countdown />
           </div>
 
-          <div className="animate-fade-in-up delay-400 pt-6">
+          <div className="animate-fade-in-up delay-400 pt-6 space-y-4">
+            <p className="text-xl sm:text-3xl font-extrabold text-navy">
+              Registration is Now Closed
+            </p>
+            <p className="text-base sm:text-lg font-bold text-navy">
+              Already registered? Retrieve your QR code for entry on March 29.
+            </p>
             <a
               href="/retrieve"
               className="cta-gradient animate-pulse-glow inline-block rounded-full px-8 sm:px-10 py-4 text-base sm:text-xl font-bold text-white shadow-2xl transition-all"
