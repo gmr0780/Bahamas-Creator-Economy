@@ -110,7 +110,7 @@ const pillars = [
 
 const speakers = [
   {
-    name: "Prime Minister Philip Edward Davis, KC",
+    name: "The Hon. Philip Edward Davis, KC, MP",
     initials: "PD",
     image: "/speakers/pm-davis.jpeg",
     role: "Keynote Address",
@@ -126,7 +126,7 @@ const speakers = [
     featured: false,
   },
   {
-    name: "Prime Minister Mia Amor Mottley",
+    name: "The Hon. Mia Amor Mottley, KC, MP",
     initials: "MM",
     image: "/speakers/mia-mottley.webp",
     imageZoom: true,
@@ -135,11 +135,11 @@ const speakers = [
     featured: false,
   },
   {
-    name: "Deputy PM Chester Cooper",
+    name: "Deputy PM I. Chester Cooper",
     initials: "CC",
     image: "/speakers/chester-cooper.webp",
     role: "Panelist",
-    tagline: "Minister of Tourism",
+    tagline: "Minister of Tourism, Investment and Aviation",
     featured: false,
   },
   {

@@ -6,13 +6,13 @@ const agendaItems = [
   { time: "4:00 PM", tag: "WELCOME", tagColor: "bg-aqua", title: "Welcome", subtitle: "Latrae Rahming, Director of Communications, OPM" },
   { time: "4:05 PM", tag: "ANTHEM", tagColor: "bg-coral", title: "National Anthem", subtitle: "Creative and Performing Arts School of The Bahamas (CAPAS)" },
   { time: "4:10 PM", tag: "SPEAKER", tagColor: "bg-aqua", title: "Speaker I: Herschel Walker", subtitle: "U.S. Ambassador to The Bahamas. \"Partnership Between U.S. Companies and The Bahamas\"" },
-  { time: "4:25 PM", tag: "GUEST", tagColor: "bg-aqua", title: "Speaker II (Virtual): The Rt. Hon. Mia Amor Mottley, KC, MP", subtitle: "Prime Minister of Barbados. \"Owning Our Product as a Region\"" },
+  { time: "4:25 PM", tag: "GUEST", tagColor: "bg-aqua", title: "Speaker II (Virtual): The Hon. Mia Amor Mottley, KC, MP", subtitle: "Prime Minister of Barbados. \"Owning Our Product as a Region\"" },
   { time: "4:35 PM", tag: "CAPAS", tagColor: "bg-coral", title: "CAPAS Presentation by Ian Poitier", subtitle: "48-Hour Short Film Challenge Winner. Video Screening" },
   { time: "4:45 PM", tag: "INTRO", tagColor: "bg-aqua", title: "Introduction of the Prime Minister", subtitle: "Latrae Rahming, Director of Communications, OPM" },
-  { time: "4:50 PM", tag: "KEYNOTE", tagColor: "bg-gradient-to-r from-aqua to-coral", title: "Keynote Address", subtitle: "The Rt. Hon. Philip Edward Davis, KC, MP. Prime Minister of The Bahamas" },
+  { time: "4:50 PM", tag: "KEYNOTE", tagColor: "bg-gradient-to-r from-aqua to-coral", title: "Keynote Address", subtitle: "The Hon. Philip Edward Davis, KC, MP. Prime Minister of The Bahamas" },
   { time: "5:10 PM", tag: "PRESENT", tagColor: "bg-coral", title: "AI for Creators: The New Digital Renaissance", subtitle: "Tanya Leis | Burson" },
   { time: "5:25 PM", tag: "PRESENT", tagColor: "bg-coral", title: "Create with Purpose: The 4 Cs Framework for Creator Success", subtitle: "Aimée Legault | Burson" },
-  { time: "5:40 PM", tag: "PANEL", tagColor: "bg-coral", title: "Panel I: Building Domestic Brand Power: Utilising Local Influence as Brand Ambassadors", subtitle: "Host: Khrisna Russell. Deputy Prime Minister Chester Cooper, Minister of Tourism" },
+  { time: "5:40 PM", tag: "PANEL", tagColor: "bg-coral", title: "Panel I: Building Domestic Brand Power: Utilising Local Influence as Brand Ambassadors", subtitle: "Host: Khrisna Russell. Deputy Prime Minister I. Chester Cooper, Minister of Tourism, Investment and Aviation" },
   { time: "6:00 PM", tag: "PRESENT", tagColor: "bg-coral", title: "Connecting Content Creators to Brands and Audiences for Revenue", subtitle: "Alexa Alianiello" },
   { time: "6:15 PM", tag: "PANEL", tagColor: "bg-aqua", title: "Panel II: Leveraging Our Platforms", subtitle: "Host: Amad Rashad Thompson. Panel: Baha Yogi, Vocab, Das Quay, Bodine, and Zhane'o" },
   { time: "6:35 PM", tag: "PLATFORM", tagColor: "bg-gradient-to-r from-aqua to-coral", title: "Platform Presentations", subtitle: "Platform Representative: Jamie Bierman, X.com (formerly known as twitter.com)" },
@@ -22,7 +22,7 @@ const agendaItems = [
 
 const speakers = [
   {
-    name: "Prime Minister Philip Edward Davis, KC",
+    name: "The Hon. Philip Edward Davis, KC, MP",
     initials: "PD",
     image: "/speakers/pm-davis.jpeg",
     role: "Keynote Address",
@@ -31,7 +31,7 @@ const speakers = [
     size: "large",
   },
   {
-    name: "Prime Minister Mia Amor Mottley",
+    name: "The Hon. Mia Amor Mottley, KC, MP",
     initials: "MM",
     image: "/speakers/mia-mottley.webp",
     imageZoom: true,
@@ -59,11 +59,11 @@ const speakers = [
     size: "normal",
   },
   {
-    name: "Deputy PM Chester Cooper",
+    name: "Deputy PM I. Chester Cooper",
     initials: "CC",
     image: "/speakers/chester-cooper.webp",
     role: "Panelist",
-    description: "Minister of Tourism",
+    description: "Minister of Tourism, Investment and Aviation",
     gradient: "from-purple-500 to-pink-400",
     size: "normal",
   },
