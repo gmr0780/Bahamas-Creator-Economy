@@ -1,10 +1,10 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 
-export default function LivePage() {
+function LiveContent() {
   const searchParams = useSearchParams();
   const isPreview = searchParams.get('preview') === 'true';
   const [videoId, setVideoId] = useState('');
@@ -144,5 +144,19 @@ export default function LivePage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function LivePage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="flex min-h-screen items-center justify-center bg-navy">
+          <div className="mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-2 border-aqua border-t-transparent" />
+        </div>
+      }
+    >
+      <LiveContent />
+    </Suspense>
   );
 }
