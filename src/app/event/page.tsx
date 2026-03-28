@@ -4,7 +4,7 @@ import BahamianFlag from "../components/BahamianFlag";
 
 const agendaItems = [
   { time: "4:00 PM", tag: "WELCOME", tagColor: "bg-aqua", title: "Welcome", subtitle: "Latrae Rahming, Director of Communications, OPM" },
-  { time: "4:05 PM", tag: "ANTHEM", tagColor: "bg-coral", title: "National Anthem", subtitle: "Creative and Performing Arts School of The Bahamas (CAPAS)" },
+  { time: "4:05 PM", tag: "ANTHEM", tagColor: "bg-coral", title: "National Anthem", subtitle: "" },
   { time: "4:10 PM", tag: "SPEAKER", tagColor: "bg-aqua", title: "Speaker I: Herschel Walker", subtitle: "U.S. Ambassador to The Bahamas. \"Partnership Between U.S. Companies and The Bahamas\"" },
   { time: "4:25 PM", tag: "GUEST", tagColor: "bg-aqua", title: "Speaker II (Virtual): The Hon. Mia Amor Mottley, KC, MP", subtitle: "Prime Minister of Barbados. \"Owning Our Product as a Region\"" },
   { time: "4:35 PM", tag: "CAPAS", tagColor: "bg-coral", title: "CAPAS Presentation by Ian Poitier", subtitle: "48-Hour Short Film Challenge Winner. Video Screening" },

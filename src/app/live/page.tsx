@@ -126,7 +126,7 @@ function LiveContent() {
           <div className="grid gap-2 text-sm">
             {[
               ['4:00 PM', 'Welcome', 'Latrae Rahming, Director of Communications, OPM'],
-              ['4:05 PM', 'National Anthem', 'CAPAS'],
+              ['4:05 PM', 'National Anthem', ''],
               ['4:10 PM', 'Speaker I: Herschel Walker', 'U.S. Ambassador to The Bahamas'],
               ['4:25 PM', 'Speaker II: The Hon. Mia Amor Mottley, KC, MP', 'Prime Minister of Barbados (Virtual)'],
               ['4:35 PM', 'CAPAS Presentation by Ian Poitier', '48-Hour Short Film Challenge Winner'],
