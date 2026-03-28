@@ -31,6 +31,14 @@ export async function PATCH(
       data.email = body.email.trim().toLowerCase();
     }
 
+    if (body.fullName) {
+      data.fullName = body.fullName.trim();
+    }
+
+    if (body.handle) {
+      data.handle = body.handle.trim();
+    }
+
     if (Object.keys(data).length === 0) {
       return NextResponse.json(
         { error: "No valid fields to update." },
