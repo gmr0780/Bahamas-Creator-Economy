@@ -10,7 +10,6 @@ const navLinks = [
   { href: "/platforms", label: "Platforms" },
   { href: "/earn", label: "Earn" },
   { href: "/event", label: "Event" },
-  { href: "/live", label: "Live" },
   { href: "/connect", label: "Connect" },
   { href: "/retrieve", label: "My Pass" },
 ];
@@ -19,12 +18,19 @@ export default function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isFull, setIsFull] = useState(false);
+  const [isLive, setIsLive] = useState(false);
 
   useEffect(() => {
     fetch("/api/registrations/count")
       .then((r) => r.json())
       .then((data) => {
         if (data.count >= data.cap || !data.open) setIsFull(true);
+      })
+      .catch(() => {});
+    fetch("/api/live")
+      .then((r) => r.ok ? r.json() : null)
+      .then((data) => {
+        if (data?.liveEnabled) setIsLive(true);
       })
       .catch(() => {});
   }, []);
@@ -84,6 +90,15 @@ export default function Navigation() {
                 {link.label}
               </Link>
             ))}
+            {isLive && (
+              <Link
+                href="/live"
+                className="text-sm lg:text-base xl:text-lg font-bold text-red-500 transition-colors hover:text-red-400 py-2 px-1 flex items-center gap-1.5"
+              >
+                <span className="h-2 w-2 rounded-full bg-red-500 animate-pulse" />
+                Live
+              </Link>
+            )}
             <Link
               href={isFull ? "/retrieve" : "/register"}
               className="cta-gradient rounded-full px-4 xl:px-6 py-2.5 text-sm xl:text-base font-bold text-white shadow-lg shadow-aqua/20 transition-all"
@@ -134,6 +149,16 @@ export default function Navigation() {
                 {link.label}
               </Link>
             ))}
+            {isLive && (
+              <Link
+                href="/live"
+                className="text-2xl font-bold text-red-500 transition-colors hover:text-red-400 py-2 px-4 flex items-center gap-2"
+                onClick={() => setMobileOpen(false)}
+              >
+                <span className="h-2.5 w-2.5 rounded-full bg-red-500 animate-pulse" />
+                Live
+              </Link>
+            )}
             <Link
               href={isFull ? "/retrieve" : "/register"}
               className="cta-gradient rounded-full px-10 py-4 text-lg font-bold text-white shadow-lg mt-4"
