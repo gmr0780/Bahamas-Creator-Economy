@@ -125,20 +125,28 @@ function LiveContent() {
           <h2 className="mb-4 text-sm font-bold uppercase tracking-widest text-aqua/60">Programme</h2>
           <div className="grid gap-2 text-sm">
             {[
-              ['4:00 PM', 'Welcome'],
-              ['4:10 PM', 'Speaker I: Herschel Walker, U.S. Ambassador'],
-              ['4:25 PM', 'Speaker II: The Hon. Mia Amor Mottley, KC, MP'],
-              ['4:50 PM', 'Keynote: The Hon. Philip Edward Davis, KC, MP'],
-              ['5:10 PM', 'AI for Creators — Tanya Leis, Burson'],
-              ['5:40 PM', 'Panel I: Building Domestic Brand Power'],
-              ['6:15 PM', 'Panel II: Leveraging Our Platforms'],
-              ['6:35 PM', 'Platform Presentations — Featuring X'],
-              ['7:00 PM', 'Closing Remarks'],
-              ['7:05 PM', '242 After Hours: Mix & Mingle'],
-            ].map(([time, title]) => (
-              <div key={time} className="flex gap-4">
-                <span className="shrink-0 font-mono text-xs text-aqua/70 w-16">{time}</span>
-                <span className="text-sand/80">{title}</span>
+              ['4:00 PM', 'Welcome', 'Latrae Rahming, Director of Communications, OPM'],
+              ['4:05 PM', 'National Anthem', 'CAPAS'],
+              ['4:10 PM', 'Speaker I: Herschel Walker', 'U.S. Ambassador to The Bahamas'],
+              ['4:25 PM', 'Speaker II: The Hon. Mia Amor Mottley, KC, MP', 'Prime Minister of Barbados (Virtual)'],
+              ['4:35 PM', 'CAPAS Presentation by Ian Poitier', '48-Hour Short Film Challenge Winner'],
+              ['4:45 PM', 'Introduction of the Prime Minister', 'Latrae Rahming'],
+              ['4:50 PM', 'Keynote Address', 'The Hon. Philip Edward Davis, KC, MP — Prime Minister of The Bahamas'],
+              ['5:10 PM', 'AI for Creators: The New Digital Renaissance', 'Tanya Leis | Burson'],
+              ['5:25 PM', 'The 4 Cs Framework for Creator Success', 'Aimée Legault | Burson'],
+              ['5:40 PM', 'Panel I: Building Domestic Brand Power', 'Host: Khrisna Russell. Deputy PM I. Chester Cooper'],
+              ['6:00 PM', 'Connecting Creators to Brands and Revenue', 'Alexa Alianiello'],
+              ['6:15 PM', 'Panel II: Leveraging Our Platforms', 'Host: Amad Rashad Thompson. Baha Yogi, Vocab, Das Quay, Bodine, Zhane\'o'],
+              ['6:35 PM', 'Platform Presentations', 'Jamie Bierman, X.com'],
+              ['7:00 PM', 'Closing Remarks', 'Ambassador-at-Large Mr. Greg Michelier'],
+              ['7:05 PM', '242 After Hours: Mix & Mingle', ''],
+            ].map(([time, title, speaker]) => (
+              <div key={time} className="flex gap-4 py-1">
+                <span className="shrink-0 font-mono text-xs text-aqua/70 w-16 pt-0.5">{time}</span>
+                <div>
+                  <span className="text-sand/80">{title}</span>
+                  {speaker && <p className="text-xs text-sand/50">{speaker}</p>}
+                </div>
               </div>
             ))}
           </div>
