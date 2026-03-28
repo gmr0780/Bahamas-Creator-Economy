@@ -39,9 +39,9 @@ export default function UrgencyBanner() {
   if (spotsLeft <= 0) {
     message = "March 29 — Registration is now closed. Already registered? Retrieve your QR code under My Pass";
   } else if (spotsLeft < 50) {
-    message = `March 29, 2026 — Only ${spotsLeft} spots left! Register now`;
+    message = `March 29, 2026 — Only ${spotsLeft} ${spotsLeft === 1 ? 'spot' : 'spots'} left! Register now`;
   } else {
-    message = `March 29, 2026 — Only ${spotsLeft} spots left!`;
+    message = `March 29, 2026 — Only ${spotsLeft} ${spotsLeft === 1 ? 'spot' : 'spots'} left!`;
   }
 
   return (

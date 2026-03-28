@@ -88,10 +88,14 @@ export default function RegisterPage() {
 
   useEffect(() => {
     fetch("/api/registrations/count")
-      .then((r) => r.json())
+      .then((r) => {
+        if (!r.ok) return null;
+        return r.json();
+      })
       .then((data) => {
+        if (!data || data.error) return;
         setSpotsLeft(data.cap - data.count);
-        setRegistrationOpen(data.open);
+        setRegistrationOpen(data.open !== false);
       })
       .catch(() => {});
   }, []);
