@@ -7,7 +7,7 @@ export const dynamic = "force-dynamic";
 export async function POST(request: NextRequest) {
   try {
     const ip = request.headers.get("x-forwarded-for")?.split(",")[0].trim() || "unknown";
-    if (!rateLimit(ip, 10, 15 * 60 * 1000)) {
+    if (!rateLimit(ip, 30, 15 * 60 * 1000)) {
       return NextResponse.json({ error: "Too many attempts. Try again later." }, { status: 429 });
     }
 
