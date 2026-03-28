@@ -8,6 +8,7 @@ const DISMISS_KEY = "urgency-banner-dismissed";
 export default function UrgencyBanner() {
   const [count, setCount] = useState<number | null>(null);
   const [cap, setCap] = useState<number>(400);
+  const [open, setOpen] = useState(true);
   const [dismissed, setDismissed] = useState(true); // start hidden to avoid flash
 
   useEffect(() => {
@@ -21,6 +22,7 @@ export default function UrgencyBanner() {
         .then((data) => {
           setCount(data.count);
           setCap(data.cap);
+          if (data.open === false) setOpen(false);
         })
         .catch(() => {});
     }
@@ -36,7 +38,7 @@ export default function UrgencyBanner() {
   const spotsLeft = cap - count;
 
   let message: string;
-  if (spotsLeft <= 0) {
+  if (!open || spotsLeft <= 0) {
     message = "March 29 — Registration is now closed. Already registered? Retrieve your QR code under My Pass";
   } else if (spotsLeft < 50) {
     message = `March 29, 2026 — Only ${spotsLeft} ${spotsLeft === 1 ? 'spot' : 'spots'} left! Register now`;
@@ -55,7 +57,7 @@ export default function UrgencyBanner() {
         </p>
 
         <div className="flex shrink-0 items-center gap-2">
-          {spotsLeft > 0 && (
+          {open && spotsLeft > 0 && (
             <Link
               href="/register"
               className="hidden rounded-full bg-white/20 px-3 py-0.5 text-xs font-bold text-white backdrop-blur-sm transition-colors hover:bg-white/30 sm:inline-block"
