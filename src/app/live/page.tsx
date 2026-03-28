@@ -1,16 +1,20 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 
 export default function LivePage() {
+  const searchParams = useSearchParams();
+  const isPreview = searchParams.get('preview') === 'true';
   const [videoId, setVideoId] = useState('');
   const [enabled, setEnabled] = useState(false);
   const [streamSize, setStreamSize] = useState('large');
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/api/live')
+    const url = isPreview ? '/api/live?preview=true' : '/api/live';
+    fetch(url)
       .then((r) => {
         if (!r.ok) return null;
         return r.json();

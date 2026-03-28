@@ -221,10 +221,24 @@ export default function AdminSettingsPage() {
                 }`}
               />
             </button>
+            <div className="mt-2 flex items-center gap-3">
+              <a
+                href="/live?preview=true"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-lg border border-white/10 px-3 py-1.5 text-xs font-semibold text-sand/80 transition-colors hover:border-aqua/30 hover:text-aqua"
+              >
+                <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+                Preview Stream
+              </a>
+            </div>
             <p className="mt-1.5 text-xs text-sand/40">
               {settings.liveEnabled
-                ? 'Live stream is ON — /live page shows the stream.'
-                : 'Live stream is OFF — /live page shows "not live yet".'}
+                ? 'Live stream is ON — /live page is public.'
+                : 'Live stream is OFF — only you can preview via the button above.'}
             </p>
           </div>
 
