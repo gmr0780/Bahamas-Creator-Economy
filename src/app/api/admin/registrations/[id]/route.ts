@@ -14,18 +14,33 @@ export async function PATCH(
 
   try {
     const { id } = await params;
-    const { status } = await request.json();
+    const body = await request.json();
+    const data: Record<string, string> = {};
 
-    if (!["approved", "rejected", "pending"].includes(status)) {
+    if (body.status) {
+      if (!["approved", "rejected", "pending"].includes(body.status)) {
+        return NextResponse.json(
+          { error: "Invalid status. Must be approved, rejected, or pending." },
+          { status: 400 }
+        );
+      }
+      data.status = body.status;
+    }
+
+    if (body.email) {
+      data.email = body.email.trim().toLowerCase();
+    }
+
+    if (Object.keys(data).length === 0) {
       return NextResponse.json(
-        { error: "Invalid status. Must be approved, rejected, or pending." },
+        { error: "No valid fields to update." },
         { status: 400 }
       );
     }
 
     const registration = await prisma.registration.update({
       where: { id },
-      data: { status },
+      data,
     });
 
     return NextResponse.json(registration);
