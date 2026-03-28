@@ -99,10 +99,11 @@ function LiveContent() {
         <div className={`relative w-full overflow-hidden bg-black ${streamSize === 'full' ? '' : 'rounded-2xl border border-white/10'}`} style={{ paddingTop: '56.25%' }}>
           <iframe
             className="absolute inset-0 h-full w-full"
-            src={`https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`}
+            src={`https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1&playsinline=1&origin=https://242creators.com`}
             title="242 Creators Conference Live Stream"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
+            referrerPolicy="strict-origin-when-cross-origin"
           />
         </div>
 
