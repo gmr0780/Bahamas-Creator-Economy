@@ -6,7 +6,7 @@ export const dynamic = "force-dynamic";
 export async function GET() {
   try {
     const settings = await prisma.setting.findMany({
-      where: { key: { in: ["youtubeVideoId", "liveEnabled"] } },
+      where: { key: { in: ["youtubeVideoId", "liveEnabled", "streamSize"] } },
     });
 
     const raw: Record<string, string> = {};
@@ -17,6 +17,7 @@ export async function GET() {
     return NextResponse.json({
       youtubeVideoId: raw.youtubeVideoId ?? "",
       liveEnabled: (raw.liveEnabled ?? "false") === "true",
+      streamSize: raw.streamSize ?? "large",
     });
   } catch (error) {
     console.error("Live settings error:", error);

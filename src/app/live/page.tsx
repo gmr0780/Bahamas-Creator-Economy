@@ -6,6 +6,7 @@ import Link from 'next/link';
 export default function LivePage() {
   const [videoId, setVideoId] = useState('');
   const [enabled, setEnabled] = useState(false);
+  const [streamSize, setStreamSize] = useState('large');
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -18,6 +19,7 @@ export default function LivePage() {
         if (data) {
           setVideoId(data.youtubeVideoId ?? '');
           setEnabled(data.liveEnabled ?? false);
+          setStreamSize(data.streamSize ?? 'large');
         }
       })
       .catch(() => {})
@@ -85,8 +87,12 @@ export default function LivePage() {
       </div>
 
       {/* Stream */}
-      <div className="mx-auto max-w-5xl px-4 py-6 sm:px-6">
-        <div className="relative w-full overflow-hidden rounded-2xl border border-white/10 bg-black" style={{ paddingTop: '56.25%' }}>
+      <div className={`mx-auto py-6 ${
+        streamSize === 'full' ? 'max-w-full px-0' :
+        streamSize === 'medium' ? 'max-w-3xl px-4 sm:px-6' :
+        'max-w-5xl px-4 sm:px-6'
+      }`}>
+        <div className={`relative w-full overflow-hidden bg-black ${streamSize === 'full' ? '' : 'rounded-2xl border border-white/10'}`} style={{ paddingTop: '56.25%' }}>
           <iframe
             className="absolute inset-0 h-full w-full"
             src={`https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`}

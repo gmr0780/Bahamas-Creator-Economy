@@ -10,6 +10,7 @@ interface Settings {
   registrationOpen: boolean;
   youtubeVideoId: string;
   liveEnabled: boolean;
+  streamSize: string;
 }
 
 export default function AdminSettingsPage() {
@@ -23,6 +24,7 @@ export default function AdminSettingsPage() {
     registrationOpen: true,
     youtubeVideoId: '',
     liveEnabled: false,
+    streamSize: 'large',
   });
 
   useEffect(() => {
@@ -41,6 +43,7 @@ export default function AdminSettingsPage() {
             registrationOpen: json.registrationOpen ?? true,
             youtubeVideoId: json.youtubeVideoId ?? '',
             liveEnabled: json.liveEnabled ?? false,
+            streamSize: json.streamSize ?? 'large',
           });
         }
       } catch {
@@ -246,6 +249,34 @@ export default function AdminSettingsPage() {
             <p className="mt-1.5 text-xs text-sand/40">
               The ID from the YouTube URL (e.g. youtube.com/watch?v=<span className="text-aqua">THIS_PART</span>). Set this before going live.
             </p>
+          </div>
+
+          {/* Stream Size */}
+          <div>
+            <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-white/70">
+              Stream Window Size
+            </label>
+            <div className="flex gap-2">
+              {[
+                { value: 'medium', label: 'Medium', desc: '768px' },
+                { value: 'large', label: 'Large', desc: '1024px' },
+                { value: 'full', label: 'Full Width', desc: 'Edge to edge' },
+              ].map((opt) => (
+                <button
+                  key={opt.value}
+                  type="button"
+                  onClick={() => setSettings((s) => ({ ...s, streamSize: opt.value }))}
+                  className={`flex-1 rounded-xl border px-3 py-3 text-center transition-colors ${
+                    settings.streamSize === opt.value
+                      ? 'border-aqua/50 bg-aqua/10 text-aqua'
+                      : 'border-white/10 text-sand/50 hover:text-sand/80'
+                  }`}
+                >
+                  <p className="text-sm font-bold">{opt.label}</p>
+                  <p className="text-[10px] mt-0.5 opacity-60">{opt.desc}</p>
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* Save */}
