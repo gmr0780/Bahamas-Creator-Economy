@@ -4,6 +4,16 @@ import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { Html5Qrcode } from 'html5-qrcode';
 
+interface SearchResult {
+  id: string;
+  fullName: string;
+  email: string;
+  handle: string;
+  platform: string;
+  status: string;
+  checkedIn: boolean;
+}
+
 export default function DoorScanPage() {
   const router = useRouter();
   const [input, setInput] = useState('');
@@ -11,6 +21,11 @@ export default function DoorScanPage() {
   const [cameraError, setCameraError] = useState('');
   const scannerRef = useRef<Html5Qrcode | null>(null);
   const processedRef = useRef(false);
+
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
+  const [searching, setSearching] = useState(false);
+  const searchTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   function extractId(value: string): string {
     const match = value.match(/\/checkin\/([a-zA-Z0-9_-]+)/);
@@ -94,6 +109,29 @@ export default function DoorScanPage() {
     };
   }, []);
 
+  // Debounced search
+  useEffect(() => {
+    if (searchTimer.current) clearTimeout(searchTimer.current);
+    if (searchQuery.trim().length < 2) {
+      setSearchResults([]);
+      return;
+    }
+    setSearching(true);
+    searchTimer.current = setTimeout(async () => {
+      try {
+        const res = await fetch(`/api/door/search?q=${encodeURIComponent(searchQuery.trim())}`);
+        if (res.ok) {
+          const data = await res.json();
+          setSearchResults(data.results ?? []);
+        }
+      } catch {
+        // ignore
+      } finally {
+        setSearching(false);
+      }
+    }, 300);
+  }, [searchQuery]);
+
   return (
     <div className="flex min-h-screen flex-col items-center justify-center px-4">
       <div className="w-full max-w-md">
@@ -143,10 +181,72 @@ export default function DoorScanPage() {
           )}
         </div>
 
-        {/* Manual Lookup */}
+        {/* Search by Name / Handle / Email */}
+        <div className="rounded-2xl border border-white/10 bg-white/[0.05] p-6 mb-4">
+          <h2 className="mb-3 text-center text-sm font-bold text-white uppercase tracking-widest">
+            Search Attendee
+          </h2>
+
+          <input
+            type="text"
+            placeholder="Search by name, email, or handle..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-full rounded-xl border border-white/20 bg-white/[0.08] px-4 py-3 text-sm text-white placeholder-sand/40 outline-none transition-all focus:border-aqua/40 focus:ring-2 focus:ring-aqua/15"
+          />
+
+          {searching && (
+            <p className="mt-3 text-center text-xs text-sand/50">Searching...</p>
+          )}
+
+          {searchResults.length > 0 && (
+            <div className="mt-3 space-y-2">
+              {searchResults.map((r) => (
+                <button
+                  key={r.id}
+                  onClick={() => router.push(`/checkin/${r.id}`)}
+                  className="w-full rounded-xl border border-white/10 bg-white/[0.04] p-3 text-left transition-all hover:bg-white/[0.08] hover:border-aqua/30"
+                >
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-sm font-bold text-white">{r.fullName}</p>
+                      <p className="text-xs text-sand/50">
+                        {r.platform && `${r.platform} · `}@{r.handle}
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      {r.checkedIn ? (
+                        <span className="rounded-full bg-green-500/20 border border-green-500/30 px-2 py-0.5 text-[10px] font-bold text-green-400">
+                          Checked In
+                        </span>
+                      ) : r.status === 'approved' ? (
+                        <span className="rounded-full bg-aqua/20 border border-aqua/30 px-2 py-0.5 text-[10px] font-bold text-aqua">
+                          Approved
+                        </span>
+                      ) : (
+                        <span className="rounded-full bg-yellow-500/20 border border-yellow-500/30 px-2 py-0.5 text-[10px] font-bold text-yellow-400">
+                          {r.status}
+                        </span>
+                      )}
+                      <svg className="h-4 w-4 text-sand/30" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                  </div>
+                </button>
+              ))}
+            </div>
+          )}
+
+          {!searching && searchQuery.trim().length >= 2 && searchResults.length === 0 && (
+            <p className="mt-3 text-center text-xs text-sand/40">No results found</p>
+          )}
+        </div>
+
+        {/* Manual ID Lookup */}
         <div className="rounded-2xl border border-white/10 bg-white/[0.05] p-6">
           <h2 className="mb-3 text-center text-sm font-bold text-white uppercase tracking-widest">
-            Manual Lookup
+            ID Lookup
           </h2>
 
           <form onSubmit={handleLookup} className="space-y-3">
