@@ -67,6 +67,9 @@ export default function AdminDashboardPage() {
   const [page, setPage] = useState(1);
   const [updatingId, setUpdatingId] = useState<string | null>(null);
   const [deleteConfirm, setDeleteConfirm] = useState<string | null>(null);
+  const [editingEmail, setEditingEmail] = useState<string | null>(null);
+  const [editEmailValue, setEditEmailValue] = useState('');
+  const [savingEmail, setSavingEmail] = useState(false);
   const [deletingId, setDeletingId] = useState<string | null>(null);
 
   // Add Registration modal state
@@ -167,6 +170,29 @@ export default function AdminDashboardPage() {
       // silently fail
     } finally {
       setDeletingId(null);
+    }
+  }
+
+  async function handleSaveEmail(id: string) {
+    setSavingEmail(true);
+    try {
+      const res = await fetch(`/api/admin/registrations/${id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: editEmailValue }),
+      });
+      if (res.status === 401) {
+        router.push('/admin');
+        return;
+      }
+      if (res.ok) {
+        setEditingEmail(null);
+        await fetchData();
+      }
+    } catch {
+      // silently fail
+    } finally {
+      setSavingEmail(false);
     }
   }
 
@@ -412,7 +438,44 @@ export default function AdminDashboardPage() {
                           )}
                         </span>
                       </td>
-                      <td className="px-4 py-3 text-sand/70">{reg.email}</td>
+                      <td className="px-4 py-3 text-sand/70">
+                        {editingEmail === reg.id ? (
+                          <div className="flex items-center gap-1.5">
+                            <input
+                              type="email"
+                              value={editEmailValue}
+                              onChange={(e) => setEditEmailValue(e.target.value)}
+                              onKeyDown={(e) => {
+                                if (e.key === 'Enter') handleSaveEmail(reg.id);
+                                if (e.key === 'Escape') setEditingEmail(null);
+                              }}
+                              autoFocus
+                              className="w-full min-w-[180px] rounded-lg border border-aqua/40 bg-white/[0.08] px-2 py-1 text-xs text-white outline-none focus:ring-1 focus:ring-aqua/30"
+                            />
+                            <button
+                              onClick={() => handleSaveEmail(reg.id)}
+                              disabled={savingEmail}
+                              className="rounded-md bg-aqua/20 border border-aqua/30 px-2 py-1 text-[10px] font-bold text-aqua hover:bg-aqua/30 disabled:opacity-40"
+                            >
+                              {savingEmail ? '...' : 'Save'}
+                            </button>
+                            <button
+                              onClick={() => setEditingEmail(null)}
+                              className="rounded-md border border-white/10 px-2 py-1 text-[10px] font-bold text-sand/50 hover:text-sand"
+                            >
+                              Cancel
+                            </button>
+                          </div>
+                        ) : (
+                          <span
+                            onClick={() => { setEditingEmail(reg.id); setEditEmailValue(reg.email); }}
+                            className="cursor-pointer hover:text-aqua transition-colors"
+                            title="Click to edit email"
+                          >
+                            {reg.email}
+                          </span>
+                        )}
+                      </td>
                       <td className="px-4 py-3 text-sand/70">{reg.platform}</td>
                       <td className="px-4 py-3 text-sand/70">@{reg.handle}</td>
                       <td className="px-4 py-3 text-sand/70">{reg.followers}</td>
