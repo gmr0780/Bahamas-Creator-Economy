@@ -10,6 +10,7 @@ const navLinks = [
   { href: "/platforms", label: "Platforms" },
   { href: "/earn", label: "Earn" },
   { href: "/event", label: "Event" },
+  { href: "/live", label: "Live" },
   { href: "/connect", label: "Connect" },
   { href: "/retrieve", label: "My Pass" },
 ];

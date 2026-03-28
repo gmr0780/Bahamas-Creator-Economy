@@ -1,0 +1,138 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+
+export default function LivePage() {
+  const [videoId, setVideoId] = useState('');
+  const [enabled, setEnabled] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('/api/live')
+      .then((r) => {
+        if (!r.ok) return null;
+        return r.json();
+      })
+      .then((data) => {
+        if (data) {
+          setVideoId(data.youtubeVideoId ?? '');
+          setEnabled(data.liveEnabled ?? false);
+        }
+      })
+      .catch(() => {})
+      .finally(() => setLoading(false));
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-navy">
+        <div className="text-center">
+          <div className="mx-auto mb-4 h-8 w-8 animate-spin rounded-full border-2 border-aqua border-t-transparent" />
+          <p className="text-sm text-sand/60">Loading stream...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (!enabled || !videoId) {
+    return (
+      <div className="flex min-h-screen flex-col items-center justify-center bg-navy px-6">
+        <div className="max-w-md text-center">
+          <h1 className="text-3xl font-black text-aqua">242</h1>
+          <p className="mt-1 text-xs font-bold uppercase tracking-[0.2em] text-aqua/60">
+            Influencers &amp; Creative Conference
+          </p>
+          <div className="mt-8 rounded-2xl border border-white/10 bg-white/[0.05] p-8">
+            <h2 className="text-xl font-bold text-white">Stream Not Live Yet</h2>
+            <p className="mt-3 text-sm text-sand/70">
+              The live stream will be available here on March 29, 2026 starting at 4:00 PM.
+            </p>
+            <p className="mt-2 text-sm text-sand/50">Check back soon.</p>
+          </div>
+          <Link
+            href="/event"
+            className="mt-6 inline-block text-sm font-semibold text-aqua underline underline-offset-4 hover:text-coral transition-colors"
+          >
+            View Event Details
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-navy text-sand">
+      {/* Header */}
+      <div className="border-b border-white/10 bg-navy/80 backdrop-blur-md">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
+          <div className="flex items-center gap-3">
+            <span className="text-xl font-black text-aqua">242</span>
+            <span className="text-white/30">|</span>
+            <span className="text-sm font-semibold text-white">Live Stream</span>
+            <span className="ml-2 inline-flex items-center gap-1.5 rounded-full bg-red-500/20 border border-red-500/40 px-2.5 py-0.5 text-xs font-bold text-red-400">
+              <span className="h-1.5 w-1.5 rounded-full bg-red-400 animate-pulse" />
+              LIVE
+            </span>
+          </div>
+          <Link
+            href="/event"
+            className="rounded-lg border border-white/10 px-3 py-1.5 text-xs font-semibold text-sand/80 transition-colors hover:border-aqua/30 hover:text-aqua"
+          >
+            Event Details
+          </Link>
+        </div>
+      </div>
+
+      {/* Stream */}
+      <div className="mx-auto max-w-5xl px-4 py-6 sm:px-6">
+        <div className="relative w-full overflow-hidden rounded-2xl border border-white/10 bg-black" style={{ paddingTop: '56.25%' }}>
+          <iframe
+            className="absolute inset-0 h-full w-full"
+            src={`https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`}
+            title="242 Creators Conference Live Stream"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
+
+        {/* Info */}
+        <div className="mt-6 text-center">
+          <h1 className="text-2xl font-extrabold text-white sm:text-3xl">
+            242 Influencers &amp; Creative Conference
+          </h1>
+          <p className="mt-2 text-sand/70">
+            Sunday, March 29, 2026 &middot; Baha Mar Convention Center, Nassau
+          </p>
+          <p className="mt-1 text-xs text-sand/50">
+            Hosted by the Office of the Prime Minister, Commonwealth of The Bahamas
+          </p>
+        </div>
+
+        {/* Agenda quick ref */}
+        <div className="mt-8 rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+          <h2 className="mb-4 text-sm font-bold uppercase tracking-widest text-aqua/60">Programme</h2>
+          <div className="grid gap-2 text-sm">
+            {[
+              ['4:00 PM', 'Welcome'],
+              ['4:10 PM', 'Speaker I: Herschel Walker, U.S. Ambassador'],
+              ['4:25 PM', 'Speaker II: The Hon. Mia Amor Mottley, KC, MP'],
+              ['4:50 PM', 'Keynote: The Hon. Philip Edward Davis, KC, MP'],
+              ['5:10 PM', 'AI for Creators — Tanya Leis, Burson'],
+              ['5:40 PM', 'Panel I: Building Domestic Brand Power'],
+              ['6:15 PM', 'Panel II: Leveraging Our Platforms'],
+              ['6:35 PM', 'Platform Presentations — Featuring X'],
+              ['7:00 PM', 'Closing Remarks'],
+              ['7:05 PM', '242 After Hours: Mix & Mingle'],
+            ].map(([time, title]) => (
+              <div key={time} className="flex gap-4">
+                <span className="shrink-0 font-mono text-xs text-aqua/70 w-16">{time}</span>
+                <span className="text-sand/80">{title}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

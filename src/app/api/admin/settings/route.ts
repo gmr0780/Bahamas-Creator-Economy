@@ -20,6 +20,8 @@ export async function GET() {
       registrationCap: parseInt(raw.registrationCap ?? raw.registration_cap ?? "400", 10),
       vipCap: parseInt(raw.vipCap ?? "100", 10),
       registrationOpen: (raw.registrationOpen ?? raw.registration_open ?? "true") === "true",
+      youtubeVideoId: raw.youtubeVideoId ?? "",
+      liveEnabled: (raw.liveEnabled ?? "false") === "true",
     });
   } catch (error) {
     console.error("Settings error:", error);
@@ -45,7 +47,7 @@ export async function PATCH(request: NextRequest) {
       registrationOpen: 'registration_open',
       registration_open: 'registrationOpen',
     };
-    const ALLOWED_KEYS = new Set(['registrationCap', 'registration_cap', 'registrationOpen', 'registration_open', 'vipCap']);
+    const ALLOWED_KEYS = new Set(['registrationCap', 'registration_cap', 'registrationOpen', 'registration_open', 'vipCap', 'youtubeVideoId', 'liveEnabled']);
 
     for (const [key, value] of Object.entries(body)) {
       if (!ALLOWED_KEYS.has(key)) continue;

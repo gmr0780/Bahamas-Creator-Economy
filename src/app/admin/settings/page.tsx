@@ -8,6 +8,8 @@ interface Settings {
   registrationCap: number;
   vipCap: number;
   registrationOpen: boolean;
+  youtubeVideoId: string;
+  liveEnabled: boolean;
 }
 
 export default function AdminSettingsPage() {
@@ -19,6 +21,8 @@ export default function AdminSettingsPage() {
     registrationCap: 400,
     vipCap: 100,
     registrationOpen: true,
+    youtubeVideoId: '',
+    liveEnabled: false,
   });
 
   useEffect(() => {
@@ -35,6 +39,8 @@ export default function AdminSettingsPage() {
             registrationCap: json.registrationCap ?? 400,
             vipCap: json.vipCap ?? 100,
             registrationOpen: json.registrationOpen ?? true,
+            youtubeVideoId: json.youtubeVideoId ?? '',
+            liveEnabled: json.liveEnabled ?? false,
           });
         }
       } catch {
@@ -182,6 +188,63 @@ export default function AdminSettingsPage() {
               {settings.registrationOpen
                 ? 'Registration is currently open.'
                 : 'Registration is currently closed.'}
+            </p>
+          </div>
+
+          {/* Divider */}
+          <div className="h-px bg-white/10" />
+
+          {/* Live Stream Toggle */}
+          <div>
+            <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-white/70">
+              Live Stream
+            </label>
+            <button
+              type="button"
+              onClick={() =>
+                setSettings((s) => ({ ...s, liveEnabled: !s.liveEnabled }))
+              }
+              className={`relative inline-flex h-7 w-12 shrink-0 items-center rounded-full border transition-colors ${
+                settings.liveEnabled
+                  ? 'border-red-500/40 bg-red-500/20'
+                  : 'border-white/20 bg-white/10'
+              }`}
+            >
+              <span
+                className={`inline-block h-5 w-5 rounded-full transition-transform ${
+                  settings.liveEnabled
+                    ? 'translate-x-6 bg-red-400'
+                    : 'translate-x-1 bg-sand/50'
+                }`}
+              />
+            </button>
+            <p className="mt-1.5 text-xs text-sand/40">
+              {settings.liveEnabled
+                ? 'Live stream is ON — /live page shows the stream.'
+                : 'Live stream is OFF — /live page shows "not live yet".'}
+            </p>
+          </div>
+
+          {/* YouTube Video ID */}
+          <div>
+            <label
+              htmlFor="youtubeVideoId"
+              className="mb-2 block text-xs font-bold uppercase tracking-widest text-white/70"
+            >
+              YouTube Video ID
+            </label>
+            <input
+              id="youtubeVideoId"
+              type="text"
+              value={settings.youtubeVideoId}
+              onChange={(e) =>
+                setSettings((s) => ({ ...s, youtubeVideoId: e.target.value }))
+              }
+              placeholder="e.g. dQw4w9WgXcQ"
+              className="w-full rounded-xl border border-white/25 bg-white/[0.12] px-5 py-3.5 text-white placeholder-sand/40 outline-none transition-all focus:border-aqua/50 focus:ring-2 focus:ring-aqua/20"
+            />
+            <p className="mt-1.5 text-xs text-sand/40">
+              The ID from the YouTube URL (e.g. youtube.com/watch?v=<span className="text-aqua">THIS_PART</span>). Set this before going live.
             </p>
           </div>
 
