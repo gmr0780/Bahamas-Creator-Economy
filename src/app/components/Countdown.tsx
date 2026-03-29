@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-const TARGET_DATE = new Date("2026-03-29T16:00:00-05:00").getTime();
+const TARGET_DATE = new Date("2026-03-29T16:00:00-04:00").getTime();
 
 interface TimeLeft {
   days: number;
