@@ -44,6 +44,23 @@ export default function CheckinPage({
 }) {
   const { id } = use(params);
   const [state, setState] = useState<PageState>({ type: 'loading' });
+  const [isDoorView, setIsDoorView] = useState(false);
+
+  // Hide site nav/footer for door staff
+  useEffect(() => {
+    if (!isDoorView) return;
+    const nav = document.querySelector('header.sticky, header.fixed') as HTMLElement;
+    const footer = document.querySelector('footer') as HTMLElement;
+    const banner = document.querySelector('[class*="gradient-aqua-coral"]') as HTMLElement;
+    if (nav) nav.style.display = 'none';
+    if (footer) footer.style.display = 'none';
+    if (banner) banner.style.display = 'none';
+    return () => {
+      if (nav) nav.style.display = '';
+      if (footer) footer.style.display = '';
+      if (banner) banner.style.display = '';
+    };
+  }, [isDoorView]);
 
   useEffect(() => {
     async function load() {
@@ -77,6 +94,7 @@ export default function CheckinPage({
         }
 
         const isDoor = await checkDoorStaff();
+        if (isDoor) setIsDoorView(true);
         setState({ type: 'info', data: fullData, isDoorStaff: isDoor });
       } catch {
         setState({ type: 'error', message: 'Connection error.' });
@@ -124,6 +142,19 @@ export default function CheckinPage({
   return (
     <div className="flex min-h-screen items-center justify-center bg-navy px-4 py-8">
       <div className="w-full max-w-sm">
+        {/* Back button for door staff */}
+        {isDoorView && (
+          <a
+            href="/door/scan"
+            className="mb-4 inline-flex items-center gap-1.5 text-sm font-semibold text-sand/60 hover:text-aqua transition-colors"
+          >
+            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+            Back to Scanner
+          </a>
+        )}
+
         {/* Header */}
         <div className="mb-6 text-center">
           <h1 className="text-2xl font-black text-aqua">242</h1>
@@ -261,10 +292,10 @@ export default function CheckinPage({
               </p>
             )}
             <a
-              href="/door/scan"
-              className="mt-6 inline-block w-full rounded-xl bg-aqua/20 border border-aqua/30 py-3 text-sm font-bold text-aqua transition-colors hover:bg-aqua/30"
+              href="/door/scan?auto=1"
+              className="mt-4 inline-block w-full rounded-xl bg-aqua/20 border border-aqua/30 py-3 text-sm font-bold text-aqua transition-colors hover:bg-aqua/30 text-center"
             >
-              Scan Next Attendee
+              Scan Next
             </a>
           </div>
         )}
@@ -290,10 +321,10 @@ export default function CheckinPage({
               </p>
             )}
             <a
-              href="/door/scan"
-              className="mt-6 inline-block w-full rounded-xl bg-aqua/20 border border-aqua/30 py-3 text-sm font-bold text-aqua transition-colors hover:bg-aqua/30"
+              href="/door/scan?auto=1"
+              className="mt-4 inline-block w-full rounded-xl bg-aqua/20 border border-aqua/30 py-3 text-sm font-bold text-aqua transition-colors hover:bg-aqua/30 text-center"
             >
-              Scan Next Attendee
+              Scan Next
             </a>
           </div>
         )}

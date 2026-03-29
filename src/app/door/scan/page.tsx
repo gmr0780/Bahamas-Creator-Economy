@@ -100,6 +100,15 @@ export default function DoorScanPage() {
     setScanning(false);
   }
 
+  // Auto-start scanner if ?auto=1
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('auto') === '1' && !scanning) {
+      startScanner();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   // Cleanup on unmount
   useEffect(() => {
     return () => {
