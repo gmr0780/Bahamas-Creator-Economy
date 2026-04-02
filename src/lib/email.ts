@@ -177,3 +177,121 @@ A program of the Office of the Prime Minister, Commonwealth of The Bahamas
     return { success: false, error };
   }
 }
+
+export async function sendMasterclassConfirmationEmail({
+  to,
+  fullName,
+}: {
+  to: string;
+  fullName: string;
+}) {
+  const resend = getResend();
+  if (!resend) return { success: false, error: "Email not configured" };
+
+  const plainText = `X Masterclass for Bahamian Creators - Registration Confirmed
+
+Hello ${fullName},
+
+You're registered for the X Masterclass for Bahamian Creators!
+
+EVENT DETAILS
+Date: Friday, April 17, 2026
+Time: 6:00 PM
+Format: Online
+Host: Jamie Bierman, X (formerly Twitter)
+
+WHAT YOU'LL LEARN
+- How to grow your audience on X
+- How to monetize your content
+- How to build your presence on the platform
+
+CONTEST
+By registering, you're automatically entered for a chance to win a lifetime subscription to X Premium — unlocking brand deals, monetization features, and global visibility.
+
+---
+242Creators.com
+A program of the Office of the Prime Minister, Commonwealth of The Bahamas
+`;
+
+  try {
+    await resend.emails.send({
+      from: "242 Creators <noreply@242creators.com>",
+      to,
+      subject: "You're In - X Masterclass for Bahamian Creators, April 17",
+      text: plainText,
+      html: `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body style="margin:0;padding:0;background:#ffffff;font-family:system-ui,-apple-system,sans-serif;color:#1a1a1a;">
+  <div style="max-width:600px;margin:0 auto;padding:40px 24px;">
+
+    <!-- Header -->
+    <div style="text-align:center;margin-bottom:32px;">
+      <h1 style="color:#0891B2;font-size:32px;font-weight:900;margin:0;">242 Creators</h1>
+      <p style="color:#555;font-size:14px;margin:8px 0 0;">X Masterclass for Bahamian Creators</p>
+    </div>
+
+    <!-- Greeting -->
+    <p style="font-size:16px;line-height:1.6;margin:0 0 24px;">Hello ${escapeHtml(fullName)},</p>
+    <p style="font-size:16px;line-height:1.6;margin:0 0 24px;">You're registered for the <strong>X Masterclass for Bahamian Creators</strong>! Get ready to learn how to grow, monetize, and build your presence on X.</p>
+
+    <!-- Event Details -->
+    <div style="background:#f7f7f7;border:1px solid #e0e0e0;border-radius:8px;padding:24px;margin:24px 0;">
+      <h3 style="font-size:16px;font-weight:700;margin:0 0 16px;color:#1a1a1a;">Event Details</h3>
+      <table style="width:100%;border-collapse:collapse;">
+        <tr>
+          <td style="color:#0891B2;font-size:13px;font-weight:700;padding:6px 0;width:70px;">DATE</td>
+          <td style="font-size:14px;padding:6px 0;color:#333;">Friday, April 17, 2026</td>
+        </tr>
+        <tr>
+          <td style="color:#0891B2;font-size:13px;font-weight:700;padding:6px 0;">TIME</td>
+          <td style="font-size:14px;padding:6px 0;color:#333;">6:00 PM</td>
+        </tr>
+        <tr>
+          <td style="color:#0891B2;font-size:13px;font-weight:700;padding:6px 0;">FORMAT</td>
+          <td style="font-size:14px;padding:6px 0;color:#333;">Online</td>
+        </tr>
+        <tr>
+          <td style="color:#0891B2;font-size:13px;font-weight:700;padding:6px 0;">HOST</td>
+          <td style="font-size:14px;padding:6px 0;color:#333;">Jamie Bierman, X (formerly Twitter)</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Contest -->
+    <div style="background:#f0fafb;border:1px solid #0891B2;border-radius:8px;padding:24px;margin:24px 0;text-align:center;">
+      <h3 style="font-size:16px;font-weight:700;margin:0 0 8px;color:#1a1a1a;">You're Entered to Win</h3>
+      <p style="font-size:14px;color:#555;margin:0 0 8px;">By registering, you're automatically entered for a chance to win a <strong>lifetime subscription to X Premium</strong>.</p>
+      <p style="font-size:13px;color:#555;margin:0;">Unlock brand deals, monetization features, and global visibility.</p>
+    </div>
+
+    <!-- What to Expect -->
+    <div style="margin:24px 0;">
+      <h3 style="font-size:16px;font-weight:700;margin:0 0 12px;color:#1a1a1a;">What You'll Learn</h3>
+      <ul style="margin:0;padding-left:20px;color:#333;font-size:14px;line-height:2;">
+        <li>How to grow your audience on X</li>
+        <li>How to monetize your content</li>
+        <li>How to build your presence on the platform</li>
+      </ul>
+    </div>
+
+    <!-- Footer -->
+    <div style="text-align:center;margin-top:40px;padding-top:24px;border-top:1px solid #e0e0e0;">
+      <p style="font-size:13px;font-weight:700;margin:0 0 4px;color:#0891B2;">242Creators.com</p>
+      <p style="color:#999;font-size:11px;margin:0;">A program of the Office of the Prime Minister, Commonwealth of The Bahamas</p>
+    </div>
+  </div>
+</body>
+</html>
+      `,
+    });
+    return { success: true };
+  } catch (error) {
+    console.error("Masterclass email send failed:", error);
+    return { success: false, error };
+  }
+}

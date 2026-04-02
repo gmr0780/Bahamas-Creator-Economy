@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import Navigation from "./components/Navigation";
-import UrgencyBanner from "./components/UrgencyBanner";
+
 import PageTracker from "./components/PageTracker";
 import BahamianFlag from "./components/BahamianFlag";
 import "./globals.css";
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Bahamas Creator Economy Initiative",
-    description: "Empowering Bahamian digital creators to earn globally. March 29, 2026.",
+    description: "Empowering Bahamian digital creators to earn globally.",
   },
   keywords: [
     "Bahamas",
@@ -49,7 +49,6 @@ export default function RootLayout({
     <html lang="en" className={`${spaceGrotesk.variable} antialiased`}>
       <body className="min-h-screen flex flex-col bg-white text-navy overflow-x-hidden">
         <PageTracker />
-        <UrgencyBanner />
         <Navigation />
 
         <main className="flex-1">{children}</main>
@@ -74,20 +73,20 @@ export default function RootLayout({
 
               {/* Footer links */}
               <div className="flex flex-wrap justify-center gap-2 sm:gap-6 text-sm text-navy">
+                <a href="/x-masterclass" className="hover:text-aqua transition-colors py-2 px-2">
+                  X Masterclass
+                </a>
+                <a href="/recap" className="hover:text-aqua transition-colors py-2 px-2">
+                  Recap
+                </a>
+                <a href="/learn" className="hover:text-aqua transition-colors py-2 px-2">
+                  Learn
+                </a>
                 <a href="/platforms" className="hover:text-aqua transition-colors py-2 px-2">
                   Platforms
                 </a>
                 <a href="/earn" className="hover:text-aqua transition-colors py-2 px-2">
                   Earn
-                </a>
-                <a href="/event" className="hover:text-aqua transition-colors py-2 px-2">
-                  Event
-                </a>
-                <a href="/register" className="hover:text-aqua transition-colors py-2 px-2">
-                  Register
-                </a>
-                <a href="/retrieve" className="hover:text-aqua transition-colors py-2 px-2">
-                  My Pass
                 </a>
               </div>
             </div>

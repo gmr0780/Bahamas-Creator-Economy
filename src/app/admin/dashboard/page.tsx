@@ -273,6 +273,12 @@ export default function AdminDashboardPage() {
           </div>
           <div className="flex items-center gap-3">
             <Link
+              href="/admin/x-masterclass"
+              className="rounded-lg border border-white/10 px-3 py-1.5 text-xs font-semibold text-sand/80 transition-colors hover:border-aqua/30 hover:text-aqua"
+            >
+              X Masterclass
+            </Link>
+            <Link
               href="/admin/analytics"
               className="rounded-lg border border-white/10 px-3 py-1.5 text-xs font-semibold text-sand/80 transition-colors hover:border-aqua/30 hover:text-aqua"
             >

@@ -1,7 +1,5 @@
 import Image from "next/image";
-import Countdown from "./components/Countdown";
 import BahamianFlag from "./components/BahamianFlag";
-import SpotsCounter from "./components/SpotsCounter";
 import HeroAnimation from "./components/HeroAnimation";
 
 /* ──────────────────────────────────────────
@@ -53,6 +51,14 @@ function IconGuidance() {
   );
 }
 
+function IconX() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+  );
+}
+
 /* ──────────────────────────────────────────
    Data
    ────────────────────────────────────────── */
@@ -88,8 +94,8 @@ const pillars = [
   },
   {
     num: "02",
-    title: "Industry Panels",
-    desc: "Panel discussions featuring creators, brands, and industry voices at the March 29 launch event.",
+    title: "Industry Panels & Masterclasses",
+    desc: "Ongoing events featuring creators, platforms, and industry voices — starting with the X Masterclass on April 17.",
   },
   {
     num: "03",
@@ -111,7 +117,6 @@ const pillars = [
 const speakers = [
   {
     name: "The Hon. Philip Edward Davis, KC, MP",
-    initials: "PD",
     image: "/speakers/pm-davis.jpeg",
     role: "Keynote Address",
     tagline: "Prime Minister of The Bahamas",
@@ -119,87 +124,34 @@ const speakers = [
   },
   {
     name: "U.S. Ambassador Herschel Walker",
-    initials: "HW",
     image: "/speakers/herschel-walker.jpeg",
     role: "Speaker I",
     tagline: "United States Ambassador to The Bahamas",
-    featured: false,
   },
   {
     name: "The Hon. Mia Amor Mottley, KC, MP",
-    initials: "MM",
     image: "/speakers/mia-mottley.webp",
     imageZoom: true,
     role: "Guest Speaker",
     tagline: "Prime Minister of Barbados",
-    featured: false,
   },
   {
     name: "Deputy PM I. Chester Cooper",
-    initials: "CC",
     image: "/speakers/chester-cooper.webp",
     role: "Panelist",
     tagline: "Minister of Tourism, Investment and Aviation",
-    featured: false,
-  },
-  {
-    name: "Alexa Alianiello",
-    initials: "AA",
-    image: "/speakers/alexa-alianiello.jpeg",
-    imageClass: "scale-150 translate-y-[5%]",
-    role: "Presenter",
-    tagline: "Agentio | Connecting Creators to Brands",
-    featured: false,
-  },
-  {
-    name: "Tanya Leis",
-    initials: "TL",
-    image: "/speakers/tanya-leis.png",
-    imageClass: "scale-125 object-top",
-    role: "Presenter",
-    tagline: "EVP, Burson North America",
-    featured: false,
-  },
-  {
-    name: "Aimée Legault",
-    initials: "AL",
-    image: "/speakers/aimee-legault.png",
-    role: "Presenter",
-    tagline: "VP, Influencer Marketing, Burson Canada",
-    featured: false,
-  },
-  {
-    name: "Amad Rashad Thompson",
-    initials: "AT",
-    image: "/speakers/ahmad-thompson.jpeg",
-    role: "Panel Host",
-    tagline: "Leveraging Our Platforms",
-    featured: false,
   },
   {
     name: "Jamie Bierman",
-    initials: "JB",
     image: "/speakers/jamie-bierman.jpeg",
     role: "Platform Presenter",
     tagline: "X (formerly Twitter)",
-    featured: false,
   },
   {
     name: "Greg Michelier",
-    initials: "GM",
     image: "/speakers/greg-michelier.jpg",
     role: "Closing Remarks",
     tagline: "Ambassador-at-Large to Technology and AI",
-    featured: false,
-  },
-  {
-    name: "Latrae Rahming",
-    initials: "LR",
-    image: "/speakers/latrae-rahming.jpeg",
-    imageClass: "object-top",
-    role: "Host",
-    tagline: "Director of Communications, OPM",
-    featured: false,
   },
 ];
 
@@ -212,10 +164,8 @@ export default function Home() {
     <>
       {/* ── HERO ─────────────────────────────────── */}
       <section className="hero-mesh relative min-h-[100dvh] flex items-center justify-center px-4 py-28 sm:py-32">
-        {/* Animated hero background */}
         <HeroAnimation />
 
-        {/* Decorative blurs */}
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
           <div className="absolute -top-32 -left-32 h-96 w-96 rounded-full bg-aqua/15 blur-3xl animate-float" />
           <div className="absolute -bottom-32 -right-32 h-96 w-96 rounded-full bg-coral/12 blur-3xl animate-float delay-500" />
@@ -237,29 +187,19 @@ export default function Home() {
           </h1>
 
           <p className="animate-fade-in-up delay-200 text-base sm:text-xl text-navy max-w-2xl mx-auto leading-relaxed">
-            Your talent. Your voice. Your income. It&apos;s time for Bahamian creators to claim their place in the global digital economy.
+            Your hub for opportunities, education, and resources. Empowering Bahamian creators to build, monetize, and thrive on global digital platforms.
           </p>
 
-          <div className="animate-fade-in-up delay-300 pt-4">
-            <p className="text-xs uppercase tracking-[0.3em] text-navy mb-4 font-medium">
-              Summit Begins In
-            </p>
-            <Countdown />
-          </div>
-
-          <div className="animate-fade-in-up delay-400 pt-6 space-y-4">
-            <p className="text-xl sm:text-3xl font-extrabold text-navy">
-              Registration is Now Closed
-            </p>
-            <p className="text-base sm:text-lg font-bold text-navy">
-              Already registered? Retrieve your QR code for entry on March 29.
-            </p>
+          <div className="animate-fade-in-up delay-300 pt-6 space-y-4">
             <a
-              href="/retrieve"
+              href="/x-masterclass"
               className="cta-gradient animate-pulse-glow inline-block rounded-full px-8 sm:px-10 py-4 text-base sm:text-xl font-bold text-white shadow-2xl transition-all"
             >
-              Retrieve My Pass
+              Next Up: X Masterclass
             </a>
+            <p className="text-sm text-navy/70 font-medium">
+              April 17 at 6:00 PM &middot; Free for all Bahamian Creators
+            </p>
           </div>
 
           {/* Scroll hint */}
@@ -291,6 +231,144 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── X MASTERCLASS PROMO ────────────────────── */}
+      <section className="px-6 py-24 sm:py-32 bg-navy text-white overflow-hidden relative">
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute top-0 left-1/4 h-64 w-64 rounded-full bg-aqua/10 blur-3xl" />
+          <div className="absolute bottom-0 right-1/4 h-64 w-64 rounded-full bg-coral/10 blur-3xl" />
+        </div>
+
+        <div className="relative z-10 max-w-5xl mx-auto">
+          <div className="text-center mb-12 space-y-4">
+            <p className="animate-fade-in-up text-xl sm:text-3xl md:text-4xl uppercase tracking-[0.15em] sm:tracking-[0.2em] text-aqua font-extrabold">
+              Next Up
+            </p>
+            <h2 className="animate-fade-in-up delay-100 text-2xl sm:text-5xl font-extrabold text-white">
+              Free X Masterclass for Bahamian Creators
+            </h2>
+          </div>
+
+          <div className="animate-fade-in-up delay-200 glass-dark rounded-3xl p-6 sm:p-10 max-w-3xl mx-auto">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="flex items-center justify-center h-12 w-12 rounded-xl bg-white/10 text-white">
+                <IconX />
+              </div>
+              <div>
+                <p className="text-lg sm:text-xl font-bold text-white">X Masterclass</p>
+                <p className="text-sm text-sand/70">with Jamie Bierman</p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+              <div className="rounded-xl bg-white/5 border border-white/10 p-4 text-center">
+                <p className="text-xs font-bold uppercase tracking-widest text-aqua/70 mb-1">Date</p>
+                <p className="text-lg font-bold text-white">April 17, 2026</p>
+              </div>
+              <div className="rounded-xl bg-white/5 border border-white/10 p-4 text-center">
+                <p className="text-xs font-bold uppercase tracking-widest text-aqua/70 mb-1">Time</p>
+                <p className="text-lg font-bold text-white">6:00 PM</p>
+              </div>
+              <div className="rounded-xl bg-white/5 border border-white/10 p-4 text-center">
+                <p className="text-xs font-bold uppercase tracking-widest text-aqua/70 mb-1">Format</p>
+                <p className="text-lg font-bold text-white">Online (Free)</p>
+              </div>
+            </div>
+
+            <div className="space-y-3 mb-8 text-sand/90">
+              <p className="leading-relaxed">
+                Following Sunday&apos;s 242 Influencers and Creative Conference, X has committed to hosting a free Masterclass for Bahamian creators and influencers.
+              </p>
+              <p className="leading-relaxed">
+                Learn directly from X on how to <strong className="text-white">grow</strong>, <strong className="text-white">monetize</strong>, and <strong className="text-white">build your presence</strong> on the platform.
+              </p>
+            </div>
+
+            {/* Contest callout */}
+            <div className="rounded-2xl bg-gradient-to-r from-aqua/10 to-coral/10 border border-aqua/20 p-5 sm:p-6 mb-8">
+              <div className="flex items-start gap-3">
+                <div className="shrink-0 mt-0.5 text-coral">
+                  <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-bold text-white text-lg mb-1">Win a Lifetime X Premium Subscription</p>
+                  <p className="text-sand/80 text-sm leading-relaxed">
+                    Creators who attend and sign up to X will have the chance to enter a contest judged by X. The winner receives a lifetime subscription to X Premium — unlocking brand deals, monetization features, and global visibility.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <a
+                href="/x-masterclass"
+                className="cta-gradient inline-block rounded-full px-8 sm:px-12 py-4 text-base sm:text-lg font-bold text-white shadow-2xl transition-all"
+              >
+                Learn More & Register
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── EVENT RECAP ──────────────────────────────── */}
+      <section className="px-6 py-24 sm:py-32 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12 space-y-4">
+            <p className="animate-fade-in-up text-xl sm:text-3xl md:text-4xl uppercase tracking-[0.15em] sm:tracking-[0.2em] text-aqua font-extrabold">
+              What We Built
+            </p>
+            <h2 className="animate-fade-in-up delay-100 text-2xl sm:text-5xl font-extrabold text-navy">
+              242 Influencers & Creative Conference
+            </h2>
+            <p className="animate-fade-in-up delay-200 text-navy/70 text-base sm:text-lg max-w-2xl mx-auto">
+              March 29, 2026 at Baha Mar Convention Center, Nassau
+            </p>
+          </div>
+
+          {/* Quote */}
+          <div className="animate-fade-in-up delay-200 max-w-3xl mx-auto mb-12">
+            <blockquote className="text-center">
+              <p className="text-lg sm:text-2xl font-medium text-navy italic leading-relaxed">
+                &ldquo;This is exactly what we set out to achieve. Not just a conversation — but real, tangible opportunities for Bahamian creators.&rdquo;
+              </p>
+            </blockquote>
+          </div>
+
+          {/* Speaker highlights from the event */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mb-12">
+            {speakers.map((s) => (
+              <div
+                key={s.name}
+                className="animate-fade-in-up rounded-2xl border border-navy/8 bg-sand/15 p-4 text-center group hover:shadow-lg hover:border-aqua/25 transition-all duration-300"
+              >
+                <div className="relative rounded-full bg-gradient-to-br from-aqua to-coral h-16 w-16 sm:h-20 sm:w-20 mx-auto mb-3 overflow-hidden shadow-lg">
+                  <Image
+                    src={s.image}
+                    alt={s.name}
+                    fill
+                    className={`object-cover ${s.imageZoom ? "scale-[1.6] translate-y-[30%]" : "object-top"}`}
+                  />
+                </div>
+                <h3 className="text-xs sm:text-sm font-bold text-navy leading-tight">{s.name}</h3>
+                <p className="text-[10px] sm:text-xs text-navy/60 mt-1">{s.tagline}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Recap CTA */}
+          <div className="text-center">
+            <a
+              href="/recap"
+              className="inline-block rounded-full border-2 border-navy px-8 py-3 text-base font-bold text-navy hover:bg-navy hover:text-white transition-all"
+            >
+              View Full Recap
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* ── STATS BAR ─────────────────────────────── */}
       <section className="px-6 py-20 sm:py-28 bg-sand/30">
         <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -313,25 +391,6 @@ export default function Home() {
               </p>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* ── INSPIRATIONAL STATEMENT ─────────────────── */}
-      <section className="relative px-6 py-24 sm:py-32 bg-navy text-white overflow-hidden">
-        <div className="pointer-events-none absolute inset-0">
-          <div className="absolute top-0 left-1/4 h-64 w-64 rounded-full bg-aqua/10 blur-3xl" />
-          <div className="absolute bottom-0 right-1/4 h-64 w-64 rounded-full bg-coral/10 blur-3xl" />
-        </div>
-        <div className="relative z-10 max-w-4xl mx-auto text-center space-y-6">
-          <p className="animate-fade-in-up text-xl sm:text-3xl md:text-4xl uppercase tracking-[0.15em] sm:tracking-[0.2em] text-aqua font-extrabold">
-            A New Era
-          </p>
-          <h2 className="animate-fade-in-up delay-100 text-2xl sm:text-5xl font-extrabold leading-tight">
-            The World Is Watching.
-          </h2>
-          <p className="animate-fade-in-up delay-200 text-base sm:text-xl text-sand max-w-3xl mx-auto leading-relaxed">
-            Bahamian creators are building audiences of millions. Now it&apos;s time to turn that influence into income, backed by the full support of the government. This is opportunity. This is a movement.
-          </p>
         </div>
       </section>
 
@@ -419,112 +478,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── SPEAKERS ──────────────────────────────── */}
-      <section className="px-6 py-24 sm:py-32 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16 space-y-4">
-            <p className="animate-fade-in-up text-xl sm:text-3xl md:text-4xl uppercase tracking-[0.15em] sm:tracking-[0.2em] text-aqua font-extrabold">
-              Who You&apos;ll Hear From
-            </p>
-            <h2 className="animate-fade-in-up delay-100 text-2xl sm:text-5xl font-extrabold text-navy">
-              Featured Speakers
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-            {speakers.map((s, i) => {
-              const gradients = [
-                "from-aqua to-coral",
-                "from-coral to-aqua",
-                "from-purple-500 to-pink-400",
-                "from-aqua to-sand",
-                "from-coral to-sand",
-                "from-indigo-400 to-violet-400",
-                "from-amber-400 to-orange-300",
-                "from-blue-400 to-indigo-400",
-                "from-aqua to-teal-300",
-                "from-coral to-pink-300",
-                "from-zinc-600 to-zinc-400",
-              ];
-              return (
-                <div
-                  key={s.name}
-                  className={`animate-fade-in-up ${
-                    i === 0
-                      ? "delay-100"
-                      : i === 1
-                        ? "delay-200"
-                        : i === 2
-                          ? "delay-300"
-                          : "delay-400"
-                  } ${s.featured ? "md:col-span-12 lg:col-span-6 lg:row-span-2" : "md:col-span-6 lg:col-span-3"}`}
-                >
-                  <div
-                    className={`rounded-3xl border border-navy/8 bg-sand/15 p-5 sm:p-10 text-center h-full flex flex-col items-center justify-center group hover:shadow-xl hover:border-aqua/25 transition-all duration-300 ${
-                      s.featured ? "py-16 sm:py-20" : ""
-                    }`}
-                  >
-                    {/* Avatar */}
-                    <div
-                      className={`relative rounded-full bg-gradient-to-br ${gradients[i]} flex items-center justify-center mb-6 shadow-lg overflow-hidden ${
-                        s.featured
-                          ? "h-32 w-32 sm:h-40 sm:w-40"
-                          : "h-20 w-20 sm:h-24 sm:w-24"
-                      }`}
-                    >
-                      {s.image ? (
-                        <Image
-                          src={s.image}
-                          alt={s.name}
-                          fill
-                          className={`object-cover ${s.imageClass ? s.imageClass : s.imageZoom ? "scale-[1.6] translate-y-[30%]" : "object-top"}`}
-                        />
-                      ) : (
-                        <span
-                          className={`font-bold text-white/90 ${
-                            s.featured
-                              ? "text-3xl sm:text-4xl"
-                              : "text-xl sm:text-2xl"
-                          }`}
-                        >
-                          {s.initials}
-                        </span>
-                      )}
-                    </div>
-
-                    <h3
-                      className={`font-bold text-navy mb-1 ${
-                        s.featured
-                          ? "text-2xl sm:text-3xl"
-                          : "text-lg sm:text-xl"
-                      }`}
-                    >
-                      {s.name}
-                    </h3>
-                    <p className="text-aqua font-medium text-sm sm:text-base">
-                      {s.role}
-                    </p>
-                    <p className="text-navy text-sm mt-1">{s.tagline}</p>
-
-                    {s.featured && (
-                      <div className="mt-6 inline-block rounded-full border border-coral/50 px-5 py-1.5 text-xs uppercase tracking-widest text-coral font-semibold">
-                        Headliner
-                      </div>
-                    )}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
       {/* ── FINAL CTA ─────────────────────────────── */}
-      <section
-        id="register"
-        className="relative px-6 py-28 sm:py-40 overflow-hidden bg-navy"
-      >
-        {/* Background gradient animation */}
+      <section className="relative px-6 py-28 sm:py-40 overflow-hidden bg-navy">
         <div className="absolute inset-0 animate-gradient-shift bg-gradient-to-br from-aqua/20 via-navy to-coral/20" />
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute top-0 left-1/4 h-64 w-64 rounded-full bg-aqua/10 blur-3xl" />
@@ -536,18 +491,21 @@ export default function Home() {
             This Is Your Moment
           </h2>
           <p className="animate-fade-in-up delay-100 text-base sm:text-xl text-sand max-w-xl mx-auto leading-relaxed">
-            For the first time ever, the Government of The Bahamas is standing behind its digital creators with real resources, real training, and real opportunity. This is historic. Step into the spotlight.
+            The Government of The Bahamas is standing behind its digital creators with real resources, real training, and real opportunity. This is a movement.
           </p>
-          <div className="animate-fade-in-up delay-200">
+          <div className="animate-fade-in-up delay-200 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="/retrieve"
+              href="/x-masterclass"
               className="cta-gradient animate-pulse-glow inline-block rounded-full px-8 sm:px-12 py-5 text-base sm:text-xl font-bold text-white shadow-2xl transition-all"
             >
-              Retrieve My Pass
+              Register for X Masterclass
             </a>
-          </div>
-          <div className="animate-fade-in-up delay-300 pt-4">
-            <SpotsCounter />
+            <a
+              href="/learn"
+              className="inline-block rounded-full border-2 border-white/30 px-8 py-4 text-base sm:text-lg font-bold text-white hover:bg-white/10 transition-all"
+            >
+              Start Learning
+            </a>
           </div>
         </div>
       </section>

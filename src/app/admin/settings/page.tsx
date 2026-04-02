@@ -11,6 +11,7 @@ interface Settings {
   youtubeVideoId: string;
   liveEnabled: boolean;
   streamSize: string;
+  xMasterclassRegistrationOpen: boolean;
 }
 
 export default function AdminSettingsPage() {
@@ -25,6 +26,7 @@ export default function AdminSettingsPage() {
     youtubeVideoId: '',
     liveEnabled: false,
     streamSize: 'large',
+    xMasterclassRegistrationOpen: false,
   });
 
   useEffect(() => {
@@ -44,6 +46,7 @@ export default function AdminSettingsPage() {
             youtubeVideoId: json.youtubeVideoId ?? '',
             liveEnabled: json.liveEnabled ?? false,
             streamSize: json.streamSize ?? 'large',
+            xMasterclassRegistrationOpen: json.xMasterclassRegistrationOpen ?? false,
           });
         }
       } catch {
@@ -191,6 +194,40 @@ export default function AdminSettingsPage() {
               {settings.registrationOpen
                 ? 'Registration is currently open.'
                 : 'Registration is currently closed.'}
+            </p>
+          </div>
+
+          {/* Divider */}
+          <div className="h-px bg-white/10" />
+
+          {/* X Masterclass Registration Toggle */}
+          <div>
+            <label className="mb-2 block text-xs font-bold uppercase tracking-widest text-white/70">
+              X Masterclass Registration
+            </label>
+            <button
+              type="button"
+              onClick={() =>
+                setSettings((s) => ({ ...s, xMasterclassRegistrationOpen: !s.xMasterclassRegistrationOpen }))
+              }
+              className={`relative inline-flex h-7 w-12 shrink-0 items-center rounded-full border transition-colors ${
+                settings.xMasterclassRegistrationOpen
+                  ? 'border-green-500/40 bg-green-500/20'
+                  : 'border-white/20 bg-white/10'
+              }`}
+            >
+              <span
+                className={`inline-block h-5 w-5 rounded-full transition-transform ${
+                  settings.xMasterclassRegistrationOpen
+                    ? 'translate-x-6 bg-green-400'
+                    : 'translate-x-1 bg-sand/50'
+                }`}
+              />
+            </button>
+            <p className="mt-1.5 text-xs text-sand/40">
+              {settings.xMasterclassRegistrationOpen
+                ? 'X Masterclass registration is OPEN — creators can sign up.'
+                : 'X Masterclass registration is CLOSED — "Coming Soon" is shown.'}
             </p>
           </div>
 

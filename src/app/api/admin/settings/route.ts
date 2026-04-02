@@ -23,6 +23,7 @@ export async function GET() {
       youtubeVideoId: raw.youtubeVideoId ?? "",
       liveEnabled: (raw.liveEnabled ?? "false") === "true",
       streamSize: raw.streamSize ?? "large",
+      xMasterclassRegistrationOpen: (raw.xMasterclassRegistrationOpen ?? "false") === "true",
     });
   } catch (error) {
     console.error("Settings error:", error);
@@ -48,7 +49,7 @@ export async function PATCH(request: NextRequest) {
       registrationOpen: 'registration_open',
       registration_open: 'registrationOpen',
     };
-    const ALLOWED_KEYS = new Set(['registrationCap', 'registration_cap', 'registrationOpen', 'registration_open', 'vipCap', 'youtubeVideoId', 'liveEnabled', 'streamSize']);
+    const ALLOWED_KEYS = new Set(['registrationCap', 'registration_cap', 'registrationOpen', 'registration_open', 'vipCap', 'youtubeVideoId', 'liveEnabled', 'streamSize', 'xMasterclassRegistrationOpen']);
 
     for (const [key, value] of Object.entries(body)) {
       if (!ALLOWED_KEYS.has(key)) continue;
