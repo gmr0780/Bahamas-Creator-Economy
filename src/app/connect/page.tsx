@@ -153,10 +153,10 @@ export default function ConnectPage() {
             and industry experts about landing brand partnerships.
           </p>
           <Link
-            href="/retrieve"
+            href="/x-masterclass"
             className="cta-gradient inline-block rounded-full px-6 sm:px-8 py-4 text-base sm:text-lg font-bold text-white shadow-lg"
           >
-            Retrieve My Pass
+            Register for X Masterclass
           </Link>
         </div>
       </section>

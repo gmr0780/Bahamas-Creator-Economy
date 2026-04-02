@@ -240,13 +240,13 @@ export default function EarnPage() {
             Turn views into real income
           </h2>
           <p className="mx-auto mb-8 max-w-md text-sand">
-            Join the Bahamas Creator Economy Launch on March 29 for keynotes, panels, and networking with creators, government leaders, and platform partners.
+            Join the free X Masterclass on April 17 to learn how to grow, monetize, and build your presence on X — with a chance to win lifetime X Premium.
           </p>
           <Link
-            href="/retrieve"
+            href="/x-masterclass"
             className="cta-gradient inline-block rounded-full px-6 sm:px-8 py-4 text-base sm:text-lg font-bold text-white shadow-lg"
           >
-            Retrieve My Pass
+            Register for X Masterclass
           </Link>
         </div>
       </section>

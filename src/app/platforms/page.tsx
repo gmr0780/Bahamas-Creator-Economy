@@ -201,13 +201,13 @@ export default function PlatformsPage() {
             Ready to start earning?
           </h2>
           <p className="mx-auto mb-8 max-w-md text-sand">
-            Join the Bahamas Creator Economy Launch on March 29 for keynotes, panels, and direct guidance on getting accepted on every eligible platform.
+            Join the free X Masterclass on April 17 to learn how to grow and monetize on X — with a chance to win lifetime X Premium.
           </p>
           <Link
-            href="/retrieve"
+            href="/x-masterclass"
             className="cta-gradient inline-block rounded-full px-6 sm:px-8 py-4 text-base sm:text-lg font-bold text-white shadow-lg"
           >
-            Retrieve My Pass
+            Register for X Masterclass
           </Link>
         </div>
       </section>

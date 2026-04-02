@@ -151,7 +151,7 @@ export default function RecapPage() {
             </div>
             <div className="rounded-2xl border border-navy/8 bg-sand/15 p-6 text-center sm:col-span-2 lg:col-span-1">
               <p className="text-4xl font-extrabold gradient-text mb-2">1st</p>
-              <p className="text-sm font-medium text-navy/70 uppercase tracking-wide">Of Its Kind in The Bahamas</p>
+              <p className="text-sm font-medium text-navy/70 uppercase tracking-wide">Of Its Kind in The Caribbean</p>
             </div>
           </div>
         </div>
@@ -248,7 +248,7 @@ export default function RecapPage() {
             Real Opportunities, Not Just Talk
           </h2>
           <p className="text-base sm:text-xl text-sand max-w-2xl mx-auto leading-relaxed">
-            The conference wasn&apos;t just a conversation. It led directly to X committing to a free Masterclass for Bahamian creators, with a lifetime X Premium subscription on the line.
+            The conference wasn&apos;t just a conversation. It led directly to X committing to a free Masterclass for Bahamian creators, with a lifetime X Premium subscription on the line — and more to come.
           </p>
           <a
             href="/x-masterclass"
