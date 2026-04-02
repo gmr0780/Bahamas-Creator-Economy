@@ -20,13 +20,6 @@ const speakers = [
     tagline: "United States Ambassador to The Bahamas",
   },
   {
-    name: "The Hon. Mia Amor Mottley, KC, MP",
-    image: "/speakers/mia-mottley.webp",
-    imageZoom: true,
-    role: "Guest Speaker",
-    tagline: "Prime Minister of Barbados",
-  },
-  {
     name: "Deputy PM I. Chester Cooper",
     image: "/speakers/chester-cooper.webp",
     role: "Panelist",
@@ -146,7 +139,7 @@ export default function RecapPage() {
               <p className="text-sm font-medium text-navy/70 uppercase tracking-wide">Creators Registered</p>
             </div>
             <div className="rounded-2xl border border-navy/8 bg-sand/15 p-6 text-center">
-              <p className="text-4xl font-extrabold gradient-text mb-2">11</p>
+              <p className="text-4xl font-extrabold gradient-text mb-2">10</p>
               <p className="text-sm font-medium text-navy/70 uppercase tracking-wide">Featured Speakers</p>
             </div>
             <div className="rounded-2xl border border-navy/8 bg-sand/15 p-6 text-center sm:col-span-2 lg:col-span-1">
@@ -195,7 +188,7 @@ export default function RecapPage() {
                       src={s.image}
                       alt={s.name}
                       fill
-                      className={`object-cover ${s.imageClass ?? (s.imageZoom ? "scale-[1.6] translate-y-[30%]" : "object-top")}`}
+                      className={`object-cover ${s.imageClass ?? "object-top"}`}
                     />
                   </div>
                   <h3 className="text-sm sm:text-base font-bold text-navy leading-tight">{s.name}</h3>

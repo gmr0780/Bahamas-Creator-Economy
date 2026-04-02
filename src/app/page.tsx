@@ -129,17 +129,30 @@ const speakers = [
     tagline: "United States Ambassador to The Bahamas",
   },
   {
-    name: "The Hon. Mia Amor Mottley, KC, MP",
-    image: "/speakers/mia-mottley.webp",
-    imageZoom: true,
-    role: "Guest Speaker",
-    tagline: "Prime Minister of Barbados",
-  },
-  {
     name: "Deputy PM I. Chester Cooper",
     image: "/speakers/chester-cooper.webp",
     role: "Panelist",
     tagline: "Minister of Tourism, Investment and Aviation",
+  },
+  {
+    name: "Alexa Alianiello",
+    image: "/speakers/alexa-alianiello.jpeg",
+    imageClass: "scale-150 translate-y-[5%]",
+    role: "Presenter",
+    tagline: "Agentio | Connecting Creators to Brands",
+  },
+  {
+    name: "Tanya Leis",
+    image: "/speakers/tanya-leis.png",
+    imageClass: "scale-125 object-top",
+    role: "Presenter",
+    tagline: "EVP, Burson North America",
+  },
+  {
+    name: "Aim\u00e9e Legault",
+    image: "/speakers/aimee-legault.png",
+    role: "Presenter",
+    tagline: "VP, Influencer Marketing, Burson Canada",
   },
   {
     name: "Jamie Bierman",
@@ -152,6 +165,13 @@ const speakers = [
     image: "/speakers/greg-michelier.jpg",
     role: "Closing Remarks",
     tagline: "Ambassador-at-Large to Technology and AI",
+  },
+  {
+    name: "Latrae Rahming",
+    image: "/speakers/latrae-rahming.jpeg",
+    imageClass: "object-top",
+    role: "Host",
+    tagline: "Director of Communications, OPM",
   },
 ];
 
@@ -337,7 +357,7 @@ export default function Home() {
           </div>
 
           {/* Speaker highlights from the event */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mb-12">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-12">
             {speakers.map((s) => (
               <div
                 key={s.name}
@@ -348,7 +368,7 @@ export default function Home() {
                     src={s.image}
                     alt={s.name}
                     fill
-                    className={`object-cover ${s.imageZoom ? "scale-[1.6] translate-y-[30%]" : "object-top"}`}
+                    className={`object-cover ${s.imageClass ?? "object-top"}`}
                   />
                 </div>
                 <h3 className="text-xs sm:text-sm font-bold text-navy leading-tight">{s.name}</h3>
