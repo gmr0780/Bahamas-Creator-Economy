@@ -9,7 +9,7 @@ function escapeHtml(str: string): string {
   return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
-export async function POST() {
+export async function POST(request: Request) {
   if (!(await isAuthenticated())) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
@@ -21,10 +21,18 @@ export async function POST() {
   const resend = new Resend(key);
 
   try {
-    const registrations = await prisma.registration.findMany({
-      where: { status: "approved" },
-      select: { email: true, fullName: true },
-    });
+    const { searchParams } = new URL(request.url);
+    const testEmail = searchParams.get("test");
+
+    let registrations: { email: string; fullName: string }[];
+    if (testEmail) {
+      registrations = [{ email: testEmail, fullName: "Test User" }];
+    } else {
+      registrations = await prisma.registration.findMany({
+        where: { status: "approved" },
+        select: { email: true, fullName: true },
+      });
+    }
 
     let sent = 0;
     let failed = 0;

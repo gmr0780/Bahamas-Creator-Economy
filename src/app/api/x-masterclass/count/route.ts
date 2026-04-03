@@ -21,6 +21,9 @@ export async function GET() {
     if (countResult.status === "rejected") {
       console.error("X Masterclass count query failed:", countResult.reason);
     }
+    if (openSetting.status === "rejected") {
+      console.error("X Masterclass open-setting query failed:", openSetting.reason);
+    }
 
     return NextResponse.json({ count, open });
   } catch (error) {
