@@ -5,12 +5,22 @@ export const dynamic = "force-dynamic";
 
 export async function GET() {
   try {
-    const count = await prisma.xMasterclassRegistration.count();
+    const [countResult, openSetting] = await Promise.allSettled([
+      prisma.xMasterclassRegistration.count(),
+      prisma.setting.findUnique({
+        where: { key: "xMasterclassRegistrationOpen" },
+      }),
+    ]);
 
-    const openSetting = await prisma.setting.findUnique({
-      where: { key: "xMasterclassRegistrationOpen" },
-    });
-    const open = (openSetting?.value ?? "false") === "true";
+    const count = countResult.status === "fulfilled" ? countResult.value : 0;
+    const open =
+      openSetting.status === "fulfilled"
+        ? (openSetting.value?.value ?? "false") === "true"
+        : false;
+
+    if (countResult.status === "rejected") {
+      console.error("X Masterclass count query failed:", countResult.reason);
+    }
 
     return NextResponse.json({ count, open });
   } catch (error) {
