@@ -307,6 +307,12 @@ export default function AdminDashboardPage() {
               X Masterclass
             </Link>
             <Link
+              href="/admin/pixels"
+              className="rounded-lg border border-white/10 px-3 py-1.5 text-xs font-semibold text-sand/80 transition-colors hover:border-aqua/30 hover:text-aqua"
+            >
+              Pixels
+            </Link>
+            <Link
               href="/admin/analytics"
               className="rounded-lg border border-white/10 px-3 py-1.5 text-xs font-semibold text-sand/80 transition-colors hover:border-aqua/30 hover:text-aqua"
             >

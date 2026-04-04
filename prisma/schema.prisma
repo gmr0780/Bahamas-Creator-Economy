@@ -56,6 +56,25 @@ model Guide {
   updatedAt   DateTime @updatedAt
 }
 
+model EmailPixel {
+  id        String   @id @default(cuid())
+  slug      String   @unique
+  label     String
+  opens     EmailPixelOpen[]
+  createdAt DateTime @default(now())
+}
+
+model EmailPixelOpen {
+  id        String     @id @default(cuid())
+  pixelId   String
+  pixel     EmailPixel @relation(fields: [pixelId], references: [id])
+  ip        String     @default("")
+  userAgent String     @default("")
+  createdAt DateTime   @default(now())
+
+  @@index([pixelId])
+}
+
 model XMasterclassRegistration {
   id        String   @id @default(cuid())
   fullName  String
