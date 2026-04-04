@@ -88,6 +88,34 @@ export default function AdminDashboardPage() {
   const [addSubmitting, setAddSubmitting] = useState(false);
   const [addError, setAddError] = useState('');
 
+  // Blast email state
+  const [blastStatus, setBlastStatus] = useState<'idle' | 'sending' | 'done' | 'error'>('idle');
+  const [blastResult, setBlastResult] = useState('');
+  const [blastTestEmail, setBlastTestEmail] = useState('');
+  const [showBlastModal, setShowBlastModal] = useState(false);
+
+  async function handleBlast(testEmail?: string) {
+    setBlastStatus('sending');
+    setBlastResult('');
+    try {
+      const url = testEmail
+        ? `/api/admin/blast-conference?test=${encodeURIComponent(testEmail)}`
+        : '/api/admin/blast-conference';
+      const res = await fetch(url, { method: 'POST' });
+      const data = await res.json();
+      if (!res.ok) {
+        setBlastStatus('error');
+        setBlastResult(data.error || 'Failed to send.');
+        return;
+      }
+      setBlastStatus('done');
+      setBlastResult(`Sent: ${data.sent} | Failed: ${data.failed} | Total: ${data.total}`);
+    } catch {
+      setBlastStatus('error');
+      setBlastResult('Network error. Try again.');
+    }
+  }
+
   const fetchData = useCallback(async () => {
     try {
       const params = new URLSearchParams({
@@ -367,6 +395,15 @@ export default function AdminDashboardPage() {
           {/* Add Registration + Export */}
           <div className="flex items-center gap-2">
             <button
+              onClick={() => { setShowBlastModal(true); setBlastStatus('idle'); setBlastResult(''); }}
+              className="inline-flex items-center gap-2 rounded-lg border border-coral/30 bg-coral/10 px-4 py-2 text-xs font-semibold text-coral transition-colors hover:bg-coral/20"
+            >
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              Email Blast
+            </button>
+            <button
               onClick={() => { setShowAddModal(true); setAddError(''); }}
               className="inline-flex items-center gap-2 rounded-lg border border-aqua/30 bg-aqua/10 px-4 py-2 text-xs font-semibold text-aqua transition-colors hover:bg-aqua/20"
             >
@@ -577,6 +614,83 @@ export default function AdminDashboardPage() {
           </div>
         )}
       </div>
+
+      {/* Email Blast Modal */}
+      {showBlastModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <div
+            className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+            onClick={() => setShowBlastModal(false)}
+          />
+          <div className="relative glass-dark rounded-2xl border border-white/10 w-full max-w-md p-6 sm:p-8">
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-lg font-bold text-white">X Masterclass Email Blast</h2>
+              <button
+                onClick={() => setShowBlastModal(false)}
+                className="rounded-lg border border-white/10 p-1.5 text-sand/60 transition-colors hover:border-white/20 hover:text-sand"
+              >
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+
+            <p className="text-sm text-sand/70 mb-4">
+              Send the X Masterclass invitation to all conference registrants.
+            </p>
+
+            {/* Test email */}
+            <div className="mb-4">
+              <label className="mb-1.5 block text-xs font-bold uppercase tracking-widest text-sand/50">
+                Send Test First
+              </label>
+              <div className="flex gap-2">
+                <input
+                  type="email"
+                  value={blastTestEmail}
+                  onChange={(e) => setBlastTestEmail(e.target.value)}
+                  placeholder="your@email.com"
+                  className="flex-1 rounded-xl border border-white/20 bg-white/[0.08] px-4 py-2.5 text-sm text-white placeholder-sand/40 outline-none transition-all focus:border-aqua/40 focus:ring-2 focus:ring-aqua/15"
+                />
+                <button
+                  onClick={() => handleBlast(blastTestEmail)}
+                  disabled={!blastTestEmail || blastStatus === 'sending'}
+                  className="rounded-xl border border-aqua/30 bg-aqua/10 px-4 py-2.5 text-xs font-bold text-aqua transition-colors hover:bg-aqua/20 disabled:opacity-40 disabled:cursor-not-allowed"
+                >
+                  {blastStatus === 'sending' ? 'Sending...' : 'Send Test'}
+                </button>
+              </div>
+            </div>
+
+            {/* Result */}
+            {blastResult && (
+              <div className={`mb-4 rounded-xl border px-4 py-3 text-sm font-medium ${
+                blastStatus === 'done'
+                  ? 'border-green-500/30 bg-green-500/10 text-green-400'
+                  : 'border-red-500/30 bg-red-500/10 text-red-400'
+              }`}>
+                {blastResult}
+              </div>
+            )}
+
+            {/* Divider */}
+            <div className="h-px bg-white/10 my-4" />
+
+            {/* Send to all */}
+            <button
+              onClick={() => {
+                if (confirm('Send the X Masterclass email to ALL conference registrants?')) {
+                  handleBlast();
+                }
+              }}
+              disabled={blastStatus === 'sending'}
+              className="w-full rounded-xl bg-coral/20 border border-coral/30 px-4 py-3 text-sm font-bold text-coral transition-colors hover:bg-coral/30 disabled:opacity-40 disabled:cursor-not-allowed"
+            >
+              {blastStatus === 'sending' ? 'Sending...' : 'Send to All Conference Registrants'}
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Add Registration Modal */}
       {showAddModal && (
